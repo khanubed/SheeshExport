@@ -1,74 +1,104 @@
 import Link from "next/link";
+import Image from "next/image";
 import { FOOTER_NAV } from "@/config/navigation";
-import { SITE_CONFIG } from "@/config/site";
+import { Leaf, Mail } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedinIn, faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 export function Footer() {
   return (
-    <footer className="border-t border-slate-200 bg-slate-900 text-slate-300">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5">
-          <div className="lg:col-span-2">
-            <span className="text-2xl font-bold tracking-tight text-white">
-              SHEESH <span className="text-emerald-500">EXPORTS</span>
-            </span>
-            <p className="mt-4 text-sm leading-relaxed text-slate-400 max-w-sm">
-              {SITE_CONFIG.description}
+    <footer className="bg-card text-card-foreground border-t border-border mt-16">
+      <div className="mx-auto max-w-7xl px-4 pb-8 pt-16 sm:px-6 lg:px-8">
+        <div className="xl:grid xl:grid-cols-3 xl:gap-8">
+          <div className="space-y-8">
+            <Link href="/" className="flex items-center space-x-2">
+              <Image src="/images/sheesh-logo.jpeg" alt="Sheesh Exports Logo" width={150} height={50} className="h-12 w-auto object-contain dark:invert" />
+            </Link>
+            <p className="text-sm leading-6 text-muted-foreground max-w-xs">
+              Bringing the richness of Indian agriculture to the world. Premium quality spices, grains, and agro-commodities.
             </p>
-            <div className="mt-6 space-y-1 text-xs text-slate-400">
-              <p>📍 {SITE_CONFIG.contact.address.street}, {SITE_CONFIG.contact.address.city}, {SITE_CONFIG.contact.address.country}</p>
-              <p>✉️ {SITE_CONFIG.contact.email} | 📞 {SITE_CONFIG.contact.phone}</p>
+            <div className="flex space-x-6 items-center">
+              <a href="#" className="text-muted-foreground hover:text-primary">
+                <span className="sr-only">LinkedIn</span>
+                <FontAwesomeIcon icon={faLinkedinIn} className="h-6 w-6" aria-hidden="true" />
+              </a>
+              <a href="#" className="text-muted-foreground hover:text-primary">
+                <span className="sr-only">Twitter</span>
+                <FontAwesomeIcon icon={faTwitter} className="h-6 w-6" aria-hidden="true" />
+              </a>
+              <a href="#" className="text-muted-foreground hover:text-primary">
+                <span className="sr-only">Email</span>
+                <Mail className="h-6 w-6" aria-hidden="true" />
+              </a>
             </div>
           </div>
-
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">Products</h3>
-            <ul className="mt-4 space-y-2">
-              {FOOTER_NAV.products.map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href} className="text-sm text-slate-400 hover:text-white transition-colors">
-                    {item.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">Company</h3>
-            <ul className="mt-4 space-y-2">
-              {FOOTER_NAV.company.map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href} className="text-sm text-slate-400 hover:text-white transition-colors">
-                    {item.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">Services & Trade</h3>
-            <ul className="mt-4 space-y-2">
-              {FOOTER_NAV.services.map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href} className="text-sm text-slate-400 hover:text-white transition-colors">
-                    {item.title}
-                  </Link>
-                </li>
-              ))}
-              {FOOTER_NAV.legal.map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href} className="text-sm text-slate-400 hover:text-white transition-colors">
-                    {item.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+            <div className="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3 className="text-sm font-semibold leading-6 text-foreground font-heading tracking-wide uppercase">Company</h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  {FOOTER_NAV.company.map((item) => (
+                    <li key={item.title}>
+                      <Link href={item.href} className="text-sm leading-6 text-muted-foreground hover:text-primary">
+                        {item.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="mt-10 md:mt-0">
+                <h3 className="text-sm font-semibold leading-6 text-foreground font-heading tracking-wide uppercase">Products</h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  {FOOTER_NAV.products.map((item) => (
+                    <li key={item.title}>
+                      <Link href={item.href} className="text-sm leading-6 text-muted-foreground hover:text-primary">
+                        {item.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <div className="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3 className="text-sm font-semibold leading-6 text-foreground font-heading tracking-wide uppercase">Services</h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  {FOOTER_NAV.services.map((item) => (
+                    <li key={item.title}>
+                      <Link href={item.href} className="text-sm leading-6 text-muted-foreground hover:text-primary">
+                        {item.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="mt-10 md:mt-0">
+                <h3 className="text-sm font-semibold leading-6 text-foreground font-heading tracking-wide uppercase">Newsletter</h3>
+                <p className="mt-6 text-sm leading-6 text-muted-foreground">
+                  Stay updated with the latest export insights and market trends.
+                </p>
+                <form className="mt-6 flex flex-col gap-3 max-w-xs">
+                  <label htmlFor="email-address" className="sr-only">Email address</label>
+                  <input
+                    type="email"
+                    name="email-address"
+                    id="email-address"
+                    autoComplete="email"
+                    required
+                    className="flex h-10 w-full min-w-0 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    placeholder="Enter your email"
+                  />
+                  <Button type="submit" className="w-full h-10">Subscribe</Button>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
-
-        <div className="mt-12 border-t border-slate-800 pt-8 text-center text-xs text-slate-500">
-          <p>© {new Date().getFullYear()} {SITE_CONFIG.legalName}. All rights reserved.</p>
+        <div className="mt-16 border-t border-border pt-8 sm:mt-20 lg:mt-24">
+          <p className="text-xs leading-5 text-muted-foreground">
+            &copy; {new Date().getFullYear()} Sheesh Exports. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
