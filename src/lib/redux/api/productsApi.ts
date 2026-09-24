@@ -1,5 +1,5 @@
 import { baseApi } from './baseApi';
-import { PRODUCTS_DATA, adaptToPrisma } from '@/lib/data/products';
+import { PRODUCTS_DATA } from '@/lib/data/products';
 import { Product } from '@/lib/data/types';
 
 export const productsApi = baseApi.injectEndpoints({
@@ -9,38 +9,35 @@ export const productsApi = baseApi.injectEndpoints({
         // Simulate network delay
         await new Promise(resolve => setTimeout(resolve, 500));
         
-        // Map raw mock data to fully compliant Prisma shape
-        let result = PRODUCTS_DATA.map(adaptToPrisma);
+        let result = [...PRODUCTS_DATA];
 
         if (filters?.search) {
           const q = filters.search.toLowerCase();
           result = result.filter(p => 
             p.name.toLowerCase().includes(q) || 
-            p.shortDescription.toLowerCase().includes(q) ||
             p.description.toLowerCase().includes(q)
           );
         }
 
         if (filters?.categories?.length > 0) {
-          // Filter by category name since the UI passes category names
-          result = result.filter(p => filters.categories.includes(p.category.name));
+          result = result.filter(p => filters.categories.includes(p.category));
         }
 
         if (filters?.certifications?.length > 0) {
           result = result.filter(p => 
-            p.certifications.some(c => filters.certifications.includes(c.name))
+            p.certifications.some(c => filters.certifications.includes(c))
           );
         }
 
         if (filters?.exportMarkets?.length > 0) {
           result = result.filter(p => 
-            p.exportMarkets.some(m => filters.exportMarkets.includes(m.country))
+            p.exportMarkets.some(m => filters.exportMarkets.includes(m))
           );
         }
 
         if (filters?.packagingTypes?.length > 0) {
           result = result.filter(p => 
-            p.packagingOptions.some(pt => filters.packagingTypes.includes(pt.type))
+            p.packagingOptions.some(pt => filters.packagingTypes.includes(pt.name))
           );
         }
 
@@ -67,7 +64,7 @@ export const productsApi = baseApi.injectEndpoints({
         const rawProduct = PRODUCTS_DATA.find(p => p.slug === slug);
         if (!rawProduct) return { error: { status: 404, data: "Not found" } };
         
-        return { data: adaptToPrisma(rawProduct) };
+        return { data: rawProduct };
       },
       providesTags: (result, error, slug) => [{ type: 'Product', id: slug }],
     }),
@@ -93,3 +90,4 @@ export const {
   useUpdateProductMutation,
   useDeleteProductMutation,
 } = productsApi;
+

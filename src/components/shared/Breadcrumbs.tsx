@@ -33,8 +33,8 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
                 {isLast ? (
                   <BreadcrumbPage>{item.label}</BreadcrumbPage>
                 ) : item.href ? (
-                  <BreadcrumbLink asChild>
-                    <Link href={item.href}>{item.label}</Link>
+                  <BreadcrumbLink render={<Link href={item.href} />}>
+                    {item.label}
                   </BreadcrumbLink>
                 ) : (
                   <BreadcrumbPage>{item.label}</BreadcrumbPage>

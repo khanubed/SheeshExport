@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getCategoryBySlug, getCategories, getProducts } from "@/lib/cms/queries";
+import { getCategoryBySlug, getCategories } from "@/lib/cms/queries";
+import { PRODUCTS_DATA } from "@/lib/data/products";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { ProductGrid } from "@/components/products/ProductGrid";
 import Link from "next/link";
@@ -34,16 +35,13 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
 
 export default async function CategoryDetailPage({ params }: CategoryPageProps) {
   const { slug } = await params;
-  const [category, allProducts] = await Promise.all([
-    getCategoryBySlug(slug),
-    getProducts(),
-  ]);
+  const category = await getCategoryBySlug(slug);
 
   if (!category) {
     notFound();
   }
 
-  const categoryProducts = allProducts.filter((p) => p.category.slug === slug);
+  const categoryProducts = PRODUCTS_DATA.filter((p) => p.categorySlug === slug);
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">

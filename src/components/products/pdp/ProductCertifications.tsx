@@ -1,0 +1,24 @@
+"use client";
+import React from "react";
+import { ShieldCheck } from "lucide-react";
+
+export function ProductCertifications({ certifications }: { certifications: string[] }) {
+  return (
+    <section className="py-16 bg-slate-100 border-y border-slate-200">
+      <div className="container mx-auto px-4 max-w-7xl flex flex-col md:flex-row items-center gap-8">
+        <div className="flex-shrink-0">
+          <h3 className="text-lg font-serif font-semibold text-slate-900 flex items-center gap-2">
+            <ShieldCheck className="w-5 h-5 text-green-600" /> Quality & Compliance
+          </h3>
+        </div>
+        <div className="flex flex-wrap gap-4 md:ml-auto">
+          {certifications.map((cert, idx) => (
+            <span key={idx} className="px-4 py-2 bg-white border border-slate-200 text-slate-700 font-medium text-sm shadow-sm rounded-sm">
+              {cert}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

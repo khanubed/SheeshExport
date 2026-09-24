@@ -20,12 +20,12 @@ export const metadata: Metadata = buildMetadata({
 });
 
 const PRODUCT_CATEGORIES = [
-  { title: "Spices", desc: "Turmeric, Chilli, Cumin, Coriander & more", img: IMAGES.products.spices, href: "/products/spices" },
-  { title: "Grains", desc: "Rice, Wheat, Maize, Millet & more", img: IMAGES.products.grains, href: "/products/grains" },
-  { title: "Pulses", desc: "Chickpeas, Lentils, Beans, Grams & more", img: IMAGES.products.pulses, href: "/products/pulses" },
-  { title: "Oil Seeds", desc: "Sesame, Mustard, Groundnut & more", img: IMAGES.products.oilSeeds, href: "/products/oil-seeds" },
-  { title: "Dry Fruits", desc: "Almonds, Cashews, Raisins & more", img: IMAGES.products.dryFruits, href: "/products/dry-fruits" },
-  { title: "Food Ingredients", desc: "Herbs, Powders, Extracts & more", img: IMAGES.products.foodIngredients, href: "/products/food-ingredients" },
+  { title: "Whole Spices", desc: "Turmeric, Chilli, Cumin, Coriander & more", img: IMAGES.products.spices, href: "/products?categories=Whole+Spices" },
+  { title: "Powdered Spices", desc: "Turmeric Powder, Chilli Powder & more", img: IMAGES.products.spices, href: "/products?categories=Powdered+Spices" },
+  { title: "Grains & Millets", desc: "Rice, Wheat, Maize, Millet & more", img: IMAGES.products.grains, href: "/products?categories=Grains+%26+Millets" },
+  { title: "Pulses & Beans", desc: "Chickpeas, Lentils, Beans, Grams & more", img: IMAGES.products.pulses, href: "/products?categories=Pulses+%26+Beans" },
+  { title: "Oil Seeds", desc: "Sesame, Mustard, Groundnut & more", img: IMAGES.products.oilSeeds, href: "/products?categories=Oil+Seeds" },
+  { title: "Dry Fruits & Nuts", desc: "Almonds, Cashews, Raisins & more", img: IMAGES.products.dryFruits, href: "/products?categories=Dry+Fruits+%26+Nuts" },
 ];
 
 const FEATURES = [
@@ -258,7 +258,7 @@ export default function HomePage() {
             </FadeIn>
             
             <FadeIn delay={0.2} className="relative h-100 hidden lg:block">
-              {/* Right column kept for balance, background image provides the visual */}
+              <div aria-hidden="true" />
             </FadeIn>
           </div>
         </div>

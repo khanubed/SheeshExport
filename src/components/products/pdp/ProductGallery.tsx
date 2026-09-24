@@ -1,57 +1,27 @@
 "use client";
+import React from "react";
+import Image from "next/image";
+import { Variant } from "@/lib/data/types";
 
-import { useState } from 'react';
-import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
-import useEmblaCarousel from 'embla-carousel-react';
-import { cn } from '@/lib/utils';
-import { ZoomIn } from 'lucide-react';
-import { ProductImage } from '@/lib/data/types';
-
-interface ProductGalleryProps {
-  images: ProductImage[];
-}
-
-export function ProductGallery({ images }: ProductGalleryProps) {
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [emblaRef] = useEmblaCarousel({ axis: 'y', dragFree: true });
-  
-  const displayImages = images.length > 0 ? images.map(img => img.url) : ['/images/placeholder.jpg', '/images/placeholder.jpg'];
-
+export function ProductGallery({ variant }: { variant: Variant }) {
+  if (!variant.images || variant.images.length === 0) return null;
   return (
-    <div className="flex flex-col-reverse md:flex-row gap-4 h-full">
-      {/* Thumbnails */}
-      <div className="md:w-24 shrink-0 h-[400px] md:h-[500px] overflow-hidden" ref={emblaRef}>
-        <div className="flex md:flex-col gap-3 h-full">
-          {displayImages.map((img, idx) => (
-            <button
-              key={idx}
-              onClick={() => setSelectedIndex(idx)}
-              className={cn(
-                "relative aspect-square w-20 md:w-full shrink-0 overflow-hidden rounded-md border-2 transition-all",
-                selectedIndex === idx ? "border-primary" : "border-transparent hover:border-muted-foreground/50"
-              )}
-            >
-              <img src={img} alt={`Thumbnail ${idx}`} className="w-full h-full object-cover" />
-            </button>
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <h2 className="text-sm font-semibold tracking-widest uppercase text-slate-500 mb-8">Product Gallery — {variant.name}</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {variant.images.map((img, idx) => (
+            <div key={idx} className="relative aspect-square bg-slate-100 group overflow-hidden">
+              <Image 
+                src={img || "/images/placeholder.jpg"} 
+                alt={variant.name} 
+                fill 
+                className="object-cover group-hover:scale-105 transition-transform duration-700" 
+              />
+            </div>
           ))}
         </div>
       </div>
-
-      {/* Main Image */}
-      <div className="flex-1 bg-muted/20 rounded-xl overflow-hidden relative group">
-        <TransformWrapper>
-          <TransformComponent wrapperClass="!w-full !h-full" contentClass="!w-full !h-full">
-            <img 
-              src={displayImages[selectedIndex]} 
-              alt="Product Main" 
-              className="w-full h-full object-cover aspect-square md:aspect-auto"
-            />
-          </TransformComponent>
-        </TransformWrapper>
-        <div className="absolute top-4 right-4 bg-background/80 backdrop-blur-sm p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-          <ZoomIn className="w-5 h-5 text-foreground" />
-        </div>
-      </div>
-    </div>
+    </section>
   );
 }

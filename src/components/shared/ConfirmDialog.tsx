@@ -48,7 +48,7 @@ export function ConfirmDialog({
 
   return (
     <AlertDialog open={open} onOpenChange={onOpenChange}>
-      {trigger && <AlertDialogTrigger asChild>{trigger}</AlertDialogTrigger>}
+      {trigger && <AlertDialogTrigger render={trigger as React.ReactElement} />}
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>{title}</AlertDialogTitle>

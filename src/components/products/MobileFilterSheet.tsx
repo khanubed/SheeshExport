@@ -15,16 +15,14 @@ export function MobileFilterSheet({ filters, setFilters }: { filters: FilterStat
 
   return (
     <Sheet>
-      <SheetTrigger asChild>
-        <Button variant="outline" className="lg:hidden flex items-center gap-2">
-          <SlidersHorizontal className="w-4 h-4" />
-          Filters
-          {activeCount > 0 && (
-            <span className="ml-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground">
-              {activeCount}
-            </span>
-          )}
-        </Button>
+      <SheetTrigger render={<Button variant="outline" className="lg:hidden flex items-center gap-2" />}>
+        <SlidersHorizontal className="w-4 h-4" />
+        Filters
+        {activeCount > 0 && (
+          <span className="ml-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground">
+            {activeCount}
+          </span>
+        )}
       </SheetTrigger>
       <SheetContent side="left" className="w-[300px] sm:w-[400px] overflow-y-auto">
         <SheetHeader className="mb-6 text-left">
