@@ -130,34 +130,34 @@ export default function ExportProcessPage() {
   };
 
   return (
-    <main className="bg-[#F7F5F0] min-h-screen text-[#1E1E1E] font-sans selection:bg-[#0B2F26] selection:text-white">
+    <main className="bg-background min-h-screen text-foreground font-sans selection:bg-primary selection:text-primary-foreground">
       <JsonLd data={schema} />
       
       {/* SECTION 01: HERO */}
-      <section className="relative min-h-[70vh] flex flex-col justify-center bg-[#0B2F26] text-white overflow-hidden">
+      <section className="relative min-h-[70vh] flex flex-col justify-center bg-primary text-primary-foreground overflow-hidden">
         {/* Split Screen Background */}
         <div className="absolute inset-0 z-0 flex opacity-30 mix-blend-luminosity">
           <div className="w-1/3 relative"><Image src="/images/about/mission.jpg" alt="Farm Sourcing" fill className="object-cover" /></div>
-          <div className="w-1/3 relative border-x border-white/10"><Image src="/images/about/factory-processing.jpg" alt="Processing Facility" fill className="object-cover" /></div>
+          <div className="w-1/3 relative border-x border-primary-foreground/10"><Image src="/images/about/factory-processing.jpg" alt="Processing Facility" fill className="object-cover" /></div>
           <div className="w-1/3 relative"><Image src="/images/about/infra-warehouse.jpg" alt="Export Container" fill className="object-cover" /></div>
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#0B2F26] via-[#0B2F26]/80 to-transparent z-10" />
 
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 relative z-20 pt-20 pb-10">
-          <span className="inline-block text-[#C8A96B] font-semibold tracking-[0.2em] uppercase text-xs mb-8 border-b border-[#C8A96B]/30 pb-2 max-w-max">
+          <span className="inline-block text-secondary font-semibold tracking-[0.2em] uppercase text-xs mb-8 border-b border-secondary/30 pb-2 max-w-max">
             Supply Chain Transparency Report
           </span>
           <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-medium leading-[1.05] mb-8 max-w-4xl">
             From Indian Farms<br /> To Global Markets
           </h1>
-          <p className="text-xl sm:text-2xl text-white/80 max-w-3xl font-light leading-relaxed mb-12">
+          <p className="text-xl sm:text-2xl text-primary-foreground/80 max-w-3xl font-light leading-relaxed font-sans mb-12">
             A transparent export process designed to ensure quality, traceability, and reliable delivery across international supply chains.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <a href="#journey" className="inline-flex items-center justify-center bg-[#C8A96B] text-[#0B2F26] px-8 py-4 font-medium tracking-wide hover:bg-[#C8A96B]/90 transition-colors">
+            <a href="#journey" className="inline-flex items-center justify-center bg-secondary text-primary px-8 py-4 font-medium tracking-wide hover:bg-secondary/90 transition-colors">
               Explore Export Workflow
             </a>
-            <Link href="/contact" className="inline-flex items-center justify-center border border-white/30 text-white px-8 py-4 font-medium tracking-wide hover:bg-white/5 transition-colors">
+            <Link href="/contact" className="inline-flex items-center justify-center border border-primary-foreground/30 text-primary-foreground px-8 py-4 font-medium tracking-wide hover:bg-card/5 transition-colors">
               Request Export Consultation
             </Link>
           </div>
@@ -165,25 +165,25 @@ export default function ExportProcessPage() {
       </section>
 
       {/* SECTION 02: EXPORT OVERVIEW */}
-      <section className="py-16 lg:py-24 bg-white border-b border-[#1E1E1E]/10">
+      <section className="py-16 lg:py-24 bg-background border-b border-border">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1000px] text-center">
-          <h2 className="font-heading text-4xl sm:text-5xl font-medium text-[#0B2F26] mb-8">
+          <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-8">
             Built For Reliable International Trade
           </h2>
-          <p className="text-xl text-[#1E1E1E]/80 font-light leading-relaxed editorial-content text-left md:text-center">
-            Successful international commodity shipping requires more than just product availability. It demands a highly synchronized workflow integrating precise <strong className="font-medium text-[#1E1E1E]">farm sourcing</strong>, rigorous <strong className="font-medium text-[#1E1E1E]">quality control</strong>, flexible <strong className="font-medium text-[#1E1E1E]">product customization</strong>, flawless <strong className="font-medium text-[#1E1E1E]">export compliance</strong>, and intelligent <strong className="font-medium text-[#1E1E1E]">container optimization</strong>. At Sheesh Exports, our entire Indian spice export process is engineered to mitigate risk and guarantee seamless global shipping.
+          <p className="text-xl text-muted-foreground font-sans font-light leading-relaxed font-sans editorial-content text-left md:text-center">
+            Successful international commodity shipping requires more than just product availability. It demands a highly synchronized workflow integrating precise <strong className="font-medium text-foreground">farm sourcing</strong>, rigorous <strong className="font-medium text-foreground">quality control</strong>, flexible <strong className="font-medium text-foreground">product customization</strong>, flawless <strong className="font-medium text-foreground">export compliance</strong>, and intelligent <strong className="font-medium text-foreground">container optimization</strong>. At Sheesh Exports, our entire Indian spice export process is engineered to mitigate risk and guarantee seamless global shipping.
           </p>
         </div>
       </section>
 
       {/* SECTION 03: EXPORT JOURNEY (THE CORE) */}
-      <section id="journey" className="py-16 lg:py-24 bg-[#F7F5F0]">
+      <section id="journey" className="py-16 lg:py-24 bg-background">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1200px]">
           <div className="text-center mb-16 lg:mb-24">
-            <h2 className="font-heading text-4xl sm:text-5xl font-medium text-[#0B2F26] mb-4">
+            <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-4">
               The Export Journey
             </h2>
-            <p className="text-[#1E1E1E]/60 uppercase tracking-widest text-sm font-medium">End-To-End Supply Chain Operations</p>
+            <p className="text-muted-foreground font-sans uppercase tracking-widest text-sm font-medium">End-To-End Supply Chain Operations</p>
           </div>
 
           <div className="space-y-16 lg:space-y-32">
@@ -193,22 +193,22 @@ export default function ExportProcessPage() {
                 <div key={idx} className={`flex flex-col ${isEven ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-10 lg:gap-20 items-center`}>
                   <div className="w-full lg:w-1/2 relative h-[350px] lg:h-[500px]">
                     <Image src={step.image} alt={step.title} fill className="object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700 shadow-sm" />
-                    <div className="absolute top-6 left-6 bg-[#0B2F26] text-white px-4 py-2 font-heading text-3xl font-medium shadow-md">
+                    <div className="absolute top-6 left-6 bg-primary text-primary-foreground px-4 py-2 font-heading text-3xl font-medium shadow-md">
                       {step.step}
                     </div>
                   </div>
                   
                   <div className="w-full lg:w-1/2">
-                    <h3 className="font-heading text-4xl lg:text-5xl font-medium text-[#1E1E1E] mb-6">
+                    <h3 className="font-heading text-4xl lg:text-5xl font-medium text-foreground mb-6">
                       {step.title}
                     </h3>
-                    <p className="text-xl text-[#1E1E1E]/80 font-light leading-relaxed mb-8">
+                    <p className="text-xl text-muted-foreground font-sans font-light leading-relaxed font-sans mb-8">
                       {step.desc}
                     </p>
                     
                     <div className="flex flex-wrap gap-3">
                       {step.tags.map((tag, tIdx) => (
-                        <span key={tIdx} className="border border-[#1E1E1E]/20 text-[#1E1E1E]/70 px-4 py-2 text-sm font-medium uppercase tracking-wider bg-white">
+                        <span key={tIdx} className="border border-input text-muted-foreground font-sans px-4 py-2 text-sm font-medium uppercase tracking-wider bg-card">
                           {tag}
                         </span>
                       ))}
@@ -216,14 +216,14 @@ export default function ExportProcessPage() {
 
                     {step.title === "Packaging" && (
                       <div className="mt-8">
-                        <Link href="/services/private-label" className="inline-flex items-center text-[#C8A96B] hover:text-[#0B2F26] font-medium tracking-wide uppercase text-sm transition-colors group">
+                        <Link href="/services/private-label" className="inline-flex items-center text-secondary hover:text-primary font-medium tracking-wide uppercase text-sm transition-colors group">
                           Explore Private Label Services <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </Link>
                       </div>
                     )}
                     {step.title === "Container Planning" && (
                       <div className="mt-8">
-                        <Link href="/services/mixed-container" className="inline-flex items-center text-[#C8A96B] hover:text-[#0B2F26] font-medium tracking-wide uppercase text-sm transition-colors group">
+                        <Link href="/services/mixed-container" className="inline-flex items-center text-secondary hover:text-primary font-medium tracking-wide uppercase text-sm transition-colors group">
                           Explore Mixed Containers <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </Link>
                       </div>
@@ -237,17 +237,17 @@ export default function ExportProcessPage() {
       </section>
 
       {/* SECTION 04: EXPORT DOCUMENTATION CENTER */}
-      <section className="py-16 lg:py-24 bg-white border-y border-[#1E1E1E]/10">
+      <section className="py-16 lg:py-24 bg-background border-y border-border">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1200px]">
-          <h2 className="font-heading text-4xl sm:text-5xl font-medium text-[#0B2F26] mb-12">
+          <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-12">
             Documentation Supporting International Trade
           </h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
             {DOCUMENTATION.map((doc, idx) => (
-              <div key={idx} className="bg-[#F7F5F0] p-6 border border-[#1E1E1E]/10 hover:border-[#C8A96B] transition-colors">
-                <FileText className="w-8 h-8 text-[#C8A96B] mb-4" />
-                <h4 className="font-heading text-xl font-medium text-[#1E1E1E] mb-2">{doc.title}</h4>
-                <p className="text-[#1E1E1E]/70 font-light text-sm">{doc.desc}</p>
+              <div key={idx} className="bg-background p-6 border border-border hover:border-secondary transition-colors">
+                <FileText className="w-8 h-8 text-secondary mb-4" />
+                <h4 className="font-heading text-xl font-medium text-foreground mb-2">{doc.title}</h4>
+                <p className="text-muted-foreground font-sans font-light text-sm">{doc.desc}</p>
               </div>
             ))}
           </div>
@@ -255,43 +255,43 @@ export default function ExportProcessPage() {
       </section>
 
       {/* SECTION 05: MIXED CONTAINER SOLUTIONS */}
-      <section className="py-16 lg:py-24 bg-[#0B2F26] text-white overflow-hidden relative">
+      <section className="py-16 lg:py-24 bg-primary text-primary-foreground overflow-hidden relative">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1200px] relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div>
-              <span className="inline-block text-[#C8A96B] font-semibold tracking-[0.2em] uppercase text-xs mb-6 border-b border-[#C8A96B]/30 pb-2">
+              <span className="inline-block text-secondary font-semibold tracking-[0.2em] uppercase text-xs mb-6 border-b border-secondary/30 pb-2">
                 Supply Chain Optimization
               </span>
               <h2 className="font-heading text-4xl sm:text-5xl font-medium mb-6 leading-tight">
                 Consolidate Multiple Products Into One Shipment
               </h2>
-              <p className="text-white/80 font-light text-lg leading-relaxed mb-10">
+              <p className="text-primary-foreground/80 font-light text-lg leading-relaxed mb-10">
                 Maximize freight efficiency and reduce inventory costs. Our mixed container export solutions allow you to source Red Chilli, Turmeric, Cumin, and Coriander consolidated inside a single FCL shipment from India.
               </p>
-              <Link href="/services/mixed-container" className="inline-flex items-center justify-center bg-[#C8A96B] text-[#0B2F26] px-8 py-4 font-medium tracking-wide hover:bg-[#C8A96B]/90 transition-colors">
+              <Link href="/services/mixed-container" className="inline-flex items-center justify-center bg-secondary text-primary px-8 py-4 font-medium tracking-wide hover:bg-secondary/90 transition-colors">
                 Explore Mixed Container Exports
               </Link>
             </div>
             
-            <div className="relative h-[400px] bg-[#F7F5F0]/5 border border-white/10 p-8 flex flex-col justify-center shadow-2xl">
+            <div className="relative h-[400px] bg-background/5 border border-primary-foreground/10 p-8 flex flex-col justify-center shadow-2xl">
               <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
-              <Box className="w-12 h-12 text-[#C8A96B] mb-8" />
+              <Box className="w-12 h-12 text-secondary mb-8" />
               <div className="space-y-4">
-                <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                <div className="flex items-center justify-between border-b border-primary-foreground/10 pb-4">
                   <span className="font-heading text-2xl">Red Chilli (Stemless)</span>
-                  <span className="text-white/50 font-medium">30% Volume</span>
+                  <span className="text-primary-foreground/50 font-medium">30% Volume</span>
                 </div>
-                <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                <div className="flex items-center justify-between border-b border-primary-foreground/10 pb-4">
                   <span className="font-heading text-2xl">Turmeric Fingers</span>
-                  <span className="text-white/50 font-medium">30% Volume</span>
+                  <span className="text-primary-foreground/50 font-medium">30% Volume</span>
                 </div>
-                <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                <div className="flex items-center justify-between border-b border-primary-foreground/10 pb-4">
                   <span className="font-heading text-2xl">Cumin Seeds</span>
-                  <span className="text-white/50 font-medium">20% Volume</span>
+                  <span className="text-primary-foreground/50 font-medium">20% Volume</span>
                 </div>
-                <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                <div className="flex items-center justify-between border-b border-primary-foreground/10 pb-4">
                   <span className="font-heading text-2xl">Coriander Seeds</span>
-                  <span className="text-white/50 font-medium">20% Volume</span>
+                  <span className="text-primary-foreground/50 font-medium">20% Volume</span>
                 </div>
               </div>
             </div>
@@ -300,52 +300,52 @@ export default function ExportProcessPage() {
       </section>
 
       {/* SECTION 06: WHY BUYERS PREFER THIS PROCESS */}
-      <section className="py-16 lg:py-24 bg-white border-b border-[#1E1E1E]/10">
+      <section className="py-16 lg:py-24 bg-background border-b border-border">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1200px]">
-          <h2 className="font-heading text-4xl sm:text-5xl font-medium text-[#0B2F26] mb-12">
+          <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-12">
             Why Buyers Prefer Our Process
           </h2>
           <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-8">
             <li className="flex items-start">
-              <CheckCircle2 className="w-6 h-6 text-[#C8A96B] mr-4 flex-shrink-0 mt-1" />
+              <CheckCircle2 className="w-6 h-6 text-secondary mr-4 flex-shrink-0 mt-1" />
               <div>
-                <h4 className="font-heading text-2xl font-medium text-[#1E1E1E] mb-2">Batch Traceability</h4>
-                <p className="text-[#1E1E1E]/70 font-light text-sm">Farm-to-port tracking ensuring total supply chain visibility.</p>
+                <h4 className="font-heading text-2xl font-medium text-foreground mb-2">Batch Traceability</h4>
+                <p className="text-muted-foreground font-sans font-light text-sm">Farm-to-port tracking ensuring total supply chain visibility.</p>
               </div>
             </li>
             <li className="flex items-start">
-              <CheckCircle2 className="w-6 h-6 text-[#C8A96B] mr-4 flex-shrink-0 mt-1" />
+              <CheckCircle2 className="w-6 h-6 text-secondary mr-4 flex-shrink-0 mt-1" />
               <div>
-                <h4 className="font-heading text-2xl font-medium text-[#1E1E1E] mb-2">Pre-Shipment Testing</h4>
-                <p className="text-[#1E1E1E]/70 font-light text-sm">Accredited laboratory clearance prior to any container sealing.</p>
+                <h4 className="font-heading text-2xl font-medium text-foreground mb-2">Pre-Shipment Testing</h4>
+                <p className="text-muted-foreground font-sans font-light text-sm">Accredited laboratory clearance prior to any container sealing.</p>
               </div>
             </li>
             <li className="flex items-start">
-              <CheckCircle2 className="w-6 h-6 text-[#C8A96B] mr-4 flex-shrink-0 mt-1" />
+              <CheckCircle2 className="w-6 h-6 text-secondary mr-4 flex-shrink-0 mt-1" />
               <div>
-                <h4 className="font-heading text-2xl font-medium text-[#1E1E1E] mb-2">Flexible Packaging</h4>
-                <p className="text-[#1E1E1E]/70 font-light text-sm">Retail pouches, bulk bags, or custom private label formatting.</p>
+                <h4 className="font-heading text-2xl font-medium text-foreground mb-2">Flexible Packaging</h4>
+                <p className="text-muted-foreground font-sans font-light text-sm">Retail pouches, bulk bags, or custom private label formatting.</p>
               </div>
             </li>
             <li className="flex items-start">
-              <CheckCircle2 className="w-6 h-6 text-[#C8A96B] mr-4 flex-shrink-0 mt-1" />
+              <CheckCircle2 className="w-6 h-6 text-secondary mr-4 flex-shrink-0 mt-1" />
               <div>
-                <h4 className="font-heading text-2xl font-medium text-[#1E1E1E] mb-2">Documentation Support</h4>
-                <p className="text-[#1E1E1E]/70 font-light text-sm">Error-free paperwork ensuring frictionless destination customs clearance.</p>
+                <h4 className="font-heading text-2xl font-medium text-foreground mb-2">Documentation Support</h4>
+                <p className="text-muted-foreground font-sans font-light text-sm">Error-free paperwork ensuring frictionless destination customs clearance.</p>
               </div>
             </li>
             <li className="flex items-start">
-              <CheckCircle2 className="w-6 h-6 text-[#C8A96B] mr-4 flex-shrink-0 mt-1" />
+              <CheckCircle2 className="w-6 h-6 text-secondary mr-4 flex-shrink-0 mt-1" />
               <div>
-                <h4 className="font-heading text-2xl font-medium text-[#1E1E1E] mb-2">Global Logistics Network</h4>
-                <p className="text-[#1E1E1E]/70 font-light text-sm">Partnerships with top-tier ocean carriers for reliable transit times.</p>
+                <h4 className="font-heading text-2xl font-medium text-foreground mb-2">Global Logistics Network</h4>
+                <p className="text-muted-foreground font-sans font-light text-sm">Partnerships with top-tier ocean carriers for reliable transit times.</p>
               </div>
             </li>
             <li className="flex items-start">
-              <CheckCircle2 className="w-6 h-6 text-[#C8A96B] mr-4 flex-shrink-0 mt-1" />
+              <CheckCircle2 className="w-6 h-6 text-secondary mr-4 flex-shrink-0 mt-1" />
               <div>
-                <h4 className="font-heading text-2xl font-medium text-[#1E1E1E] mb-2">Regulatory Compliance</h4>
-                <p className="text-[#1E1E1E]/70 font-light text-sm">Adherence to ASTA, ESA, FDA, and EU maximum residue limits.</p>
+                <h4 className="font-heading text-2xl font-medium text-foreground mb-2">Regulatory Compliance</h4>
+                <p className="text-muted-foreground font-sans font-light text-sm">Adherence to ASTA, ESA, FDA, and EU maximum residue limits.</p>
               </div>
             </li>
           </ul>
@@ -353,53 +353,53 @@ export default function ExportProcessPage() {
       </section>
 
       {/* SECTION 07: FAQ */}
-      <section className="py-16 lg:py-24 bg-[#F7F5F0]">
+      <section className="py-16 lg:py-24 bg-background">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[800px]">
-          <h2 className="font-heading text-4xl sm:text-5xl font-medium text-[#0B2F26] mb-12 text-center">
+          <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-12 text-center">
             Export Operations FAQ
           </h2>
           <div className="space-y-10">
             <div>
-              <h4 className="text-xl font-medium text-[#1E1E1E] mb-2">How long does the export process take?</h4>
-              <p className="text-[#1E1E1E]/80 font-light leading-relaxed">The timeline varies based on product readiness, packaging requirements, and vessel availability, typically ranging from 7 to 21 days from order confirmation to vessel departure.</p>
+              <h4 className="text-xl font-medium text-foreground mb-2">How long does the export process take?</h4>
+              <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">The timeline varies based on product readiness, packaging requirements, and vessel availability, typically ranging from 7 to 21 days from order confirmation to vessel departure.</p>
             </div>
             <div>
-              <h4 className="text-xl font-medium text-[#1E1E1E] mb-2">Can products be mixed in one container?</h4>
-              <p className="text-[#1E1E1E]/80 font-light leading-relaxed">Yes, we specialize in Mixed Container solutions, allowing buyers to consolidate multiple commodities into a single FCL shipment to optimize freight costs.</p>
+              <h4 className="text-xl font-medium text-foreground mb-2">Can products be mixed in one container?</h4>
+              <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">Yes, we specialize in Mixed Container solutions, allowing buyers to consolidate multiple commodities into a single FCL shipment to optimize freight costs.</p>
             </div>
             <div>
-              <h4 className="text-xl font-medium text-[#1E1E1E] mb-2">Do you provide Certificates of Analysis?</h4>
-              <p className="text-[#1E1E1E]/80 font-light leading-relaxed">Every shipment is accompanied by a batch-specific Certificate of Analysis detailing moisture, purity, and safety parameters.</p>
+              <h4 className="text-xl font-medium text-foreground mb-2">Do you provide Certificates of Analysis?</h4>
+              <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">Every shipment is accompanied by a batch-specific Certificate of Analysis detailing moisture, purity, and safety parameters.</p>
             </div>
             <div>
-              <h4 className="text-xl font-medium text-[#1E1E1E] mb-2">Can packaging be customized?</h4>
-              <p className="text-[#1E1E1E]/80 font-light leading-relaxed">Yes, we support extensive packaging customization including Private Labeling directly from our processing facilities.</p>
+              <h4 className="text-xl font-medium text-foreground mb-2">Can packaging be customized?</h4>
+              <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">Yes, we support extensive packaging customization including Private Labeling directly from our processing facilities.</p>
             </div>
             <div>
-              <h4 className="text-xl font-medium text-[#1E1E1E] mb-2">Which countries do you export to?</h4>
-              <p className="text-[#1E1E1E]/80 font-light leading-relaxed">We ship globally, with a strong focus on high-compliance markets including the USA, Europe (EU & UK), the Middle East, and Asia Pacific.</p>
+              <h4 className="text-xl font-medium text-foreground mb-2">Which countries do you export to?</h4>
+              <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">We ship globally, with a strong focus on high-compliance markets including the USA, Europe (EU & UK), the Middle East, and Asia Pacific.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* SECTION 08: CTA */}
-      <section className="py-20 lg:py-24 bg-[#0B2F26] text-white">
+      <section className="py-20 lg:py-24 bg-primary text-primary-foreground">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-4xl text-center">
           <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-medium mb-6">
             Ready To Source Directly From India?
           </h2>
-          <p className="text-xl text-white/80 font-light mb-10 max-w-2xl mx-auto">
+          <p className="text-xl text-primary-foreground/80 font-light mb-10 max-w-2xl mx-auto">
             Speak with our export team to discuss products, packaging requirements and shipment planning.
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <Link href="/request-quote" className="inline-flex items-center justify-center bg-[#C8A96B] text-[#0B2F26] px-8 py-4 font-medium tracking-wide w-full sm:w-auto hover:bg-[#C8A96B]/90 transition-colors">
+            <Link href="/request-quote" className="inline-flex items-center justify-center bg-secondary text-primary px-8 py-4 font-medium tracking-wide w-full sm:w-auto hover:bg-secondary/90 transition-colors">
               Request Quote
             </Link>
-            <Link href="/contact" className="inline-flex items-center justify-center border border-white/30 text-white px-8 py-4 font-medium tracking-wide w-full sm:w-auto hover:bg-white/5 transition-colors">
+            <Link href="/contact" className="inline-flex items-center justify-center border border-primary-foreground/30 text-primary-foreground px-8 py-4 font-medium tracking-wide w-full sm:w-auto hover:bg-card/5 transition-colors">
               Talk To Export Team
             </Link>
-            <Link href="/services/mixed-container" className="inline-flex items-center justify-center text-white underline-offset-4 hover:text-[#C8A96B] hover:underline px-8 py-4 font-light w-full sm:w-auto transition-colors">
+            <Link href="/services/mixed-container" className="inline-flex items-center justify-center text-primary-foreground underline-offset-4 hover:text-secondary hover:underline px-8 py-4 font-light w-full sm:w-auto transition-colors">
               Explore Mixed Containers
             </Link>
           </div>

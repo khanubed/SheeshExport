@@ -45,7 +45,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
   );
 
   return (
-    <main className="bg-white">
+    <main className="bg-card">
       {/* SECTION 01: IMMERSIVE HERO */}
       <CategoryHero category={category} />
       

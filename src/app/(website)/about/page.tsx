@@ -44,13 +44,13 @@ const BUYER_BENEFITS = [
 
 export default function AboutPage() {
   return (
-    <main className="bg-[#F9F8F6] min-h-screen text-[#1C1C1C] font-sans selection:bg-[#0B3B24] selection:text-white">
+    <main className="bg-background min-h-screen text-foreground font-sans selection:bg-primary selection:text-white">
       {/* SECTION 01: HERO */}
       <section className="relative min-h-[90vh] flex items-center pt-24 pb-12 overflow-hidden">
         <AboutHeroSwiper />
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <FadeIn className="max-w-4xl">
-            <span className="inline-block text-[#C5A059] font-semibold tracking-[0.2em] uppercase text-sm mb-6 border-b border-[#C5A059]/30 pb-2">
+            <span className="inline-block text-secondary font-semibold tracking-[0.2em] uppercase text-sm mb-6 border-b border-secondary/30 pb-2">
               India's Trusted Export Partner
             </span>
             <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-medium text-white leading-[1.05] mb-8 drop-shadow-lg">
@@ -68,10 +68,10 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <FadeIn>
-              <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-medium text-[#0B3B24] leading-[1.1] mb-8">
+              <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-medium text-primary leading-[1.1] mb-8">
                 Built Around Supply Reliability, Quality Consistency & Global Trade Expertise
               </h2>
-              <div className="space-y-6 text-lg text-[#1C1C1C]/80 font-light leading-relaxed">
+              <div className="space-y-6 text-lg text-foreground/80 font-light leading-relaxed">
                 <p>
                   We are not merely traders. Sheesh Exports is a fully integrated supply chain partner bridging the gap between India's vast agrarian landscape and international markets. Our infrastructure is designed to give you absolute confidence in your procurement.
                 </p>
@@ -91,10 +91,10 @@ export default function AboutPage() {
       </section>
 
       {/* SECTION 03: WHAT WE EXPORT */}
-      <section className="py-24 bg-white border-y border-[#0B3B24]/10">
+      <section className="py-24 bg-white border-y border-primary/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <FadeIn className="mb-16">
-            <h2 className="font-heading text-4xl sm:text-5xl font-medium text-[#0B3B24] text-center">What We Export</h2>
+            <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary text-center">What We Export</h2>
           </FadeIn>
           <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-1">
             {EXPORT_CATEGORIES.map((cat, idx) => (
@@ -103,7 +103,7 @@ export default function AboutPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute bottom-8 left-8">
                   <h3 className="font-heading text-3xl text-white font-medium tracking-wide">{cat.name}</h3>
-                  <div className="h-0.5 w-12 bg-[#C5A059] mt-4 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+                  <div className="h-0.5 w-12 bg-secondary mt-4 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
                 </div>
               </StaggerItem>
             ))}
@@ -112,7 +112,7 @@ export default function AboutPage() {
       </section>
 
       {/* SECTION 04: FARM TO GLOBAL MARKET */}
-      <section className="py-32 bg-[#0B3B24] text-white overflow-hidden relative">
+      <section className="py-32 bg-primary text-white overflow-hidden relative">
         <div className="absolute inset-0 opacity-10">
            <Image src="/images/about/texture-map.png" alt="Texture" fill className="object-cover" />
         </div>
@@ -121,7 +121,7 @@ export default function AboutPage() {
             <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-medium text-[#F9F8F6] text-center">
               Farm To Global Market
             </h2>
-            <p className="text-center text-[#C5A059] tracking-[0.2em] uppercase text-sm mt-4">Our Signature Supply Chain</p>
+            <p className="text-center text-secondary tracking-[0.2em] uppercase text-sm mt-4">Our Signature Supply Chain</p>
           </FadeIn>
           
           <div className="relative">
@@ -131,7 +131,7 @@ export default function AboutPage() {
             <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6 relative z-10">
               {JOURNEY_STEPS.map((step, idx) => (
                 <StaggerItem key={idx} className="flex flex-col items-center text-center group">
-                  <div className="w-4 h-4 rounded-full bg-[#C5A059] mb-6 shadow-[0_0_15px_rgba(197,160,89,0.5)] group-hover:scale-150 transition-transform duration-300" />
+                  <div className="w-4 h-4 rounded-full bg-secondary mb-6 shadow-[0_0_15px_rgba(197,160,89,0.5)] group-hover:scale-150 transition-transform duration-300" />
                   <h4 className="font-heading text-xl font-medium text-[#F9F8F6] mb-2">{step.title}</h4>
                   <p className="text-xs text-white/60 font-light px-2 leading-relaxed">{step.desc}</p>
                 </StaggerItem>
@@ -150,31 +150,31 @@ export default function AboutPage() {
               <Image src="/images/about/india-map-clean.png" alt="Sourcing Regions in India" fill className="object-contain object-left" />
             </FadeIn>
             <FadeIn className="order-1 lg:order-2">
-              <span className="text-[#C5A059] font-semibold tracking-[0.2em] uppercase text-sm mb-4 block">India Origins</span>
-              <h2 className="font-heading text-4xl sm:text-5xl font-medium text-[#0B3B24] mb-12">
+              <span className="text-secondary font-semibold tracking-[0.2em] uppercase text-sm mb-4 block">India Origins</span>
+              <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-12">
                 Sourced from the Finest Terroirs
               </h2>
               
               <div className="space-y-8">
-                <div className="border-l-2 border-[#C5A059] pl-6">
-                  <h4 className="font-heading text-2xl font-medium text-[#1C1C1C]">Guntur</h4>
-                  <p className="text-[#1C1C1C]/60 uppercase tracking-wider text-xs mt-1 mb-2">Andhra Pradesh</p>
-                  <p className="text-[#1C1C1C]/80 font-light">The global epicenter for premium S4 Sananam and Teja red chillies.</p>
+                <div className="border-l-2 border-secondary pl-6">
+                  <h4 className="font-heading text-2xl font-medium text-foreground">Guntur</h4>
+                  <p className="text-foreground/60 uppercase tracking-wider text-xs mt-1 mb-2">Andhra Pradesh</p>
+                  <p className="text-foreground/80 font-light">The global epicenter for premium S4 Sananam and Teja red chillies.</p>
                 </div>
-                <div className="border-l-2 border-[#C5A059] pl-6">
-                  <h4 className="font-heading text-2xl font-medium text-[#1C1C1C]">Erode & Nizamabad</h4>
-                  <p className="text-[#1C1C1C]/60 uppercase tracking-wider text-xs mt-1 mb-2">Tamil Nadu & Telangana</p>
-                  <p className="text-[#1C1C1C]/80 font-light">Known for deep yellow, high-curcumin turmeric fingers.</p>
+                <div className="border-l-2 border-secondary pl-6">
+                  <h4 className="font-heading text-2xl font-medium text-foreground">Erode & Nizamabad</h4>
+                  <p className="text-foreground/60 uppercase tracking-wider text-xs mt-1 mb-2">Tamil Nadu & Telangana</p>
+                  <p className="text-foreground/80 font-light">Known for deep yellow, high-curcumin turmeric fingers.</p>
                 </div>
-                <div className="border-l-2 border-[#C5A059] pl-6">
-                  <h4 className="font-heading text-2xl font-medium text-[#1C1C1C]">Unjha</h4>
-                  <p className="text-[#1C1C1C]/60 uppercase tracking-wider text-xs mt-1 mb-2">Gujarat</p>
-                  <p className="text-[#1C1C1C]/80 font-light">Asia's largest cumin and oil seed cultivation belt.</p>
+                <div className="border-l-2 border-secondary pl-6">
+                  <h4 className="font-heading text-2xl font-medium text-foreground">Unjha</h4>
+                  <p className="text-foreground/60 uppercase tracking-wider text-xs mt-1 mb-2">Gujarat</p>
+                  <p className="text-foreground/80 font-light">Asia's largest cumin and oil seed cultivation belt.</p>
                 </div>
-                <div className="border-l-2 border-[#C5A059] pl-6">
-                  <h4 className="font-heading text-2xl font-medium text-[#1C1C1C]">Malabar Coast</h4>
-                  <p className="text-[#1C1C1C]/60 uppercase tracking-wider text-xs mt-1 mb-2">Kerala</p>
-                  <p className="text-[#1C1C1C]/80 font-light">The historic home of Tellicherry black pepper and cardamom.</p>
+                <div className="border-l-2 border-secondary pl-6">
+                  <h4 className="font-heading text-2xl font-medium text-foreground">Malabar Coast</h4>
+                  <p className="text-foreground/60 uppercase tracking-wider text-xs mt-1 mb-2">Kerala</p>
+                  <p className="text-foreground/80 font-light">The historic home of Tellicherry black pepper and cardamom.</p>
                 </div>
               </div>
             </FadeIn>
@@ -186,13 +186,13 @@ export default function AboutPage() {
       <section className="py-32 bg-white text-center">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
           <FadeIn>
-            <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-medium text-[#0B3B24] mb-16">
+            <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-medium text-primary mb-16">
               Serving Importers Across 50+ Countries
             </h2>
             <div className="relative h-[400px] w-full mb-16 opacity-80 mix-blend-multiply">
               <Image src="/images/about/world-map-routes.png" alt="Global Export Routes" fill className="object-contain" />
             </div>
-            <div className="flex flex-wrap justify-center gap-x-12 gap-y-6 text-[#1C1C1C]/80 font-heading text-2xl tracking-wide">
+            <div className="flex flex-wrap justify-center gap-x-12 gap-y-6 text-foreground/80 font-heading text-2xl tracking-wide">
               <span>North America</span>
               <span>Europe</span>
               <span>Middle East</span>
@@ -204,46 +204,46 @@ export default function AboutPage() {
       </section>
 
       {/* SECTION 07: QUALITY & COMPLIANCE */}
-      <section className="py-24 sm:py-32 bg-[#F9F8F6]">
+      <section className="py-24 sm:py-32 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <FadeIn>
-              <h2 className="font-heading text-4xl sm:text-5xl font-medium text-[#0B3B24] mb-6">
+              <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-6">
                 Quality Assurance
               </h2>
-              <div className="w-12 h-0.5 bg-[#C5A059] mb-8" />
-              <p className="text-lg text-[#1C1C1C]/80 font-light leading-relaxed mb-6">
+              <div className="w-12 h-0.5 bg-secondary mb-8" />
+              <p className="text-lg text-foreground/80 font-light leading-relaxed mb-6">
                 International buyers cannot risk non-compliance at destination ports. That is why our quality framework is uncompromising.
               </p>
-              <p className="text-lg text-[#1C1C1C]/80 font-light leading-relaxed">
+              <p className="text-lg text-foreground/80 font-light leading-relaxed">
                 Every consignment undergoes mandatory lab analysis for pesticide residues, aflatoxins, moisture content, and microbial loads. We partner with internationally recognized third-party surveyors like SGS and Eurofins to ensure your goods meet ASTA, ESA, and FDA standards before they ever leave Indian shores.
               </p>
             </FadeIn>
-            <FadeIn delay={0.2} className="bg-white p-10 sm:p-14 shadow-sm border border-[#0B3B24]/10 rounded-sm">
-              <h3 className="font-heading text-2xl font-medium text-[#1C1C1C] mb-10 pb-4 border-b border-black/10">Official Certifications</h3>
+            <FadeIn delay={0.2} className="bg-white p-10 sm:p-14 shadow-sm border border-primary/10 rounded-sm">
+              <h3 className="font-heading text-2xl font-medium text-foreground mb-10 pb-4 border-b border-black/10">Official Certifications</h3>
               <div className="grid grid-cols-2 gap-y-8 gap-x-4">
                 <div className="flex items-center gap-4">
-                  <ShieldCheck className="w-6 h-6 text-[#0B3B24]" />
+                  <ShieldCheck className="w-6 h-6 text-primary" />
                   <span className="font-medium tracking-wide">ISO 22000</span>
                 </div>
                 <div className="flex items-center gap-4">
-                  <Award className="w-6 h-6 text-[#0B3B24]" />
+                  <Award className="w-6 h-6 text-primary" />
                   <span className="font-medium tracking-wide">APEDA</span>
                 </div>
                 <div className="flex items-center gap-4">
-                  <FileText className="w-6 h-6 text-[#0B3B24]" />
+                  <FileText className="w-6 h-6 text-primary" />
                   <span className="font-medium tracking-wide">US FDA</span>
                 </div>
                 <div className="flex items-center gap-4">
-                  <ShieldCheck className="w-6 h-6 text-[#0B3B24]" />
+                  <ShieldCheck className="w-6 h-6 text-primary" />
                   <span className="font-medium tracking-wide">FSSAI</span>
                 </div>
                 <div className="flex items-center gap-4">
-                  <Award className="w-6 h-6 text-[#0B3B24]" />
+                  <Award className="w-6 h-6 text-primary" />
                   <span className="font-medium tracking-wide">Spices Board India</span>
                 </div>
                 <div className="flex items-center gap-4">
-                  <ShieldCheck className="w-6 h-6 text-[#0B3B24]" />
+                  <ShieldCheck className="w-6 h-6 text-primary" />
                   <span className="font-medium tracking-wide">Halal & Kosher</span>
                 </div>
               </div>
@@ -306,12 +306,12 @@ export default function AboutPage() {
       <section className="py-24 sm:py-32 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center">
           <FadeIn>
-            <h2 className="font-heading text-4xl sm:text-5xl font-medium text-[#0B3B24] mb-16">
+            <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-16">
               Why Buyers Work With Us
             </h2>
             <ul className="space-y-6">
               {BUYER_BENEFITS.map((benefit, idx) => (
-                <li key={idx} className="font-heading text-2xl sm:text-3xl text-[#1C1C1C] border-b border-[#1C1C1C]/10 pb-6 last:border-0 tracking-wide">
+                <li key={idx} className="font-heading text-2xl sm:text-3xl text-foreground border-b border-border pb-6 last:border-0 tracking-wide">
                   {benefit}
                 </li>
               ))}
@@ -321,16 +321,16 @@ export default function AboutPage() {
       </section>
 
       {/* SECTION 10: LEADERSHIP NOTE */}
-      <section className="py-24 bg-[#F9F8F6] border-y border-[#0B3B24]/10">
+      <section className="py-24 bg-background border-y border-primary/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
           <FadeIn>
-            <div className="mx-auto w-12 h-12 mb-8 text-[#C5A059]">
+            <div className="mx-auto w-12 h-12 mb-8 text-secondary">
               <FileText className="w-full h-full" strokeWidth={1} />
             </div>
-            <h2 className="font-heading text-3xl sm:text-4xl font-medium text-[#0B3B24] mb-10">
+            <h2 className="font-heading text-3xl sm:text-4xl font-medium text-primary mb-10">
               A Message From Sheesh Exports
             </h2>
-            <div className="space-y-6 text-lg text-[#1C1C1C]/80 font-light leading-relaxed italic">
+            <div className="space-y-6 text-lg text-foreground/80 font-light leading-relaxed italic">
               <p>
                 "In international commodity trade, the foundation of every successful transaction is trust. We understand that our buyers are managing complex supply chains across oceans, and they require a partner in India who acts as a dependable extension of their own procurement team."
               </p>
@@ -343,20 +343,20 @@ export default function AboutPage() {
       </section>
 
       {/* SECTION 11: FINAL CTA */}
-      <section className="py-24 sm:py-32 bg-[#0B3B24] text-white text-center">
+      <section className="py-24 sm:py-32 bg-primary text-white text-center">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
           <FadeIn>
             <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-medium mb-12">
               Ready To Source Premium<br className="hidden sm:block"/> Indian Agricultural Products?
             </h2>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
-              <Link href="/request-quote" className={buttonVariants({ size: "lg", className: "bg-[#C5A059] text-[#0B3B24] hover:bg-[#C5A059]/90 font-medium tracking-wide w-full sm:w-auto h-14 px-8 text-lg rounded-none" })}>
+              <Link href="/request-quote" className={buttonVariants({ size: "lg", className: "bg-secondary text-primary hover:bg-secondary/90 font-medium tracking-wide w-full sm:w-auto h-14 px-8 text-lg rounded-none" })}>
                 Request Quote
               </Link>
               <a href="#" className={buttonVariants({ variant: "outline", size: "lg", className: "bg-transparent border-white/30 text-white hover:bg-white/10 w-full sm:w-auto h-14 px-8 text-lg rounded-none" })}>
                 Download Company Profile
               </a>
-              <Link href="/contact" className="text-white hover:text-[#C5A059] underline-offset-4 hover:underline transition-all mt-4 sm:mt-0 font-light">
+              <Link href="/contact" className="text-white hover:text-secondary underline-offset-4 hover:underline transition-all mt-4 sm:mt-0 font-light">
                 Talk To Procurement Team
               </Link>
             </div>

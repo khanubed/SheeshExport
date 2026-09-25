@@ -21,14 +21,14 @@ const FAQ = [
 
 export default function ContactPage() {
   return (
-    <main className="bg-[#F7F5F0] min-h-screen text-[#1E1E1E] font-sans selection:bg-[#0B2F26] selection:text-white">
+    <main className="bg-background min-h-screen text-foreground font-sans selection:bg-primary selection:text-white">
       
       {/* SECTION 01: HERO */}
-      <section className="bg-[#0B2F26] text-white pt-20 pb-0 lg:pt-24">
+      <section className="bg-primary text-white pt-20 pb-0 lg:pt-24">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1400px]">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-end">
             <div className="pb-16 lg:pb-24">
-              <span className="inline-block text-[#C8A96B] font-semibold tracking-[0.2em] uppercase text-xs mb-8 border-b border-[#C8A96B]/30 pb-2">
+              <span className="inline-block text-secondary font-semibold tracking-[0.2em] uppercase text-xs mb-8 border-b border-secondary/30 pb-2">
                 Contact Sheesh Exports
               </span>
               <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl font-medium leading-[1.05] mb-8">
@@ -51,25 +51,25 @@ export default function ContactPage() {
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1400px]">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
             <div className="p-8 hover:bg-white/5 transition-colors">
-              <Phone className="w-8 h-8 text-[#C8A96B] mb-4" />
+              <Phone className="w-8 h-8 text-secondary mb-4" />
               <h4 className="font-heading text-xl font-medium mb-1">Call Us</h4>
               <p className="text-white/60 font-light text-sm mb-4">Working Hours: 9 AM - 6 PM (IST)</p>
-              <a href="tel:+919876543210" className="text-lg font-medium hover:text-[#C8A96B] transition-colors">+91 98765 43210</a>
+              <a href="tel:+919876543210" className="text-lg font-medium hover:text-secondary transition-colors">+91 98765 43210</a>
             </div>
             <div className="p-8 hover:bg-white/5 transition-colors">
-              <Mail className="w-8 h-8 text-[#C8A96B] mb-4" />
+              <Mail className="w-8 h-8 text-secondary mb-4" />
               <h4 className="font-heading text-xl font-medium mb-1">Email</h4>
               <p className="text-white/60 font-light text-sm mb-4">Procurement & General Enquiries</p>
-              <a href="mailto:export@sheeshexports.com" className="text-lg font-medium hover:text-[#C8A96B] transition-colors">export@sheeshexports.com</a>
+              <a href="mailto:export@sheeshexports.com" className="text-lg font-medium hover:text-secondary transition-colors">export@sheeshexports.com</a>
             </div>
             <div className="p-8 hover:bg-white/5 transition-colors">
-              <MessageSquare className="w-8 h-8 text-[#C8A96B] mb-4" />
+              <MessageSquare className="w-8 h-8 text-secondary mb-4" />
               <h4 className="font-heading text-xl font-medium mb-1">WhatsApp</h4>
               <p className="text-white/60 font-light text-sm mb-4">Direct procurement support</p>
-              <a href="#" className="text-lg font-medium hover:text-[#C8A96B] transition-colors">Chat with Export Team</a>
+              <a href="#" className="text-lg font-medium hover:text-secondary transition-colors">Chat with Export Team</a>
             </div>
             <div className="p-8 hover:bg-white/5 transition-colors">
-              <Clock className="w-8 h-8 text-[#C8A96B] mb-4" />
+              <Clock className="w-8 h-8 text-secondary mb-4" />
               <h4 className="font-heading text-xl font-medium mb-1">Response Time</h4>
               <p className="text-white/60 font-light text-sm mb-4">Global Support</p>
               <span className="text-lg font-medium">Typically within 24 hours</span>
@@ -79,21 +79,21 @@ export default function ContactPage() {
       </section>
 
       {/* SECTION 03: HEADQUARTERS & CONTACT FORM */}
-      <section className="py-12 lg:py-16 bg-white border-b border-[#1E1E1E]/10">
+      <section className="py-12 lg:py-16 bg-white border-b border-border">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1400px]">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
             
             {/* Left: Headquarters Info */}
             <div>
-              <span className="inline-block text-[#C8A96B] font-semibold tracking-[0.2em] uppercase text-xs mb-6">Global Headquarters</span>
-              <h2 className="font-heading text-4xl sm:text-5xl font-medium text-[#0B2F26] mb-10">Sheesh Exports</h2>
+              <span className="inline-block text-secondary font-semibold tracking-[0.2em] uppercase text-xs mb-6">Global Headquarters</span>
+              <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-10">Sheesh Exports</h2>
               
               <div className="space-y-8 mb-12">
                 <div className="flex items-start">
-                  <MapPin className="w-6 h-6 text-[#C8A96B] mr-4 flex-shrink-0 mt-1" />
+                  <MapPin className="w-6 h-6 text-secondary mr-4 flex-shrink-0 mt-1" />
                   <div>
-                    <h4 className="font-heading text-xl font-medium text-[#1E1E1E] mb-2">Registered Address</h4>
-                    <p className="text-[#1E1E1E]/70 font-light leading-relaxed">
+                    <h4 className="font-heading text-xl font-medium text-foreground mb-2">Registered Address</h4>
+                    <p className="text-foreground/70 font-light leading-relaxed">
                       123 Trade Center, Export Zone<br />
                       Guntur, Andhra Pradesh - 522001<br />
                       India
@@ -101,20 +101,20 @@ export default function ContactPage() {
                   </div>
                 </div>
                 
-                <div className="border-t border-[#1E1E1E]/10 pt-8 flex gap-12">
+                <div className="border-t border-border pt-8 flex gap-12">
                   <div>
-                    <span className="block text-xs uppercase tracking-widest font-semibold text-[#1E1E1E]/50 mb-1">GST Number</span>
-                    <span className="font-medium text-[#1E1E1E]">27ABCDE1234F1Z5</span>
+                    <span className="block text-xs uppercase tracking-widest font-semibold text-foreground/50 mb-1">GST Number</span>
+                    <span className="font-medium text-foreground">27ABCDE1234F1Z5</span>
                   </div>
                   <div>
-                    <span className="block text-xs uppercase tracking-widest font-semibold text-[#1E1E1E]/50 mb-1">IEC Code</span>
-                    <span className="font-medium text-[#1E1E1E]">0312345678</span>
+                    <span className="block text-xs uppercase tracking-widest font-semibold text-foreground/50 mb-1">IEC Code</span>
+                    <span className="font-medium text-foreground">0312345678</span>
                   </div>
                 </div>
               </div>
 
               {/* Map Embed */}
-              <div className="w-full h-[300px] bg-[#1E1E1E]/5 border border-[#1E1E1E]/10 overflow-hidden">
+              <div className="w-full h-[300px] bg-muted border border-border overflow-hidden">
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d122588.42398592534!2d80.36675231713063!3d16.323565582313674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4a755cb1787785%3A0x9f7999dd90f1e694!2sGuntur%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
                   width="100%" 
@@ -128,37 +128,37 @@ export default function ContactPage() {
             </div>
 
             {/* Right: Enquiry Form */}
-            <div className="bg-[#F7F5F0] border border-[#1E1E1E]/10 p-8 lg:p-12">
-              <h3 className="font-heading text-3xl font-medium text-[#0B2F26] mb-8">Send An Enquiry</h3>
+            <div className="bg-background border border-border p-8 lg:p-12">
+              <h3 className="font-heading text-3xl font-medium text-primary mb-8">Send An Enquiry</h3>
               <form className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-xs uppercase tracking-widest font-semibold text-[#1E1E1E]/60 mb-2">Name *</label>
-                    <input type="text" className="w-full bg-white border border-[#1E1E1E]/20 p-4 outline-none focus:border-[#C8A96B] transition-colors" />
+                    <label className="block text-xs uppercase tracking-widest font-semibold text-foreground/60 mb-2">Name *</label>
+                    <input type="text" className="w-full bg-white border border-input p-4 outline-none focus:border-secondary transition-colors" />
                   </div>
                   <div>
-                    <label className="block text-xs uppercase tracking-widest font-semibold text-[#1E1E1E]/60 mb-2">Company *</label>
-                    <input type="text" className="w-full bg-white border border-[#1E1E1E]/20 p-4 outline-none focus:border-[#C8A96B] transition-colors" />
-                  </div>
-                </div>
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-xs uppercase tracking-widest font-semibold text-[#1E1E1E]/60 mb-2">Email Address *</label>
-                    <input type="email" className="w-full bg-white border border-[#1E1E1E]/20 p-4 outline-none focus:border-[#C8A96B] transition-colors" />
-                  </div>
-                  <div>
-                    <label className="block text-xs uppercase tracking-widest font-semibold text-[#1E1E1E]/60 mb-2">Phone Number</label>
-                    <input type="tel" className="w-full bg-white border border-[#1E1E1E]/20 p-4 outline-none focus:border-[#C8A96B] transition-colors" />
+                    <label className="block text-xs uppercase tracking-widest font-semibold text-foreground/60 mb-2">Company *</label>
+                    <input type="text" className="w-full bg-white border border-input p-4 outline-none focus:border-secondary transition-colors" />
                   </div>
                 </div>
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-xs uppercase tracking-widest font-semibold text-[#1E1E1E]/60 mb-2">Country</label>
-                    <input type="text" className="w-full bg-white border border-[#1E1E1E]/20 p-4 outline-none focus:border-[#C8A96B] transition-colors" />
+                    <label className="block text-xs uppercase tracking-widest font-semibold text-foreground/60 mb-2">Email Address *</label>
+                    <input type="email" className="w-full bg-white border border-input p-4 outline-none focus:border-secondary transition-colors" />
                   </div>
                   <div>
-                    <label className="block text-xs uppercase tracking-widest font-semibold text-[#1E1E1E]/60 mb-2">Subject</label>
-                    <select className="w-full bg-white border border-[#1E1E1E]/20 p-4 outline-none focus:border-[#C8A96B] transition-colors">
+                    <label className="block text-xs uppercase tracking-widest font-semibold text-foreground/60 mb-2">Phone Number</label>
+                    <input type="tel" className="w-full bg-white border border-input p-4 outline-none focus:border-secondary transition-colors" />
+                  </div>
+                </div>
+                <div className="grid sm:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-xs uppercase tracking-widest font-semibold text-foreground/60 mb-2">Country</label>
+                    <input type="text" className="w-full bg-white border border-input p-4 outline-none focus:border-secondary transition-colors" />
+                  </div>
+                  <div>
+                    <label className="block text-xs uppercase tracking-widest font-semibold text-foreground/60 mb-2">Subject</label>
+                    <select className="w-full bg-white border border-input p-4 outline-none focus:border-secondary transition-colors">
                       <option value="General">General Enquiry</option>
                       <option value="Product">Product Information</option>
                       <option value="Documentation">Documentation / Quality</option>
@@ -167,16 +167,16 @@ export default function ContactPage() {
                   </div>
                 </div>
                 <div>
-                  <label className="block text-xs uppercase tracking-widest font-semibold text-[#1E1E1E]/60 mb-2">Message *</label>
-                  <textarea rows={5} className="w-full bg-white border border-[#1E1E1E]/20 p-4 outline-none focus:border-[#C8A96B] transition-colors resize-none" />
+                  <label className="block text-xs uppercase tracking-widest font-semibold text-foreground/60 mb-2">Message *</label>
+                  <textarea rows={5} className="w-full bg-white border border-input p-4 outline-none focus:border-secondary transition-colors resize-none" />
                 </div>
                 
-                <div className="border border-dashed border-[#1E1E1E]/20 bg-white p-6 flex items-center justify-center cursor-pointer hover:border-[#C8A96B] transition-colors group">
-                  <Paperclip className="w-5 h-5 text-[#1E1E1E]/40 mr-3 group-hover:text-[#C8A96B]" />
-                  <span className="text-sm font-medium text-[#1E1E1E]/70 group-hover:text-[#1E1E1E]">Attach Documents (Optional)</span>
+                <div className="border border-dashed border-input bg-white p-6 flex items-center justify-center cursor-pointer hover:border-secondary transition-colors group">
+                  <Paperclip className="w-5 h-5 text-foreground/40 mr-3 group-hover:text-secondary" />
+                  <span className="text-sm font-medium text-foreground/70 group-hover:text-foreground">Attach Documents (Optional)</span>
                 </div>
                 
-                <button type="button" className="w-full flex items-center justify-center bg-[#0B2F26] text-white px-8 py-4 font-medium tracking-wide hover:bg-[#0B2F26]/90 transition-colors">
+                <button type="button" className="w-full flex items-center justify-center bg-primary text-white px-8 py-4 font-medium tracking-wide hover:bg-primary/90 transition-colors">
                   Send Enquiry
                 </button>
               </form>
@@ -186,55 +186,55 @@ export default function ContactPage() {
       </section>
 
       {/* SECTION 04: DEPARTMENTS DIRECTORY */}
-      <section className="py-12 lg:py-16 bg-[#F7F5F0]">
+      <section className="py-12 lg:py-16 bg-background">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1200px]">
-          <h2 className="font-heading text-4xl sm:text-5xl font-medium text-[#0B2F26] mb-16 text-center">
+          <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-16 text-center">
             Department Directory
           </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white border border-[#1E1E1E]/10 p-8 hover:border-[#C8A96B] transition-colors">
-              <h4 className="font-heading text-2xl font-medium text-[#1E1E1E] mb-2">Sales & Quotations</h4>
-              <p className="text-sm text-[#1E1E1E]/60 mb-6">Product pricing and contract negotiation.</p>
+            <div className="bg-white border border-border p-8 hover:border-secondary transition-colors">
+              <h4 className="font-heading text-2xl font-medium text-foreground mb-2">Sales & Quotations</h4>
+              <p className="text-sm text-foreground/60 mb-6">Product pricing and contract negotiation.</p>
               <div className="space-y-2 text-sm">
-                <p><span className="font-medium text-[#1E1E1E]/50 w-24 inline-block">Email:</span> sales@sheeshexports.com</p>
-                <p><span className="font-medium text-[#1E1E1E]/50 w-24 inline-block">Phone:</span> +91 98765 43211</p>
+                <p><span className="font-medium text-foreground/50 w-24 inline-block">Email:</span> sales@sheeshexports.com</p>
+                <p><span className="font-medium text-foreground/50 w-24 inline-block">Phone:</span> +91 98765 43211</p>
               </div>
             </div>
 
-            <div className="bg-white border border-[#1E1E1E]/10 p-8 hover:border-[#C8A96B] transition-colors">
-              <h4 className="font-heading text-2xl font-medium text-[#1E1E1E] mb-2">Export Documentation</h4>
-              <p className="text-sm text-[#1E1E1E]/60 mb-6">Shipping documents, customs and LC support.</p>
+            <div className="bg-white border border-border p-8 hover:border-secondary transition-colors">
+              <h4 className="font-heading text-2xl font-medium text-foreground mb-2">Export Documentation</h4>
+              <p className="text-sm text-foreground/60 mb-6">Shipping documents, customs and LC support.</p>
               <div className="space-y-2 text-sm">
-                <p><span className="font-medium text-[#1E1E1E]/50 w-24 inline-block">Email:</span> docs@sheeshexports.com</p>
-                <p><span className="font-medium text-[#1E1E1E]/50 w-24 inline-block">Phone:</span> +91 98765 43212</p>
+                <p><span className="font-medium text-foreground/50 w-24 inline-block">Email:</span> docs@sheeshexports.com</p>
+                <p><span className="font-medium text-foreground/50 w-24 inline-block">Phone:</span> +91 98765 43212</p>
               </div>
             </div>
 
-            <div className="bg-white border border-[#1E1E1E]/10 p-8 hover:border-[#C8A96B] transition-colors">
-              <h4 className="font-heading text-2xl font-medium text-[#1E1E1E] mb-2">Private Label</h4>
-              <p className="text-sm text-[#1E1E1E]/60 mb-6">OEM enquiries and packaging solutions.</p>
+            <div className="bg-white border border-border p-8 hover:border-secondary transition-colors">
+              <h4 className="font-heading text-2xl font-medium text-foreground mb-2">Private Label</h4>
+              <p className="text-sm text-foreground/60 mb-6">OEM enquiries and packaging solutions.</p>
               <div className="space-y-2 text-sm">
-                <p><span className="font-medium text-[#1E1E1E]/50 w-24 inline-block">Email:</span> oem@sheeshexports.com</p>
-                <p><span className="font-medium text-[#1E1E1E]/50 w-24 inline-block">Phone:</span> +91 98765 43213</p>
+                <p><span className="font-medium text-foreground/50 w-24 inline-block">Email:</span> oem@sheeshexports.com</p>
+                <p><span className="font-medium text-foreground/50 w-24 inline-block">Phone:</span> +91 98765 43213</p>
               </div>
             </div>
 
-            <div className="bg-white border border-[#1E1E1E]/10 p-8 hover:border-[#C8A96B] transition-colors">
-              <h4 className="font-heading text-2xl font-medium text-[#1E1E1E] mb-2">Quality & Compliance</h4>
-              <p className="text-sm text-[#1E1E1E]/60 mb-6">Lab reports, specs and certification queries.</p>
+            <div className="bg-white border border-border p-8 hover:border-secondary transition-colors">
+              <h4 className="font-heading text-2xl font-medium text-foreground mb-2">Quality & Compliance</h4>
+              <p className="text-sm text-foreground/60 mb-6">Lab reports, specs and certification queries.</p>
               <div className="space-y-2 text-sm">
-                <p><span className="font-medium text-[#1E1E1E]/50 w-24 inline-block">Email:</span> qa@sheeshexports.com</p>
-                <p><span className="font-medium text-[#1E1E1E]/50 w-24 inline-block">Phone:</span> +91 98765 43214</p>
+                <p><span className="font-medium text-foreground/50 w-24 inline-block">Email:</span> qa@sheeshexports.com</p>
+                <p><span className="font-medium text-foreground/50 w-24 inline-block">Phone:</span> +91 98765 43214</p>
               </div>
             </div>
 
-            <div className="bg-white border border-[#1E1E1E]/10 p-8 hover:border-[#C8A96B] transition-colors">
-              <h4 className="font-heading text-2xl font-medium text-[#1E1E1E] mb-2">Logistics</h4>
-              <p className="text-sm text-[#1E1E1E]/60 mb-6">Container planning and vessel schedules.</p>
+            <div className="bg-white border border-border p-8 hover:border-secondary transition-colors">
+              <h4 className="font-heading text-2xl font-medium text-foreground mb-2">Logistics</h4>
+              <p className="text-sm text-foreground/60 mb-6">Container planning and vessel schedules.</p>
               <div className="space-y-2 text-sm">
-                <p><span className="font-medium text-[#1E1E1E]/50 w-24 inline-block">Email:</span> logistics@sheeshexports.com</p>
-                <p><span className="font-medium text-[#1E1E1E]/50 w-24 inline-block">Phone:</span> +91 98765 43215</p>
+                <p><span className="font-medium text-foreground/50 w-24 inline-block">Email:</span> logistics@sheeshexports.com</p>
+                <p><span className="font-medium text-foreground/50 w-24 inline-block">Phone:</span> +91 98765 43215</p>
               </div>
             </div>
           </div>
@@ -242,7 +242,7 @@ export default function ContactPage() {
       </section>
 
       {/* SECTION 05: GLOBAL COVERAGE */}
-      <section className="py-12 lg:py-16 bg-[#0B2F26] text-white">
+      <section className="py-12 lg:py-16 bg-primary text-white">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1200px]">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -251,11 +251,11 @@ export default function ContactPage() {
                 Supporting importers, distributors, retail chains, and food manufacturers worldwide.
               </p>
               <div className="grid grid-cols-2 gap-y-4 font-medium">
-                <div className="flex items-center"><Globe className="w-5 h-5 text-[#C8A96B] mr-3" /> North America</div>
-                <div className="flex items-center"><Globe className="w-5 h-5 text-[#C8A96B] mr-3" /> Europe</div>
-                <div className="flex items-center"><Globe className="w-5 h-5 text-[#C8A96B] mr-3" /> Middle East</div>
-                <div className="flex items-center"><Globe className="w-5 h-5 text-[#C8A96B] mr-3" /> Asia Pacific</div>
-                <div className="flex items-center"><Globe className="w-5 h-5 text-[#C8A96B] mr-3" /> Africa</div>
+                <div className="flex items-center"><Globe className="w-5 h-5 text-secondary mr-3" /> North America</div>
+                <div className="flex items-center"><Globe className="w-5 h-5 text-secondary mr-3" /> Europe</div>
+                <div className="flex items-center"><Globe className="w-5 h-5 text-secondary mr-3" /> Middle East</div>
+                <div className="flex items-center"><Globe className="w-5 h-5 text-secondary mr-3" /> Asia Pacific</div>
+                <div className="flex items-center"><Globe className="w-5 h-5 text-secondary mr-3" /> Africa</div>
               </div>
             </div>
             
@@ -270,51 +270,51 @@ export default function ContactPage() {
       </section>
 
       {/* WHY PARTNER WITH US */}
-      <section className="py-12 lg:py-16 bg-white border-b border-[#1E1E1E]/10">
+      <section className="py-12 lg:py-16 bg-white border-b border-border">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1200px]">
-          <h2 className="font-heading text-4xl sm:text-5xl font-medium text-[#0B2F26] mb-16 text-center">
+          <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-16 text-center">
             Why Work With Sheesh Exports
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-12">
-            <div className="border-t border-[#C8A96B] pt-4">
-              <h4 className="font-heading text-2xl font-medium text-[#1E1E1E] mb-2">Direct Farm Sourcing</h4>
-              <p className="text-[#1E1E1E]/70 font-light text-sm">Bypassing middle-men for guaranteed traceability and competitive FOB pricing.</p>
+            <div className="border-t border-secondary pt-4">
+              <h4 className="font-heading text-2xl font-medium text-foreground mb-2">Direct Farm Sourcing</h4>
+              <p className="text-foreground/70 font-light text-sm">Bypassing middle-men for guaranteed traceability and competitive FOB pricing.</p>
             </div>
-            <div className="border-t border-[#C8A96B] pt-4">
-              <h4 className="font-heading text-2xl font-medium text-[#1E1E1E] mb-2">Export Compliance Expertise</h4>
-              <p className="text-[#1E1E1E]/70 font-light text-sm">Deep regulatory knowledge of ASTA, ESA, FDA, and major global food safety laws.</p>
+            <div className="border-t border-secondary pt-4">
+              <h4 className="font-heading text-2xl font-medium text-foreground mb-2">Export Compliance Expertise</h4>
+              <p className="text-foreground/70 font-light text-sm">Deep regulatory knowledge of ASTA, ESA, FDA, and major global food safety laws.</p>
             </div>
-            <div className="border-t border-[#C8A96B] pt-4">
-              <h4 className="font-heading text-2xl font-medium text-[#1E1E1E] mb-2">Flexible Packaging</h4>
-              <p className="text-[#1E1E1E]/70 font-light text-sm">Capabilities ranging from 50kg industrial sacks to 100g retail-ready private label jars.</p>
+            <div className="border-t border-secondary pt-4">
+              <h4 className="font-heading text-2xl font-medium text-foreground mb-2">Flexible Packaging</h4>
+              <p className="text-foreground/70 font-light text-sm">Capabilities ranging from 50kg industrial sacks to 100g retail-ready private label jars.</p>
             </div>
-            <div className="border-t border-[#C8A96B] pt-4">
-              <h4 className="font-heading text-2xl font-medium text-[#1E1E1E] mb-2">Global Logistics Network</h4>
-              <p className="text-[#1E1E1E]/70 font-light text-sm">Partnerships with top tier ocean carriers securing reliable container availability.</p>
+            <div className="border-t border-secondary pt-4">
+              <h4 className="font-heading text-2xl font-medium text-foreground mb-2">Global Logistics Network</h4>
+              <p className="text-foreground/70 font-light text-sm">Partnerships with top tier ocean carriers securing reliable container availability.</p>
             </div>
-            <div className="border-t border-[#C8A96B] pt-4">
-              <h4 className="font-heading text-2xl font-medium text-[#1E1E1E] mb-2">Mixed Container Solutions</h4>
-              <p className="text-[#1E1E1E]/70 font-light text-sm">Consolidate multiple commodities into a single cost-effective FCL shipment.</p>
+            <div className="border-t border-secondary pt-4">
+              <h4 className="font-heading text-2xl font-medium text-foreground mb-2">Mixed Container Solutions</h4>
+              <p className="text-foreground/70 font-light text-sm">Consolidate multiple commodities into a single cost-effective FCL shipment.</p>
             </div>
-            <div className="border-t border-[#C8A96B] pt-4">
-              <h4 className="font-heading text-2xl font-medium text-[#1E1E1E] mb-2">Dedicated Support</h4>
-              <p className="text-[#1E1E1E]/70 font-light text-sm">Single point of contact from initial quotation through to destination port delivery.</p>
+            <div className="border-t border-secondary pt-4">
+              <h4 className="font-heading text-2xl font-medium text-foreground mb-2">Dedicated Support</h4>
+              <p className="text-foreground/70 font-light text-sm">Single point of contact from initial quotation through to destination port delivery.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-12 lg:py-16 bg-[#F7F5F0]">
+      <section className="py-12 lg:py-16 bg-background">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[800px]">
-          <h2 className="font-heading text-4xl sm:text-5xl font-medium text-[#0B2F26] mb-12 text-center">
+          <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-12 text-center">
             Frequently Asked Questions
           </h2>
           <div className="space-y-10">
             {FAQ.map((item, idx) => (
               <div key={idx}>
-                <h4 className="text-xl font-medium text-[#1E1E1E] mb-2">{item.q}</h4>
-                <p className="text-[#1E1E1E]/80 font-light leading-relaxed">{item.a}</p>
+                <h4 className="text-xl font-medium text-foreground mb-2">{item.q}</h4>
+                <p className="text-foreground/80 font-light leading-relaxed">{item.a}</p>
               </div>
             ))}
           </div>
@@ -322,13 +322,13 @@ export default function ContactPage() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="py-12 lg:py-16 bg-[#0B2F26] text-white">
+      <section className="py-12 lg:py-16 bg-primary text-white">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-4xl text-center">
           <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-medium mb-8">
             Ready To Start Your Import Journey?
           </h2>
           <div className="flex flex-col justify-center items-center gap-4 sm:flex-row">
-            <Link href="/request-quote" className="inline-flex items-center justify-center bg-[#C8A96B] text-[#0B2F26] px-10 py-5 font-medium tracking-wide w-full sm:w-auto hover:bg-[#C8A96B]/90 transition-colors">
+            <Link href="/request-quote" className="inline-flex items-center justify-center bg-secondary text-primary px-10 py-5 font-medium tracking-wide w-full sm:w-auto hover:bg-secondary/90 transition-colors">
               Request Quote
             </Link>
             <Link href="#top" className="inline-flex items-center justify-center border border-white/30 text-white px-10 py-5 font-medium tracking-wide w-full sm:w-auto hover:bg-white/5 transition-colors">

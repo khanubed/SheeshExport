@@ -76,7 +76,7 @@ export default async function MarketDetailPage({ params }: MarketPageProps) {
         <div className="mt-8 flex gap-4">
           <Link
             href={`/request-quote?market=${encodeURIComponent(market.country)}`}
-            className="rounded-md bg-emerald-700 px-6 py-3 text-sm font-semibold text-white hover:bg-emerald-800"
+            className="rounded-md bg-emerald-700 px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-emerald-800"
           >
             Get Shipping & Price Quote to {market.country}
           </Link>
