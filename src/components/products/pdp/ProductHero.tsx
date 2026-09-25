@@ -9,12 +9,12 @@ import { Button } from "@/components/ui/button";
 
 export function ProductHero({ product, selectedVariant }: { product: Product; selectedVariant: Variant }) {
   return (
-    <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden border-b border-slate-100">
+    <section className="relative pt-12 pb-8 lg:pt-16 lg:pb-8 overflow-hidden border-b border-slate-100">
       <div className="container mx-auto px-4 max-w-7xl">
-        <div className="flex flex-col lg:flex-row gap-16 items-center">
+        <div className="flex flex-col lg:flex-row gap-4 items-center">
           
           <motion.div 
-            className="w-full lg:w-1/2 flex flex-col gap-6"
+            className="w-full lg:w-3/5 flex flex-col gap-3"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -25,17 +25,17 @@ export function ProductHero({ product, selectedVariant }: { product: Product; se
               <span>{product.category}</span>
             </div>
             
-            <h1 className="text-4xl lg:text-6xl font-serif font-semibold tracking-tight text-slate-900 leading-tight">
+            <h1 className="text-3xl lg:text-5xl font-serif font-semibold tracking-tight text-slate-900 leading-tight">
               {product.name}
             </h1>
             
             {product.botanicalName && (
-              <p className="text-lg text-slate-500 italic font-serif">
+              <p className="text-md text-slate-500 italic font-serif">
                 {product.botanicalName}
               </p>
             )}
 
-            <p className="text-lg text-slate-600 leading-relaxed max-w-xl">
+            <p className="text-sm text-slate-600 leading-relaxed max-w-xl">
               {product.description.split("\n")[0]}
             </p>
 
@@ -65,7 +65,7 @@ export function ProductHero({ product, selectedVariant }: { product: Product; se
           </motion.div>
 
           <motion.div 
-            className="w-full lg:w-1/2 relative h-[500px] bg-slate-50"
+            className="w-full lg:w-2/5 relative h-[500px] bg-slate-50"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}

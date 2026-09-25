@@ -1,3 +1,4 @@
+import { AnnouncementBar } from "@/components/navigation/AnnouncementBar";
 import { Header } from "@/components/navigation/Header";
 import { Footer } from "@/components/navigation/Footer";
 
@@ -7,7 +8,8 @@ export default function WebsiteLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col relative">
+      <AnnouncementBar />
       <Header />
       <main className="flex-1">{children}</main>
       <Footer />

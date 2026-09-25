@@ -1,74 +1,74 @@
-import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getCategoryBySlug, getCategories } from "@/lib/cms/queries";
+import { Metadata } from "next";
+import { CATEGORIES_DATA } from "@/lib/data/categories";
 import { PRODUCTS_DATA } from "@/lib/data/products";
-import { buildMetadata } from "@/lib/seo/metadata";
-import { ProductGrid } from "@/components/products/ProductGrid";
-import Link from "next/link";
+import { CategoryHero } from "@/components/categories/CategoryHero";
+import { CategoryOverview } from "@/components/categories/CategoryOverview";
+import { CategoryProductShowcase } from "@/components/categories/CategoryProductShowcase";
 
-interface CategoryPageProps {
-  params: Promise<{ slug: string }>;
-}
-
+// Pre-render all categories at build time
 export async function generateStaticParams() {
-  const categories = await getCategories();
-  return categories.map((c) => ({ slug: c.slug }));
+  return CATEGORIES_DATA.map((category) => ({
+    slug: category.slug,
+  }));
 }
 
-export async function generateMetadata({ params }: CategoryPageProps): Promise<Metadata> {
+// Generate SEO Metadata
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const category = await getCategoryBySlug(slug);
+  const category = CATEGORIES_DATA.find((c) => c.slug === slug);
+  
+  if (!category) return {};
 
-  if (!category) {
-    return buildMetadata({
-      title: "Category Not Found",
-      pathname: `/categories/${slug}`,
-    });
-  }
-
-  return buildMetadata({
-    title: category.seo.title || `${category.name} Wholesale Exporters & Suppliers India`,
-    description: category.seo.description || category.description,
-    pathname: `/categories/${category.slug}`,
-  });
+  return {
+    title: `${category.name} | Premium B2B Export | Sheesh Exports`,
+    description: category.description,
+    openGraph: {
+      title: `${category.name} | Premium Export | Sheesh Exports`,
+      description: category.description,
+      images: [category.heroImage],
+    },
+  };
 }
 
-export default async function CategoryDetailPage({ params }: CategoryPageProps) {
+export default async function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const category = await getCategoryBySlug(slug);
+  const category = CATEGORIES_DATA.find((c) => c.slug === slug);
 
   if (!category) {
     notFound();
   }
 
-  const categoryProducts = PRODUCTS_DATA.filter((p) => p.categorySlug === slug);
+  // Get products that belong to this category
+  const categoryProducts = PRODUCTS_DATA.filter(
+    (product) => product.categorySlug === category.slug
+  );
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-      {/* Breadcrumbs */}
-      <nav aria-label="Breadcrumb" className="mb-6 flex items-center space-x-2 text-xs text-slate-500">
-        <Link href="/" className="hover:text-slate-800">Home</Link>
-        <span>/</span>
-        <Link href="/products" className="hover:text-slate-800">Products</Link>
-        <span>/</span>
-        <span className="font-semibold text-slate-900">{category.name}</span>
-      </nav>
-
-      <div>
-        <span className="text-xs font-semibold uppercase tracking-wider text-emerald-700">
-          Wholesale Commodity Category
-        </span>
-        <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-          {category.name}
-        </h1>
-        <p className="mt-4 max-w-2xl text-base text-slate-600">
-          {category.description}
-        </p>
-      </div>
-
-      <div className="mt-12">
-        <ProductGrid products={categoryProducts} />
-      </div>
-    </div>
+    <main className="bg-white">
+      {/* SECTION 01: IMMERSIVE HERO */}
+      <CategoryHero category={category} />
+      
+      {/* SECTION 02: CATEGORY OVERVIEW */}
+      <CategoryOverview category={category} />
+      
+      {/* Placeholders for upcoming sections */}
+      {/* 
+        <ProductPortfolioExplorer category={category} products={categoryProducts} />
+        <WhySourceFromIndia category={category} />
+        <MajorOrigins category={category} />
+        <ExportMarkets category={category} />
+        <CategoryApplications category={category} />
+        <SupplyChainJourney category={category} />
+        <CertificationEcosystem category={category} />
+        <MarketIntelligence category={category} />
+        <RelatedCategories currentSlug={category.slug} />
+        <CategoryFAQ category={category} />
+        <RFQCTA category={category} />
+      */}
+      
+      {/* SECTION: CATEGORY PRODUCTS */}
+      <CategoryProductShowcase category={category} products={categoryProducts} />
+    </main>
   );
 }

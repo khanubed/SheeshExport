@@ -19,7 +19,7 @@ export function ProductRFQCTA({ product }: { product: Product }) {
               Request Quotation <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </Link>
-          <Button size="lg" variant="outline" className="rounded-none h-16 px-10 border-white text-white hover:bg-white/10 text-lg tracking-wide w-full sm:w-auto">
+          <Button size="lg" variant="secondary" className="rounded-none h-16 px-10 border-white text-white hover:bg-white/10 text-lg tracking-wide w-full sm:w-auto">
             <Mail className="mr-2 w-5 h-5" /> Contact Sales
           </Button>
         </div>

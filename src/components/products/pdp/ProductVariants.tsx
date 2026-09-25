@@ -5,25 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Product, Variant } from "@/lib/data/types";
 import { cn } from "@/lib/utils";
-import { motion, AnimatePresence } from "framer-motion";
 import gsap from "gsap";
-import {
-  Check,
-  ChevronDown,
-  ChevronUp,
-  Sparkles,
-  ArrowRight,
-  ShieldCheck,
-  Flame,
-  Scale,
-  Layers,
-  Copy,
-  CheckCheck,
-  Eye,
-  FileSpreadsheet,
-  X,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 interface ProductVariantsProps {
   product: Product;
@@ -31,103 +13,37 @@ interface ProductVariantsProps {
   onSelect: (v: Variant) => void;
 }
 
+const certMapping: Record<string, string> = {
+  "ISO 22000": "Food Safety Management",
+  "US FDA": "United States Compliance",
+  "APEDA": "Government Export Authority",
+  "Spices Board India": "Industry Regulation",
+  "FSSAI": "Food Safety and Standards Authority",
+  "SGS Inspected": "Pre-shipment Inspection",
+};
+
+const getCertFullName = (cert: string) =>
+  certMapping[cert] || "International Quality Certification";
+
+const getIdealFor = (product: Product) => {
+  const allBestFor = product.packagingOptions.flatMap((p) =>
+    p.bestFor.split(",").map((s) => s.trim())
+  );
+  const unique = Array.from(new Set(allBestFor)).filter(Boolean);
+  return unique.length > 0
+    ? unique
+    : ["Commercial Extraction", "Spice Blending", "Retail Packaging"];
+};
+
 export function ProductVariants({
   product,
   selectedVariant,
   onSelect,
 }: ProductVariantsProps) {
-  const [isExpanded, setIsExpanded] = useState<boolean>(true);
-  const [copied, setCopied] = useState<boolean>(false);
-  const [activeImageIndex, setActiveImageIndex] = useState<number>(0);
-
-  const sectionRef = useRef<HTMLElement>(null);
-  const cardsContainerRef = useRef<HTMLDivElement>(null);
-  const detailsRef = useRef<HTMLDivElement>(null);
-
-  // GSAP entrance animation for variant cards
-  useEffect(() => {
-    if (!cardsContainerRef.current) return;
-    const cards = cardsContainerRef.current.children;
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        cards,
-        {
-          opacity: 0,
-          y: 24,
-          scale: 0.98,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.6,
-          stagger: 0.08,
-          ease: "power2.out",
-        }
-      );
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, [product.id]);
-
-  // GSAP animation when selected variant or expanded state changes
-  useEffect(() => {
-    if (!detailsRef.current || !isExpanded) return;
-
-    const ctx = gsap.context(() => {
-      const items = detailsRef.current?.querySelectorAll(".spec-animate-item");
-      if (items && items.length > 0) {
-        gsap.fromTo(
-          items,
-          { opacity: 0, y: 12 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.4,
-            stagger: 0.03,
-            ease: "power2.out",
-          }
-        );
-      }
-    }, detailsRef);
-
-    return () => ctx.revert();
-  }, [selectedVariant.id, isExpanded]);
-
-  // Reset active image index when variant changes
-  useEffect(() => {
-    setActiveImageIndex(0);
-  }, [selectedVariant.id]);
-
-  const handleCardClick = (variant: Variant) => {
-    if (selectedVariant.id === variant.id) {
-      // Toggle expansion if already selected
-      setIsExpanded((prev) => !prev);
-    } else {
-      onSelect(variant);
-      setIsExpanded(true);
-    }
-  };
-
-  const handleCopySpecs = () => {
-    const text = [
-      `Product: ${product.name}`,
-      `Grade / Variant: ${selectedVariant.name}`,
-      selectedVariant.shortDescription ? `Description: ${selectedVariant.shortDescription}` : "",
-      "--- Key Attributes ---",
-      ...selectedVariant.attributes.map((a) => `${a.label}: ${a.value}`),
-      "--- Lab Specifications ---",
-      ...selectedVariant.specifications.map((s) => `${s.parameter}: ${s.value}`),
-    ]
-      .filter(Boolean)
-      .join("\n");
-
-    if (navigator?.clipboard) {
-      navigator.clipboard.writeText(text);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2200);
-    }
-  };
+  const [displayVariant, setDisplayVariant] = useState<Variant>(selectedVariant);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+  const isFirstMount = useRef(true);
 
   // Helper to get image for any variant
   const getVariantImage = (v: Variant, index = 0): string => {
@@ -137,451 +53,326 @@ export function ProductVariants({
     if (product.originStory?.images && product.originStory.images.length > 0) {
       return product.originStory.images[0];
     }
-    return "/images/products/red-chilli.jpg";
+    return "/images/placeholder.jpg"; // Fallback
   };
 
-  const currentDisplayImage = getVariantImage(selectedVariant, activeImageIndex);
+  // Exit animation when selected variant changes
+  useEffect(() => {
+    if (isFirstMount.current) {
+      isFirstMount.current = false;
+      return;
+    }
+    if (selectedVariant.id === displayVariant.id) return;
+    if (!contentRef.current || !imageRef.current) return;
+
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        onComplete: () => {
+          setDisplayVariant(selectedVariant);
+        },
+      });
+
+      tl.to(
+        imageRef.current,
+        { opacity: 0, duration: 0.4, ease: "power2.inOut" },
+        0
+      );
+      tl.to(
+        contentRef.current?.querySelectorAll(".gsap-item") || [],
+        { opacity: 0, y: 15, duration: 0.4, stagger: 0.03, ease: "power2.inOut" },
+        0
+      );
+    });
+
+    return () => ctx.revert();
+  }, [selectedVariant, displayVariant.id]);
+
+  // Enter animation when display variant updates
+  useEffect(() => {
+    if (!contentRef.current || !imageRef.current) return;
+
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline();
+
+      // Ensure elements are initially hidden before animating in
+      gsap.set(imageRef.current, { opacity: 0, scale: 1.05 });
+      gsap.set(contentRef.current?.querySelectorAll(".gsap-item") || [], {
+        opacity: 0,
+        y: -15,
+      });
+
+      tl.to(
+        imageRef.current,
+        { opacity: 1, scale: 1, duration: 0.9, ease: "power2.out" },
+        0.1
+      );
+
+      tl.to(
+        contentRef.current?.querySelectorAll(".gsap-item") || [],
+        { opacity: 1, y: 0, duration: 0.8, stagger: 0.06, ease: "power2.out" },
+        0.15
+      );
+    });
+
+    return () => ctx.revert();
+  }, [displayVariant]);
+
+  const currentDisplayImage = getVariantImage(displayVariant, 0);
 
   return (
-    <section
-      ref={sectionRef}
-      className="py-14 bg-gradient-to-b from-white via-slate-50/50 to-white border-y border-slate-100 relative overflow-hidden"
-    >
-      {/* Decorative ambient background accents */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-slate-500/5 rounded-full blur-3xl pointer-events-none" />
+    <section className="bg-white text-slate-900 border-b border-slate-200">
+      {/* LAYER 1: VARIANT SELECTION (SAMPLE STRIP) */}
+      <div className="max-w-7xl mx-auto px-4 lg:px-8 py-10 lg:py-12 border-b border-slate-200">
+        <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-6 font-sans">
+          Commercial Grade Explorer
+        </h2>
 
-      <div className="container mx-auto px-4 max-w-7xl relative z-10">
-        {/* Header with Luxury Metadata */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4 pb-4 border-b border-slate-200">
-          <div>
-            <div className="flex items-center gap-2 mb-2">
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-900 text-white uppercase tracking-wider">
-                <Sparkles className="w-3 h-3 text-amber-400" />
-                Export Grade Selection
-              </span>
-              <span className="text-xs text-slate-600 font-medium">
-                {product.variants.length} Commercial Grades Available
-              </span>
-            </div>
-            <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 tracking-tight">
-              Select Grade & Commercial Specifications
-            </h2>
-            <p className="text-sm text-slate-600 mt-1 max-w-2xl">
-              Each commercial grade is curated for specific processing applications, heat ranges, and international food safety standards. Click any card below to open its laboratory parameters.
-            </p>
-          </div>
-
-          <div className="flex items-center gap-3 self-start md:self-auto">
-            <span className="text-xs text-slate-600 hidden sm:inline">
-              Currently Active:
-            </span>
-            <span className="text-xs font-semibold px-3 py-1.5 rounded-md bg-slate-900 text-white shadow-sm flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              {selectedVariant.name}
-            </span>
-          </div>
-        </div>
-
-        {/* Interconnected Variant Cards Grid */}
-        <div
-          ref={cardsContainerRef}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5"
-        >
-          {product.variants.map((variant) => {
-            const isSelected = selectedVariant.id === variant.id;
-            const cardImg = getVariantImage(variant, 0);
+        <div className="flex flex-col border-t border-slate-200">
+          {product.variants.map((v) => {
+            const isActive = selectedVariant.id === v.id;
+            const keyAttr =
+              v.attributes.find((a) => a.label.toLowerCase().includes("heat")) ||
+              v.attributes[0];
 
             return (
-              <motion.button
-                key={variant.id}
-                type="button"
-                onClick={() => handleCardClick(variant)}
-                whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                whileTap={{ scale: 0.98 }}
-                className={cn(
-                  "group relative flex flex-col text-left rounded-xl overflow-hidden transition-all duration-300",
-                  "border bg-white cursor-pointer select-none",
-                  isSelected
-                    ? "border-slate-900 shadow-xl ring-2 ring-slate-900/10 shadow-slate-900/10"
-                    : "border-slate-200 hover:border-slate-400 hover:shadow-lg shadow-sm"
-                )}
+              <button
+                key={v.id}
+                onClick={() => onSelect(v)}
+                className="group flex flex-col md:flex-row md:items-center justify-between py-4 md:py-6 border-b border-slate-200 hover:bg-slate-50 transition-colors w-full text-left"
               >
-                {/* Active Indicator Top Bar */}
-                {isSelected && (
-                  <motion.div
-                    layoutId="activeVariantBar"
-                    className="absolute top-0 left-0 right-0 h-1 bg-slate-900 z-30"
-                  />
-                )}
+                {/* Variant Name */}
+                <span
+                  className={cn(
+                    "w-full md:w-1/3 text-2xl md:text-3xl font-serif tracking-tight transition-colors mb-4 md:mb-0",
+                    isActive
+                      ? "text-slate-900 font-medium"
+                      : "text-slate-400 group-hover:text-slate-700"
+                  )}
+                >
+                  {v.name}
+                </span>
 
-                {/* Variant Image Frame */}
-                <div className="relative w-full aspect-[16/10] overflow-hidden bg-slate-100">
-                  <Image
-                    src={cardImg}
-                    alt={variant.name}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                    className={cn(
-                      "object-cover transition-transform duration-500 ease-out",
-                      isSelected ? "scale-105" : "group-hover:scale-105"
-                    )}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
-
-                  {/* Top Badges */}
-                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
-                    <span className="text-[11px] font-semibold tracking-wider uppercase px-2 py-0.5 rounded bg-black/60 backdrop-blur-md text-white border border-white/10">
-                      Grade
-                    </span>
-                    {isSelected ? (
-                      <span className="flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-emerald-500 text-white shadow-sm">
-                        <Check className="w-3 h-3" />
-                        Selected
-                      </span>
-                    ) : (
-                      <span className="text-[11px] font-medium px-2 py-0.5 rounded-full bg-black/50 text-white/90 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
-                        <Eye className="w-3 h-3" />
-                        Inspect
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Bottom Image Overlay Tag */}
-                  <div className="absolute bottom-2.5 left-3 right-3 z-10 flex items-center justify-between text-white">
-                    <span className="text-xs font-medium text-slate-200 line-clamp-1">
-                      {variant.attributes[0]?.value || "Standard Export Spec"}
-                    </span>
-                    <span className="text-[10px] text-amber-300 font-mono">
-                      {variant.attributes.find((a) => a.label.toLowerCase().includes("heat"))?.value || ""}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Card Content */}
-                <div className="p-4 flex flex-col flex-grow justify-between bg-white">
-                  <div>
-                    <h3 className="font-serif font-bold text-base md:text-lg text-slate-900 group-hover:text-slate-950 leading-snug">
-                      {variant.name}
-                    </h3>
-
-                    {/* Quick attribute preview chips */}
-                    <div className="flex flex-wrap gap-1.5 mt-2.5">
-                      {variant.attributes.slice(0, 2).map((attr, idx) => (
-                        <span
-                          key={idx}
-                          className="inline-flex items-center text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200/70"
-                        >
-                          <strong className="font-medium text-slate-900 mr-1">
-                            {attr.label}:
-                          </strong>
-                          {attr.value}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Click affordance indicator */}
-                  <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-                    {isSelected ? (
-                      <span className="font-semibold text-slate-900 flex items-center gap-1">
-                        {isExpanded ? (
-                          <>
-                            Details Open <ChevronUp className="w-3.5 h-3.5" />
-                          </>
-                        ) : (
-                          <>
-                            Click to Expand <ChevronDown className="w-3.5 h-3.5" />
-                          </>
-                        )}
-                      </span>
-                    ) : (
-                      <span className="font-medium text-slate-600 group-hover:text-slate-900 flex items-center gap-1 transition-colors">
-                        Inspect Grade
-                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-                      </span>
-                    )}
-
-                    <span
+                {/* Sample Image */}
+                <div className="w-full md:w-1/3 flex justify-start md:justify-center mb-4 md:mb-0">
+                  <div className="relative w-32 h-16 md:w-40 md:h-20 overflow-hidden bg-slate-100">
+                    <Image
+                      src={getVariantImage(v, 0)}
+                      alt={v.name}
+                      fill
                       className={cn(
-                        "text-[10px] uppercase font-mono px-1.5 py-0.5 rounded",
-                        isSelected
-                          ? "bg-slate-900 text-white"
-                          : "bg-slate-100 text-slate-600"
+                        "object-cover transition-all duration-700",
+                        isActive
+                          ? "grayscale-0 opacity-100"
+                          : "grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100"
                       )}
-                    >
-                      B2B Specs
-                    </span>
+                    />
                   </div>
                 </div>
-              </motion.button>
+
+                {/* Key Attribute */}
+                <span
+                  className={cn(
+                    "w-full md:w-1/3 text-left md:text-right text-sm font-mono tracking-wider transition-colors uppercase",
+                    isActive
+                      ? "text-slate-900"
+                      : "text-slate-400 group-hover:text-slate-700"
+                  )}
+                >
+                  {keyAttr?.value}
+                </span>
+              </button>
             );
           })}
         </div>
+      </div>
 
-        {/* Opened Variant Full Details Inspector */}
-        <AnimatePresence mode="wait">
-          {isExpanded && (
-            <motion.div
-              key={selectedVariant.id}
-              initial={{ opacity: 0, height: 0, y: 15 }}
-              animate={{ opacity: 1, height: "auto", y: 0 }}
-              exit={{ opacity: 0, height: 0, y: -10 }}
-              transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-6 overflow-hidden"
-            >
-              <div
-                ref={detailsRef}
-                className="bg-white rounded-2xl border-2 border-slate-900 shadow-2xl overflow-hidden"
-              >
-                {/* Drawer Header Banner */}
-                <div className="bg-slate-900 text-white px-6 py-4 flex flex-wrap items-center justify-between gap-4 border-b border-slate-800">
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center text-amber-400">
-                      <FileSpreadsheet className="w-5 h-5" />
+      {/* LAYER 2: COMMERCIAL INTELLIGENCE VIEW */}
+      <div className="max-w-screen-xl mx-auto px-4 lg:px-8 py-10 lg:py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 lg:items-start">
+          
+          {/* IMAGE AREA */}
+          <div className="lg:col-span-7 sticky top-24 order-2 lg:order-1 h-[80vh] min-h-[500px]">
+            <div className="relative w-full h-full overflow-hidden bg-slate-100">
+              <div ref={imageRef} className="absolute inset-0 w-full h-full opacity-0">
+                <Image
+                  src={currentDisplayImage}
+                  alt={displayVariant.name}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* DATA AREA */}
+          <div className="lg:col-span-5 flex flex-col justify-center order-1 lg:order-2">
+            <div ref={contentRef} className="flex flex-col gap-8">
+              
+              {/* Header */}
+              <div className="gsap-item opacity-0">
+                <h1 className="text-4xl lg:text-5xl font-serif tracking-tight text-slate-900 mb-4 leading-none">
+                  {displayVariant.name}
+                </h1>
+                <p className="text-lg text-slate-600 leading-relaxed font-serif">
+                  {displayVariant.shortDescription ||
+                    "Premium export grade cultivated for specialized processing and exceptional yield."}
+                </p>
+              </div>
+
+              {/* Commercial Snapshot */}
+              <div className="gsap-item opacity-0">
+                <div className="flex flex-wrap gap-x-8 gap-y-6 pb-6 border-b border-slate-200">
+                  {displayVariant.attributes.map((attr) => (
+                    <div key={attr.label} className="flex flex-col gap-1.5">
+                      <span className="text-[10px] uppercase tracking-[0.15em] text-slate-400 font-sans font-bold">
+                        {attr.label}
+                      </span>
+                      <span className="text-sm font-mono text-slate-900">
+                        {attr.value}
+                      </span>
                     </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <span className="text-xs uppercase tracking-widest text-slate-400 font-semibold">
-                          Grade Specification Dossier
+                  ))}
+                  <div className="flex flex-col gap-1.5">
+                    <span className="text-[10px] uppercase tracking-[0.15em] text-slate-400 font-sans font-bold">
+                      MOQ
+                    </span>
+                    <span className="text-sm font-mono text-slate-900">
+                      {product.packagingOptions[0]?.moq || "14 MT"}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Specification Dossier */}
+              <div className="gsap-item opacity-0">
+                <h3 className="text-[10px] uppercase tracking-[0.15em] text-slate-900 mb-4 font-bold font-sans">
+                  Commercial Specifications
+                </h3>
+                <div className="flex flex-col gap-4">
+                  {displayVariant.specifications.map((spec) => (
+                    <div
+                      key={spec.parameter}
+                      className="flex justify-between items-baseline border-b border-slate-100 pb-3"
+                    >
+                      <span className="text-sm text-slate-600 font-sans">
+                        {spec.parameter}
+                      </span>
+                      <span className="text-sm font-mono text-slate-900 font-medium text-right">
+                        {spec.value}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Export Compliance & Logistics */}
+              <div className="gsap-item opacity-0 grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-[10px] uppercase tracking-[0.15em] text-slate-900 mb-4 font-bold font-sans">
+                    Export Compliance
+                  </h3>
+                  <div className="flex flex-col gap-4">
+                    {product.certifications.slice(0, 4).map((cert) => (
+                      <div key={cert} className="flex flex-col gap-1">
+                        <span className="text-sm font-bold font-sans text-slate-900">
+                          {cert}
                         </span>
-                        <span className="text-[10px] bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-2 py-0.2 rounded-full font-medium">
-                          Export Verified
+                        <span className="text-xs text-slate-500 font-serif italic">
+                          {getCertFullName(cert)}
                         </span>
                       </div>
-                      <h4 className="text-xl font-serif font-bold text-white">
-                        {selectedVariant.name}
-                      </h4>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-2">
-                    <button
-                      type="button"
-                      onClick={handleCopySpecs}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-slate-200 text-xs font-medium transition-colors"
-                      title="Copy Grade Specifications"
-                    >
-                      {copied ? (
-                        <>
-                          <CheckCheck className="w-3.5 h-3.5 text-emerald-400" />
-                          <span className="text-emerald-300">Copied to Clipboard</span>
-                        </>
-                      ) : (
-                        <>
-                          <Copy className="w-3.5 h-3.5" />
-                          <span>Copy Specs</span>
-                        </>
-                      )}
-                    </button>
-
-                    <button
-                      type="button"
-                      onClick={() => setIsExpanded(false)}
-                      className="w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 text-slate-300 hover:text-white flex items-center justify-center transition-colors"
-                      aria-label="Collapse Grade Details"
-                    >
-                      <X className="w-4 h-4" />
-                    </button>
+                    ))}
                   </div>
                 </div>
 
-                {/* Drawer Main Body */}
-                <div className="p-6 md:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-slate-50/40">
-                  {/* Left Column: Grade Media & Quick Order CTA */}
-                  <div className="lg:col-span-4 flex flex-col gap-5">
-                    {/* Large Image Showcase */}
-                    <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm group">
-                      <Image
-                        src={currentDisplayImage}
-                        alt={selectedVariant.name}
-                        fill
-                        sizes="(max-width: 1024px) 100vw, 33vw"
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
-                      
-                      <div className="absolute top-3 left-3">
-                        <span className="px-2.5 py-1 rounded bg-black/60 backdrop-blur-md text-white text-[11px] font-semibold tracking-wide border border-white/15">
-                          {selectedVariant.attributes.find((a) => a.label.toLowerCase().includes("format"))?.value || "Commercial Grade"}
-                        </span>
-                      </div>
-
-                      <div className="absolute bottom-3 left-3 right-3 text-white">
-                        <span className="text-xs font-medium text-slate-200">Commercial Sample Visual</span>
-                        <p className="text-xs text-slate-300 line-clamp-1">
-                          Standard Sortex Cleaned Export Lot
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Thumbnail gallery if variant has multiple images */}
-                    {selectedVariant.images && selectedVariant.images.length > 1 && (
-                      <div className="flex gap-2">
-                        {selectedVariant.images.map((img, idx) => (
-                          <button
-                            key={idx}
-                            type="button"
-                            onClick={() => setActiveImageIndex(idx)}
-                            className={cn(
-                              "relative w-16 h-14 rounded-lg overflow-hidden border-2 transition-all",
-                              activeImageIndex === idx
-                                ? "border-slate-900 ring-2 ring-slate-900/20"
-                                : "border-slate-200 hover:border-slate-400 opacity-70 hover:opacity-100"
-                            )}
-                          >
-                            <Image
-                              src={img}
-                              alt={`${selectedVariant.name} thumb ${idx}`}
-                              fill
-                              className="object-cover"
-                            />
-                          </button>
-                        ))}
-                      </div>
-                    )}
-
-                    {/* Short Description */}
-                    {selectedVariant.shortDescription && (
-                      <div className="bg-white p-4 rounded-xl border border-slate-200/80 shadow-xs">
-                        <span className="text-[11px] font-bold uppercase tracking-wider text-slate-600 block mb-1">
-                          Grade Suitability & Application
-                        </span>
-                        <p className="text-xs text-slate-700 leading-relaxed">
-                          {selectedVariant.shortDescription}
-                        </p>
-                      </div>
-                    )}
-
-                    {/* Dedicated CTA for this grade */}
-                    <div className="flex flex-col gap-2.5 pt-2">
-                      <Link
-                        href={`/request-quote?product=${product.slug}&variant=${selectedVariant.slug}`}
-                        className="w-full"
-                      >
-                        <Button className="w-full h-11 bg-slate-900 hover:bg-slate-800 text-white rounded-lg text-sm font-medium shadow-md flex items-center justify-center gap-2 group">
-                          Request Quote for {selectedVariant.name}
-                          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </Button>
-                      </Link>
-
-                      <div className="flex items-center justify-between text-xs text-slate-600 px-1">
-                        <span className="flex items-center gap-1">
-                          <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-                          Pre-shipment Inspection
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <Check className="w-3.5 h-3.5 text-emerald-600" />
-                          CoA Provided
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Middle Column: Physical & Sensory Attributes */}
-                  <div className="lg:col-span-4 flex flex-col gap-4">
-                    <div className="flex items-center justify-between">
-                      <h5 className="text-xs font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
-                        <Layers className="w-3.5 h-3.5 text-slate-700" />
-                        Physical & Sensory Parameters
-                      </h5>
-                      <span className="text-[11px] text-slate-600">
-                        {selectedVariant.attributes.length} Parameters
+                <div>
+                  <h3 className="text-[10px] uppercase tracking-[0.15em] text-slate-900 mb-4 font-bold font-sans">
+                    Commercial Logistics
+                  </h3>
+                  <div className="flex flex-col gap-3 text-sm font-sans">
+                    <div className="flex justify-between border-b border-slate-100 pb-2">
+                      <span className="text-slate-500">20FT Container</span>
+                      <span className="font-mono font-medium text-slate-900">
+                        {product.shipping.capacity20ft}
                       </span>
                     </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2.5">
-                      {selectedVariant.attributes.map((attr, idx) => (
-                        <div
-                          key={idx}
-                          className="spec-animate-item bg-white p-3.5 rounded-xl border border-slate-200/80 shadow-xs flex items-center justify-between hover:border-slate-300 transition-colors"
-                        >
-                          <div className="flex items-center gap-2.5">
-                            <div className="w-7 h-7 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600">
-                              {attr.label.toLowerCase().includes("heat") ? (
-                                <Flame className="w-4 h-4 text-red-500" />
-                              ) : attr.label.toLowerCase().includes("color") ? (
-                                <Sparkles className="w-4 h-4 text-amber-500" />
-                              ) : (
-                                <Scale className="w-4 h-4 text-slate-500" />
-                              )}
-                            </div>
-                            <span className="text-xs font-semibold text-slate-600">
-                              {attr.label}
-                            </span>
-                          </div>
-                          <span className="text-xs font-bold text-slate-900 bg-slate-50 px-2.5 py-1 rounded-md border border-slate-100">
-                            {attr.value}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Fast shipping indicator */}
-                    <div className="bg-amber-50/70 border border-amber-200/80 rounded-xl p-3.5 mt-1">
-                      <div className="flex items-center gap-2 text-amber-900 font-semibold text-xs mb-1">
-                        <span className="w-2 h-2 rounded-full bg-amber-500" />
-                        Container Loadability
-                      </div>
-                      <p className="text-[11px] text-amber-800 leading-relaxed">
-                        Standard 20ft: {product.shipping.capacity20ft} • 40ft HC: {product.shipping.capacity40ft}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Right Column: Chemical & Quality Lab Specifications */}
-                  <div className="lg:col-span-4 flex flex-col gap-4">
-                    <div className="flex items-center justify-between">
-                      <h5 className="text-xs font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
-                        <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-                        Laboratory Quality Standards
-                      </h5>
-                      <span className="text-[11px] text-emerald-700 font-medium">
-                        Standard Tolerance
+                    <div className="flex justify-between border-b border-slate-100 pb-2">
+                      <span className="text-slate-500">40FT Container</span>
+                      <span className="font-mono font-medium text-slate-900">
+                        {product.shipping.capacity40ft}
                       </span>
                     </div>
-
-                    <div className="bg-white rounded-xl border border-slate-200/80 shadow-xs overflow-hidden divide-y divide-slate-100">
-                      {selectedVariant.specifications.map((spec, idx) => (
-                        <div
-                          key={idx}
-                          className="spec-animate-item px-4 py-3 flex items-center justify-between hover:bg-slate-50/60 transition-colors"
-                        >
-                          <div className="flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                            <span className="text-xs font-medium text-slate-700">
-                              {spec.parameter}
-                            </span>
-                          </div>
-                          <span className="text-xs font-mono font-bold text-slate-900">
-                            {spec.value}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Certifications strip */}
-                    <div className="bg-white p-3.5 rounded-xl border border-slate-200/80 shadow-xs">
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-slate-600 block mb-2">
-                        Compliance & Certification
+                    <div className="flex justify-between border-b border-slate-100 pb-2">
+                      <span className="text-slate-500">Transit Time</span>
+                      <span className="font-mono font-medium text-slate-900">
+                        {product.shipping.transitTime.split(" ")[0]} Days
                       </span>
-                      <div className="flex flex-wrap gap-1.5">
-                        {product.certifications.map((cert, idx) => (
-                          <span
-                            key={idx}
-                            className="text-[10px] font-semibold px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200/80"
-                          >
-                            {cert}
-                          </span>
-                        ))}
-                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+
+              {/* Why Buyers Choose This Grade */}
+              <div className="gsap-item opacity-0">
+                <h3 className="text-[10px] uppercase tracking-[0.15em] text-slate-900 mb-4 font-bold font-sans">
+                  Why Buyers Choose This Grade
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 font-sans">
+                  <div>
+                    <span className="text-xs uppercase tracking-widest text-slate-400 block mb-2">
+                      Ideal For
+                    </span>
+                    <ul className="flex flex-col gap-3">
+                      {getIdealFor(product)
+                        .slice(0, 4)
+                        .map((item, i) => (
+                          <li
+                            key={i}
+                            className="text-sm text-slate-700 flex items-start gap-3"
+                          >
+                            <span className="text-slate-300 mt-0.5 font-serif">
+                              —
+                            </span>
+                            {item}
+                          </li>
+                        ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <span className="text-xs uppercase tracking-widest text-slate-400 block mb-2">
+                      Strengths
+                    </span>
+                    <ul className="flex flex-col gap-3">
+                      {displayVariant.attributes.slice(0, 4).map((attr, i) => (
+                        <li
+                          key={i}
+                          className="text-sm text-slate-700 flex items-start gap-3"
+                        >
+                          <span className="text-slate-300 mt-0.5 font-serif">
+                            —
+                          </span>
+                          High {attr.label}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* Action */}
+              <div className="gsap-item opacity-0 pt-2">
+                <Link
+                  href={`/request-quote?product=${product.slug}&variant=${displayVariant.slug}`}
+                >
+                  <button className="w-full lg:w-auto px-10 py-5 bg-slate-900 text-white text-xs font-bold uppercase tracking-[0.15em] hover:bg-slate-800 transition-colors">
+                    Request Corporate Quote
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -64,96 +64,202 @@ export interface Product {
 
 export const PRODUCTS_DATA: Product[] = [
   {
-    id: "p-red-chilli",
-    slug: "red-chilli-whole",
-    name: "Red Chilli (Whole)",
+    id: "p-red-chilli-whole",
+    slug: "whole-red-chilli-guntur",
+    name: "Whole Red Chilli (Capsicum annuum)",
     category: "Whole Spices",
     categorySlug: "whole-spices",
     botanicalName: "Capsicum annuum",
-    description: "Sheesh Exports is a world-class cultivator, processor, and bulk exporter of Whole Red Chillies (Capsicum annuum), operating directly from Guntur, Andhra Pradesh—the renowned red chilli capital of the world. India is the largest producer, consumer, and exporter of chillies globally, and Sheesh Exports stands at the forefront of providing authentic, farm-traceable Indian chillies to food corporations, spice grinders, oleoresin extraction plants, and retail brands across the Middle East, United States, Europe, Southeast Asia, and Africa.\n\nWe specialize in all major export-grade commercial varieties including fiery Teja S17, high-color Byadgi, versatile S4 / Sananam, and wrinkled 273 chillies. Sourced from GAP-certified farms, our whole red chillies are carefully sun-cured, mechanically destoned, cleaned, and sorted into Stemless and With Stem grades according to buyer specifications.\n\nWe enforce rigorous quality controls to ensure moisture is held under 11%, broken or discolored pods remain below 2%, and total aflatoxin / ochratoxin levels strictly adhere to European Commission and US FDA limits. Every shipment is fumigated, palletized, and packaged in breathable jute sacks or multi-wall poly bags, supported by comprehensive APEDA documentation, Certificate of Origin, and SGS pre-shipment inspections.",
+    seoMetaData: {
+      metaTitle: "Whole Red Chilli Bulk Exporter | Guntur Red Chilli Wholesale | Sheesh Exports",
+      metaDescription: "Leading Guntur red chilli exporter supplying premium Teja S17, Byadgi, S4 Sannam, 273 & Indo-5 varieties. GAP-certified, ASTA color tested, aflatoxin controlled for global food processors.",
+      keywords: [
+        "Whole Red Chilli Exporter",
+        "Guntur Red Chilli Wholesale",
+        "Teja S17 Stemless Bulk",
+        "Byadgi Red Chilli ASTA Color",
+        "S4 Sannam Red Chilli",
+        "Wrinkled 273 Chilli Exporter",
+        "Indian Spice Bulk Supplier",
+        "Oleoresin Grade Red Chilli"
+      ]
+    },
+    description: "Sheesh Exports is a premier cultivator, processor, and bulk B2B exporter of export-grade Whole Red Chillies (Capsicum annuum), operating directly out of Guntur, Andhra Pradesh—the world's largest hub for red chilli trading and export. India accounts for the largest share of global chilli production and exports, and Sheesh Exports bridges farm-level agronomy directly with international industrial buyers, oleoresin extraction plants, spice grinders, and retail packing brands across North America, Europe, the Middle East, Southeast Asia, and Africa.\n\nWe specialize in all major export-grade commercial varieties including fiery Teja S17, color-rich Byadgi, versatile S4 / Sannam (334), Wrinkled 273, and Indo-5. Sourced from GAP-certified farms, our whole chillies undergo meticulous sun-curing, mechanical destoning, cleaning, and electronic color sorting into Stemless, With Stem, and Cut pod formats.\n\nWe enforce strict compliance controls to maintain moisture below 11–12%, broken/discolored pods under 2%, and total aflatoxin/ochratoxin levels compliant with stringent EU Commission and US FDA threshold standards. Every consignment is pre-inspected by SGS/Geo-Chem, fumigated, palletized, and delivered with full APEDA traceability and Phytosanitary documentation.",
     originStory: {
       location: "Guntur, Andhra Pradesh, India",
-      story: "Guntur, the chilli capital of the world, offers the perfect confluence of rich volcanic soil and a hot, dry climate essential for cultivating the world's finest red chillies. The heritage of chilli farming here dates back centuries, with farmers utilizing traditional sun-curing methods alongside modern GAP-certified agronomy. Our deep-rooted relationships with local farming communities ensure absolute traceability from seed to shipment. By bypassing middlemen, we guarantee that only the most vibrant, pungent, and unadulterated chillies reach our global clientele.",
-      images: ["/images/products/red-chilli.jpg", "/images/products/red-chilli.jpg", "/images/products/red-chilli.jpg"]
+      story: "Cultivated in the mineral-rich black soils of the Guntur belt under hot, dry climatic conditions, Guntur chillies are globally renowned for their unmatched heat (capsaicin) and natural color pigments. By pairing age-old sun-curing techniques with modern GAP-compliant farming, Sheesh Exports guarantees 100% farm-to-port traceability, direct community sourcing, and absolute purity without middleman markups.",
+      images: [
+        "/images/products/red-chilli/red-chilli-whole.jpg",
+        "/images/products/red-chilli/red-chilli-1.jpg",
+        "/images/products/red-chilli/red-chilli-2.jpg"
+      ]
     },
     variants: [
       {
-        id: "v-teja-stemless",
-        slug: "teja-stemless",
+        id: "v-teja-s17-stemless",
+        slug: "teja-s17-stemless",
         name: "Teja S17 (Stemless)",
-        shortDescription: "Premium grade Teja S17 (Stemless) specifically processed and sorted for bulk B2B export.",
-        images: ["/images/products/red-chilli.jpg"],
+        shortDescription: "Fiery, extra-hot variety widely favored for industrial capsaicin extraction, hot sauces, and spice grinding.",
+        images: ["/images/products/red-chilli/stemless.webp"],
         attributes: [
-          { label: "Color", value: "Deep Red" },
+          { label: "Color", value: "Fiery Red" },
           { label: "Heat (SHU)", value: "75,000 - 100,000" },
-          { label: "ASTA Color", value: "60 - 80" },
+          { label: "ASTA Color", value: "50 - 70" },
+          { label: "Format", value: "Stemless (98%+ destemmed)" }
+        ],
+        specifications: [
+          { parameter: "Purity", value: "99% Min" },
+          { parameter: "Moisture", value: "10% - 11% Max" },
+          { parameter: "Foreign Matter", value: "1% Max" },
+          { parameter: "Aflatoxin (B1)", value: "< 5 PPB" },
+          { parameter: "Loose/Broken Pods", value: "2% Max" }
+        ]
+      },
+      {
+        id: "v-byadgi-with-stem",
+        slug: "byadgi-with-stem",
+        name: "Byadgi KDL (With Stem / Stemless)",
+        shortDescription: "Deep crimson, low-heat chilli valued for high ASTA color extraction, food coloring, and oleoresin production.",
+        images: ["/images/products/red-chilli/byadgi.webp"],
+        attributes: [
+          { label: "Color", value: "Deep Wrinkled Crimson" },
+          { label: "Heat (SHU)", value: "8,000 - 15,000" },
+          { label: "ASTA Color", value: "120 - 160+" },
+          { label: "Format", value: "With Stem / Stemless available" }
+        ],
+        specifications: [
+          { parameter: "Purity", value: "98.5% Min" },
+          { parameter: "Moisture", value: "11% - 12% Max" },
+          { parameter: "Foreign Matter", value: "1% Max" },
+          { parameter: "Total Aflatoxin", value: "< 10 PPB" },
+          { parameter: "Pod Length", value: "10 - 12 cm" }
+        ]
+      },
+      {
+        id: "v-s4-sannam-334",
+        slug: "s4-sannam-stemless",
+        name: "S4 / Sannam (334) (Stemless & With Stem)",
+        shortDescription: "The world's largest volume export chilli variety, known for balanced heat, medium color, and consistent quality.",
+        images: ["/images/products/red-chilli/Sannam-Stemless.jpg"],
+        attributes: [
+          { label: "Color", value: "Bright Red" },
+          { label: "Heat (SHU)", value: "25,000 - 35,000" },
+          { label: "ASTA Color", value: "40 - 60" },
+          { label: "Format", value: "Stemless / With Stem" }
+        ],
+        specifications: [
+          { parameter: "Purity", value: "99% Min" },
+          { parameter: "Moisture", value: "11% Max" },
+          { parameter: "Foreign Matter", value: "1% Max" },
+          { parameter: "Total Aflatoxin", value: "< 10 PPB" },
+          { parameter: "Skin Thickness", value: "Thin to Medium" }
+        ]
+      },
+      {
+        id: "v-wrinkled-273",
+        slug: "wrinkled-273-stemless",
+        name: "Wrinkled 273 (Stemless)",
+        shortDescription: "Popular medium-heat variety with distinct wrinkled pericarp, excellent for blended curry powders and oleoresin.",
+        images: ["/images/products/red-chilli/wrinkled.jpg"],
+        attributes: [
+          { label: "Color", value: "Dark Red" },
+          { label: "Heat (SHU)", value: "15,000 - 25,000" },
+          { label: "ASTA Color", value: "60 - 90" },
           { label: "Format", value: "Stemless" }
         ],
         specifications: [
           { parameter: "Purity", value: "99% Min" },
           { parameter: "Moisture", value: "11% Max" },
           { parameter: "Foreign Matter", value: "1% Max" },
-          { parameter: "Aflatoxin", value: "< 5 PPB B1" }
+          { parameter: "Aflatoxin", value: "< 10 PPB" }
         ]
       },
       {
-        id: "v-byadgi-with-stem",
-        slug: "byadgi-with-stem",
-        name: "Byadgi (With Stem)",
-        images: ["/images/products/red-chilli.jpg"],
+        id: "v-indo-5",
+        slug: "indo-5-with-stem",
+        name: "Indo-5 / ENDO 5 (With Stem)",
+        shortDescription: "Long-pod, thick-skinned variety delivering sharp pungency and ideal durability for long ocean transportation.",
+        images: ["/images/products/red-chilli/indo-5-chilli.jpg"],
         attributes: [
-          { label: "Color", value: "Intense Red" },
-          { label: "Heat (SHU)", value: "10,000 - 15,000" },
-          { label: "ASTA Color", value: "120 - 160" },
+          { label: "Color", value: "Light to Vibrant Red" },
+          { label: "Heat (SHU)", value: "50,000 - 65,000" },
+          { label: "ASTA Color", value: "50 - 70" },
           { label: "Format", value: "With Stem" }
         ],
         specifications: [
           { parameter: "Purity", value: "98% Min" },
           { parameter: "Moisture", value: "12% Max" },
           { parameter: "Foreign Matter", value: "1% Max" },
-          { parameter: "Aflatoxin", value: "< 10 PPB Total" }
+          { parameter: "Pod Length", value: "11 - 14 cm" }
         ]
       }
     ],
     shipping: {
-      capacity20ft: "7 MT (approx.)",
-      capacity40ft: "14 MT (approx.)",
-      transitTime: "14 - 35 Days depending on destination",
-      exportPorts: ["Chennai Port", "Krishnapatnam Port", "Nhava Sheva"],
-      shippingModes: ["FCL", "LCL", "Break Bulk"]
+      capacity20ft: "7 to 7.5 MT (Uncompressed Jute/PP Bags) / Up to 11 MT (Compressed Bales)",
+      capacity40ft: "14 to 15 MT (Jute/PP Bags) / Up to 24 MT (High Cube Compressed Bales)",
+      transitTime: "12 - 35 Days depending on port of destination",
+      exportPorts: ["Krishnapatnam Port", "Chennai Port", "Visakhapatnam Port", "Nhava Sheva (JNPT)"],
+      shippingModes: ["FCL (Full Container Load)", "LCL (Less Than Container Load)", "Break Bulk"]
     },
-    certifications: ["FSSAI", "APEDA", "ISO 22000", "US FDA", "Spices Board India"],
-    exportMarkets: ["USA", "EU", "Middle East", "Asia", "Africa"],
+    certifications: [
+      "FSSAI Certified",
+      "APEDA (Ministry of Commerce India)",
+      "Spices Board of India Registered Exporter",
+      "ISO 22000:2018 Food Safety",
+      "US FDA Registered Facility",
+      "GMP & HACCP Compliant",
+      "SGS / Geo-Chem Quality Certified"
+    ],
+    exportMarkets: [
+      "United States & Canada",
+      "European Union (Germany, Netherlands, UK, Spain)",
+      "Middle East (UAE, Saudi Arabia, Qatar, Oman)",
+      "Southeast Asia (China, Vietnam, Malaysia, Indonesia, Thailand)",
+      "North & East Africa"
+    ],
     packagingOptions: [
       {
         id: "pkg-raw",
-        name: "Raw Commodity Supply",
-        description: "Bulk loose form in traditional jute bags or PP woven bags.",
-        moq: "14 MT (1 x 40FT HC)",
-        leadTime: "10-14 Days",
-        bestFor: "Spice Grinders, Extractors, Wholesale Distributors"
+        name: "Bulk Commodity Packaging (B2B Grinders & Extractors)",
+        description: "Heavy-duty breathable Jute sacks, PP woven bags, or high-density hydraulic compressed bales (to maximize payload).",
+        moq: "14 MT (1 x 40FT HC Container)",
+        leadTime: "7 - 10 Days from order confirmation",
+        bestFor: "Spice Grinders, Capsaicin Extractors, Oleoresin Manufacturers, Wholesale Importers"
       },
       {
         id: "pkg-private",
-        name: "Private Label Packaging",
-        description: "Buyer's packaging design and branding.",
-        moq: "5 MT",
-        leadTime: "21-28 Days",
-        bestFor: "Retail Brands, Supermarket Chains"
+        name: "Private Label Retail & Foodservice Packaging",
+        description: "Customized pouch packing, pillow bags, zip-lock stand-up pouches, or retail master cartons with customer logo and compliance labeling.",
+        moq: "5 MT per variant/brand design",
+        leadTime: "18 - 25 Days",
+        bestFor: "Retail Brands, Supermarket Chains, Foodservice Distributors"
       },
       {
         id: "pkg-sheesh",
-        name: "Sheesh Exports Packaging",
-        description: "Ready-to-market export packaging with Sheesh Exports branding.",
+        name: "Sheesh Exports Branded Packaging",
+        description: "Standard high-barrier export-grade 10kg/25kg branded poly-laminated multi-wall bags ready for distribution.",
         moq: "5 MT",
-        leadTime: "14 Days",
-        bestFor: "Distributors, Importers"
+        leadTime: "10 Days",
+        bestFor: "Regional Spice Distributors, Re-exporters, Food Processing Units"
       }
     ],
     faqs: [
-      { question: "Which red chilli varieties does Sheesh Exports export?", answer: "We export Teja S17, S4 Sananam, Byadgi, and Indo-5." },
-      { question: "What is the difference between Stemless and With-Stem?", answer: "Stemless chillies have stems removed to reduce freight weight and processing labor. With-stem retain the natural stem." },
-      { question: "How do you control aflatoxin?", answer: "We dry chillies on raised poly-tarpaulins and test every batch via HPLC for aflatoxins." }
+      {
+        question: "Which commercial red chilli varieties does Sheesh Exports export?",
+        answer: "We export Teja S17, Byadgi KDL, S4 / Sannam (334), Wrinkled 273, and Indo-5 varieties in Stemless, With Stem, or Crush/Flake forms depending on client requirements."
+      },
+      {
+        question: "What is the difference between Stemless and With-Stem chillies?",
+        answer: "Stemless chillies have the natural stem manually or mechanically removed, reducing container shipping weight, lowering waste for spice grinders, and eliminating processing steps. With-Stem chillies retain their original stem and are often preferred for whole-spice distribution."
+      },
+      {
+        question: "How do you ensure aflatoxin and pesticide residue limits comply with US FDA and EU standards?",
+        answer: "Chillies are sun-dried on food-grade raised poly-tarpaulins to eliminate soil contact and fungal growth. Every lot is tested via HPLC/LC-MS-MS for aflatoxin B1/total and pesticide residues prior to dispatch."
+      },
+      {
+        question: "Can you increase the container loading capacity for whole chillies?",
+        answer: "Yes. While standard loose-bagged chillies yield ~14-15 MT per 40ft HC container, we offer hydraulically compressed paper/jute bales that allow loading up to 22-24 MT per 40ft HC container, significantly reducing freight cost per metric ton."
+      }
     ]
   },
   {
