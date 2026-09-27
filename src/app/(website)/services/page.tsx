@@ -1,5 +1,7 @@
 import { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo/metadata";
+import { buildBreadcrumbSchema } from "@/lib/seo/breadcrumb";
+import { JsonLd } from "@/components/seo/JsonLd";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Package, Box, Container } from "lucide-react";
@@ -12,15 +14,20 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default function ServicesHubPage() {
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { label: "Home", href: "/" },
+    { label: "Services", href: "/services" },
+  ]);
+
   return (
     <main className="bg-background min-h-screen text-foreground font-sans selection:bg-primary selection:text-primary-foreground">
-      
+      <JsonLd data={breadcrumbSchema} />
       {/* SECTION 01: HERO */}
       <section className="relative min-h-[60vh] flex flex-col justify-center bg-primary text-primary-foreground">
-        <div className="absolute inset-0 opacity-20 mix-blend-luminosity">
-          <Image src="/images/about/factory-processing.jpg" alt="Global Supply Chain" fill className="object-cover" priority />
+        <div className="absolute inset-0 opacity-100">
+          <Image src="/images/services/factory-eagle-eye.png" alt="Global Supply Chain" fill className="object-cover" priority />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0B2F26] via-[#0B2F26]/90 to-[#0B2F26]/60" />
+        <div className="absolute inset-0 bg-black/60 " />
         
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 relative z-10 py-20">
           <span className="inline-block text-secondary font-semibold tracking-[0.2em] uppercase text-xs mb-8 border-b border-secondary/30 pb-2">
@@ -43,7 +50,7 @@ export default function ServicesHubPage() {
             {/* Private Label */}
             <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
               <div className="w-full lg:w-1/2 relative h-[350px] lg:h-[450px]">
-                <Image src="/images/about/vision.jpg" alt="Retail spice packaging" fill className="object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700" />
+                <Image src="/images/services/private-labelling.png" alt="Retail spice packaging" fill className="object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700" />
               </div>
               <div className="w-full lg:w-1/2">
                 <div className="flex items-center gap-4 mb-6">
@@ -65,7 +72,7 @@ export default function ServicesHubPage() {
             {/* Bulk Export */}
             <div className="flex flex-col lg:flex-row-reverse gap-12 lg:gap-20 items-center">
               <div className="w-full lg:w-1/2 relative h-[350px] lg:h-[450px]">
-                <Image src="/images/about/infra-warehouse.jpg" alt="Warehouse stacked with bags" fill className="object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700" />
+                <Image src="/images/services/bulk-exports.png" alt="Warehouse stacked with bags" fill className="object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700" />
               </div>
               <div className="w-full lg:w-1/2">
                 <div className="flex items-center gap-4 mb-6">
@@ -87,7 +94,7 @@ export default function ServicesHubPage() {
             {/* Mixed Container */}
             <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
               <div className="w-full lg:w-1/2 relative h-[350px] lg:h-[450px]">
-                <Image src="/images/about/factory-processing.jpg" alt="Container with multiple commodities" fill className="object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700" />
+                <Image src="/images/services/mixed-shipment.png" alt="Container with multiple commodities" fill className="object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700" />
               </div>
               <div className="w-full lg:w-1/2">
                 <div className="flex items-center gap-4 mb-6">

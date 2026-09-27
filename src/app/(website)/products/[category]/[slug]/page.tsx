@@ -1,7 +1,12 @@
 import { notFound } from "next/navigation";
 import { PRODUCTS_DATA } from "@/lib/data/products";
 import { ProductDetailClient } from "@/components/products/pdp/ProductDetailClient";
+import { ProductCard } from "@/components/products/ProductCard";
 import { Metadata } from "next";
+import { buildProductSchema } from "@/lib/seo/product";
+import { buildBreadcrumbSchema } from "@/lib/seo/breadcrumb";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { buildMetadata } from "@/lib/seo/metadata";
 
 export async function generateStaticParams() {
   return PRODUCTS_DATA.map((product) => ({
@@ -10,31 +15,86 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ category: string; slug: string }> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ category: string; slug: string }>;
+}): Promise<Metadata> {
   const resolvedParams = await params;
-  const product = PRODUCTS_DATA.find((p) => p.slug === resolvedParams.slug && p.categorySlug === resolvedParams.category);
+  const product = PRODUCTS_DATA.find(
+    (p) => p.slug === resolvedParams.slug && p.categorySlug === resolvedParams.category
+  );
 
   if (!product) {
     return { title: "Product Not Found" };
   }
 
-  return {
-    title: `${product.name} | Premium B2B Export | Sheesh Exports`,
-    description: product.description.substring(0, 160),
-  };
+  const seoTitle =
+    product.seoMetaData?.metaTitle ||
+    `${product.name} Exporter & Wholesale Supplier from India | Sheesh Exports`;
+  
+  const seoDescription =
+    product.seoMetaData?.metaDescription ||
+    `Premium ${product.name} from India. APEDA & FSSAI certified wholesale exporter. High quality, custom packaging available. Minimum order: ${product.packagingOptions?.[0]?.moq || "Flexible"}.`;
+
+  return buildMetadata({
+    title: seoTitle.replace(" | Sheesh Exports", ""), // buildMetadata will append it
+    description: seoDescription,
+    pathname: `/products/${product.categorySlug}/${product.slug}`,
+    ogImage: typeof product.variants?.[0]?.images?.[0] === "string" ? product.variants?.[0]?.images?.[0] : (product.variants?.[0]?.images?.[0] as any)?.src,
+  });
 }
 
-export default async function ProductPage({ params }: { params: Promise<{ category: string; slug: string }> }) {
+export default async function ProductPage({
+  params,
+}: {
+  params: Promise<{ category: string; slug: string }>;
+}) {
   const resolvedParams = await params;
-  const product = PRODUCTS_DATA.find((p) => p.slug === resolvedParams.slug && p.categorySlug === resolvedParams.category);
+  const product = PRODUCTS_DATA.find(
+    (p) => p.slug === resolvedParams.slug && p.categorySlug === resolvedParams.category
+  );
 
   if (!product) {
     notFound();
   }
 
+  const relatedProducts = PRODUCTS_DATA.filter(
+    (p) => p.categorySlug === product.categorySlug && p.id !== product.id
+  ).slice(0, 3);
+
+  const productSchema = buildProductSchema(product);
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { label: "Home", href: "/" },
+    { label: "Products", href: "/products" },
+    { label: product.category, href: `/products/${product.categorySlug}` },
+    { label: product.name, href: `/products/${product.categorySlug}/${product.slug}` },
+  ]);
+
   return (
     <main className="min-h-screen bg-background">
+      <JsonLd data={[productSchema, breadcrumbSchema]} />
       <ProductDetailClient product={product} />
+
+      {relatedProducts.length > 0 && (
+        <section className="bg-slate-50 py-16 lg:py-24 border-t border-slate-200">
+          <div className="container mx-auto px-4 max-w-8xl">
+            <div className="mb-10 text-center">
+              <h2 className="text-3xl font-serif text-slate-900 font-semibold mb-3">
+                Related Products
+              </h2>
+              <p className="text-slate-500 font-sans">
+                Explore other export-grade commodities in the {product.category} category.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {relatedProducts.map((p) => (
+                <ProductCard key={p.id} product={p} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
     </main>
   );
 }

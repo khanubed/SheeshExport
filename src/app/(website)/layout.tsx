@@ -1,6 +1,7 @@
 import { AnnouncementBar } from "@/components/navigation/AnnouncementBar";
 import { Header } from "@/components/navigation/Header";
 import { Footer } from "@/components/navigation/Footer";
+import { FloatingWidget } from "@/components/ui/FloatingWidget";
 
 export default function WebsiteLayout({
   children,
@@ -13,6 +14,7 @@ export default function WebsiteLayout({
       <Header />
       <main className="flex-1">{children}</main>
       <Footer />
+      <FloatingWidget />
     </div>
   );
 }

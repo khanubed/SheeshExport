@@ -1,4 +1,4 @@
-import { Product } from "@/types/product";
+import { Product } from "@/lib/data/types";
 import { SITE_CONFIG } from "@/config/site";
 
 export function buildProductSchema(product: Product) {
@@ -6,10 +6,9 @@ export function buildProductSchema(product: Product) {
     "@context": "https://schema.org",
     "@type": "Product",
     name: product.name,
-    image: product.images.map((img) => img.url),
-    description: product.shortDescription || product.description,
+    image: product.variants?.[0]?.images?.map((img: any) => typeof img === "string" ? img : img.src) || [],
+    description: product.description,
     sku: `SE-${product.slug.toUpperCase()}`,
-    mpn: product.hsCode,
     brand: {
       "@type": "Brand",
       name: SITE_CONFIG.name,

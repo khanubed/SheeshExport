@@ -176,7 +176,7 @@ export default function CertificationsPage() {
                 </div>
                 {cert.image && (
                   <div className="w-full md:w-[200px] h-[120px] bg-card border border-border flex items-center justify-center p-4 relative flex-shrink-0 group">
-                    <Image src={cert.image} alt={cert.name} fill className="object-contain p-4 grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" />
+                    <Image src={cert.image} alt={cert.name} fill className="object-contain p-4transition-all duration-500" />
                   </div>
                 )}
               </div>

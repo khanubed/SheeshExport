@@ -20,9 +20,11 @@ export const MAIN_NAV: NavItem[] = [
     title: "Products",
     href: "/products",
     children: [
-      { title: "Whole & Ground Spices", href: "/categories/spices", description: "Red Chilli, Turmeric, Cumin, Coriander, Black Pepper." },
-      { title: "Oil Seeds", href: "/categories/oil-seeds", description: "Natural & Hulled Sesame, Mustard, Groundnut." },
-      { title: "Grains & Pulses", href: "/categories/pulses", description: "Chickpeas, Lentils, Basmati & Non-Basmati Rice." },
+      { title: "Whole Spices", href: "/categories/whole-spices", description: "Premium Indian whole spices including chilli, cumin, and turmeric." },
+      { title: "Oil Seeds", href: "/categories/oil-seeds", description: "Sortex-cleaned sesame, peanut, and mustard seeds." },
+      { title: "Pulses", href: "/categories/pulses", description: "Export-grade chickpeas, lentils, and beans." },
+      { title: "Grains", href: "/categories/grains", description: "Basmati rice, wheat, and millets." },
+      { title: "Dry Fruits", href: "/categories/dry-fruits", description: "High-grade cashews, raisins, and premium nuts." },
       { title: "View All Products", href: "/products", description: "Complete B2B product catalog and grade specifications." },
     ],
   },
@@ -57,11 +59,11 @@ export const MAIN_NAV: NavItem[] = [
 
 export const FOOTER_NAV = {
   products: [
-    { title: "Red Chilli", href: "/products/red-chilli" },
-    { title: "Turmeric Finger & Powder", href: "/products/turmeric" },
-    { title: "Cumin Seeds", href: "/products/cumin" },
-    { title: "Coriander Seeds", href: "/products/coriander" },
-    { title: "Sesame Seeds", href: "/products/sesame-seeds" },
+    { title: "Whole Red Chilli", href: "/products/whole-spices/whole-red-chilli-guntur" },
+    { title: "1121 Basmati Rice", href: "/products/rice/1121" },
+    { title: "Yellow Maize", href: "/products/grains-millets/maizewhite-yellow" },
+    { title: "Peanuts", href: "/products/dry-fruits-nuts/peanut-whole" },
+    { title: "Green Peas", href: "/products/pulses-beans/green-peas" },
     { title: "All Products", href: "/products" },
   ],
   company: [

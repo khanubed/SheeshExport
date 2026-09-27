@@ -8,15 +8,22 @@ import { faLinkedinIn, faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 export function Footer() {
   return (
-    <footer className="bg-card text-card-foreground border-t border-border mt-16">
-      <div className="mx-auto max-w-7xl px-4 pb-8 pt-16 sm:px-6 lg:px-8">
+    <footer className="bg-card text-card-foreground border-t border-border">
+      <div className="mx-auto max-w-8xl px-4 pb-8 pt-16 sm:px-6 lg:px-8">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
             <Link href="/" className="flex items-center space-x-2">
-              <Image src="/images/sheesh-logo.jpeg" alt="Sheesh Exports Logo" width={150} height={50} className="h-12 w-auto object-contain dark:invert" />
+              <Image
+                src="/images/sheesh-logo.jpeg"
+                alt="Sheesh Exports Logo"
+                width={150}
+                height={50}
+                className="h-12 w-auto object-contain dark:invert"
+              />
             </Link>
             <p className="text-sm leading-6 text-muted-foreground max-w-xs">
-              Bringing the richness of Indian agriculture to the world. Premium quality spices, grains, and agro-commodities.
+              Bringing the richness of Indian agriculture to the world. Premium quality spices,
+              grains, and agro-commodities.
             </p>
             <div className="flex space-x-6 items-center">
               <a href="#" className="text-muted-foreground hover:text-primary">
@@ -36,11 +43,16 @@ export function Footer() {
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm font-semibold leading-6 text-foreground font-heading tracking-wide uppercase">Company</h3>
+                <h3 className="text-sm font-semibold leading-6 text-foreground font-heading tracking-wide uppercase">
+                  Company
+                </h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {FOOTER_NAV.company.map((item) => (
                     <li key={item.title}>
-                      <Link href={item.href} className="text-sm leading-6 text-muted-foreground hover:text-primary">
+                      <Link
+                        href={item.href}
+                        className="text-sm leading-6 text-muted-foreground hover:text-primary"
+                      >
                         {item.title}
                       </Link>
                     </li>
@@ -48,11 +60,16 @@ export function Footer() {
                 </ul>
               </div>
               <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold leading-6 text-foreground font-heading tracking-wide uppercase">Products</h3>
+                <h3 className="text-sm font-semibold leading-6 text-foreground font-heading tracking-wide uppercase">
+                  Products
+                </h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {FOOTER_NAV.products.map((item) => (
                     <li key={item.title}>
-                      <Link href={item.href} className="text-sm leading-6 text-muted-foreground hover:text-primary">
+                      <Link
+                        href={item.href}
+                        className="text-sm leading-6 text-muted-foreground hover:text-primary"
+                      >
                         {item.title}
                       </Link>
                     </li>
@@ -62,11 +79,16 @@ export function Footer() {
             </div>
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm font-semibold leading-6 text-foreground font-heading tracking-wide uppercase">Services</h3>
+                <h3 className="text-sm font-semibold leading-6 text-foreground font-heading tracking-wide uppercase">
+                  Services
+                </h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {FOOTER_NAV.services.map((item) => (
                     <li key={item.title}>
-                      <Link href={item.href} className="text-sm leading-6 text-muted-foreground hover:text-primary">
+                      <Link
+                        href={item.href}
+                        className="text-sm leading-6 text-muted-foreground hover:text-primary"
+                      >
                         {item.title}
                       </Link>
                     </li>
@@ -74,12 +96,16 @@ export function Footer() {
                 </ul>
               </div>
               <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold leading-6 text-foreground font-heading tracking-wide uppercase">Newsletter</h3>
+                <h3 className="text-sm font-semibold leading-6 text-foreground font-heading tracking-wide uppercase">
+                  Newsletter
+                </h3>
                 <p className="mt-6 text-sm leading-6 text-muted-foreground">
                   Stay updated with the latest export insights and market trends.
                 </p>
                 <form className="mt-6 flex flex-col gap-3 max-w-xs">
-                  <label htmlFor="email-address" className="sr-only">Email address</label>
+                  <label htmlFor="email-address" className="sr-only">
+                    Email address
+                  </label>
                   <input
                     type="email"
                     name="email-address"
@@ -89,7 +115,9 @@ export function Footer() {
                     className="flex h-10 w-full min-w-0 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                     placeholder="Enter your email"
                   />
-                  <Button type="submit" className="w-full h-10">Subscribe</Button>
+                  <Button type="submit" className="w-full h-10">
+                    Subscribe
+                  </Button>
                 </form>
               </div>
             </div>

@@ -1,5 +1,7 @@
 import { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo/metadata";
+import { buildBreadcrumbSchema } from "@/lib/seo/breadcrumb";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { getMarkets } from "@/lib/cms/queries";
 import Link from "next/link";
 
@@ -12,9 +14,15 @@ export const metadata: Metadata = buildMetadata({
 
 export default async function ExportMarketsPage() {
   const markets = await getMarkets();
+  
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { label: "Home", href: "/" },
+    { label: "Export Markets", href: "/export-markets" },
+  ]);
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-8xl px-4 py-16 sm:px-6 lg:px-8">
+      <JsonLd data={breadcrumbSchema} />
       <div>
         <span className="text-xs font-semibold uppercase tracking-wider text-emerald-700">
           Global Reach
@@ -23,13 +31,17 @@ export default async function ExportMarketsPage() {
           International Export Corridors
         </h1>
         <p className="mt-4 max-w-2xl text-base text-slate-600">
-          We maintain established logistics routes, customs documentation familiarity, and fast ocean transit to major commercial ports worldwide.
+          We maintain established logistics routes, customs documentation familiarity, and fast
+          ocean transit to major commercial ports worldwide.
         </p>
       </div>
 
       <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {markets.map((m) => (
-          <div key={m.id} className="flex flex-col rounded-xl border border-slate-200 bg-card p-6 shadow-sm">
+          <div
+            key={m.id}
+            className="flex flex-col rounded-xl border border-slate-200 bg-card p-6 shadow-sm"
+          >
             <span className="text-xs font-semibold text-emerald-700">{m.region}</span>
             <h2 className="mt-1 text-xl font-bold text-slate-900">{m.country}</h2>
             <p className="mt-3 text-sm text-slate-600 flex-1">{m.overview}</p>

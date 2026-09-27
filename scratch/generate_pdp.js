@@ -1,10 +1,10 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
-const outDir = path.join(__dirname, '..', 'src', 'components', 'products', 'pdp');
+const outDir = path.join(__dirname, "..", "src", "components", "products", "pdp");
 
 const files = {
-  'ProductDetailClient.tsx': `
+  "ProductDetailClient.tsx": `
 "use client";
 import React, { useState, useEffect } from "react";
 import { Product, Variant } from "@/lib/data/types";
@@ -58,7 +58,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
       <ProductOriginStory product={product} />
       <ProductGallery variant={selectedVariant} />
       <div className="bg-slate-50 border-t border-b border-slate-100 py-16">
-        <div className="container mx-auto px-4 max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="container mx-auto px-4 max-w-8xl grid grid-cols-1 lg:grid-cols-2 gap-16">
           <VariantAttributes variant={selectedVariant} />
           <ProductSpecifications variant={selectedVariant} />
         </div>
@@ -77,7 +77,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
 }
   `,
 
-  'ProductHero.tsx': `
+  "ProductHero.tsx": `
 "use client";
 import React from "react";
 import Image from "next/image";
@@ -90,7 +90,7 @@ import { Button } from "@/components/ui/button";
 export function ProductHero({ product, selectedVariant }: { product: Product; selectedVariant: Variant }) {
   return (
     <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden border-b border-slate-100">
-      <div className="container mx-auto px-4 max-w-7xl">
+      <div className="container mx-auto px-4 max-w-8xl">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           
           <motion.div 
@@ -166,7 +166,7 @@ export function ProductHero({ product, selectedVariant }: { product: Product; se
 }
   `,
 
-  'ProductVariants.tsx': `
+  "ProductVariants.tsx": `
 "use client";
 import React from "react";
 import { Product, Variant } from "@/lib/data/types";
@@ -175,7 +175,7 @@ import { cn } from "@/lib/utils";
 export function ProductVariants({ product, selectedVariant, onSelect }: { product: Product; selectedVariant: Variant; onSelect: (v: Variant) => void }) {
   return (
     <section className="py-12 bg-white">
-      <div className="container mx-auto px-4 max-w-7xl">
+      <div className="container mx-auto px-4 max-w-8xl">
         <h3 className="text-sm font-semibold tracking-widest uppercase text-slate-500 mb-6">Available Grades & Variants</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {product.variants.map((variant) => (
@@ -206,7 +206,7 @@ export function ProductVariants({ product, selectedVariant, onSelect }: { produc
 }
   `,
 
-  'ProductOriginStory.tsx': `
+  "ProductOriginStory.tsx": `
 "use client";
 import React from "react";
 import Image from "next/image";
@@ -216,7 +216,7 @@ import { MapPin } from "lucide-react";
 export function ProductOriginStory({ product }: { product: Product }) {
   return (
     <section className="py-24 bg-slate-900 text-slate-50">
-      <div className="container mx-auto px-4 max-w-7xl">
+      <div className="container mx-auto px-4 max-w-8xl">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           <div className="w-full lg:w-1/2">
             <h2 className="text-sm font-semibold tracking-widest uppercase text-slate-400 mb-4">The Origin Story</h2>
@@ -243,7 +243,7 @@ export function ProductOriginStory({ product }: { product: Product }) {
 }
   `,
 
-  'ProductGallery.tsx': `
+  "ProductGallery.tsx": `
 "use client";
 import React from "react";
 import Image from "next/image";
@@ -253,7 +253,7 @@ export function ProductGallery({ variant }: { variant: Variant }) {
   if (!variant.images || variant.images.length === 0) return null;
   return (
     <section className="py-20 bg-white">
-      <div className="container mx-auto px-4 max-w-7xl">
+      <div className="container mx-auto px-4 max-w-8xl">
         <h2 className="text-sm font-semibold tracking-widest uppercase text-slate-500 mb-8">Product Gallery — {variant.name}</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {variant.images.map((img, idx) => (
@@ -273,7 +273,7 @@ export function ProductGallery({ variant }: { variant: Variant }) {
 }
   `,
 
-  'VariantAttributes.tsx': `
+  "VariantAttributes.tsx": `
 "use client";
 import React from "react";
 import { Variant } from "@/lib/data/types";
@@ -295,7 +295,7 @@ export function VariantAttributes({ variant }: { variant: Variant }) {
 }
   `,
 
-  'ProductSpecifications.tsx': `
+  "ProductSpecifications.tsx": `
 "use client";
 import React from "react";
 import { Variant } from "@/lib/data/types";
@@ -317,7 +317,7 @@ export function ProductSpecifications({ variant }: { variant: Variant }) {
 }
   `,
 
-  'ProductShipping.tsx': `
+  "ProductShipping.tsx": `
 "use client";
 import React from "react";
 import { ShippingDetails } from "@/lib/data/types";
@@ -326,7 +326,7 @@ import { Ship, Anchor, Clock, Box } from "lucide-react";
 export function ProductShipping({ shipping }: { shipping: ShippingDetails }) {
   return (
     <section className="py-20 bg-slate-900 text-white">
-      <div className="container mx-auto px-4 max-w-7xl">
+      <div className="container mx-auto px-4 max-w-8xl">
         <div className="text-center mb-16">
           <h2 className="text-sm font-semibold tracking-widest uppercase text-slate-400 mb-4">Logistics</h2>
           <h3 className="text-3xl lg:text-4xl font-serif font-medium">Shipping & Containerization</h3>
@@ -363,7 +363,7 @@ export function ProductShipping({ shipping }: { shipping: ShippingDetails }) {
 }
   `,
 
-  'ProductPackaging.tsx': `
+  "ProductPackaging.tsx": `
 "use client";
 import React from "react";
 import { PackagingOption } from "@/lib/data/types";
@@ -372,7 +372,7 @@ import { Check } from "lucide-react";
 export function ProductPackaging({ options }: { options: PackagingOption[] }) {
   return (
     <section className="py-24 bg-white">
-      <div className="container mx-auto px-4 max-w-7xl">
+      <div className="container mx-auto px-4 max-w-8xl">
         <div className="mb-16">
           <h2 className="text-sm font-semibold tracking-widest uppercase text-slate-500 mb-4">Fulfillment</h2>
           <h3 className="text-3xl lg:text-4xl font-serif font-semibold text-slate-900">Packaging Options</h3>
@@ -408,7 +408,7 @@ export function ProductPackaging({ options }: { options: PackagingOption[] }) {
 }
   `,
 
-  'ProductCertifications.tsx': `
+  "ProductCertifications.tsx": `
 "use client";
 import React from "react";
 import { ShieldCheck } from "lucide-react";
@@ -416,7 +416,7 @@ import { ShieldCheck } from "lucide-react";
 export function ProductCertifications({ certifications }: { certifications: string[] }) {
   return (
     <section className="py-16 bg-slate-100 border-y border-slate-200">
-      <div className="container mx-auto px-4 max-w-7xl flex flex-col md:flex-row items-center gap-8">
+      <div className="container mx-auto px-4 max-w-8xl flex flex-col md:flex-row items-center gap-8">
         <div className="flex-shrink-0">
           <h3 className="text-lg font-serif font-semibold text-slate-900 flex items-center gap-2">
             <ShieldCheck className="w-5 h-5 text-green-600" /> Quality & Compliance
@@ -435,7 +435,7 @@ export function ProductCertifications({ certifications }: { certifications: stri
 }
   `,
 
-  'ProductExportMarkets.tsx': `
+  "ProductExportMarkets.tsx": `
 "use client";
 import React from "react";
 import { Globe2 } from "lucide-react";
@@ -443,7 +443,7 @@ import { Globe2 } from "lucide-react";
 export function ProductExportMarkets({ markets }: { markets: string[] }) {
   return (
     <section className="py-24 bg-white">
-      <div className="container mx-auto px-4 max-w-7xl text-center">
+      <div className="container mx-auto px-4 max-w-8xl text-center">
         <Globe2 className="w-12 h-12 text-slate-300 mx-auto mb-6" />
         <h3 className="text-3xl font-serif font-semibold text-slate-900 mb-8">Global Export Markets</h3>
         <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
@@ -459,7 +459,7 @@ export function ProductExportMarkets({ markets }: { markets: string[] }) {
 }
   `,
 
-  'VariantComparison.tsx': `
+  "VariantComparison.tsx": `
 "use client";
 import React from "react";
 import { Variant } from "@/lib/data/types";
@@ -472,7 +472,7 @@ export function VariantComparison({ variants }: { variants: Variant[] }) {
 
   return (
     <section className="py-24 bg-slate-50">
-      <div className="container mx-auto px-4 max-w-7xl">
+      <div className="container mx-auto px-4 max-w-8xl">
         <h3 className="text-3xl font-serif font-semibold text-slate-900 mb-12 text-center">Grade Comparison</h3>
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse bg-white shadow-sm border border-slate-200">
@@ -503,7 +503,7 @@ export function VariantComparison({ variants }: { variants: Variant[] }) {
 }
   `,
 
-  'ProductFAQ.tsx': `
+  "ProductFAQ.tsx": `
 "use client";
 import React from "react";
 import { FAQ } from "@/lib/data/types";
@@ -528,7 +528,7 @@ export function ProductFAQ({ faqs }: { faqs: FAQ[] }) {
 }
   `,
 
-  'ProductRFQCTA.tsx': `
+  "ProductRFQCTA.tsx": `
 "use client";
 import React from "react";
 import { Product } from "@/lib/data/types";
@@ -558,11 +558,11 @@ export function ProductRFQCTA({ product }: { product: Product }) {
     </section>
   );
 }
-  `
+  `,
 };
 
 for (const [filename, content] of Object.entries(files)) {
   fs.writeFileSync(path.join(outDir, filename), content.trim());
 }
 
-console.log('Successfully generated 15 PDP components in', outDir);
+console.log("Successfully generated 15 PDP components in", outDir);

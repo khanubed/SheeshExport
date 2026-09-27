@@ -2,6 +2,9 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getMarketBySlug, getMarkets } from "@/lib/cms/queries";
 import { buildMetadata } from "@/lib/seo/metadata";
+import { buildBreadcrumbSchema } from "@/lib/seo/breadcrumb";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { SITE_CONFIG } from "@/config/site";
 import Link from "next/link";
 
 interface MarketPageProps {
@@ -25,7 +28,7 @@ export async function generateMetadata({ params }: MarketPageProps): Promise<Met
   }
 
   return buildMetadata({
-    title: market.seo.title || `Exporting Indian Spices to ${market.country}`,
+    title: market.seo.title || `Exporting Indian Agro Commodities to ${market.country}`,
     description: market.seo.description || market.overview,
     pathname: `/export-markets/${market.slug}`,
   });
@@ -39,13 +42,35 @@ export default async function MarketDetailPage({ params }: MarketPageProps) {
     notFound();
   }
 
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { label: "Home", href: "/" },
+    { label: "Export Markets", href: "/export-markets" },
+    { label: market.country, href: `/export-markets/${market.slug}` },
+  ]);
+
+  const itemPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemPage",
+    name: `Exporting Indian Agro Commodities to ${market.country}`,
+    description: market.overview,
+    url: `${SITE_CONFIG.url}/export-markets/${market.slug}`,
+  };
+
   return (
-    <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-8xl px-4 py-16 sm:px-6 lg:px-8">
+      <JsonLd data={[breadcrumbSchema, itemPageSchema]} />
       {/* Breadcrumbs */}
-      <nav aria-label="Breadcrumb" className="mb-6 flex items-center space-x-2 text-xs text-slate-500">
-        <Link href="/" className="hover:text-slate-800">Home</Link>
+      <nav
+        aria-label="Breadcrumb"
+        className="mb-6 flex items-center space-x-2 text-xs text-slate-500"
+      >
+        <Link href="/" className="hover:text-slate-800">
+          Home
+        </Link>
         <span>/</span>
-        <Link href="/export-markets" className="hover:text-slate-800">Export Markets</Link>
+        <Link href="/export-markets" className="hover:text-slate-800">
+          Export Markets
+        </Link>
         <span>/</span>
         <span className="font-semibold text-slate-900">{market.country}</span>
       </nav>
@@ -57,12 +82,12 @@ export default async function MarketDetailPage({ params }: MarketPageProps) {
         <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
           Exporting Indian Commodities to {market.country}
         </h1>
-        <p className="mt-4 text-base leading-relaxed text-slate-600">
-          {market.overview}
-        </p>
+        <p className="mt-4 text-base leading-relaxed text-slate-600">{market.overview}</p>
 
         <div className="mt-8 rounded-xl border border-slate-200 bg-slate-50 p-6">
-          <h2 className="text-lg font-bold text-slate-900">Key Regulatory & Customs Requirements</h2>
+          <h2 className="text-lg font-bold text-slate-900">
+            Key Regulatory & Customs Requirements
+          </h2>
           <ul className="mt-4 space-y-2 text-sm text-slate-700">
             {market.keyImportRequirements.map((req, i) => (
               <li key={i} className="flex items-start">

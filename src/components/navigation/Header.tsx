@@ -1,15 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import { MAIN_NAV } from "@/config/navigation";
-import { ThemeToggle } from "@/components/ThemeToggle";
-import { Search, ChevronDown, Leaf } from "lucide-react";
+import { ChevronDown, Leaf } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur-md">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-20 max-w-8xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center space-x-2">
           <Image src="/images/sheesh-logo.jpeg" alt="Sheesh Exports Logo" width={150} height={50} className="h-12 w-auto object-contain dark:invert" />
         </Link>
@@ -51,10 +50,6 @@ export function Header() {
         </nav>
 
         <div className="flex items-center space-x-4">
-          <button className="text-muted-foreground hover:text-foreground" aria-label="Search">
-            <Search className="h-5 w-5" />
-          </button>
-          <ThemeToggle />
           <Link href="/request-quote" className={cn(buttonVariants({ variant: "default" }), "hidden sm:inline-flex")}>
             Request a Quote
           </Link>

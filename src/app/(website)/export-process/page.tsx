@@ -16,63 +16,63 @@ const EXPORT_JOURNEY = [
   {
     step: "01",
     title: "Sourcing",
-    image: "/images/about/mission.jpg",
+    image: "/images/about/infra-sourcing.png",
     desc: "Products sourced from approved growing regions through verified suppliers and farming networks.",
     tags: ["Guntur", "Erode", "Unjha", "Malabar"]
   },
   {
     step: "02",
     title: "Cleaning & Sorting",
-    image: "/images/about/factory-processing.jpg",
+    image: "/images/about/infra-cleaning.jpeg",
     desc: "Removal of foreign matter, dust, stones and impurities via automated processing machinery.",
     tags: ["Mechanical Cleaning", "Destoning", "Sorting", "Grading"]
   },
   {
     step: "03",
     title: "Laboratory Testing",
-    image: "/images/about/infra-testing.jpg",
+    image: "/images/about/infra-testing.jpeg",
     desc: "Every export batch undergoes rigorous quality, microbiological, and safety verification.",
     tags: ["Moisture", "Aflatoxin", "Microbiology", "Heavy Metals", "Pesticides"]
   },
   {
     step: "04",
     title: "Product Approval",
-    image: "/images/about/quality-assurance.webp",
+    image: "/images/about/product-approvel.jpeg",
     desc: "Batches are cleared by quality inspectors against strict international limits before moving forward.",
     tags: ["Quality Release", "Compliance Check", "Batch Tagging"]
   },
   {
     step: "05",
     title: "Packaging",
-    image: "/images/about/infra-warehouse.jpg",
+    image: "/images/about/infra-packaging.jpeg",
     desc: "Customized export packaging executed according to exact buyer and destination requirements.",
     tags: ["Bulk Commodity", "Private Label", "Sheesh Packaging"]
   },
   {
     step: "06",
     title: "Container Planning",
-    image: "/images/about/vision.jpg",
+    image: "/images/about/container-planning.jpeg",
     desc: "Optimized loading plans maximize product protection, weight limits, and freight efficiency.",
     tags: ["20FT Containers", "40FT HC", "FCL", "LCL", "Mixed Containers"]
   },
   {
     step: "07",
     title: "Documentation",
-    image: "/images/about/quality-assurance.webp",
+    image: "/images/about/documentation.png",
     desc: "Complete documentation prepared to ensure frictionless customs clearance at destination ports.",
     tags: ["Commercial Invoice", "Certificate of Origin", "Phytosanitary", "Bill of Lading"]
   },
   {
     step: "08",
     title: "Port Clearance",
-    image: "/images/about/infra-warehouse.jpg",
+    image: "/images/about/port-clearance.jpeg",
     desc: "Efficient customs clearance and terminal handling operations through major Indian ports.",
     tags: ["Nhava Sheva", "Mundra", "Chennai", "Krishnapatnam"]
   },
   {
     step: "09",
     title: "Global Delivery",
-    image: "/images/about/factory-processing.jpg",
+    image: "/images/about/global-delivery.jpeg",
     desc: "Products shipped worldwide through our network of trusted ocean freight and logistics partners.",
     tags: ["USA", "Europe", "Middle East", "Africa", "Asia Pacific"]
   }
@@ -136,12 +136,12 @@ export default function ExportProcessPage() {
       {/* SECTION 01: HERO */}
       <section className="relative min-h-[70vh] flex flex-col justify-center bg-primary text-primary-foreground overflow-hidden">
         {/* Split Screen Background */}
-        <div className="absolute inset-0 z-0 flex opacity-30 mix-blend-luminosity">
-          <div className="w-1/3 relative"><Image src="/images/about/mission.jpg" alt="Farm Sourcing" fill className="object-cover" /></div>
+        <div className="absolute inset-0 z-0 flex ">
+          <div className="w-1/3 relative"><Image src="/images/about/infra-sourcing.png" alt="Farm Sourcing" fill className="object-cover" /></div>
           <div className="w-1/3 relative border-x border-primary-foreground/10"><Image src="/images/about/factory-processing.jpg" alt="Processing Facility" fill className="object-cover" /></div>
-          <div className="w-1/3 relative"><Image src="/images/about/infra-warehouse.jpg" alt="Export Container" fill className="object-cover" /></div>
+          <div className="w-1/3 relative"><Image src="/images/about/infra-warehouse.jpeg" alt="Export Container" fill className="object-cover" /></div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B2F26] via-[#0B2F26]/80 to-transparent z-10" />
+        <div className="absolute inset-0 bg-black/70 z-10" />
 
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 relative z-20 pt-20 pb-10">
           <span className="inline-block text-secondary font-semibold tracking-[0.2em] uppercase text-xs mb-8 border-b border-secondary/30 pb-2 max-w-max">
@@ -191,8 +191,8 @@ export default function ExportProcessPage() {
               const isEven = idx % 2 !== 0;
               return (
                 <div key={idx} className={`flex flex-col ${isEven ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-10 lg:gap-20 items-center`}>
-                  <div className="w-full lg:w-1/2 relative h-[350px] lg:h-[500px]">
-                    <Image src={step.image} alt={step.title} fill className="object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700 shadow-sm" />
+                  <div className="w-full lg:w-1/2 relative h-[350px] aspect-4/3 lg:h-[500px]">
+                    <Image src={step.image} alt={step.title} fill className="object-cover aspect-4/3 grayscale-[30%] hover:grayscale-0 transition-all duration-700 shadow-sm" />
                     <div className="absolute top-6 left-6 bg-primary text-primary-foreground px-4 py-2 font-heading text-3xl font-medium shadow-md">
                       {step.step}
                     </div>

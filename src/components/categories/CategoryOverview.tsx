@@ -3,30 +3,22 @@ import { Category } from "@/lib/data/categories";
 
 export function CategoryOverview({ category }: { category: Category }) {
   return (
-    <section className="py-20 lg:py-32 bg-white border-b border-slate-200">
+    <section className="py-12 lg:py-16 bg-white border-b border-slate-200">
        <div className="max-w-screen-xl mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
              
              {/* Left: Narrative (60%) */}
              <div className="lg:col-span-7 flex flex-col gap-8">
                 <div>
-                   <h2 className="text-xs uppercase tracking-[0.2em] font-bold text-slate-400 mb-6 font-sans">Industry Overview</h2>
-                   <p className="text-xl lg:text-2xl font-serif text-slate-900 leading-relaxed">
-                      {category.overview.industry}
-                   </p>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
-                   <div>
-                      <h3 className="text-[10px] uppercase tracking-[0.15em] font-bold text-slate-400 mb-3 font-sans border-b border-slate-900 pb-2 inline-block">Production & Sourcing</h3>
-                      <p className="text-sm text-slate-600 leading-relaxed font-sans">
-                         {category.overview.production}
-                      </p>
-                   </div>
-                   <div>
-                      <h3 className="text-[10px] uppercase tracking-[0.15em] font-bold text-slate-400 mb-3 font-sans border-b border-slate-900 pb-2 inline-block">Global Supply Network</h3>
-                      <p className="text-sm text-slate-600 leading-relaxed font-sans">
-                         {category.overview.supplyNetwork}
-                      </p>
+                   <h2 className="text-3xl lg:text-4xl font-serif text-slate-900 font-semibold mb-6">
+                     {category.heroTitle || `${category.name} Export Solutions`}
+                   </h2>
+                   <div className="text-lg text-slate-700 leading-relaxed font-sans space-y-4">
+                     {category.overviewText?.split('\n\n').map((paragraph, idx) => (
+                       <p key={idx}>{paragraph}</p>
+                     )) || (
+                       <p>{category.overview.industry} {category.overview.production}</p>
+                     )}
                    </div>
                 </div>
              </div>

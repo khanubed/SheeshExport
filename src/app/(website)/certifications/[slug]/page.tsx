@@ -97,7 +97,7 @@ export default async function CertificationDetailPage({ params }: PageProps) {
           <div className="bg-background border border-border p-4 sm:p-8">
             <div className="relative w-full aspect-[1/1.4] sm:aspect-[16/9] lg:aspect-[21/9] bg-card border border-[#1E1E1E]/5 shadow-sm mb-8 flex items-center justify-center overflow-hidden group">
               {displayImage ? (
-                <Image src={displayImage} alt={`${name} Document Viewer`} fill className="object-contain p-8 md:p-16 grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" />
+                <Image src={displayImage} alt={`${name} Document Viewer`} fill className="object-contain p-8 md:p-16 transition-all duration-500" />
               ) : (
                 <div className="text-center text-foreground/30 font-heading text-4xl">Document Viewer Placeholder</div>
               )}

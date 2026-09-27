@@ -15,6 +15,8 @@ import {
   ShieldCheck,
   Award,
   FileText,
+  Boxes,
+  Globe2,
 } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { ProductCarousel } from "@/components/home/ProductCarousel";
@@ -72,11 +74,37 @@ const PRODUCT_CATEGORIES = [
   },
 ];
 
-const FEATURES = [
-  { title: "Consistent Quality", desc: "International Standards" },
-  { title: "On-Time Delivery", desc: "Global Logistics Network" },
-  { title: "Flexible MOQs", desc: "For Businesses of All Sizes" },
-  { title: "Dedicated Export Support", desc: "From Inquiry to Shipment" },
+const ADVANTAGES = [
+  {
+    title: "Farm Sourcing",
+    desc: "Sourced directly from verified farming networks across India's leading agricultural regions, ensuring full traceability from origin to shipment.",
+    icon: Leaf
+  },
+  {
+    title: "Quality Assurance",
+    desc: "Every batch undergoes rigorous testing for moisture, purity, and contamination to meet your destination market's strict compliance standards.",
+    icon: ShieldCheck
+  },
+  {
+    title: "Private Label",
+    desc: "From bulk supply to custom retail-ready formats, we offer complete OEM manufacturing and flexible packaging adapted to your business model.",
+    icon: Package
+  },
+  {
+    title: "Export Compliance",
+    desc: "Our dedicated team manages all regulatory documentation, phytosanitary requirements, and customs clearance to streamline international procurement.",
+    icon: FileText
+  },
+  {
+    title: "Mixed Containers",
+    desc: "Import multiple product categories in a single shipment. Optimize freight costs and simplify supplier management with our consolidation program.",
+    icon: Boxes
+  },
+  {
+    title: "Global Logistics",
+    desc: "Serving buyers across North America, Europe, the Middle East, and Asia with end-to-end container planning and dedicated freight coordination.",
+    icon: Globe2
+  },
 ];
 
 const INDUSTRIES = [
@@ -87,18 +115,19 @@ const INDUSTRIES = [
 ];
 
 const CERTIFICATIONS = [
-  { name: "APEDA", desc: "Registered Exporter", img: "/images/certificates/APEDA.png.webp" },
+  { name: "APEDA", desc: "Registered Exporter", img: "/images/certificates/APEDA.png.webp", slug: "apeda" },
   {
     name: "Spices Board",
     desc: "Certified Member",
     img: "/images/certificates/SPICES-BOARD-CERTIFICATE.webp",
+    slug: "spices-board-india"
   },
-  { name: "FSSAI", desc: "Food Safety", img: "/images/certificates/FSSAI.webp" },
-  { name: "FIEO", desc: "Export Organization", img: "/images/certificates/FIEO-Logo-Trans-1.webp" },
-  { name: "IEC", desc: "Import Export Code", img: "/images/certificates/IEC-CERTIFICATE.png.webp" },
-  { name: "MSME", desc: "Govt. of India", img: "/images/certificates/MSME_logo_colour.svg" },
-  { name: "GST", desc: "Registered", img: "/images/certificates/gst-1.webp" },
-  { name: "Star Export House", desc: "Recognized", img: "/images/certificates/star.webp" },
+  { name: "FSSAI", desc: "Food Safety", img: "/images/certificates/FSSAI.webp", slug: "fssai" },
+  { name: "FIEO", desc: "Export Organization", img: "/images/certificates/FIEO-Logo-Trans-1.webp", slug: "fieo" },
+  { name: "IEC", desc: "Import Export Code", img: "/images/certificates/IEC-CERTIFICATE.png.webp", slug: "iec" },
+  { name: "MSME", desc: "Govt. of India", img: "/images/certificates/MSME_logo_colour.svg", slug: "msme" },
+  { name: "GST", desc: "Registered", img: "/images/certificates/gst-1.webp", slug: "gst" },
+  { name: "Star Export House", desc: "Recognized", img: "/images/certificates/star.webp", slug: "star-export-house" },
 ];
 
 const INSIGHTS = [
@@ -121,6 +150,7 @@ const INSIGHTS = [
     href: "#",
   },
 ];
+
 
 export default function HomePage() {
   return (
@@ -152,13 +182,13 @@ export default function HomePage() {
             className="object-cover w-full h-full -scale-x-100"
           >
             <source
-              src="/Generated%20Video%20September%2022,%202026%20-%202_18PM.mp4"
+              src="/hero-video.mp4"
               type="video/mp4"
             />
           </video>
           <div className="absolute inset-0 bg-black/60 dark:bg-black/20" />
         </div>
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full text-white">
+        <div className="relative z-10 mx-auto max-w-8xl px-4 sm:px-6 lg:px-8 w-full text-white">
           <FadeIn>
             <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-4 block">
               Indian Origin. Global Reach.
@@ -166,7 +196,7 @@ export default function HomePage() {
             <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] max-w-3xl mb-6">
               Premium Spices & Agro Commodities from India
             </h1>
-            <p className="text-lg sm:text-xl text-slate-300 max-w-2xl mb-10 leading-relaxed font-sans">
+            <p className="text-lg sm:text-xl text-slate-300 max-w-2xl mb-4 leading-relaxed font-sans">
               We are a leading exporter of spices, grains, oil seeds, pulses and allied food
               products, delivering authentic Indian quality to markets worldwide.
             </p>
@@ -211,9 +241,9 @@ export default function HomePage() {
         </div>
       </section>
       {/* Certifications */}
-      <section className="py-24 bg-background">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+      <section className="py-12 bg-background">
+        <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-4">
             <FadeIn>
               <span className="text-xs font-semibold tracking-wider uppercase text-primary mb-4 block">
                 Quality & Compliance
@@ -232,7 +262,7 @@ export default function HomePage() {
             <CertificationsCarousel certifications={CERTIFICATIONS} />
           </FadeIn>
 
-          <FadeIn className="mt-12 text-center">
+          <FadeIn className="mt-6 text-center">
             <Link
               href="/certifications"
               className={buttonVariants({ variant: "outline", className: "font-sans" })}
@@ -244,7 +274,7 @@ export default function HomePage() {
       </section>
       {/* Product Range */}
       <section className="pb-24 bg-background">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
           <FadeIn className="flex flex-col md:flex-row md:items-end justify-between mb-16">
             <div className="max-w-2xl">
               <span className="text-xs font-semibold tracking-wider uppercase text-muted-foreground mb-2 block">
@@ -256,7 +286,7 @@ export default function HomePage() {
                 Diverse Possibilities.
               </h2>
             </div>
-            <div className="mt-6 md:mt-0 max-w-md">
+            <div className=" md:mt-0 max-w-md">
               <p className="text-muted-foreground mb-4">
                 From aromatic spices to wholesome grains, we supply nature's best — sourced,
                 processed and packed to meet global standards.
@@ -270,71 +300,121 @@ export default function HomePage() {
             </div>
           </FadeIn>
 
-          <FadeIn className="mt-12">
+          <FadeIn className="mt-4">
             <ProductCarousel categories={PRODUCT_CATEGORIES} />
           </FadeIn>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="relative py-24 border-y border-border overflow-hidden">
+      {/* Why Choose Us / Competitive Advantage */}
+      <section className="relative py-16 border-y border-border overflow-hidden bg-black">
         <div className="absolute inset-0 z-0">
-          <video autoPlay loop muted playsInline className="object-cover w-full h-full ">
+          <video autoPlay loop muted playsInline className="object-cover w-full h-full grayscale opacity-30">
             <source src="/12351626_3840_2160_30fps.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-black/80 dark:bg-black/80" />
+          <div className="absolute inset-0 bg-black/50" />
+          {/* Subtle noise/texture overlay to remove pure flatness */}
+          <div className="absolute inset-0 opacity-10 bg-[url('/images/noise.png')] mix-blend-overlay pointer-events-none" />
         </div>
+
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <FadeIn>
-              <span className="text-xs font-semibold tracking-wider uppercase text-white/80 mb-4 block">
-                Our Strengths
-              </span>
-              <h2 className="font-heading text-4xl sm:text-5xl font-bold text-white mb-6 leading-tight">
-                Why Global Buyers
-                <br />
-                Choose Us
-              </h2>
-              <p className="text-slate-300 text-lg mb-10 max-w-xl">
-                We combine India's rich agricultural heritage with modern infrastructure and
-                stringent quality control to deliver products you can trust.
-              </p>
+          
+          {/* Section Header */}
+          <FadeIn className="max-w-[700px] mx-auto text-center mb-16">
+            <span className="text-xs font-bold tracking-widest uppercase text-white/50 mb-4 block">
+              OUR COMPETITIVE ADVANTAGE
+            </span>
+            <h2 className="font-heading text-[clamp(3rem,5vw,5rem)] font-bold text-white mb-6 leading-[1.1]">
+              Why Global Buyers Choose Sheesh Exports
+            </h2>
+            <p className="text-white/70 text-[0.95rem] leading-[1.7] max-w-2xl mx-auto">
+              We help importers and distributors source export-grade commodities directly from India's trusted regions, simplifying international procurement with end-to-end support.
+            </p>
+          </FadeIn>
 
-              <div className="space-y-8 mb-12">
-                {FEATURES.map((feat, idx) => (
-                  <div key={idx} className="flex gap-4">
-                    <div className="mt-1 shrink-0">
-                      <CheckCircle2 className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-bold text-white">{feat.title}</h4>
-                      <p className="text-slate-300">{feat.desc}</p>
-                    </div>
+          {/* Metrics Strip */}
+          <FadeIn delay={0.1} className="mb-20 border-y border-white/10 py-10">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-white/10 text-center">
+              <div>
+                <div className="text-5xl font-bold text-white mb-2">50+</div>
+                <div className="text-white/50 text-xs font-semibold tracking-widest uppercase">Export Markets</div>
+              </div>
+              <div className="border-t border-white/10 pt-8 mt-8 md:border-t-0 md:pt-0 md:mt-0">
+                <div className="text-5xl font-bold text-white mb-2">100+</div>
+                <div className="text-white/50 text-xs font-semibold tracking-widest uppercase">Commercial SKUs</div>
+              </div>
+              <div className="border-t border-white/10 pt-8 mt-8 md:border-t-0 md:pt-0 md:mt-0">
+                <div className="text-5xl font-bold text-white mb-2">20+</div>
+                <div className="text-white/50 text-xs font-semibold tracking-widest uppercase">Product Categories</div>
+              </div>
+              <div className="border-t border-white/10 pt-8 mt-8 md:border-t-0 md:pt-0 md:mt-0">
+                <div className="text-5xl font-bold text-white mb-2">100%</div>
+                <div className="text-white/50 text-xs font-semibold tracking-widest uppercase">Export Focused</div>
+              </div>
+            </div>
+          </FadeIn>
+
+          {/* Capability Grid */}
+          <FadeIn delay={0.2} className="mb-16">
+            <div className="grid md:grid-cols-2 gap-[1px] bg-white/10 border border-white/10 shadow-2xl">
+              {ADVANTAGES.map((adv, idx) => {
+                const Icon = adv.icon;
+                return (
+                  <div key={idx} className="bg-black/60 backdrop-blur-md p-10 hover:bg-black/80 transition-colors">
+                    <Icon className="w-6 h-6 text-white/80 mb-6" />
+                    <h3 className="text-[1.125rem] font-semibold text-white mb-3">{adv.title}</h3>
+                    <p className="text-[0.95rem] leading-[1.7] text-white/60">
+                      {adv.desc}
+                    </p>
                   </div>
-                ))}
-              </div>
+                );
+              })}
+            </div>
+          </FadeIn>
 
-              <Link
-                href="/about"
-                className={buttonVariants({
-                  variant: "outline",
-                  className:
-                    "font-sans border-white/30 text-white hover:bg-white/10 hover:text-white bg-transparent",
-                })}
+          {/* Certifications */}
+          <FadeIn delay={0.3} className="mb-16 text-center flex flex-col items-center">
+            <span className="text-[10px] uppercase tracking-widest text-white/40 mb-4 block font-semibold">
+              ACCREDITATIONS & COMPLIANCE
+            </span>
+            <div className="flex flex-wrap justify-center gap-4">
+              {["ISO 22000", "APEDA", "FSSAI", "US FDA", "HALAL", "Spices Board India"].map((badge, idx) => (
+                <span key={idx} className="px-4 py-1.5 border border-white/20 text-white/60 text-[11px] font-medium tracking-widest uppercase">
+                  {badge}
+                </span>
+              ))}
+            </div>
+          </FadeIn>
+
+          {/* CTA */}
+          <FadeIn delay={0.4} className="text-center">
+            <Link
+              href="/about"
+              className="inline-flex items-center text-[0.95rem] font-semibold text-white hover:text-white/70 transition-colors group border-b border-transparent hover:border-white/70 pb-1"
+            >
+              Learn More About Sheesh Exports <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Journey Section */}
+      <section className="py-24 bg-background border-y border-border">
+        <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
+          <FadeIn className="relative mx-auto max-w-6xl">
+            <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-2xl border border-border bg-black">
+              <video 
+                autoPlay 
+                loop 
+                muted 
+                playsInline 
+                className="w-full h-full object-contain"
               >
-                About Sheesh Exports <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </FadeIn>
-
-            <FadeIn delay={0.2} className="hidden lg:flex justify-end items-end h-full">
-              <div className="bg-background p-6 rounded-lg shadow-xl max-w-xs border border-border">
-                <Leaf className="h-8 w-8 text-primary mb-3" />
-                <p className="font-heading text-xl font-bold text-foreground">
-                  From Indian Farms to Global Tables
-                </p>
-              </div>
-            </FadeIn>
-          </div>
+                <source src="/Sheesh_Journey.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -352,7 +432,7 @@ export default function HomePage() {
           />
           <div className="absolute inset-0 bg-background/55" />
         </div>
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <FadeIn>
               <span className="text-xs font-semibold tracking-wider uppercase text-primary mb-4 block">
@@ -385,15 +465,16 @@ export default function HomePage() {
       </section>
 
       {/* Industry Solutions */}
-      <section className="py-24 bg-card border-y border-border">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-card border-y border-border">
+        <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <FadeIn className="order-2 lg:order-1 relative h-125 rounded-lg overflow-hidden">
+            <FadeIn className="order-2 lg:order-1 relative rounded-lg overflow-hidden">
               <Image
                 src="/images/ChatGPT%20Image%20Sep%2022,%202026,%2003_04_18%20PM.png"
                 alt="Industry Processing"
-                fill
-                className="object-cover"
+                width={800}
+                height={800}
+                className="w-full h-auto object-cover"
               />
             </FadeIn>
 
@@ -443,8 +524,8 @@ export default function HomePage() {
       <TestimonialsSection />
 
       {/* Insights */}
-      <section className="py-24 bg-background">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="py-12 bg-background">
+        <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
           <FadeIn className="mb-16">
             <span className="text-xs font-semibold tracking-wider uppercase text-muted-foreground mb-4 block">
               Stay Informed
@@ -502,7 +583,7 @@ export default function HomePage() {
       <QuotationFormSection />
 
       {/* CTA */}
-      <section className="relative py-24 overflow-hidden border-t border-border">
+      <section className="relative py-12 overflow-hidden border-t border-border">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/cta-bg.avif"
@@ -512,7 +593,7 @@ export default function HomePage() {
           />
           <div className="absolute inset-0 bg-background/85" />
         </div>
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
           <FadeIn className="grid md:grid-cols-2 gap-10 items-center">
             <div>
               <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-4 block">

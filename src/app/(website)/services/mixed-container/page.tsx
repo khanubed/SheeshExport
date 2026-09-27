@@ -1,5 +1,8 @@
 import { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo/metadata";
+import { buildBreadcrumbSchema } from "@/lib/seo/breadcrumb";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { SITE_CONFIG } from "@/config/site";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Container, Box, FileText, CheckCircle2, TrendingDown, Factory, Landmark, MapPin, ShieldCheck } from "lucide-react";
@@ -7,14 +10,32 @@ import { ArrowRight, Container, Box, FileText, CheckCircle2, TrendingDown, Facto
 export const metadata: Metadata = buildMetadata({
   title: "Mixed Container Spice Export Consolidation India",
   description:
-    "Consolidate multiple spices and agricultural commodities into a single export container. Reduce inventory risk and optimize freight costs.",
+    "Consolidate multiple spices a  nd agricultural commodities into a single export container. Reduce inventory risk and optimize freight costs.",
   pathname: "/services/mixed-container",
 });
 
 export default function MixedContainerPage() {
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { label: "Home", href: "/" },
+    { label: "Services", href: "/services" },
+    { label: "Mixed Container Consolidation", href: "/services/mixed-container" },
+  ]);
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Mixed Container Spice Export Consolidation India",
+    description: "Consolidate multiple spices and agricultural commodities into a single export container. Reduce inventory risk and optimize freight costs.",
+    provider: {
+      "@type": "Organization",
+      name: SITE_CONFIG.name,
+    },
+    url: `${SITE_CONFIG.url}/services/mixed-container`,
+  };
+
   return (
     <main className="bg-background min-h-screen text-foreground font-sans selection:bg-primary selection:text-primary-foreground">
-      
+      <JsonLd data={[breadcrumbSchema, serviceSchema]} />
       {/* SECTION 01: HERO */}
       <section className="relative min-h-[70vh] flex flex-col justify-center bg-primary text-primary-foreground">
         <div className="absolute inset-0 opacity-40 mix-blend-luminosity">

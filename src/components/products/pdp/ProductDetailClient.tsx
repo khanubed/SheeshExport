@@ -4,13 +4,7 @@ import { Product, Variant } from "@/lib/data/types";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import { ProductHero } from "./ProductHero";
 import { ProductVariants } from "./ProductVariants";
-import { ProductOriginStory } from "./ProductOriginStory";
-import { ProductGallery } from "./ProductGallery";
-import { VariantAttributes } from "./VariantAttributes";
-import { ProductSpecifications } from "./ProductSpecifications";
-import { ProductShipping } from "./ProductShipping";
 import { ProductPackaging } from "./ProductPackaging";
-import { ProductCertifications } from "./ProductCertifications";
 import { ProductExportMarkets } from "./ProductExportMarkets";
 import { VariantComparison } from "./VariantComparison";
 import { ProductFAQ } from "./ProductFAQ";
@@ -45,24 +39,22 @@ export function ProductDetailClient({ product }: { product: Product }) {
   return (
     <div className="flex flex-col w-full bg-white text-slate-900 selection:bg-slate-200">
       <ProductHero product={product} selectedVariant={selectedVariant} />
-      {product.variants.length > 1 && (
-        <ProductVariants product={product} selectedVariant={selectedVariant} onSelect={handleVariantChange} />
-      )}
-      <ProductOriginStory product={product} />
-      <ProductGallery variant={selectedVariant} />
-      <div className="bg-slate-50 border-t border-b border-slate-100 py-16">
-        <div className="container mx-auto px-4 max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <VariantAttributes variant={selectedVariant} />
-          <ProductSpecifications variant={selectedVariant} />
-        </div>
-      </div>
-      <ProductShipping shipping={product.shipping} />
+      
+      {/* Commercial Intelligence View (includes origin story, specs, compliance, and image) */}
+      <ProductVariants 
+        product={product} 
+        selectedVariant={selectedVariant} 
+        onSelect={handleVariantChange} 
+      />
+      
+      {/* Additional PDP Sections */}
       <ProductPackaging options={product.packagingOptions} />
-      <ProductCertifications certifications={product.certifications} />
       <ProductExportMarkets markets={product.exportMarkets} />
+      
       {product.variants.length > 1 && (
         <VariantComparison variants={product.variants} />
       )}
+      
       <ProductFAQ faqs={product.faqs} />
       <ProductRFQCTA product={product} />
     </div>

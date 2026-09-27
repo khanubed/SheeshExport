@@ -15,8 +15,11 @@
 - Product Catalog filtering logic (Client-side mock logic ready to be replaced by RTK Query).
 - Client UI Slices (`auth`, `cart`, `ui`, `filters`, `rfqForm`, `adminUi`) implemented.
 - RTK Query `baseApi` and 14 injected feature slices implemented.
+- Implemented comprehensive SEO architecture across pages (schemas, meta tags) per `03-keyword-seo-architecture.md`.
+- Revamped layout sections (Competitive Advantage, Boxed Video Journey Section) and improved accessibility contrast on Service/About pages.
 
 ## Active / Next Tasks
+- Implement `FloatingWidget.tsx` (Chatbot & Calling UI simulation) across the application layout to capture leads.
 - Connect mock data/UI to backend API once the backend is ready (RTK hooks already generated).
 - Develop Admin Dashboard UI (`/admin`).
 - Develop Request for Quote (RFQ) multi-step flow using `rfqFormSlice`.

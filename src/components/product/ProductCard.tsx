@@ -40,7 +40,7 @@ export function ProductCard({
 }: ProductCardProps) {
   // Determine primary image
   const primaryImage = product.images?.[0]?.url || "/images/placeholder.jpg"
-  const primaryImageAlt = product.images?.[0]?.altText || product.name
+  const primaryImageAlt = (product.images?.[0] as any)?.altText || product.name
 
   if (variant === "compact") {
     return (

@@ -108,7 +108,7 @@ export default function QualityPage() {
             {QUALITY_FLOW.map((item, idx) => (
               <div key={idx} className="relative group">
                 <div className="mb-4">
-                  <span className="text-secondary font-heading text-5xl opacity-50">0{idx + 1}</span>
+                  <span className="text-secondary font-heading font-bold text-5xl ">0{idx + 1}</span>
                 </div>
                 <h4 className="font-heading text-xl font-medium mb-2">{item.step}</h4>
                 <p className="text-primary-foreground/60 font-light text-sm leading-relaxed">{item.desc}</p>
@@ -128,7 +128,7 @@ export default function QualityPage() {
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1400px]">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="relative h-[500px] lg:h-[700px] w-full">
-              <Image src="/images/about/infra-testing.jpg" alt="Laboratory Analysis" fill className="object-cover" />
+              <Image src="/images/about/infra-testing.jpeg" alt="Laboratory Analysis" fill className="object-cover" />
             </div>
             <div>
               <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-8">
@@ -268,7 +268,7 @@ export default function QualityPage() {
               </div>
             </div>
             <div className="w-full lg:w-1/2 relative h-[400px] lg:h-[600px]">
-              <Image src="/images/about/infra-warehouse.jpg" alt="Controlled Hygiene Facility" fill className="object-cover" />
+              <Image src="/images/about/infra-warehouse.jpeg" alt="Controlled Hygiene Facility" fill className="object-cover" />
             </div>
           </div>
         </div>

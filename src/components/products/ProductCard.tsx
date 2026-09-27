@@ -6,7 +6,8 @@ import { buttonVariants } from "@/components/ui/button";
 import { PackageSearch, ShieldCheck, ListTree } from "lucide-react";
 
 export function ProductCard({ product }: { product: Product }) {
-  const imageUrl = product.variants?.[0]?.images?.[0] || product.originStory?.images?.[0] || "/images/placeholder.jpg";
+  const firstImage = product.variants?.[0]?.images?.[0] || product.variants?.[0]?.originStory?.images?.[0];
+  const imageUrl = typeof firstImage === "string" ? firstImage : (firstImage?.src || "/images/placeholder.jpg");
   const productHref = `/products/${product.categorySlug}/${product.slug}`;
   
   return (
@@ -72,8 +73,8 @@ export function ProductCard({ product }: { product: Product }) {
             <span className="text-muted-foreground flex items-center gap-1 font-medium uppercase tracking-wider text-[9px]">
               <PackageSearch className="w-3 h-3" /> Origin
             </span>
-            <span className="font-semibold text-xs text-foreground line-clamp-1" title={product.originStory?.location || "India"}>
-              {product.originStory?.location || "India"}
+            <span className="font-semibold text-xs text-foreground line-clamp-1" title={product.variants?.[0]?.originStory?.location || "India"}>
+              {product.variants?.[0]?.originStory?.location || "India"}
             </span>
           </div>
           <div className="flex flex-col gap-0.5">

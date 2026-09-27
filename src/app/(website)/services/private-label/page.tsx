@@ -1,5 +1,8 @@
 import { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo/metadata";
+import { buildBreadcrumbSchema } from "@/lib/seo/breadcrumb";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { SITE_CONFIG } from "@/config/site";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Package, ShieldCheck, Factory } from "lucide-react";
@@ -12,15 +15,33 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default function PrivateLabelPage() {
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { label: "Home", href: "/" },
+    { label: "Services", href: "/services" },
+    { label: "Private Label Manufacturing", href: "/services/private-label" },
+  ]);
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Private Label Spice Manufacturing & Packaging",
+    description: "Launch your retail spice brand with our OEM private label manufacturing services. We provide custom packaging, regulatory labeling, and export-ready production.",
+    provider: {
+      "@type": "Organization",
+      name: SITE_CONFIG.name,
+    },
+    url: `${SITE_CONFIG.url}/services/private-label`,
+  };
+
   return (
     <main className="bg-background min-h-screen text-foreground font-sans selection:bg-primary selection:text-primary-foreground">
-      
+      <JsonLd data={[breadcrumbSchema, serviceSchema]} />
       {/* SECTION 01: HERO */}
       <section className="relative min-h-[70vh] flex flex-col justify-center bg-primary text-primary-foreground">
-        <div className="absolute inset-0 opacity-30 mix-blend-luminosity">
-          <Image src="/images/about/factory-processing.jpg" alt="Premium Retail Spice Packaging" fill className="object-cover" priority />
+        <div className="absolute inset-0 ">
+          <Image src="/images/services/private-labelling.png" alt="Premium Retail Spice Packaging" fill className="object-cover" priority />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B2F26] via-[#0B2F26]/80 to-transparent" />
+        <div className="absolute inset-0 bg-black/20" />
         
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 relative z-10 pt-24 pb-16">
           <span className="inline-block text-secondary font-semibold tracking-[0.2em] uppercase text-xs mb-8 border-b border-secondary/30 pb-2">
@@ -45,54 +66,54 @@ export default function PrivateLabelPage() {
 
       {/* SECTION 02: PROBLEM -> SOLUTION */}
       <section className="py-16 lg:py-24 bg-background border-b border-border">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1200px]">
+        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-8xl">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-24">
             {/* The Problem */}
-            <div className="bg-background p-10 lg:p-12 border border-border">
-              <h3 className="font-heading text-3xl font-medium text-foreground mb-8">Challenges For Retail Brands</h3>
+            <div className="bg-card p-10 lg:p-12 border border-border rounded-xl shadow-sm">
+              <h3 className="font-heading text-3xl font-semibold text-foreground mb-8">Challenges For Retail Brands</h3>
               <ul className="space-y-6">
                 <li className="flex items-start">
-                  <div className="w-1.5 h-1.5 bg-muted0 rounded-full mt-2.5 mr-4 flex-shrink-0" />
-                  <p className="text-lg text-muted-foreground font-sans font-light"><strong className="font-medium text-foreground">No Manufacturing:</strong> High capital required to build hygienic, food-safe processing facilities.</p>
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2.5 mr-4 flex-shrink-0" />
+                  <p className="text-lg text-foreground/80 font-sans leading-relaxed"><strong className="font-semibold text-foreground">No Manufacturing:</strong> High capital required to build hygienic, food-safe processing facilities.</p>
                 </li>
                 <li className="flex items-start">
-                  <div className="w-1.5 h-1.5 bg-muted0 rounded-full mt-2.5 mr-4 flex-shrink-0" />
-                  <p className="text-lg text-muted-foreground font-sans font-light"><strong className="font-medium text-foreground">No Packaging Line:</strong> Inability to efficiently pack retail quantities (100g - 1kg) at scale.</p>
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2.5 mr-4 flex-shrink-0" />
+                  <p className="text-lg text-foreground/80 font-sans leading-relaxed"><strong className="font-semibold text-foreground">No Packaging Line:</strong> Inability to efficiently pack retail quantities (100g - 1kg) at scale.</p>
                 </li>
                 <li className="flex items-start">
-                  <div className="w-1.5 h-1.5 bg-muted0 rounded-full mt-2.5 mr-4 flex-shrink-0" />
-                  <p className="text-lg text-muted-foreground font-sans font-light"><strong className="font-medium text-foreground">No Export Expertise:</strong> Struggling to consolidate shipments from multiple small suppliers.</p>
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2.5 mr-4 flex-shrink-0" />
+                  <p className="text-lg text-foreground/80 font-sans leading-relaxed"><strong className="font-semibold text-foreground">No Export Expertise:</strong> Struggling to consolidate shipments from multiple small suppliers.</p>
                 </li>
                 <li className="flex items-start">
-                  <div className="w-1.5 h-1.5 bg-muted0 rounded-full mt-2.5 mr-4 flex-shrink-0" />
-                  <p className="text-lg text-muted-foreground font-sans font-light"><strong className="font-medium text-foreground">Compliance Risks:</strong> FDA or EU customs rejections due to improper nutritional labeling or barcode formatting.</p>
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2.5 mr-4 flex-shrink-0" />
+                  <p className="text-lg text-foreground/80 font-sans leading-relaxed"><strong className="font-semibold text-foreground">Compliance Risks:</strong> FDA or EU customs rejections due to improper nutritional labeling or barcode formatting.</p>
                 </li>
               </ul>
             </div>
 
             {/* The Solution */}
             <div className="flex flex-col justify-center">
-              <h3 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-8">How Sheesh Exports Solves Them</h3>
+              <h3 className="font-heading text-4xl sm:text-5xl font-semibold text-primary mb-8">How Sheesh Exports Solves Them</h3>
               <ul className="space-y-6">
                 <li className="flex items-start group">
-                  <Factory className="w-6 h-6 text-secondary mt-1 mr-4 flex-shrink-0" />
+                  <Factory className="w-7 h-7 text-secondary mt-0.5 mr-5 flex-shrink-0" />
                   <div>
-                    <h4 className="text-xl font-medium text-foreground mb-1 group-hover:text-secondary transition-colors">Turnkey Production</h4>
-                    <p className="text-lg text-muted-foreground font-sans font-light">We utilize our BRC/ISO certified facilities to process and blend products exactly to your specifications.</p>
+                    <h4 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">Turnkey Production</h4>
+                    <p className="text-lg text-foreground/80 font-sans leading-relaxed">We utilize our BRC/ISO certified facilities to process and blend products exactly to your specifications.</p>
                   </div>
                 </li>
                 <li className="flex items-start group">
-                  <Package className="w-6 h-6 text-secondary mt-1 mr-4 flex-shrink-0" />
+                  <Package className="w-7 h-7 text-secondary mt-0.5 mr-5 flex-shrink-0" />
                   <div>
-                    <h4 className="text-xl font-medium text-foreground mb-1 group-hover:text-secondary transition-colors">Automated Retail Packing</h4>
-                    <p className="text-lg text-muted-foreground font-sans font-light">Form-fill-seal machines directly pack products into your branded pouches, jars, or tins.</p>
+                    <h4 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">Automated Retail Packing</h4>
+                    <p className="text-lg text-foreground/80 font-sans leading-relaxed">Form-fill-seal machines directly pack products into your branded pouches, jars, or tins.</p>
                   </div>
                 </li>
                 <li className="flex items-start group">
-                  <ShieldCheck className="w-6 h-6 text-secondary mt-1 mr-4 flex-shrink-0" />
+                  <ShieldCheck className="w-7 h-7 text-secondary mt-0.5 mr-5 flex-shrink-0" />
                   <div>
-                    <h4 className="text-xl font-medium text-foreground mb-1 group-hover:text-secondary transition-colors">Regulatory Compliance</h4>
-                    <p className="text-lg text-muted-foreground font-sans font-light">We ensure all packaging meets the exact nutritional panel and barcode requirements for your destination country.</p>
+                    <h4 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">Regulatory Compliance</h4>
+                    <p className="text-lg text-foreground/80 font-sans leading-relaxed">We ensure all packaging meets the exact nutritional panel and barcode requirements for your destination country.</p>
                   </div>
                 </li>
               </ul>
@@ -112,7 +133,7 @@ export default function PrivateLabelPage() {
             {/* Format 1 */}
             <div className="bg-card border border-border group">
               <div className="relative h-[300px] w-full bg-muted overflow-hidden">
-                <Image src="/images/about/factory-processing.jpg" alt="Stand-Up Pouches" fill className="object-cover grayscale mix-blend-multiply group-hover:scale-105 transition-transform duration-700" />
+                <Image src="/images/services/standup-pouch-package.jpeg" alt="Stand-Up Pouches" fill className="object-cover grayscale mix-blend-multiply group-hover:scale-105 transition-transform duration-700" />
               </div>
               <div className="p-8">
                 <h3 className="font-heading text-2xl font-medium text-foreground mb-4">Stand-Up Pouches</h3>
@@ -127,7 +148,7 @@ export default function PrivateLabelPage() {
             {/* Format 2 */}
             <div className="bg-card border border-border group">
               <div className="relative h-[300px] w-full bg-muted overflow-hidden">
-                <Image src="/images/about/infra-warehouse.jpg" alt="Glass Jars" fill className="object-cover grayscale mix-blend-multiply group-hover:scale-105 transition-transform duration-700" />
+                <Image src="/images/services/glass-jars.jpeg" alt="Glass Jars" fill className="object-cover grayscale mix-blend-multiply group-hover:scale-105 transition-transform duration-700" />
               </div>
               <div className="p-8">
                 <h3 className="font-heading text-2xl font-medium text-foreground mb-4">Glass Jars</h3>
@@ -142,7 +163,7 @@ export default function PrivateLabelPage() {
             {/* Format 3 */}
             <div className="bg-card border border-border group">
               <div className="relative h-[300px] w-full bg-muted overflow-hidden">
-                <Image src="/images/about/vision.jpg" alt="PET Containers" fill className="object-cover grayscale mix-blend-multiply group-hover:scale-105 transition-transform duration-700" />
+                <Image src="/images/services/pet-containers.png" alt="PET Containers" fill className="object-cover grayscale mix-blend-multiply group-hover:scale-105 transition-transform duration-700" />
               </div>
               <div className="p-8">
                 <h3 className="font-heading text-2xl font-medium text-foreground mb-4">PET Containers</h3>
@@ -157,7 +178,7 @@ export default function PrivateLabelPage() {
             {/* Format 4 */}
             <div className="bg-card border border-border group">
               <div className="relative h-[300px] w-full bg-muted overflow-hidden">
-                <Image src="/images/about/mission.jpg" alt="Tin Packaging" fill className="object-cover grayscale mix-blend-multiply group-hover:scale-105 transition-transform duration-700" />
+                <Image src="/images/services/tin-container.png" alt="Tin Packaging" fill className="object-cover grayscale mix-blend-multiply group-hover:scale-105 transition-transform duration-700" />
               </div>
               <div className="p-8">
                 <h3 className="font-heading text-2xl font-medium text-foreground mb-4">Tin Packaging</h3>
@@ -228,48 +249,40 @@ export default function PrivateLabelPage() {
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1200px]">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="font-heading text-4xl sm:text-5xl font-medium mb-8">
+              <h2 className="font-heading text-4xl sm:text-5xl font-semibold mb-8">
                 Regulatory Labeling & Compliance
               </h2>
-              <p className="text-xl text-primary-foreground/80 font-light leading-relaxed font-sans mb-10">
+              <p className="text-xl text-primary-foreground/90 leading-relaxed font-sans mb-10">
                 Custom packaging is useless if it gets rejected at customs. Our compliance team ensures your artwork meets the strict food labeling regulations of your destination market before going to print.
               </p>
               
               <div className="grid sm:grid-cols-2 gap-x-8 gap-y-6">
                 <div>
-                  <h4 className="font-heading text-2xl text-secondary mb-2">FDA Labels</h4>
-                  <p className="text-primary-foreground/70 font-light text-sm">Compliant formatting for the United States, including specific ingredient declaration rules.</p>
+                  <h4 className="font-heading text-2xl text-secondary font-semibold mb-2">FDA Labels</h4>
+                  <p className="text-primary-foreground/90 text-sm leading-relaxed">Compliant formatting for the United States, including specific ingredient declaration rules.</p>
                 </div>
                 <div>
-                  <h4 className="font-heading text-2xl text-secondary mb-2">EU Labels</h4>
-                  <p className="text-primary-foreground/70 font-light text-sm">Adherence to European Union allergen highlighting and multilingual requirements.</p>
+                  <h4 className="font-heading text-2xl text-secondary font-semibold mb-2">EU Labels</h4>
+                  <p className="text-primary-foreground/90 text-sm leading-relaxed">Adherence to European Union allergen highlighting and multilingual requirements.</p>
                 </div>
                 <div>
-                  <h4 className="font-heading text-2xl text-secondary mb-2">Nutritional Panels</h4>
-                  <p className="text-primary-foreground/70 font-light text-sm">Accurate macroscopic and microscopic nutritional data calculated per serving size.</p>
+                  <h4 className="font-heading text-2xl text-secondary font-semibold mb-2">Nutritional Panels</h4>
+                  <p className="text-primary-foreground/90 text-sm leading-relaxed">Accurate macroscopic and microscopic nutritional data calculated per serving size.</p>
                 </div>
                 <div>
-                  <h4 className="font-heading text-2xl text-secondary mb-2">Barcodes & Batching</h4>
-                  <p className="text-primary-foreground/70 font-light text-sm">UPC/EAN integration and dynamic inkjet printing for batch numbers and expiry dates.</p>
+                  <h4 className="font-heading text-2xl text-secondary font-semibold mb-2">Barcodes & Batching</h4>
+                  <p className="text-primary-foreground/90 text-sm leading-relaxed">UPC/EAN integration and dynamic inkjet printing for batch numbers and expiry dates.</p>
                 </div>
               </div>
             </div>
             
-            <div className="relative h-[500px] bg-card/5 border border-primary-foreground/10 p-10 flex flex-col justify-center shadow-2xl">
-              <div className="space-y-6 opacity-70">
-                <div className="h-4 bg-card/20 w-1/3 rounded" />
-                <div className="h-12 bg-card/10 w-3/4 rounded" />
-                <div className="flex gap-4">
-                  <div className="h-32 bg-card/10 w-1/2 rounded" />
-                  <div className="h-32 bg-card/10 w-1/2 rounded" />
-                </div>
-                <div className="h-8 bg-card/20 w-1/4 rounded mt-8" />
-              </div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="bg-secondary text-primary px-6 py-3 font-medium tracking-widest uppercase text-sm">
-                  Compliant Artwork Approved
-                </div>
-              </div>
+            <div className="relative h-[400px] lg:h-[500px] w-full rounded-xl overflow-hidden shadow-2xl border border-primary-foreground/10 bg-white">
+              <Image 
+                src="/images/services/label-.png" 
+                alt="Compliant Artwork Example" 
+                fill 
+                className="object-contain p-6" 
+              />
             </div>
           </div>
         </div>

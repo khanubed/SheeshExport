@@ -6,19 +6,23 @@ import { Ship, Anchor, Clock, Box } from "lucide-react";
 export function ProductShipping({ shipping }: { shipping: ShippingDetails }) {
   return (
     <section className="py-20 bg-slate-900 text-white">
-      <div className="container mx-auto px-4 max-w-7xl">
+      <div className="container mx-auto px-4 max-w-8xl">
         <div className="text-center mb-16">
-          <h2 className="text-sm font-semibold tracking-widest uppercase text-slate-400 mb-4">Logistics</h2>
-          <h3 className="text-3xl lg:text-4xl font-serif font-medium">Shipping & Containerization</h3>
+          <h2 className="text-sm font-semibold tracking-widest uppercase text-slate-400 mb-4">
+            Logistics
+          </h2>
+          <h3 className="text-3xl lg:text-4xl font-serif font-medium">
+            Shipping & Containerization
+          </h3>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="flex flex-col items-center text-center p-8 border border-slate-800 bg-slate-800/50">
             <Box className="w-10 h-10 text-primary mb-4" />
             <h4 className="text-xl font-serif mb-2">20FT FCL</h4>
             <p className="text-slate-400">{shipping.capacity20ft}</p>
           </div>
-          
+
           <div className="flex flex-col items-center text-center p-8 border border-slate-800 bg-slate-800/50">
             <Box className="w-10 h-10 text-primary mb-4" />
             <h4 className="text-xl font-serif mb-2">40FT HC</h4>
