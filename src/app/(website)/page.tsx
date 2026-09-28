@@ -25,6 +25,9 @@ import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { QuotationFormSection } from "@/components/home/QuotationFormSection";
 import { ProcessSection } from "@/components/home/ProcessSection";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/home/AnimatedSection";
+import { HomeFAQ } from "@/components/home/HomeFAQ";
+import { ContactSection } from "@/components/contact/ContactSection";
+import { CATEGORIES_DATA } from "@/lib/data/categories";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { buildOrganizationSchema } from "@/lib/seo/organization";
 import { SITE_CONFIG } from "@/config/site";
@@ -35,44 +38,6 @@ export const metadata: Metadata = buildMetadata({
     "Sheesh Exports is a leading B2B exporter of bulk spices, grains, pulses, and oil seeds from India. APEDA & FSSAI certified wholesale supplier with custom packaging and global shipping.",
 });
 
-const PRODUCT_CATEGORIES = [
-  {
-    title: "Whole Spices",
-    desc: "Turmeric, Chilli, Cumin, Coriander & more",
-    img: IMAGES.products.spices,
-    href: "/products?categories=Whole+Spices",
-  },
-  {
-    title: "Powdered Spices",
-    desc: "Turmeric Powder, Chilli Powder & more",
-    img: IMAGES.products.spices,
-    href: "/products?categories=Powdered+Spices",
-  },
-  {
-    title: "Grains & Millets",
-    desc: "Rice, Wheat, Maize, Millet & more",
-    img: IMAGES.products.grains,
-    href: "/products?categories=Grains+%26+Millets",
-  },
-  {
-    title: "Pulses & Beans",
-    desc: "Chickpeas, Lentils, Beans, Grams & more",
-    img: IMAGES.products.pulses,
-    href: "/products?categories=Pulses+%26+Beans",
-  },
-  {
-    title: "Oil Seeds",
-    desc: "Sesame, Mustard, Groundnut & more",
-    img: IMAGES.products.oilSeeds,
-    href: "/products?categories=Oil+Seeds",
-  },
-  {
-    title: "Dry Fruits & Nuts",
-    desc: "Almonds, Cashews, Raisins & more",
-    img: IMAGES.products.dryFruits,
-    href: "/products?categories=Dry+Fruits+%26+Nuts",
-  },
-];
 
 const ADVANTAGES = [
   {
@@ -190,7 +155,7 @@ export default function HomePage() {
         </div>
         <div className="relative z-10 mx-auto max-w-8xl px-4 sm:px-6 lg:px-8 w-full text-white">
           <FadeIn>
-            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-4 block">
+            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-secondary mb-4 block">
               Indian Origin. Global Reach.
             </span>
             <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] max-w-3xl mb-6">
@@ -301,7 +266,7 @@ export default function HomePage() {
           </FadeIn>
 
           <FadeIn className="mt-4">
-            <ProductCarousel categories={PRODUCT_CATEGORIES} />
+            <ProductCarousel categories={CATEGORIES_DATA} />
           </FadeIn>
         </div>
       </section>
@@ -428,9 +393,9 @@ export default function HomePage() {
             src="/ChatGPT%20Image%20Sep%2022,%202026,%2002_46_51%20PM.png"
             alt="Global Reach Background"
             fill
-            className="object-right"
+            className="object-cover object-right"
           />
-          <div className="absolute inset-0 bg-background/55" />
+          <div className="absolute inset-0 " />
         </div>
         <div className="relative z-10 mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -579,59 +544,28 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Quotation Form */}
-      <QuotationFormSection />
+      {/* FAQ Section */}
+      <HomeFAQ />
 
-      {/* CTA */}
-      <section className="relative py-12 overflow-hidden border-t border-border">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/cta-bg.avif"
-            alt="Agricultural Fields"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-background/85" />
-        </div>
-        <div className="relative z-10 mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
-          <FadeIn className="grid md:grid-cols-2 gap-10 items-center">
-            <div>
-              <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-4 block">
-                Let's Grow Together
-              </span>
-              <h2 className="font-heading text-4xl sm:text-5xl font-bold text-foreground mb-6">
-                Ready to Source Authentic Indian Products?
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-xl">
-                Partner with Sheesh Exports for reliable supply, competitive pricing, and long-term
-                business relationships.
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4 md:justify-end">
-              <Link
-                href="/request-quote"
-                className={buttonVariants({
-                  size: "lg",
-                  className:
-                    "bg-foreground text-background hover:bg-foreground/90 font-sans shadow-lg",
-                })}
-              >
-                Request a Quote <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-              <Link
-                href="/contact"
-                className={buttonVariants({
-                  size: "lg",
-                  variant: "outline",
-                  className: "font-sans bg-transparent",
-                })}
-              >
-                Contact Us
-              </Link>
-            </div>
+      {/* Contact Header */}
+      <section className="pt-24 pb-12 bg-background border-t border-border">
+        <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
+          <FadeIn className="max-w-3xl">
+            <span className="text-xs font-semibold tracking-widest uppercase text-primary mb-4 block">
+              Global Partnerships
+            </span>
+            <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
+              Let's Build A Reliable Supply Chain Together.
+            </h2>
+            <p className="text-lg text-muted-foreground font-sans leading-relaxed">
+              Whether you are looking for specific origin certifications, bulk FOB pricing, or end-to-end private-label manufacturing, our international procurement team is ready to assist you.
+            </p>
           </FadeIn>
         </div>
       </section>
+
+      {/* Contact Section */}
+      <ContactSection />
     </div>
   );
 }

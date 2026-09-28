@@ -57,10 +57,10 @@ export default function AboutPage() {
             <span className="inline-block text-secondary font-semibold tracking-[0.2em] uppercase text-sm mb-6 border-b border-secondary/30 pb-2">
               India's Trusted Export Partner
             </span>
-            <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-medium text-white leading-[1.05] mb-8 drop-shadow-lg">
+            <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-white leading-[1.05] mb-8 drop-shadow-lg">
               For Spices, Agro Commodities & Food Ingredients
             </h1>
-            <p className="text-xl sm:text-2xl text-white/90 max-w-2xl font-light leading-relaxed drop-shadow-md">
+            <p className="text-lg sm:text-xl text-white/90 max-w-2xl font-light leading-relaxed drop-shadow-md">
               Connecting global buyers with carefully sourced, processed and export-ready
               agricultural products from India's most renowned growing regions.
             </p>
@@ -124,7 +124,7 @@ export default function AboutPage() {
                 key={idx}
                 className="group relative h-[400px] overflow-hidden bg-[#1C1C1C]"
               >
-                <Link href={`/products/${cat.slug}`} className="block w-full h-full">
+                <Link href={`/categories/${cat.slug}`} className="block w-full h-full">
                   <Image
                     src={cat.heroImage}
                     alt={cat.name}
@@ -251,12 +251,12 @@ export default function AboutPage() {
 
       {/* SECTION 06: GLOBAL REACH */}
       <section className="py-32 bg-white text-center">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-8xl">
           <FadeIn>
             <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-medium text-primary mb-16">
               Serving Importers Across 50+ Countries
             </h2>
-            <div className="relative h-[400px] w-full mb-16 opacity-80 mix-blend-multiply">
+            <div className="relative h-[500px] md:h-[700px] lg:h-[800px] w-full mb-16 opacity-80 mix-blend-multiply">
               <Image
                 src="/world-map.png"
                 alt="Global Export Routes"

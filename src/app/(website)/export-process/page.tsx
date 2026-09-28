@@ -165,7 +165,7 @@ export default function ExportProcessPage() {
       </section>
 
       {/* SECTION 02: EXPORT OVERVIEW */}
-      <section className="py-16 lg:py-24 bg-background border-b border-border">
+      <section className="py-12 lg:py-16 bg-background border-b border-border">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1000px] text-center">
           <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-8">
             Built For Reliable International Trade
@@ -177,7 +177,7 @@ export default function ExportProcessPage() {
       </section>
 
       {/* SECTION 03: EXPORT JOURNEY (THE CORE) */}
-      <section id="journey" className="py-16 lg:py-24 bg-background">
+      <section id="journey" className="py-12 lg:py-16 bg-background">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1200px]">
           <div className="text-center mb-16 lg:mb-24">
             <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-4">
@@ -186,11 +186,11 @@ export default function ExportProcessPage() {
             <p className="text-muted-foreground font-sans uppercase tracking-widest text-sm font-medium">End-To-End Supply Chain Operations</p>
           </div>
 
-          <div className="space-y-16 lg:space-y-32">
+          <div className="space-y-12 lg:space-y-20">
             {EXPORT_JOURNEY.map((step, idx) => {
               const isEven = idx % 2 !== 0;
               return (
-                <div key={idx} className={`flex flex-col ${isEven ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-10 lg:gap-20 items-center`}>
+                <div key={idx} className={`flex flex-col ${isEven ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-8 lg:gap-12 items-center`}>
                   <div className="w-full lg:w-1/2 relative h-[350px] aspect-4/3 lg:h-[500px]">
                     <Image src={step.image} alt={step.title} fill className="object-cover aspect-4/3 grayscale-[30%] hover:grayscale-0 transition-all duration-700 shadow-sm" />
                     <div className="absolute top-6 left-6 bg-primary text-primary-foreground px-4 py-2 font-heading text-3xl font-medium shadow-md">
@@ -216,14 +216,14 @@ export default function ExportProcessPage() {
 
                     {step.title === "Packaging" && (
                       <div className="mt-8">
-                        <Link href="/services/private-label" className="inline-flex items-center text-secondary hover:text-primary font-medium tracking-wide uppercase text-sm transition-colors group">
+                        <Link href="/services/private-label" className="inline-flex items-center text-primary hover:text-primary font-medium tracking-wide uppercase text-sm transition-colors group">
                           Explore Private Label Services <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </Link>
                       </div>
                     )}
                     {step.title === "Container Planning" && (
                       <div className="mt-8">
-                        <Link href="/services/mixed-container" className="inline-flex items-center text-secondary hover:text-primary font-medium tracking-wide uppercase text-sm transition-colors group">
+                        <Link href="/services/mixed-container" className="inline-flex items-center text-primary hover:text-primary font-medium tracking-wide uppercase text-sm transition-colors group">
                           Explore Mixed Containers <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </Link>
                       </div>
@@ -237,7 +237,7 @@ export default function ExportProcessPage() {
       </section>
 
       {/* SECTION 04: EXPORT DOCUMENTATION CENTER */}
-      <section className="py-16 lg:py-24 bg-background border-y border-border">
+      <section className="py-12 lg:py-16 bg-background border-y border-border">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1200px]">
           <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-12">
             Documentation Supporting International Trade
@@ -255,9 +255,9 @@ export default function ExportProcessPage() {
       </section>
 
       {/* SECTION 05: MIXED CONTAINER SOLUTIONS */}
-      <section className="py-16 lg:py-24 bg-primary text-primary-foreground overflow-hidden relative">
+      <section className="py-12 lg:py-16 bg-primary text-primary-foreground overflow-hidden relative">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1200px] relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div>
               <span className="inline-block text-secondary font-semibold tracking-[0.2em] uppercase text-xs mb-6 border-b border-secondary/30 pb-2">
                 Supply Chain Optimization
@@ -300,12 +300,12 @@ export default function ExportProcessPage() {
       </section>
 
       {/* SECTION 06: WHY BUYERS PREFER THIS PROCESS */}
-      <section className="py-16 lg:py-24 bg-background border-b border-border">
+      <section className="py-12 lg:py-16 bg-background border-b border-border">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1200px]">
           <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-12">
             Why Buyers Prefer Our Process
           </h2>
-          <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-8">
+          <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-8">
             <li className="flex items-start">
               <CheckCircle2 className="w-6 h-6 text-secondary mr-4 flex-shrink-0 mt-1" />
               <div>
@@ -353,12 +353,12 @@ export default function ExportProcessPage() {
       </section>
 
       {/* SECTION 07: FAQ */}
-      <section className="py-16 lg:py-24 bg-background">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[800px]">
+      <section className="py-12 lg:py-16 bg-background">
+        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-6xl">
           <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-12 text-center">
             Export Operations FAQ
           </h2>
-          <div className="space-y-10">
+          <div className="space-y-8">
             <div>
               <h4 className="text-xl font-medium text-foreground mb-2">How long does the export process take?</h4>
               <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">The timeline varies based on product readiness, packaging requirements, and vessel availability, typically ranging from 7 to 21 days from order confirmation to vessel departure.</p>
@@ -384,7 +384,7 @@ export default function ExportProcessPage() {
       </section>
 
       {/* SECTION 08: CTA */}
-      <section className="py-20 lg:py-24 bg-primary text-primary-foreground">
+      <section className="py-16 lg:py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-4xl text-center">
           <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-medium mb-6">
             Ready To Source Directly From India?

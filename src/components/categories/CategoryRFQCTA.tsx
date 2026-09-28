@@ -8,7 +8,7 @@ export function CategoryRFQCTA({ category }: { category: Category }) {
   return (
     <section className="py-16 bg-slate-900 text-white text-center">
       <div className="container mx-auto px-6 max-w-4xl">
-        <h2 className="text-3xl lg:text-4xl font-serif font-semibold mb-6 leading-tight">
+        <h2 className="text-3xl lg:text-4xl font-heading font-bold mb-6 leading-tight">
           Looking For A Reliable<br/>{category.name} Supplier?
         </h2>
         <p className="text-lg text-slate-300 font-sans mb-8 max-w-2xl mx-auto">

@@ -18,7 +18,7 @@ export function ProductHero({
   const heroImgSrc = typeof firstImg === "string" ? firstImg : ((firstImg as any)?.src || "/images/placeholder.jpg");
 
   return (
-    <section className="relative pt-12 pb-8 lg:pt-16 lg:pb-8 overflow-hidden border-b border-slate-100">
+    <section className="relative pt-12 pb-8 lg:pt-16 lg:pb-8 overflow-hidden border-b border-border">
       <div className="container mx-auto px-4 max-w-8xl">
         <div className="flex flex-col lg:flex-row gap-4 items-center">
           <motion.div
@@ -27,30 +27,30 @@ export function ProductHero({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-slate-500 mb-2">
-              <Link href="/products" className="hover:text-slate-900 transition-colors">
+            <div className="flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-muted-foreground mb-2">
+              <Link href="/products" className="hover:text-primary transition-colors">
                 Products
               </Link>
               <ChevronRight className="w-3 h-3 flex-shrink-0" />
               <Link
                 href={`/categories/${product.categorySlug}`}
-                className="hover:text-slate-900 transition-colors truncate"
+                className="hover:text-primary transition-colors truncate"
               >
                 {product.category}
               </Link>
               <ChevronRight className="w-3 h-3 flex-shrink-0" />
-              <span className="text-slate-900 truncate">{product.name}</span>
+              <span className="text-foreground truncate">{product.name}</span>
             </div>
 
-            <h1 className="text-3xl lg:text-5xl font-serif font-semibold tracking-tight text-slate-900 leading-tight">
+            <h1 className="text-3xl lg:text-5xl font-heading font-bold tracking-tight text-foreground leading-tight">
               {product.name}
             </h1>
 
             {product.botanicalName && (
-              <p className="text-md text-slate-500 italic font-serif">{product.botanicalName}</p>
+              <p className="text-md text-muted-foreground italic font-sans">{product.botanicalName}</p>
             )}
 
-            <p className="text-sm text-slate-600 leading-relaxed max-w-xl mb-6">
+            <p className="text-sm text-muted-foreground leading-relaxed max-w-xl mb-6 font-sans">
               {product.description.split("\n")[0]}
             </p>
 
@@ -58,7 +58,7 @@ export function ProductHero({
               <Link href={`/request-quote?product=${product.slug}`}>
                 <Button
                   size="lg"
-                  className="rounded-none bg-slate-900 text-white hover:bg-slate-800 h-14 px-8 text-base tracking-wide w-full sm:w-auto"
+                  className="rounded-none bg-primary text-primary-foreground hover:bg-primary/90 h-14 px-8 text-base tracking-wide w-full sm:w-auto"
                 >
                   Request Bulk Quote
                 </Button>
@@ -66,7 +66,7 @@ export function ProductHero({
               <Button
                 size="lg"
                 variant="outline"
-                className="rounded-none h-14 px-8 border-slate-300 text-slate-700 hover:bg-slate-50 text-base tracking-wide w-full sm:w-auto"
+                className="rounded-none h-14 px-8 border-border text-foreground hover:bg-muted/50 text-base tracking-wide w-full sm:w-auto"
               >
                 <Download className="w-4 h-4 mr-2" /> Spec Sheet
               </Button>
@@ -74,7 +74,7 @@ export function ProductHero({
           </motion.div>
 
           <motion.div
-            className="w-full lg:w-2/5 relative h-[500px] bg-slate-50"
+            className="w-full lg:w-2/5 relative h-[500px] bg-muted/30"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}

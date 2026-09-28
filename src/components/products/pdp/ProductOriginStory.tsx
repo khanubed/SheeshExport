@@ -8,11 +8,11 @@ export function ProductOriginStory({ product }: { product: Product }) {
   const originStory = product.variants?.[0]?.originStory;
   if (!originStory) return null;
   return (
-    <section className="py-24 bg-slate-900 text-slate-50">
+    <section className="py-24 bg-primary text-slate-50">
       <div className="container mx-auto px-4 max-w-8xl">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           <div className="w-full lg:w-1/2">
-            <h2 className="text-sm font-semibold tracking-widest uppercase text-slate-400 mb-4">
+            <h2 className="text-sm font-semibold tracking-widest uppercase text-muted-foreground/80 mb-4">
               The Origin Story
             </h2>
             <h3 className="text-4xl font-serif font-medium mb-6 flex items-center gap-3">
@@ -20,7 +20,7 @@ export function ProductOriginStory({ product }: { product: Product }) {
               {originStory.location}
             </h3>
             <div className="w-12 h-1 bg-primary mb-8"></div>
-            <p className="text-lg text-slate-300 leading-relaxed font-light">
+            <p className="text-lg text-muted-foreground/70 leading-relaxed font-light">
               {originStory.story}
             </p>
           </div>

@@ -68,7 +68,7 @@ export default function CertificationsPage() {
       {/* SECTION 01: HERO */}
       <section className="relative min-h-[60vh] flex flex-col lg:flex-row items-center border-b border-border">
         <div className="w-full lg:w-[60%] px-6 sm:px-12 lg:px-24 py-12 lg:py-24 flex flex-col justify-center">
-          <span className="inline-block text-secondary font-semibold tracking-[0.2em] uppercase text-xs mb-8 border-b border-secondary/30 pb-2 max-w-max">
+          <span className="inline-block text-foreground font-semibold tracking-[0.2em] uppercase text-xs mb-8 border-b border-secondary pb-2 max-w-max">
             Compliance & Certifications
           </span>
           <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl font-medium text-primary leading-[1.05] mb-8">
@@ -169,7 +169,7 @@ export default function CertificationsPage() {
                       <span className="text-xs uppercase tracking-wider text-muted-foreground font-sans font-semibold block mb-1">Applicable Markets</span>
                       <span className="text-foreground font-medium">{cert.markets}</span>
                     </div>
-                    <Link href={`/certifications/${cert.slug}`} className="inline-flex items-center text-secondary hover:text-primary font-medium tracking-wide uppercase text-sm transition-colors">
+                    <Link href={`/certifications/${cert.slug}`} className="inline-flex items-center text-foreground hover:text-primary font-medium tracking-wide uppercase text-sm transition-colors">
                       View Certification <ArrowRight className="ml-2 w-4 h-4" />
                     </Link>
                   </div>

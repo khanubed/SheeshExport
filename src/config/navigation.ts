@@ -17,16 +17,19 @@ export const MAIN_NAV: NavItem[] = [
     ],
   },
   {
-    title: "Products",
-    href: "/products",
+    title: "Categories",
+    href: "/categories",
     children: [
       { title: "Whole Spices", href: "/categories/whole-spices", description: "Premium Indian whole spices including chilli, cumin, and turmeric." },
       { title: "Oil Seeds", href: "/categories/oil-seeds", description: "Sortex-cleaned sesame, peanut, and mustard seeds." },
       { title: "Pulses", href: "/categories/pulses", description: "Export-grade chickpeas, lentils, and beans." },
       { title: "Grains", href: "/categories/grains", description: "Basmati rice, wheat, and millets." },
       { title: "Dry Fruits", href: "/categories/dry-fruits", description: "High-grade cashews, raisins, and premium nuts." },
-      { title: "View All Products", href: "/products", description: "Complete B2B product catalog and grade specifications." },
     ],
+  },
+  {
+    title: "Products",
+    href: "/products",
   },
   {
     title: "Services",

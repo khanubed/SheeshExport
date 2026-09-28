@@ -39,7 +39,7 @@ export default function QualityPage() {
       {/* SECTION 01: HERO */}
       <section className="relative min-h-[60vh] flex flex-col lg:flex-row items-center border-b border-border">
         <div className="w-full lg:w-[60%] px-6 sm:px-12 lg:px-24 py-12 lg:py-20 flex flex-col justify-center">
-          <span className="inline-block text-secondary font-semibold tracking-[0.2em] uppercase text-xs mb-8 border-b border-secondary/30 pb-2 max-w-max">
+          <span className="inline-block text-foreground font-semibold tracking-[0.2em] uppercase text-xs mb-8 border-b border-secondary pb-2 max-w-max">
             Food Safety & Export Compliance System
           </span>
           <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl font-medium text-primary leading-[1.05] mb-8">

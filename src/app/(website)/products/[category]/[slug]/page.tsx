@@ -77,13 +77,13 @@ export default async function ProductPage({
       <ProductDetailClient product={product} />
 
       {relatedProducts.length > 0 && (
-        <section className="bg-slate-50 py-16 lg:py-24 border-t border-slate-200">
+        <section className="bg-muted/30 py-6 lg:py-12 border-t border-border">
           <div className="container mx-auto px-4 max-w-8xl">
             <div className="mb-10 text-center">
-              <h2 className="text-3xl font-serif text-slate-900 font-semibold mb-3">
+              <h2 className="text-3xl font-heading text-foreground font-bold mb-3">
                 Related Products
               </h2>
-              <p className="text-slate-500 font-sans">
+              <p className="text-muted-foreground font-sans">
                 Explore other export-grade commodities in the {product.category} category.
               </p>
             </div>

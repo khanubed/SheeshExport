@@ -8,7 +8,7 @@ export function CategoryQuality({ category }: { category: Category }) {
       <div className="container mx-auto px-6 lg:px-12 max-w-8xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
-            <h2 className="text-3xl lg:text-4xl font-serif font-semibold mb-4">
+            <h2 className="text-3xl lg:text-4xl font-heading font-bold mb-4">
               Export Quality Standards
             </h2>
             <p className="text-base text-slate-300 font-sans mb-8 leading-relaxed">
@@ -34,7 +34,7 @@ export function CategoryQuality({ category }: { category: Category }) {
             </div>
           </div>
           <div className="bg-white/5 border border-white/10 p-10">
-            <h3 className="text-xl font-bold mb-6 font-serif">Global Certifications</h3>
+            <h3 className="text-xl font-bold mb-6 font-heading">Global Certifications</h3>
             <div className="flex flex-wrap gap-3">
               {category.certifications.map((cert, i) => (
                 <span

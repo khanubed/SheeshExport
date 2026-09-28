@@ -27,6 +27,7 @@
  * accessibility and SEO instead of a bare file path.
  * ============================================================================
  */
+import { CategorySlug } from "./categories";
 
 export interface FAQ {
   question: string;
@@ -82,7 +83,7 @@ export interface Product {
   slug: string;
   name: string;
   category: string;
-  categorySlug: string;
+  categorySlug: CategorySlug;
   botanicalName: string;
   description: string;
   seoMetaData?: {
@@ -159,7 +160,7 @@ export const PRODUCTS_DATA: Product[] = [
         originStory: {
           location: "Guntur, Andhra Pradesh, India",
           story:
-            "Cultivated in the mineral-rich black soils of the Guntur belt under hot, dry climatic conditions, Guntur chillies are globally renowned for their unmatched heat (capsaicin) and natural color pigments. By pairing age-old sun-curing techniques with modern GAP-compliant farming, Sheesh Exports guarantees 100% farm-to-port traceability, direct community sourcing, and absolute purity without middleman markups.",
+            "Cultivated in the mineral-rich black soils of the Guntur belt under hot, dry climatic conditions, Guntur chillies are globally renowned for their unmatched heat (capsaicin) and natural color pigments. The Whole Red Chilli grade is specifically prized because it is fiery, extra-hot variety widely favored for industrial capsaicin extraction, hot sauces, and spice grinding. By pairing age-old sun-curing techniques with modern GAP-compliant farming, Sheesh Exports guarantees 100% farm-to-port traceability, direct community sourcing, and absolute purity without middleman markups.",
           images: [
             { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-whole.jpg", alt: "Guntur red chilli farms and sun-curing yards" },
             { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-1.jpg", alt: "Guntur red chilli farms and sun-curing yards" },
@@ -189,7 +190,7 @@ export const PRODUCTS_DATA: Product[] = [
         originStory: {
           location: "Guntur, Andhra Pradesh, India",
           story:
-            "Cultivated in the mineral-rich black soils of the Guntur belt under hot, dry climatic conditions, Guntur chillies are globally renowned for their unmatched heat (capsaicin) and natural color pigments. By pairing age-old sun-curing techniques with modern GAP-compliant farming, Sheesh Exports guarantees 100% farm-to-port traceability, direct community sourcing, and absolute purity without middleman markups.",
+            "Cultivated in the mineral-rich black soils of the Guntur belt under hot, dry climatic conditions, Guntur chillies are globally renowned for their unmatched heat (capsaicin) and natural color pigments. The Byadgi KDL grade is specifically prized because it is deep crimson, low-heat chilli valued for high asta color extraction, food coloring, and oleoresin production. By pairing age-old sun-curing techniques with modern GAP-compliant farming, Sheesh Exports guarantees 100% farm-to-port traceability, direct community sourcing, and absolute purity without middleman markups.",
           images: [
             { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-whole.jpg", alt: "Guntur red chilli farms and sun-curing yards" },
             { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-1.jpg", alt: "Guntur red chilli farms and sun-curing yards" },
@@ -219,7 +220,7 @@ export const PRODUCTS_DATA: Product[] = [
         originStory: {
           location: "Guntur, Andhra Pradesh, India",
           story:
-            "Cultivated in the mineral-rich black soils of the Guntur belt under hot, dry climatic conditions, Guntur chillies are globally renowned for their unmatched heat (capsaicin) and natural color pigments. By pairing age-old sun-curing techniques with modern GAP-compliant farming, Sheesh Exports guarantees 100% farm-to-port traceability, direct community sourcing, and absolute purity without middleman markups.",
+            "Cultivated in the mineral-rich black soils of the Guntur belt under hot, dry climatic conditions, Guntur chillies are globally renowned for their unmatched heat (capsaicin) and natural color pigments. The S4 / Sannam grade is specifically prized because it is the world's largest volume export chilli variety, known for balanced heat, medium color, and consistent quality. By pairing age-old sun-curing techniques with modern GAP-compliant farming, Sheesh Exports guarantees 100% farm-to-port traceability, direct community sourcing, and absolute purity without middleman markups.",
           images: [
             { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-whole.jpg", alt: "Guntur red chilli farms and sun-curing yards" },
             { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-1.jpg", alt: "Guntur red chilli farms and sun-curing yards" },
@@ -248,7 +249,7 @@ export const PRODUCTS_DATA: Product[] = [
         originStory: {
           location: "Guntur, Andhra Pradesh, India",
           story:
-            "Cultivated in the mineral-rich black soils of the Guntur belt under hot, dry climatic conditions, Guntur chillies are globally renowned for their unmatched heat (capsaicin) and natural color pigments. By pairing age-old sun-curing techniques with modern GAP-compliant farming, Sheesh Exports guarantees 100% farm-to-port traceability, direct community sourcing, and absolute purity without middleman markups.",
+            "Cultivated in the mineral-rich black soils of the Guntur belt under hot, dry climatic conditions, Guntur chillies are globally renowned for their unmatched heat (capsaicin) and natural color pigments. The Wrinkled 273 grade is specifically prized because it is popular medium-heat variety with distinct wrinkled pericarp, excellent for blended curry powders and oleoresin. By pairing age-old sun-curing techniques with modern GAP-compliant farming, Sheesh Exports guarantees 100% farm-to-port traceability, direct community sourcing, and absolute purity without middleman markups.",
           images: [
             { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-whole.jpg", alt: "Guntur red chilli farms and sun-curing yards" },
             { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-1.jpg", alt: "Guntur red chilli farms and sun-curing yards" },
@@ -277,7 +278,7 @@ export const PRODUCTS_DATA: Product[] = [
         originStory: {
           location: "Guntur, Andhra Pradesh, India",
           story:
-            "Cultivated in the mineral-rich black soils of the Guntur belt under hot, dry climatic conditions, Guntur chillies are globally renowned for their unmatched heat (capsaicin) and natural color pigments. By pairing age-old sun-curing techniques with modern GAP-compliant farming, Sheesh Exports guarantees 100% farm-to-port traceability, direct community sourcing, and absolute purity without middleman markups.",
+            "Cultivated in the mineral-rich black soils of the Guntur belt under hot, dry climatic conditions, Guntur chillies are globally renowned for their unmatched heat (capsaicin) and natural color pigments. The Indo-5 / ENDO 5 grade is specifically prized because it is long-pod, thick-skinned variety delivering sharp pungency and ideal durability for long ocean transportation. By pairing age-old sun-curing techniques with modern GAP-compliant farming, Sheesh Exports guarantees 100% farm-to-port traceability, direct community sourcing, and absolute purity without middleman markups.",
           images: [
             { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-whole.jpg", alt: "Guntur red chilli farms and sun-curing yards" },
             { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-1.jpg", alt: "Guntur red chilli farms and sun-curing yards" },
@@ -406,7 +407,7 @@ export const PRODUCTS_DATA: Product[] = [
         originStory: {
           location: "Nizamabad & Salem Belts, India",
           story:
-            "Cultivated in the fertile, well-drained loamy soils of Telangana, Tamil Nadu, and Kerala under optimal tropical climate conditions, Indian turmeric fingers are globally renowned for their rich deep-orange color, potent aroma, and superior curcuminoid bioactive profiles. By pairing time-tested curing practices with modern GAP-compliant farming and processing, Sheesh Exports guarantees 100% farm-to-port traceability, direct community sourcing, and absolute purity without middleman markups.",
+            "Cultivated in the fertile, well-drained loamy soils of Telangana, Tamil Nadu, and Kerala under optimal tropical climate conditions, Indian turmeric fingers are globally renowned for their rich deep-orange color, potent aroma, and superior curcuminoid bioactive profiles. The Bulk Commodity Packaging grade is specifically prized because it is smooth, clean-surfaced golden finger widely preferred by commercial grinders and spice blending brands. By pairing time-tested curing practices with modern GAP-compliant farming and processing, Sheesh Exports guarantees 100% farm-to-port traceability, direct community sourcing, and absolute purity without middleman markups.",
           images: originImages("whole-spices", "turmeric-finger-guntur-whole", "Nizamabad turmeric farms, boiling and polishing units"),
         },
       },
@@ -432,7 +433,7 @@ export const PRODUCTS_DATA: Product[] = [
         originStory: {
           location: "Nizamabad & Salem Belts, India",
           story:
-            "Cultivated in the fertile, well-drained loamy soils of Telangana, Tamil Nadu, and Kerala under optimal tropical climate conditions, Indian turmeric fingers are globally renowned for their rich deep-orange color, potent aroma, and superior curcuminoid bioactive profiles. By pairing time-tested curing practices with modern GAP-compliant farming and processing, Sheesh Exports guarantees 100% farm-to-port traceability, direct community sourcing, and absolute purity without middleman markups.",
+            "Cultivated in the fertile, well-drained loamy soils of Telangana, Tamil Nadu, and Kerala under optimal tropical climate conditions, Indian turmeric fingers are globally renowned for their rich deep-orange color, potent aroma, and superior curcuminoid bioactive profiles. The Alleppey Finger grade is specifically prized because it is premium dark-orange turmeric with exceptional natural oil and curcumin content, ideal for extractors and nutraceuticals. By pairing time-tested curing practices with modern GAP-compliant farming and processing, Sheesh Exports guarantees 100% farm-to-port traceability, direct community sourcing, and absolute purity without middleman markups.",
           images: originImages("whole-spices", "turmeric-finger-guntur-whole", "Nizamabad turmeric farms, boiling and polishing units"),
         },
       },
@@ -458,7 +459,7 @@ export const PRODUCTS_DATA: Product[] = [
         originStory: {
           location: "Nizamabad & Salem Belts, India",
           story:
-            "Cultivated in the fertile, well-drained loamy soils of Telangana, Tamil Nadu, and Kerala under optimal tropical climate conditions, Indian turmeric fingers are globally renowned for their rich deep-orange color, potent aroma, and superior curcuminoid bioactive profiles. By pairing time-tested curing practices with modern GAP-compliant farming and processing, Sheesh Exports guarantees 100% farm-to-port traceability, direct community sourcing, and absolute purity without middleman markups.",
+            "Cultivated in the fertile, well-drained loamy soils of Telangana, Tamil Nadu, and Kerala under optimal tropical climate conditions, Indian turmeric fingers are globally renowned for their rich deep-orange color, potent aroma, and superior curcuminoid bioactive profiles. The Salem Finger grade is specifically prized because it is renowned for its bright yellow hue and long finger shape, ideal for high-end retail packaging and spice mixes. By pairing time-tested curing practices with modern GAP-compliant farming and processing, Sheesh Exports guarantees 100% farm-to-port traceability, direct community sourcing, and absolute purity without middleman markups.",
           images: originImages("whole-spices", "turmeric-finger-guntur-whole", "Nizamabad turmeric farms, boiling and polishing units"),
         },
       },
@@ -483,7 +484,7 @@ export const PRODUCTS_DATA: Product[] = [
         originStory: {
           location: "Nizamabad & Salem Belts, India",
           story:
-            "Cultivated in the fertile, well-drained loamy soils of Telangana, Tamil Nadu, and Kerala under optimal tropical climate conditions, Indian turmeric fingers are globally renowned for their rich deep-orange color, potent aroma, and superior curcuminoid bioactive profiles. By pairing time-tested curing practices with modern GAP-compliant farming and processing, Sheesh Exports guarantees 100% farm-to-port traceability, direct community sourcing, and absolute purity without middleman markups.",
+            "Cultivated in the fertile, well-drained loamy soils of Telangana, Tamil Nadu, and Kerala under optimal tropical climate conditions, Indian turmeric fingers are globally renowned for their rich deep-orange color, potent aroma, and superior curcuminoid bioactive profiles. The Rajapore Finger grade is specifically prized because it is thick, bold-sized turmeric fingers preferred for whole-spice distribution, traditional grinding, and culinary blends. By pairing time-tested curing practices with modern GAP-compliant farming and processing, Sheesh Exports guarantees 100% farm-to-port traceability, direct community sourcing, and absolute purity without middleman markups.",
           images: originImages("whole-spices", "turmeric-finger-guntur-whole", "Nizamabad turmeric farms, boiling and polishing units"),
         },
       },
@@ -508,7 +509,7 @@ export const PRODUCTS_DATA: Product[] = [
         originStory: {
           location: "Nizamabad & Salem Belts, India",
           story:
-            "Cultivated in the fertile, well-drained loamy soils of Telangana, Tamil Nadu, and Kerala under optimal tropical climate conditions, Indian turmeric fingers are globally renowned for their rich deep-orange color, potent aroma, and superior curcuminoid bioactive profiles. By pairing time-tested curing practices with modern GAP-compliant farming and processing, Sheesh Exports guarantees 100% farm-to-port traceability, direct community sourcing, and absolute purity without middleman markups.",
+            "Cultivated in the fertile, well-drained loamy soils of Telangana, Tamil Nadu, and Kerala under optimal tropical climate conditions, Indian turmeric fingers are globally renowned for their rich deep-orange color, potent aroma, and superior curcuminoid bioactive profiles. The Erode Finger grade is specifically prized because it is globally commercialized medium-sized variety valued for standard quality consistency and industrial utility. By pairing time-tested curing practices with modern GAP-compliant farming and processing, Sheesh Exports guarantees 100% farm-to-port traceability, direct community sourcing, and absolute purity without middleman markups.",
           images: originImages("whole-spices", "turmeric-finger-guntur-whole", "Nizamabad turmeric farms, boiling and polishing units"),
         },
       },
@@ -631,7 +632,7 @@ export const PRODUCTS_DATA: Product[] = [
         originStory: {
           location: "Wayanad & Idukki, Kerala, India",
           story:
-            "High in the misty, monsoon-fed hills of the Western Ghats, black pepper vines climb alongside coffee and areca palms in a shaded, biodiverse ecosystem cultivated by smallholder growers for generations. Berries are hand-harvested at the ideal maturity window and sun-dried on raised bamboo mats to preserve their essential oils. Sheesh Exports partners directly with these Malabar Coast growers, ensuring farm-to-port traceability and consistent, chemical-free quality on every lot.",
+            "High in the misty, monsoon-fed hills of the Western Ghats, black pepper vines climb alongside coffee and areca palms in a shaded, biodiverse ecosystem cultivated by smallholder growers for generations. The Bulk Commodity Packaging grade is specifically prized because it is the benchmark export grade — clean, uniform, heavy berries with strong natural pungency and aroma. Sheesh Exports partners directly with these Malabar Coast growers, ensuring farm-to-port traceability and consistent, chemical-free quality on every lot.",
           images: originImages("whole-spices", "black-pepper-malabar-garbled", "Wayanad pepper vine farms and sun-drying yards"),
         },
       },
@@ -656,7 +657,7 @@ export const PRODUCTS_DATA: Product[] = [
         originStory: {
           location: "Wayanad & Idukki, Kerala, India",
           story:
-            "High in the misty, monsoon-fed hills of the Western Ghats, black pepper vines climb alongside coffee and areca palms in a shaded, biodiverse ecosystem cultivated by smallholder growers for generations. Berries are hand-harvested at the ideal maturity window and sun-dried on raised bamboo mats to preserve their essential oils. Sheesh Exports partners directly with these Malabar Coast growers, ensuring farm-to-port traceability and consistent, chemical-free quality on every lot.",
+            "High in the misty, monsoon-fed hills of the Western Ghats, black pepper vines climb alongside coffee and areca palms in a shaded, biodiverse ecosystem cultivated by smallholder growers for generations. The Bold Black Pepper grade is specifically prized because it is extra-heavy, high-density berries favored by premium spice blenders and oleoresin extractors for maximum yield. Sheesh Exports partners directly with these Malabar Coast growers, ensuring farm-to-port traceability and consistent, chemical-free quality on every lot.",
           images: originImages("whole-spices", "black-pepper-malabar-garbled", "Wayanad pepper vine farms and sun-drying yards"),
         },
       },
@@ -681,7 +682,7 @@ export const PRODUCTS_DATA: Product[] = [
         originStory: {
           location: "Wayanad & Idukki, Kerala, India",
           story:
-            "High in the misty, monsoon-fed hills of the Western Ghats, black pepper vines climb alongside coffee and areca palms in a shaded, biodiverse ecosystem cultivated by smallholder growers for generations. Berries are hand-harvested at the ideal maturity window and sun-dried on raised bamboo mats to preserve their essential oils. Sheesh Exports partners directly with these Malabar Coast growers, ensuring farm-to-port traceability and consistent, chemical-free quality on every lot.",
+            "High in the misty, monsoon-fed hills of the Western Ghats, black pepper vines climb alongside coffee and areca palms in a shaded, biodiverse ecosystem cultivated by smallholder growers for generations. The Malabar White Pepper grade is specifically prized because it is de-husked, water-retted pepper with a milder, cleaner heat — a staple for light-colored sauces and refined seasoning blends. Sheesh Exports partners directly with these Malabar Coast growers, ensuring farm-to-port traceability and consistent, chemical-free quality on every lot.",
           images: originImages("whole-spices", "black-pepper-malabar-garbled", "Wayanad pepper vine farms and sun-drying yards"),
         },
       },
@@ -789,7 +790,7 @@ export const PRODUCTS_DATA: Product[] = [
         originStory: {
           location: "Kota & Baran, Rajasthan, India",
           story:
-            "Coriander thrives as a winter Rabi crop across the sandy loam plains of Rajasthan and Madhya Pradesh, where cool nights and dry harvest-time weather develop the seed's characteristic sweet, citrus aroma. After harvest, seeds are sun-dried in open yards before being routed to our grinding units, where controlled low-temperature milling protects the delicate volatile oils that give coriander powder its signature fragrance.",
+            "Coriander thrives as a winter Rabi crop across the sandy loam plains of Rajasthan and Madhya Pradesh, where cool nights and dry harvest-time weather develop the seed's characteristic sweet, citrus aroma. The Bulk Commodity Packaging grade is specifically prized because it is finely milled, free-flowing powder ideal for spice blends, seasoning mixes, and packaged retail sachets. After harvest, seeds are sun-dried in open yards before being routed to our grinding units, where controlled low-temperature milling protects the delicate volatile oils that give coriander powder its signature fragrance.",
           images: originImages("powdered-spices", "coriander-powder-ground-dhania", "Rajasthan coriander fields and seed drying yards"),
         },
       },
@@ -814,7 +815,7 @@ export const PRODUCTS_DATA: Product[] = [
         originStory: {
           location: "Kota & Baran, Rajasthan, India",
           story:
-            "Coriander thrives as a winter Rabi crop across the sandy loam plains of Rajasthan and Madhya Pradesh, where cool nights and dry harvest-time weather develop the seed's characteristic sweet, citrus aroma. After harvest, seeds are sun-dried in open yards before being routed to our grinding units, where controlled low-temperature milling protects the delicate volatile oils that give coriander powder its signature fragrance.",
+            "Coriander thrives as a winter Rabi crop across the sandy loam plains of Rajasthan and Madhya Pradesh, where cool nights and dry harvest-time weather develop the seed's characteristic sweet, citrus aroma. The Coriander Powder grade is specifically prized because it is coarser texture with a more pronounced bite, favored by curry powder blenders and traditional masala manufacturers. After harvest, seeds are sun-dried in open yards before being routed to our grinding units, where controlled low-temperature milling protects the delicate volatile oils that give coriander powder its signature fragrance.",
           images: originImages("powdered-spices", "coriander-powder-ground-dhania", "Rajasthan coriander fields and seed drying yards"),
         },
       },
@@ -839,7 +840,7 @@ export const PRODUCTS_DATA: Product[] = [
         originStory: {
           location: "Kota & Baran, Rajasthan, India",
           story:
-            "Coriander thrives as a winter Rabi crop across the sandy loam plains of Rajasthan and Madhya Pradesh, where cool nights and dry harvest-time weather develop the seed's characteristic sweet, citrus aroma. After harvest, seeds are sun-dried in open yards before being routed to our grinding units, where controlled low-temperature milling protects the delicate volatile oils that give coriander powder its signature fragrance.",
+            "Coriander thrives as a winter Rabi crop across the sandy loam plains of Rajasthan and Madhya Pradesh, where cool nights and dry harvest-time weather develop the seed's characteristic sweet, citrus aroma. The Roasted Coriander Powder grade is specifically prized because it is lightly dry-roasted before grinding for a deeper, nutty aroma — popular for chutneys, dry rubs, and snack seasoning. After harvest, seeds are sun-dried in open yards before being routed to our grinding units, where controlled low-temperature milling protects the delicate volatile oils that give coriander powder its signature fragrance.",
           images: originImages("powdered-spices", "coriander-powder-ground-dhania", "Rajasthan coriander fields and seed drying yards"),
         },
       },
@@ -935,7 +936,7 @@ export const PRODUCTS_DATA: Product[] = [
         originStory: {
           location: "Madhya Pradesh, Karnataka & Bihar, India",
           story:
-            "Maize is grown as a resilient Kharif crop across the black cotton soils of Madhya Pradesh and the red loamy soils of Karnataka, benefiting from the monsoon rains that support its rapid growth cycle. After mechanical harvesting, cobs are dried to safe moisture levels and shelled before entering our sortex facilities, where electronic color sorting removes discolored and foreign kernels to deliver a clean, export-ready grain.",
+            "Maize is grown as a resilient Kharif crop across the black cotton soils of Madhya Pradesh and the red loamy soils of Karnataka, benefiting from the monsoon rains that support its rapid growth cycle. The Bulk Multi-Wall Bags grade is specifically prized because it is premium grade yellow maize (food grade) specifically processed and sorted for bulk b2b export. After mechanical harvesting, cobs are dried to safe moisture levels and shelled before entering our sortex facilities, where electronic color sorting removes discolored and foreign kernels to deliver a clean, export-ready grain.",
           images: originImages("grains-millets", "maize-white-yellow", "Madhya Pradesh maize fields and sortex processing"),
         },
       },
@@ -1031,7 +1032,7 @@ export const PRODUCTS_DATA: Product[] = [
         originStory: {
           location: "Coorg & Chikmagalur, Karnataka, India",
           story:
-            "Cultivated under a dense canopy of shade trees alongside spices like pepper and cardamom, Indian coffee boasts a unique terroir. The high-altitude estates of the Western Ghats benefit from copious monsoon rains and rich organic soils. This biodiversity-friendly, shade-grown approach allows the cherries to mature slowly, developing complex sugars and nuanced flavor notes. Our partner estates adhere to sustainable farming practices, preserving the delicate ecosystem while yielding beans of exceptional quality.",
+            "Cultivated under a dense canopy of shade trees alongside spices like pepper and cardamom, Indian coffee boasts a unique terroir. The Yellow Maize grade is specifically prized because it is premium grade arabica plantation a specifically processed and sorted for bulk b2b export. Our partner estates adhere to sustainable farming practices, preserving the delicate ecosystem while yielding beans of exceptional quality.",
           images: originImages("tea-coffee", "coffee-arabica-robusta", "Coorg shade-grown coffee estates and drying beds"),
         },
       },
@@ -1124,7 +1125,7 @@ export const PRODUCTS_DATA: Product[] = [
         originStory: {
           location: "Assam & Darjeeling, India",
           story:
-            "The tropical Brahmaputra Valley of Assam yields strong, malty leaf under intense heat and heavy monsoon rainfall, while the steep, cool slopes of Darjeeling in the Himalayan foothills foster the slow growth behind its famous muscatel character. Pluckers follow the time-honored 'two leaves and a bud' standard across estates with over a century of tea-growing heritage. Sheesh Exports partners with estates that combine this tradition with modern hygiene and pesticide-controlled cultivation, ensuring consistent liquor quality in every lot.",
+            "The tropical Brahmaputra Valley of Assam yields strong, malty leaf under intense heat and heavy monsoon rainfall, while the steep, cool slopes of Darjeeling in the Himalayan foothills foster the slow growth behind its famous muscatel character. The Robusta Cherry AB grade is specifically prized because it is premium grade assam ctc (bopl/bp) specifically processed and sorted for bulk b2b export. Sheesh Exports partners with estates that combine this tradition with modern hygiene and pesticide-controlled cultivation, ensuring consistent liquor quality in every lot.",
           images: originImages("tea-coffee", "tea-assam-darjeeling", "Assam tea gardens and Darjeeling hillside estates"),
         },
       },
@@ -1220,7 +1221,7 @@ export const PRODUCTS_DATA: Product[] = [
         originStory: {
           location: "Madhya Pradesh, India",
           story:
-            "Known as the 'Soya Bowl of India', Madhya Pradesh produces the country's highest quality non-GMO soybeans across its fertile black cotton soils. We source premium defatted soy flour directly from integrated crushing plants in this region, then process it through tightly temperature- and pressure-controlled extrusion. This neutralizes anti-nutritional factors while preserving high-quality plant protein, yielding a clean-tasting, highly functional ingredient ready for global export.",
+            "Known as the 'Soya Bowl of India', Madhya Pradesh produces the country's highest quality non-GMO soybeans across its fertile black cotton soils. The Darjeeling Orthodox grade is specifically prized because it is premium grade large soya chunks specifically processed and sorted for bulk b2b export. This neutralizes anti-nutritional factors while preserving high-quality plant protein, yielding a clean-tasting, highly functional ingredient ready for global export.",
           images: originImages("soya-products", "soya-chunks-tvp", "Madhya Pradesh soybean crushing and extrusion facility"),
         },
       },
@@ -1316,7 +1317,7 @@ export const PRODUCTS_DATA: Product[] = [
         originStory: {
           location: "Punjab & Haryana, India",
           story:
-            "True Basmati can only be grown in the specific geographic footprint at the foothills of the Himalayas. The combination of mineral-rich glacial waters, specific soil composition, and the unique diurnal temperature variations of Punjab and Haryana impart the distinct aroma and elongation characteristics to the 1121 variety. Our paddy is carefully aged for a minimum of 12 months before milling, a crucial step that reduces moisture, enhances aroma, and ensures the grains remain separate and fluffy upon cooking.",
+            "True Basmati can only be grown in the specific geographic footprint at the foothills of the Himalayas. The Soya Granules / Mince grade is specifically prized because it is premium grade 1121 creamy sella specifically processed and sorted for bulk b2b export. Our paddy is carefully aged for a minimum of 12 months before milling, a crucial step that reduces moisture, enhances aroma, and ensures the grains remain separate and fluffy upon cooking.",
           images: originImages("rice", "basmati-rice-1121", "Punjab basmati paddy fields and aging warehouse"),
         },
       },
@@ -1420,7 +1421,7 @@ export const PRODUCTS_DATA: Product[] = [
         originStory: {
           location: "Processed in India (Global Sourcing)",
           story:
-            "While we source raw inshell almonds from top-tier global origins like California and Australia, the meticulous processing, grading, and sorting are conducted in our state-of-the-art facilities in India. This dual approach allows us to leverage global crop quality while applying highly cost-effective, precise Indian processing capabilities, delivering unmatched value and customized grading to our international B2B clients.",
+            "While we source raw inshell almonds from top-tier global origins like California and Australia, the meticulous processing, grading, and sorting are conducted in our state-of-the-art facilities in India. The 1121 Steam Basmati grade is specifically prized because it is premium grade nonpareil supreme specifically processed and sorted for bulk b2b export. This dual approach allows us to leverage global crop quality while applying highly cost-effective, precise Indian processing capabilities, delivering unmatched value and customized grading to our international B2B clients.",
           images: originImages("dry-fruits-nuts", "almond-kernels", "Almond shelling and electronic sorting facility in India"),
         },
       },
@@ -1504,7 +1505,7 @@ export const PRODUCTS_DATA: Product[] = [
         originStory: {
           location: "Saurashtra, Gujarat, India",
           story:
-            "Gujarat accounts for the lion's share of India's peanut production, and the Saurashtra region's well-drained sandy loam soils and favorable monsoon cycles create the perfect environment for robust pod development. We work closely with farming cooperatives to ensure timely harvesting and proper sun-drying, which is critical to preventing mold growth and ensuring aflatoxin-free kernels. Our integrated processing units near the major ports minimize transit time from factory to vessel.",
+            "Gujarat accounts for the lion's share of India's peanut production, and the Saurashtra region's well-drained sandy loam soils and favorable monsoon cycles create the perfect environment for robust pod development. The Carmel Type grade is specifically prized because it is premium grade bold peanuts specifically processed and sorted for bulk b2b export. Our integrated processing units near the major ports minimize transit time from factory to vessel.",
           images: originImages("dry-fruits-nuts", "peanuts-groundnuts", "Gujarat peanut farms and decortication units"),
         },
       },
@@ -1602,7 +1603,7 @@ export const PRODUCTS_DATA: Product[] = [
         originStory: {
           location: "Uttar Pradesh & Madhya Pradesh, India",
           story:
-            "Cultivated as a winter (Rabi) crop, Indian green peas benefit from the cool climate and fertile alluvial soils of the Gangetic plains. Upon harvesting, the peas are naturally sun-dried to optimal moisture levels before being transported to our processing hubs. Our meticulous sorting process removes any bleached or shriveled peas, ensuring our clients receive a product that cooks evenly and presents beautifully in end-consumer products.",
+            "Cultivated as a winter (Rabi) crop, Indian green peas benefit from the cool climate and fertile alluvial soils of the Gangetic plains. The Java Peanuts grade is specifically prized because it is premium grade whole green peas specifically processed and sorted for bulk b2b export. Our meticulous sorting process removes any bleached or shriveled peas, ensuring our clients receive a product that cooks evenly and presents beautifully in end-consumer products.",
           images: originImages("pulses-beans", "green-peas-dry", "Uttar Pradesh green pea fields and sorting units"),
         },
       },
@@ -1663,7 +1664,7 @@ export const PRODUCTS_DATA: Product[] = [
         originStory: {
           location: "Gujarat & Rajasthan, India",
           story:
-            "India produces over 80% of the world's Psyllium, driven by the unique agro-climatic conditions of Gujarat and Rajasthan. The crop requires dry, cool weather during maturation and zero rainfall during harvest to prevent seed drop and spoilage. We partner with specialized farmer networks in Unjha and surrounding districts, ensuring sustainable harvesting and immediate post-harvest processing to preserve the crucial mucilage content of the seeds.",
+            "India produces over 80% of the world's Psyllium, driven by the unique agro-climatic conditions of Gujarat and Rajasthan. The PP Woven Bags grade is specifically prized because it is premium grade psyllium husk 99% specifically processed and sorted for bulk b2b export. We partner with specialized farmer networks in Unjha and surrounding districts, ensuring sustainable harvesting and immediate post-harvest processing to preserve the crucial mucilage content of the seeds.",
           images: originImages("herbs-botanicals", "psyllium-seed-husk", "Unjha, Gujarat psyllium farms and husking mills"),
         },
       },
@@ -1762,7 +1763,7 @@ export const PRODUCTS_DATA: Product[] = [
         originStory: {
           location: "Madhya Pradesh & Gujarat, India",
           story:
-            "The 'Sharbati' wheat of Madhya Pradesh is famously known as the golden grain of India. Grown under rain-fed conditions with potash-rich soil, the grains naturally develop higher protein content and a sweeter taste compared to other varieties. By combining this superior raw material with traditional slow stone-grinding principles — which prevents overheating and nutrient loss — scaled in modern hygienic facilities, we produce an Atta that honors tradition while meeting global food safety standards.",
+            "The 'Sharbati' wheat of Madhya Pradesh is famously known as the golden grain of India. The Psyllium Seeds grade is specifically prized because it is premium grade 100% whole wheat atta specifically processed and sorted for bulk b2b export. By combining this superior raw material with traditional slow stone-grinding principles — which prevents overheating and nutrient loss — scaled in modern hygienic facilities, we produce an Atta that honors tradition while meeting global food safety standards.",
           images: originImages("flours-starches", "wheat-flour-chakki-atta", "Madhya Pradesh Sharbati wheat fields and stone mills"),
         },
       },
@@ -1834,7 +1835,7 @@ export const PRODUCTS_DATA: Product[] = [
         originStory: {
           location: "Kerala & Tamil Nadu, India",
           story:
-            "Along India's lush southwestern coastline, coconut palms thrive in the humid tropical climate and sandy coastal soils of Kerala and Tamil Nadu, regions that have cultivated coconuts for generations as a cornerstone crop. Mature nuts are hand-harvested, de-husked, and pared before being hot-air dried in hygienic facilities to lock in natural sweetness without any chemical bleaching. Sheesh Exports works directly with coastal processing units to guarantee freshness from grove to export container.",
+            "Along India's lush southwestern coastline, coconut palms thrive in the humid tropical climate and sandy coastal soils of Kerala and Tamil Nadu, regions that have cultivated coconuts for generations as a cornerstone crop. The Retail Pouches grade is specifically prized because it is premium grade fine grade specifically processed and sorted for bulk b2b export. Sheesh Exports works directly with coastal processing units to guarantee freshness from grove to export container.",
           images: originImages("other", "desiccated-coconut", "Kerala coconut groves and desiccation processing plant"),
         },
       },
