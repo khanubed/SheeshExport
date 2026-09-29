@@ -73,10 +73,10 @@ const ADVANTAGES = [
 ];
 
 const INDUSTRIES = [
-  { icon: Factory, title: "Food Manufacturing" },
-  { icon: Store, title: "Retail & Private Label" },
-  { icon: Utensils, title: "HoReCa (Hotels, Restaurants, Cafes)" },
-  { icon: Package, title: "FMCG" },
+  { icon: Factory, title: "Food Manufacturing", slug: "food-manufacturing" },
+  { icon: Store, title: "Retail & Private Label", slug: "retail-private-label" },
+  { icon: Utensils, title: "HoReCa", slug: "horeca-hospitality" },
+  { icon: Package, title: "Importers & Distributors", slug: "importers-distributors" },
 ];
 
 const CERTIFICATIONS = [
@@ -462,13 +462,14 @@ export default function HomePage() {
                   {INDUSTRIES.map((ind, idx) => {
                     const Icon = ind.icon;
                     return (
-                      <div
+                      <Link
+                        href={`/industries/${ind.slug}`}
                         key={idx}
-                        className="bg-background border border-border p-6 rounded-lg text-center flex flex-col items-center justify-center gap-3 transition-colors hover:border-primary/50"
+                        className="bg-background border border-border p-6 rounded-lg text-center flex flex-col items-center justify-center gap-3 transition-colors hover:border-primary/50 group"
                       >
-                        <Icon className="h-8 w-8 text-primary" />
-                        <span className="font-semibold text-sm">{ind.title}</span>
-                      </div>
+                        <Icon className="h-8 w-8 text-primary group-hover:scale-110 transition-transform" />
+                        <span className="font-semibold text-sm group-hover:text-primary transition-colors">{ind.title}</span>
+                      </Link>
                     );
                   })}
                 </div>

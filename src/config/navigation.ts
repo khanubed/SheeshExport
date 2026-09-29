@@ -28,6 +28,16 @@ export const MAIN_NAV: NavItem[] = [
     ],
   },
   {
+    title: "Industries",
+    href: "/industries",
+    children: [
+      { title: "Food Manufacturing", href: "/industries/food-manufacturing", description: "Industrial ingredient sourcing for processed foods." },
+      { title: "Retail & Private Label", href: "/industries/retail-private-label", description: "Custom packaging and private label solutions." },
+      { title: "Importers & Distributors", href: "/industries/importers-distributors", description: "Bulk commodity sourcing with flexible shipment." },
+      { title: "Hospitality & HORECA", href: "/industries/horeca-hospitality", description: "Foodservice-grade ingredients for restaurants." },
+    ],
+  },
+  {
     title: "Products",
     href: "/products",
   },
@@ -81,6 +91,12 @@ export const FOOTER_NAV = {
     { title: "Private Label Packaging", href: "/services/private-label" },
     { title: "Bulk Container Shipping", href: "/services/bulk-export" },
     { title: "Mixed Cargo Consolidation", href: "/services/mixed-container" },
+  ],
+  industries: [
+    { title: "Food Manufacturing", href: "/industries/food-manufacturing" },
+    { title: "Retail & Private Label", href: "/industries/retail-private-label" },
+    { title: "Importers & Distributors", href: "/industries/importers-distributors" },
+    { title: "Hospitality & HORECA", href: "/industries/horeca-hospitality" },
   ],
   legal: [
     { title: "Privacy Policy", href: "/privacy-policy" },
