@@ -6,8 +6,8 @@ import { Metadata } from "next";
 import { buildProductSchema } from "@/lib/seo/product";
 import { buildBreadcrumbSchema } from "@/lib/seo/breadcrumb";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { Suspense } from "react";
 import { buildMetadata } from "@/lib/seo/metadata";
-
 export async function generateStaticParams() {
   return PRODUCTS_DATA.map((product) => ({
     category: product.categorySlug,
@@ -74,7 +74,9 @@ export default async function ProductPage({
   return (
     <main className="min-h-screen bg-background">
       <JsonLd data={[productSchema, breadcrumbSchema]} />
-      <ProductDetailClient product={product} />
+      <Suspense fallback={<div className="p-8 text-center text-muted-foreground">Loading product details...</div>}>
+        <ProductDetailClient product={product} />
+      </Suspense>
 
       {relatedProducts.length > 0 && (
         <section className="bg-muted/30 py-6 lg:py-12 border-t border-border">
