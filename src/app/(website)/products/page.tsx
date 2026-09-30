@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { buildBreadcrumbSchema } from "@/lib/seo/breadcrumb";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { Suspense } from "react";
 import { ProductCatalogClient } from "@/components/products/ProductCatalogClient";
 
 export const metadata: Metadata = buildMetadata({
@@ -53,7 +54,9 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      <ProductCatalogClient />
+      <Suspense fallback={<div className="p-12 text-center text-muted-foreground font-sans">Loading catalog...</div>}>
+        <ProductCatalogClient />
+      </Suspense>
     </main>
   );
 }
