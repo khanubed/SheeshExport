@@ -21,7 +21,7 @@ export function AnnouncementBar() {
   };
 
   return (
-    <div className="bg-primary text-primary-foreground px-4 py-2 relative text-sm text-center font-medium">
+    <aside aria-label="Announcement" className="bg-primary text-primary-foreground px-4 py-2 relative text-sm text-center font-medium">
       <span>APEDA Registered · Serving 40+ Countries Worldwide</span>
       <button 
         onClick={handleDismiss}
@@ -30,6 +30,6 @@ export function AnnouncementBar() {
       >
         <X className="w-4 h-4" />
       </button>
-    </div>
+    </aside>
   );
 }

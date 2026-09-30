@@ -37,7 +37,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
   };
 
   return (
-    <div className="flex flex-col w-full bg-background text-foreground selection:bg-primary/20">
+    <article className="flex flex-col w-full bg-background text-foreground selection:bg-primary/20">
       <ProductHero product={product} selectedVariant={selectedVariant} />
       
       {/* Commercial Intelligence View (includes origin story, specs, compliance, and image) */}
@@ -57,6 +57,6 @@ export function ProductDetailClient({ product }: { product: Product }) {
       
       <ProductFAQ faqs={product.faqs} />
       <ProductRFQCTA product={product} />
-    </div>
+    </article>
   );
 }

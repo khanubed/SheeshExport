@@ -26,6 +26,7 @@ import { QuotationFormSection } from "@/components/home/QuotationFormSection";
 import { ProcessSection } from "@/components/home/ProcessSection";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/home/AnimatedSection";
 import { FAQSection } from "@/components/shared/FAQSection";
+import { CTASection } from "@/components/shared/CTASection";
 import { ContactSection } from "@/components/contact/ContactSection";
 import { CATEGORIES_DATA } from "@/lib/data/categories";
 import { buildMetadata } from "@/lib/seo/metadata";
@@ -143,7 +144,7 @@ const INSIGHTS = [
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <main className="flex flex-col min-h-screen" role="main">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -161,7 +162,7 @@ export default function HomePage() {
         }}
       />
       {/* Hero Section */}
-      <section className="relative h-[85vh] min-h-150 flex items-center justify-center overflow-hidden">
+      <section aria-labelledby="hero-heading" className="relative h-[85vh] min-h-150 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <video
             autoPlay
@@ -182,7 +183,7 @@ export default function HomePage() {
             <span className="text-xs font-semibold tracking-[0.2em] uppercase text-secondary mb-4 block">
               Indian Origin. Global Reach.
             </span>
-            <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] max-w-3xl mb-6">
+            <h1 id="hero-heading" className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] max-w-3xl mb-6">
               Premium Spices & Agro Commodities from India
             </h1>
             <p className="text-lg sm:text-xl text-slate-300 max-w-2xl mb-4 leading-relaxed font-sans">
@@ -212,16 +213,16 @@ export default function HomePage() {
               </a>
             </div>
 
-            <div className="grid grid-cols-3 gap-8 max-w-2xl pt-8 border-t border-white/20">
-              <div>
+            <div className="grid grid-cols-3 gap-8 max-w-2xl pt-8 border-t border-white/20" role="list" aria-label="Company statistics">
+              <div role="listitem">
                 <div className="font-heading text-4xl font-bold mb-1">50+</div>
                 <div className="text-sm text-slate-400">Countries Served</div>
               </div>
-              <div>
+              <div role="listitem">
                 <div className="font-heading text-4xl font-bold mb-1">100+</div>
                 <div className="text-sm text-slate-400">Global Partners</div>
               </div>
-              <div>
+              <div role="listitem">
                 <div className="font-heading text-4xl font-bold mb-1">25+</div>
                 <div className="text-sm text-slate-400">Years of Excellence</div>
               </div>
@@ -230,14 +231,14 @@ export default function HomePage() {
         </div>
       </section>
       {/* Certifications */}
-      <section className="py-12 bg-background">
+      <section aria-labelledby="certifications-heading" className="py-12 bg-background">
         <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-4">
             <FadeIn>
               <span className="text-xs font-semibold tracking-wider uppercase text-primary mb-4 block">
                 Quality & Compliance
               </span>
-              <h2 className="font-heading text-4xl sm:text-5xl font-bold text-foreground mb-6">
+              <h2 id="certifications-heading" className="font-heading text-4xl sm:text-5xl font-bold text-foreground mb-6">
                 Certified for Global Trade
               </h2>
               <p className="text-muted-foreground text-lg">
@@ -262,14 +263,14 @@ export default function HomePage() {
         </div>
       </section>
       {/* Product Range */}
-      <section className="pb-24 bg-background">
+      <section aria-labelledby="products-heading" className="pb-24 bg-background">
         <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
           <FadeIn className="flex flex-col md:flex-row md:items-end justify-between mb-16">
             <div className="max-w-2xl">
               <span className="text-xs font-semibold tracking-wider uppercase text-muted-foreground mb-2 block">
                 Our Product Range
               </span>
-              <h2 className="font-heading text-4xl sm:text-5xl font-bold text-foreground leading-tight">
+              <h2 id="products-heading" className="font-heading text-4xl sm:text-5xl font-bold text-foreground leading-tight">
                 Quality Produce.
                 <br />
                 Diverse Possibilities.
@@ -296,7 +297,7 @@ export default function HomePage() {
       </section>
 
       {/* Why Choose Us / Competitive Advantage */}
-      <section className="relative py-16 border-y border-border overflow-hidden bg-black">
+      <section aria-labelledby="advantage-heading" className="relative py-16 border-y border-border overflow-hidden bg-black">
         <div className="absolute inset-0 z-0">
           <video autoPlay loop muted playsInline className="object-cover w-full h-full grayscale opacity-30">
             <source src="/12351626_3840_2160_30fps.mp4" type="video/mp4" />
@@ -313,7 +314,7 @@ export default function HomePage() {
             <span className="text-xs font-bold tracking-widest uppercase text-white/50 mb-4 block">
               OUR COMPETITIVE ADVANTAGE
             </span>
-            <h2 className="font-heading text-[clamp(3rem,5vw,5rem)] font-bold text-white mb-6 leading-[1.1]">
+            <h2 id="advantage-heading" className="font-heading text-[clamp(3rem,5vw,5rem)] font-bold text-white mb-6 leading-[1.1]">
               Why Global Buyers Choose Sheesh Exports
             </h2>
             <p className="text-white/70 text-[0.95rem] leading-[1.7] max-w-2xl mx-auto">
@@ -323,20 +324,20 @@ export default function HomePage() {
 
           {/* Metrics Strip */}
           <FadeIn delay={0.1} className="mb-20 border-y border-white/10 py-10">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-4 md:gap-8 md:divide-x md:divide-white/10 text-center">
-              <div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-4 md:gap-8 md:divide-x md:divide-white/10 text-center" role="list" aria-label="Key metrics">
+              <div role="listitem">
                 <div className="text-5xl font-bold text-white mb-2">50+</div>
                 <div className="text-white/50 text-xs font-semibold tracking-widest uppercase">Export Markets</div>
               </div>
-              <div>
+              <div role="listitem">
                 <div className="text-5xl font-bold text-white mb-2">100+</div>
                 <div className="text-white/50 text-xs font-semibold tracking-widest uppercase">Commercial SKUs</div>
               </div>
-              <div>
+              <div role="listitem">
                 <div className="text-5xl font-bold text-white mb-2">20+</div>
                 <div className="text-white/50 text-xs font-semibold tracking-widest uppercase">Product Categories</div>
               </div>
-              <div>
+              <div role="listitem">
                 <div className="text-5xl font-bold text-white mb-2">100%</div>
                 <div className="text-white/50 text-xs font-semibold tracking-widest uppercase">Export Focused</div>
               </div>
@@ -345,17 +346,17 @@ export default function HomePage() {
 
           {/* Capability Grid */}
           <FadeIn delay={0.2} className="mb-16">
-            <div className="grid md:grid-cols-2 gap-[1px] bg-white/10 border border-white/10 shadow-2xl">
+            <div className="grid md:grid-cols-2 gap-[1px] bg-white/10 border border-white/10 shadow-2xl" role="list" aria-label="Competitive advantages">
               {ADVANTAGES.map((adv, idx) => {
                 const Icon = adv.icon;
                 return (
-                  <div key={idx} className="bg-black/60 backdrop-blur-md p-10 hover:bg-black/80 transition-colors">
-                    <Icon className="w-6 h-6 text-white/80 mb-6" />
+                  <article key={idx} className="bg-black/60 backdrop-blur-md p-10 hover:bg-black/80 transition-colors" role="listitem">
+                    <Icon className="w-6 h-6 text-white/80 mb-6" aria-hidden="true" />
                     <h3 className="text-[1.125rem] font-semibold text-white mb-3">{adv.title}</h3>
                     <p className="text-[0.95rem] leading-[1.7] text-white/60">
                       {adv.desc}
                     </p>
-                  </div>
+                  </article>
                 );
               })}
             </div>
@@ -366,9 +367,9 @@ export default function HomePage() {
             <span className="text-[10px] uppercase tracking-widest text-white/40 mb-4 block font-semibold">
               ACCREDITATIONS & COMPLIANCE
             </span>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-4" role="list" aria-label="Certifications">
               {["ISO 22000", "APEDA", "FSSAI", "US FDA", "HALAL", "Spices Board India"].map((badge, idx) => (
-                <span key={idx} className="px-4 py-1.5 border border-white/20 text-white/60 text-[11px] font-medium tracking-widest uppercase">
+                <span key={idx} className="px-4 py-1.5 border border-white/20 text-white/60 text-[11px] font-medium tracking-widest uppercase" role="listitem">
                   {badge}
                 </span>
               ))}
@@ -388,10 +389,10 @@ export default function HomePage() {
       </section>
 
       {/* Journey Section */}
-      <section className="py-24 bg-background border-y border-border">
+      <section aria-labelledby="journey-heading" className="py-24 bg-background border-y border-border">
         <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
           <FadeIn className="relative mx-auto max-w-6xl">
-            <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-2xl border border-border bg-black">
+            <figure className="aspect-video w-full rounded-2xl overflow-hidden shadow-2xl border border-border bg-black">
               <video 
                 autoPlay 
                 loop 
@@ -402,7 +403,8 @@ export default function HomePage() {
                 <source src="/Sheesh_Journey.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
-            </div>
+              <figcaption className="sr-only">Sheesh Exports journey from farm to global markets</figcaption>
+            </figure>
           </FadeIn>
         </div>
       </section>
@@ -411,10 +413,10 @@ export default function HomePage() {
       <ProcessSection />
 
       {/* Global Reach */}
-      <section className="relative py-24 border-y border-border overflow-hidden">
+      <section aria-labelledby="global-reach-heading" className="relative py-24 border-y border-border overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/ChatGPT%20Image%20Sep%2022,%202026,%2002_46_51%20PM.png"
+            src="/world-map.png"
             alt="Global Reach Background"
             fill
             className="object-cover object-right"
@@ -427,7 +429,7 @@ export default function HomePage() {
               <span className="text-xs font-semibold tracking-wider uppercase text-primary mb-4 block">
                 Our Global Reach
               </span>
-              <h2 className="font-heading text-4xl sm:text-5xl font-bold text-foreground mb-6 leading-tight">
+              <h2 id="global-reach-heading" className="font-heading text-4xl sm:text-5xl font-bold text-foreground mb-6 leading-tight">
                 Trusted by Importers
                 <br />
                 Across 50+ Countries
@@ -446,25 +448,28 @@ export default function HomePage() {
               </Link>
             </FadeIn>
 
-            <FadeIn delay={0.2} className="relative h-100 hidden lg:block">
-              <div aria-hidden="true" />
+            <FadeIn delay={0.2} className="relative h-100 hidden lg:block" aria-hidden="true">
+              <div />
             </FadeIn>
           </div>
         </div>
       </section>
 
       {/* Industry Solutions */}
-      <section className="py-16 bg-card border-y border-border">
+      <section aria-labelledby="industries-heading" className="py-16 bg-card border-y border-border">
         <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <FadeIn className="order-2 lg:order-1 relative rounded-lg overflow-hidden">
-              <Image
-                src="/images/ChatGPT%20Image%20Sep%2022,%202026,%2003_04_18%20PM.png"
-                alt="Industry Processing"
-                width={800}
-                height={800}
-                className="w-full h-auto object-cover"
-              />
+              <figure>
+                <Image
+                  src="/images/ChatGPT%20Image%20Sep%2022,%202026,%2003_04_18%20PM.png"
+                  alt="Industry Processing"
+                  width={800}
+                  height={800}
+                  className="w-full h-auto object-cover"
+                />
+                <figcaption className="sr-only">Food processing facility</figcaption>
+              </figure>
             </FadeIn>
 
             <div className="order-1 lg:order-2">
@@ -472,7 +477,7 @@ export default function HomePage() {
                 <span className="text-xs font-semibold tracking-wider uppercase text-muted-foreground mb-4 block">
                   Industry Solutions
                 </span>
-                <h2 className="font-heading text-4xl sm:text-5xl font-bold text-foreground mb-6 leading-tight">
+                <h2 id="industries-heading" className="font-heading text-4xl sm:text-5xl font-bold text-foreground mb-6 leading-tight">
                   Tailored for Every
                   <br />
                   Food Business
@@ -482,21 +487,19 @@ export default function HomePage() {
                   their sourcing and procurement needs.
                 </p>
 
-                <div className="grid grid-cols-2 gap-6 mb-10">
+                <nav className="grid grid-cols-2 gap-6 mb-10" aria-label="Industry solutions">
                   {INDUSTRIES.map((ind, idx) => {
                     const Icon = ind.icon;
                     return (
-                      <Link
-                        href={`/industries/${ind.slug}`}
-                        key={idx}
-                        className="bg-background border border-border p-6 rounded-lg text-center flex flex-col items-center justify-center gap-3 transition-colors hover:border-primary/50 group"
-                      >
-                        <Icon className="h-8 w-8 text-primary group-hover:scale-110 transition-transform" />
-                        <span className="font-semibold text-sm group-hover:text-primary transition-colors">{ind.title}</span>
-                      </Link>
+                      <article key={idx} className="bg-background border border-border p-6 rounded-lg text-center flex flex-col items-center justify-center gap-3 transition-colors hover:border-primary/50 group" role="listitem">
+                        <Link href={`/industries/${ind.slug}`} className="w-full h-full flex flex-col items-center justify-center gap-3">
+                          <Icon className="h-8 w-8 text-primary group-hover:scale-110 transition-transform" aria-hidden="true" />
+                          <span className="font-semibold text-sm group-hover:text-primary transition-colors">{ind.title}</span>
+                        </Link>
+                      </article>
                     );
                   })}
-                </div>
+                </nav>
 
                 <Link
                   href="/industries"
@@ -514,13 +517,13 @@ export default function HomePage() {
       <TestimonialsSection />
 
       {/* Insights */}
-      <section className="py-12 bg-background">
+      <section aria-labelledby="insights-heading" className="py-12 bg-background">
         <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
           <FadeIn className="mb-16">
             <span className="text-xs font-semibold tracking-wider uppercase text-muted-foreground mb-4 block">
               Stay Informed
             </span>
-            <h2 className="font-heading text-4xl sm:text-5xl font-bold text-foreground mb-4">
+            <h2 id="insights-heading" className="font-heading text-4xl sm:text-5xl font-bold text-foreground mb-4">
               Insights, Guides &<br />
               Market Updates
             </h2>
@@ -541,28 +544,31 @@ export default function HomePage() {
             </div>
           </FadeIn>
 
-          <StaggerContainer className="grid md:grid-cols-3 gap-8">
+          <StaggerContainer className="grid md:grid-cols-3 gap-8" role="list" aria-label="Latest insights">
             {INSIGHTS.map((insight, idx) => (
-              <StaggerItem key={idx}>
-                <Link href={insight.href} className="group block">
-                  <div className="relative h-56 mb-6 overflow-hidden rounded-lg">
-                    <Image
-                      src={insight.img}
-                      alt={insight.title}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                  <span className="text-xs font-semibold tracking-wider uppercase text-primary mb-2 block">
-                    {insight.category}
-                  </span>
-                  <h3 className="font-heading text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                    {insight.title}
-                  </h3>
-                  <div className="inline-flex items-center text-sm font-semibold text-muted-foreground group-hover:text-primary transition-colors">
-                    Read More <ArrowRight className="ml-2 h-4 w-4" />
-                  </div>
-                </Link>
+              <StaggerItem key={idx} role="listitem">
+                <article>
+                  <Link href={insight.href} className="group block">
+                    <figure className="relative h-56 mb-6 overflow-hidden rounded-lg">
+                      <Image
+                        src={insight.img}
+                        alt={insight.title}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <figcaption className="sr-only">{insight.title}</figcaption>
+                    </figure>
+                    <span className="text-xs font-semibold tracking-wider uppercase text-primary mb-2 block">
+                      {insight.category}
+                    </span>
+                    <h3 className="font-heading text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                      {insight.title}
+                    </h3>
+                    <div className="inline-flex items-center text-sm font-semibold text-muted-foreground group-hover:text-primary transition-colors">
+                      Read More <ArrowRight className="ml-2 h-4 w-4" />
+                    </div>
+                  </Link>
+                </article>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -573,13 +579,13 @@ export default function HomePage() {
       <FAQSection title="Sourcing & Export Queries" subtitle="Frequently Asked Questions" faqs={HOME_FAQS} />
 
       {/* Contact Header */}
-      <section className="pt-24 pb-12 bg-background border-t border-border">
+      <section aria-labelledby="contact-heading" className="pt-24 pb-12 bg-background border-t border-border">
         <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
           <FadeIn className="max-w-3xl">
             <span className="text-xs font-semibold tracking-widest uppercase text-primary mb-4 block">
               Global Partnerships
             </span>
-            <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
+            <h2 id="contact-heading" className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
               Let's Build A Reliable Supply Chain Together.
             </h2>
             <p className="text-lg text-muted-foreground font-sans leading-relaxed">
@@ -591,6 +597,9 @@ export default function HomePage() {
 
       {/* Contact Section */}
       <ContactSection />
-    </div>
+
+      {/* Final CTA */}
+      <CTASection />
+    </main>
   );
 }

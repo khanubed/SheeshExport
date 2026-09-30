@@ -12,7 +12,9 @@ export default function WebsiteLayout({
     <div className="flex min-h-screen flex-col relative">
       <AnnouncementBar />
       <Header />
-      <main className="flex-1">{children}</main>
+      <main id="main-content" className="flex-1 flex flex-col" role="main">
+        {children}
+      </main>
       <Footer />
       <FloatingWidget />
     </div>

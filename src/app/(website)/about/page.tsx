@@ -16,6 +16,8 @@ import {
 import { buttonVariants } from "@/components/ui/button";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/home/AnimatedSection";
 import { AboutHeroSwiper } from "@/components/about/AboutHeroSwiper";
+import { FAQSection } from "@/components/shared/FAQSection";
+import { CTASection } from "@/components/shared/CTASection";
 
 export const metadata: Metadata = buildMetadata({
   title: "About Sheesh Exports | Premium Indian Agro & Spices Exporter",
@@ -46,18 +48,37 @@ const BUYER_BENEFITS = [
   "Responsive Procurement Team",
 ];
 
+const ABOUT_FAQS = [
+  {
+    question: "Is Sheesh Exports an APEDA registered Indian spices exporter?",
+    answer: "Yes, Sheesh Exports is a fully APEDA-registered and Spices Board of India-certified exporter. We comply with all governmental regulations to legally export premium Indian spices, agro commodities, and food ingredients to over 50 countries worldwide."
+  },
+  {
+    question: "Do you supply bulk Indian spices directly from the farmers?",
+    answer: "Absolutely. We are direct bulk spice suppliers in India, sourcing raw materials like Guntur Red Chilli, Erode Turmeric, and Unjha Cumin directly from verified farming networks. This allows us to maintain strict quality control and offer competitive wholesale pricing."
+  },
+  {
+    question: "Are your export facilities FSSAI and ISO certified?",
+    answer: "Our processing and warehousing facilities are strictly FSSAI certified and hold ISO 22000 certifications for food safety management. We also maintain US FDA registration and provide Halal and Kosher certifications for specific markets like the Middle East and North America."
+  },
+  {
+    question: "What makes you different from other agro commodity exporters in India?",
+    answer: "Unlike traditional traders, we operate a fully integrated supply chain. We handle the farm-level sourcing, mechanical cleaning, optical sortexing, lab testing, and custom packaging in-house. This ensures that every container leaving our facility meets precise international import standards without adulteration risks."
+  }
+];
+
 export default function AboutPage() {
   return (
-    <main className="bg-background min-h-screen text-foreground font-sans selection:bg-primary selection:text-white">
+    <main className="bg-background min-h-screen text-foreground font-sans selection:bg-primary selection:text-white" role="main">
       {/* SECTION 01: HERO */}
-      <section className="relative min-h-[90vh] flex items-center pt-24 pb-12 overflow-hidden">
+      <section aria-labelledby="about-hero-heading" className="relative min-h-[90vh] flex items-center pt-24 pb-12 overflow-hidden">
         <AboutHeroSwiper />
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 max-w-8xl">
           <FadeIn className="max-w-4xl">
             <span className="inline-block text-secondary font-semibold tracking-[0.2em] uppercase text-sm mb-6 border-b border-secondary/30 pb-2">
               India's Trusted Export Partner
             </span>
-            <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-white leading-[1.05] mb-8 drop-shadow-lg">
+            <h1 id="about-hero-heading" className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-white leading-[1.05] mb-8 drop-shadow-lg">
               For Spices, Agro Commodities & Food Ingredients
             </h1>
             <p className="text-lg sm:text-xl text-white/90 max-w-2xl font-light leading-relaxed drop-shadow-md">
@@ -69,11 +90,11 @@ export default function AboutPage() {
       </section>
 
       {/* SECTION 02: WHO WE ARE */}
-      <section className="py-24 sm:py-32">
+      <section aria-labelledby="who-we-are-heading" className="py-24 sm:py-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-8xl">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <FadeIn>
-              <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-medium text-primary leading-[1.1] mb-8">
+              <h2 id="who-we-are-heading" className="font-heading text-4xl sm:text-5xl lg:text-6xl font-medium text-primary leading-[1.1] mb-8">
                 Built Around Supply Reliability, Quality Consistency & Global Trade Expertise
               </h2>
               <div className="space-y-6 text-lg text-foreground/80 font-light leading-relaxed">
@@ -99,46 +120,55 @@ export default function AboutPage() {
               delay={0.2}
               className="relative h-[600px] w-full rounded-sm overflow-hidden shadow-2xl"
             >
-              <Image
-                src="/images/about/factory-processing.jpg"
-                alt="Spice Processing Facility"
-                fill
-                className="object-cover"
-              />
+              <figure>
+                <Image
+                  src="/images/about/factory-processing.jpg"
+                  alt="Spice Processing Facility"
+                  fill
+                  className="object-cover"
+                />
+                <figcaption className="sr-only">Our state-of-the-art spice processing facility</figcaption>
+              </figure>
             </FadeIn>
           </div>
         </div>
       </section>
 
       {/* SECTION 03: WHAT WE EXPORT */}
-      <section className="py-24 bg-white border-y border-primary/10">
+      <section aria-labelledby="what-we-export-heading" className="py-24 bg-white border-y border-primary/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-8xl">
           <FadeIn className="mb-16">
-            <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary text-center">
+            <h2 id="what-we-export-heading" className="font-heading text-4xl sm:text-5xl font-medium text-primary text-center">
               What We Export
             </h2>
           </FadeIn>
-          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-1">
+          <StaggerContainer className="grid grid-cols-2 lg:grid-cols-3 gap-1" role="list" aria-label="Product categories">
             {CATEGORIES_DATA.map((cat, idx) => (
               <StaggerItem
                 key={idx}
-                className="group relative h-[400px] overflow-hidden bg-[#1C1C1C]"
+                className="group relative aspect-square overflow-hidden bg-[#1C1C1C]"
+                role="listitem"
               >
-                <Link href={`/categories/${cat.slug}`} className="block w-full h-full">
-                  <Image
-                    src={cat.heroImage}
-                    alt={cat.name}
-                    fill
-                    className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out grayscale-[20%] group-hover:grayscale-0"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                  <div className="absolute bottom-8 left-8">
-                    <h3 className="font-heading text-3xl text-white font-medium tracking-wide">
-                      {cat.name}
-                    </h3>
-                    <div className="h-0.5 w-12 bg-secondary mt-4 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-                  </div>
-                </Link>
+                <article>
+                  <Link href={`/categories/${cat.slug}`} className="block w-full h-full">
+                    <figure>
+                      <Image
+                        src={cat.heroImage}
+                        alt={cat.name}
+                        fill
+                        className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out grayscale-[20%] group-hover:grayscale-0"
+                      />
+                      <figcaption className="sr-only">{cat.name} category</figcaption>
+                    </figure>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                    <div className="absolute bottom-8 left-8">
+                      <h3 className="font-heading text-3xl text-white font-medium tracking-wide">
+                        {cat.name}
+                      </h3>
+                      <div className="h-0.5 w-12 bg-secondary mt-4 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+                    </div>
+                  </Link>
+                </article>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -146,13 +176,13 @@ export default function AboutPage() {
       </section>
 
       {/* SECTION 04: FARM TO GLOBAL MARKET */}
-      <section className="py-32 bg-primary text-white overflow-hidden relative">
+      <section aria-labelledby="farm-to-market-heading" className="py-32 bg-primary text-white overflow-hidden relative">
         <div className="absolute inset-0 opacity-10">
           <Image src="/images/about/texture-map.jpg" alt="Texture" fill className="object-cover" />
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-8xl relative z-10">
           <FadeIn className="mb-20">
-            <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-medium text-[#F9F8F6] text-center">
+            <h2 id="farm-to-market-heading" className="font-heading text-4xl sm:text-5xl lg:text-6xl font-medium text-[#F9F8F6] text-center">
               Farm To Global Market
             </h2>
             <p className="text-center text-secondary tracking-[0.2em] uppercase text-sm mt-4">
@@ -162,18 +192,20 @@ export default function AboutPage() {
 
           <div className="relative">
             {/* Connecting Line */}
-            <div className="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-white/20 -translate-y-1/2" />
+            <div className="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-white/20 -translate-y-1/2" aria-hidden="true" />
 
-            <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6 relative z-10">
+            <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6 relative z-10" role="list" aria-label="Supply chain steps">
               {JOURNEY_STEPS.map((step, idx) => (
-                <StaggerItem key={idx} className="flex flex-col items-center text-center group">
-                  <div className="w-4 h-4 rounded-full bg-secondary mb-6 shadow-[0_0_15px_rgba(197,160,89,0.5)] group-hover:scale-150 transition-transform duration-300" />
-                  <h4 className="font-heading text-xl font-medium text-[#F9F8F6] mb-2">
-                    {step.title}
-                  </h4>
-                  <p className="text-xs text-white/60 font-light px-2 leading-relaxed">
-                    {step.desc}
-                  </p>
+                <StaggerItem key={idx} className="flex flex-col items-center text-center group" role="listitem">
+                  <article>
+                    <div className="w-4 h-4 rounded-full bg-secondary mb-6 shadow-[0_0_15px_rgba(197,160,89,0.5)] group-hover:scale-150 transition-transform duration-300" aria-hidden="true" />
+                    <h3 className="font-heading text-xl font-medium text-[#F9F8F6] mb-2">
+                      {step.title}
+                    </h3>
+                    <p className="text-xs text-white/60 font-light px-2 leading-relaxed">
+                      {step.desc}
+                    </p>
+                  </article>
                 </StaggerItem>
               ))}
             </StaggerContainer>
@@ -182,67 +214,70 @@ export default function AboutPage() {
       </section>
 
       {/* SECTION 05: INDIA ORIGINS */}
-      <section className="py-24 sm:py-32">
+      <section aria-labelledby="india-origins-heading" className="py-24 sm:py-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-8xl">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <FadeIn className="order-2 lg:order-1 relative h-[600px] w-full">
               {/* Using a clean map placeholder, user mentioned "Clean India Map. Not interactive." */}
-              <Image
-                src="/images/about/india-map-clean.jpg"
-                alt="Sourcing Regions in India"
-                fill
-                className="object-contain object-left"
-              />
+              <figure>
+                <Image
+                  src="/images/about/india-map-clean.jpg"
+                  alt="Sourcing Regions in India"
+                  fill
+                  className="object-contain object-left"
+                />
+                <figcaption className="sr-only">Map of India showing sourcing regions</figcaption>
+              </figure>
             </FadeIn>
             <FadeIn className="order-1 lg:order-2">
               <span className="text-secondary font-semibold tracking-[0.2em] uppercase text-sm mb-4 block">
                 India Origins
               </span>
-              <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-12">
+              <h2 id="india-origins-heading" className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-12">
                 Sourced from the Finest Terroirs
               </h2>
 
               <div className="space-y-8">
-                <div className="border-l-2 border-secondary pl-6">
-                  <h4 className="font-heading text-2xl font-medium text-foreground">Guntur</h4>
+                <article className="border-l-2 border-secondary pl-6">
+                  <h3 className="font-heading text-2xl font-medium text-foreground">Guntur</h3>
                   <p className="text-foreground/60 uppercase tracking-wider text-xs mt-1 mb-2">
                     Andhra Pradesh
                   </p>
                   <p className="text-foreground/80 font-light">
                     The global epicenter for premium S4 Sananam and Teja red chillies.
                   </p>
-                </div>
-                <div className="border-l-2 border-secondary pl-6">
-                  <h4 className="font-heading text-2xl font-medium text-foreground">
+                </article>
+                <article className="border-l-2 border-secondary pl-6">
+                  <h3 className="font-heading text-2xl font-medium text-foreground">
                     Erode & Nizamabad
-                  </h4>
+                  </h3>
                   <p className="text-foreground/60 uppercase tracking-wider text-xs mt-1 mb-2">
                     Tamil Nadu & Telangana
                   </p>
                   <p className="text-foreground/80 font-light">
                     Known for deep yellow, high-curcumin turmeric fingers.
                   </p>
-                </div>
-                <div className="border-l-2 border-secondary pl-6">
-                  <h4 className="font-heading text-2xl font-medium text-foreground">Unjha</h4>
+                </article>
+                <article className="border-l-2 border-secondary pl-6">
+                  <h3 className="font-heading text-2xl font-medium text-foreground">Unjha</h3>
                   <p className="text-foreground/60 uppercase tracking-wider text-xs mt-1 mb-2">
                     Gujarat
                   </p>
                   <p className="text-foreground/80 font-light">
                     Asia's largest cumin and oil seed cultivation belt.
                   </p>
-                </div>
-                <div className="border-l-2 border-secondary pl-6">
-                  <h4 className="font-heading text-2xl font-medium text-foreground">
+                </article>
+                <article className="border-l-2 border-secondary pl-6">
+                  <h3 className="font-heading text-2xl font-medium text-foreground">
                     Malabar Coast
-                  </h4>
+                  </h3>
                   <p className="text-foreground/60 uppercase tracking-wider text-xs mt-1 mb-2">
                     Kerala
                   </p>
                   <p className="text-foreground/80 font-light">
                     The historic home of Tellicherry black pepper and cardamom.
                   </p>
-                </div>
+                </article>
               </div>
             </FadeIn>
           </div>
@@ -250,37 +285,42 @@ export default function AboutPage() {
       </section>
 
       {/* SECTION 06: GLOBAL REACH */}
-      <section className="py-32 bg-white text-center">
+      <section aria-labelledby="global-reach-heading" className="py-16 md:py-24 lg:py-32 bg-white text-center">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-8xl">
           <FadeIn>
-            <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-medium text-primary mb-16">
+            <h2 id="global-reach-heading" className="font-heading text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-medium text-primary mb-8 md:mb-16">
               Serving Importers Across 50+ Countries
             </h2>
-            <div className="relative h-[500px] md:h-[700px] lg:h-[800px] w-full mb-16 opacity-80 mix-blend-multiply">
+            <figure className="relative h-[250px] sm:h-[400px] md:h-[600px] lg:h-[800px] w-full mb-8 md:mb-16 opacity-80 mix-blend-multiply">
               <Image
                 src="/world-map.png"
                 alt="Global Export Routes"
                 fill
                 className="object-contain"
               />
-            </div>
-            <div className="flex flex-wrap justify-center gap-x-12 gap-y-6 text-foreground/80 font-heading text-2xl tracking-wide">
+              <figcaption className="sr-only">World map showing export routes to 50+ countries</figcaption>
+            </figure>
+            <nav className="flex flex-wrap justify-center items-center gap-x-4 md:gap-x-8 lg:gap-x-12 gap-y-4 text-foreground/80 font-heading text-lg sm:text-xl lg:text-2xl tracking-wide" aria-label="Export regions">
               <span>North America</span>
+              <span aria-hidden="true" className="hidden sm:inline text-primary/40">•</span>
               <span>Europe</span>
+              <span aria-hidden="true" className="hidden sm:inline text-primary/40">•</span>
               <span>Middle East</span>
+              <span aria-hidden="true" className="hidden sm:inline text-primary/40">•</span>
               <span>Africa</span>
+              <span aria-hidden="true" className="hidden sm:inline text-primary/40">•</span>
               <span>Asia Pacific</span>
-            </div>
+            </nav>
           </FadeIn>
         </div>
       </section>
 
       {/* SECTION 07: QUALITY & COMPLIANCE */}
-      <section className="py-24 sm:py-32 bg-background">
+      <section aria-labelledby="quality-compliance-heading" className="py-24 sm:py-32 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-8xl">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <FadeIn>
-              <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-6">
+              <h2 id="quality-compliance-heading" className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-6">
                 Quality Assurance
               </h2>
               <div className="w-12 h-0.5 bg-secondary mb-8" />
@@ -302,42 +342,42 @@ export default function AboutPage() {
               <h3 className="font-heading text-2xl font-medium text-foreground mb-10 pb-4 border-b border-black/10">
                 Official Certifications
               </h3>
-              <div className="grid grid-cols-2 gap-y-8 gap-x-4">
-                <div className="flex items-center gap-4">
-                  <ShieldCheck className="w-6 h-6 text-primary" />
+              <ul className="grid grid-cols-2 gap-y-8 gap-x-4" role="list" aria-label="Certifications">
+                <li role="listitem" className="flex items-center gap-4">
+                  <ShieldCheck className="w-6 h-6 text-primary" aria-hidden="true" />
                   <span className="font-medium tracking-wide">ISO 22000</span>
-                </div>
-                <div className="flex items-center gap-4">
-                  <Award className="w-6 h-6 text-primary" />
+                </li>
+                <li role="listitem" className="flex items-center gap-4">
+                  <Award className="w-6 h-6 text-primary" aria-hidden="true" />
                   <span className="font-medium tracking-wide">APEDA</span>
-                </div>
-                <div className="flex items-center gap-4">
-                  <FileText className="w-6 h-6 text-primary" />
+                </li>
+                <li role="listitem" className="flex items-center gap-4">
+                  <FileText className="w-6 h-6 text-primary" aria-hidden="true" />
                   <span className="font-medium tracking-wide">US FDA</span>
-                </div>
-                <div className="flex items-center gap-4">
-                  <ShieldCheck className="w-6 h-6 text-primary" />
+                </li>
+                <li role="listitem" className="flex items-center gap-4">
+                  <ShieldCheck className="w-6 h-6 text-primary" aria-hidden="true" />
                   <span className="font-medium tracking-wide">FSSAI</span>
-                </div>
-                <div className="flex items-center gap-4">
-                  <Award className="w-6 h-6 text-primary" />
+                </li>
+                <li role="listitem" className="flex items-center gap-4">
+                  <Award className="w-6 h-6 text-primary" aria-hidden="true" />
                   <span className="font-medium tracking-wide">Spices Board India</span>
-                </div>
-                <div className="flex items-center gap-4">
-                  <ShieldCheck className="w-6 h-6 text-primary" />
+                </li>
+                <li role="listitem" className="flex items-center gap-4">
+                  <ShieldCheck className="w-6 h-6 text-primary" aria-hidden="true" />
                   <span className="font-medium tracking-wide">Halal & Kosher</span>
-                </div>
-              </div>
+                </li>
+              </ul>
             </FadeIn>
           </div>
         </div>
       </section>
 
       {/* SECTION 08: INFRASTRUCTURE */}
-      <section className="py-24 sm:py-32 bg-[#1C1C1C] text-white">
+      <section aria-labelledby="infrastructure-heading" className="py-24 sm:py-32 bg-[#1C1C1C] text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-8xl">
           <FadeIn className="mb-16">
-            <h2 className="font-heading text-4xl sm:text-5xl font-medium text-[#F9F8F6]">
+            <h2 id="infrastructure-heading" className="font-heading text-4xl sm:text-5xl font-medium text-[#F9F8F6]">
               Industrial Infrastructure
             </h2>
             <p className="text-[#F9F8F6]/60 mt-4 max-w-2xl font-light text-lg">
@@ -347,65 +387,75 @@ export default function AboutPage() {
             </p>
           </FadeIn>
 
-          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <StaggerItem className="relative h-[350px] group overflow-hidden">
-              <Image
-                src="/images/about/infra-processing.jpeg"
-                alt="Processing Facilities"
-                fill
-                className="object-cover  transition-opacity duration-500"
-              />
-              {/* <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" /> */}
+          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" role="list" aria-label="Infrastructure facilities">
+            <StaggerItem className="relative h-[350px] group overflow-hidden" role="listitem">
+              <figure>
+                <Image
+                  src="/images/about/infra-processing.jpeg"
+                  alt="Processing Facilities"
+                  fill
+                  className="object-cover  transition-opacity duration-500"
+                />
+                <figcaption className="sr-only">Processing facilities</figcaption>
+              </figure>
               <div className="absolute bottom-6 left-6">
-                <h4 className="font-heading bg-primary/60 px-3  text-2xl font-medium">Processing Facilities</h4>
+                <h3 className="font-heading bg-primary/60 px-3  text-2xl font-medium">Processing Facilities</h3>
               </div>
             </StaggerItem>
-            <StaggerItem className="relative h-[350px] group overflow-hidden">
-              <Image
-                src="/images/about/infra-warehouse.jpeg"
-                alt="Warehousing"
-                fill
-                className="object-cover  transition-opacity duration-500"
-              />
-              {/* <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" /> */}
+            <StaggerItem className="relative h-[350px] group overflow-hidden" role="listitem">
+              <figure>
+                <Image
+                  src="/images/about/infra-warehouse.jpeg"
+                  alt="Warehousing"
+                  fill
+                  className="object-cover  transition-opacity duration-500"
+                />
+                <figcaption className="sr-only">Warehousing facilities</figcaption>
+              </figure>
               <div className="absolute bottom-6 left-6">
-                <h4 className="font-heading bg-primary/60 px-3  text-2xl font-medium">Warehousing</h4>
+                <h3 className="font-heading bg-primary/60 px-3  text-2xl font-medium">Warehousing</h3>
               </div>
             </StaggerItem>
-            <StaggerItem className="relative h-[350px] group overflow-hidden">
-              <Image
-                src="/images/about/infra-packaging.jpeg"
-                alt="Packaging Lines"
-                fill
-                className="object-cover  transition-opacity duration-500"
-              />
-              {/* <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" /> */}
+            <StaggerItem className="relative h-[350px] group overflow-hidden" role="listitem">
+              <figure>
+                <Image
+                  src="/images/about/infra-packaging.jpeg"
+                  alt="Packaging Lines"
+                  fill
+                  className="object-cover  transition-opacity duration-500"
+                />
+                <figcaption className="sr-only">Packaging lines</figcaption>
+              </figure>
               <div className="absolute bottom-6 left-6">
-                <h4 className="font-heading bg-primary/60 px-3  text-2xl font-medium">Packaging Lines</h4>
+                <h3 className="font-heading bg-primary/60 px-3  text-2xl font-medium">Packaging Lines</h3>
               </div>
             </StaggerItem>
-            <StaggerItem className="relative h-[350px] group overflow-hidden">
-              <Image
-                src="/images/about/infra-testing.jpeg"
-                alt="Quality Testing"
-                fill
-                className="object-cover  transition-opacity duration-500"
-              />
-              {/* <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" /> */}
+            <StaggerItem className="relative h-[350px] group overflow-hidden" role="listitem">
+              <figure>
+                <Image
+                  src="/images/about/infra-testing.jpeg"
+                  alt="Quality Testing"
+                  fill
+                  className="object-cover  transition-opacity duration-500"
+                />
+                <figcaption className="sr-only">Quality testing laboratory</figcaption>
+              </figure>
               <div className="absolute bottom-6 left-6">
-                <h4 className="font-heading bg-primary/60 px-3  text-2xl font-medium">Quality Testing</h4>
+                <h3 className="font-heading bg-primary/60 px-3  text-2xl font-medium">Quality Testing</h3>
               </div>
             </StaggerItem>
-            <StaggerItem className="relative h-[350px] group overflow-hidden lg:col-span-2">
-              <Image
-                src="/images/about/infra-loading.jpeg"
-                alt="Container Loading Operations"
-                fill
-                className="object-cover  transition-opacity duration-500"
-              />
-              {/* <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" /> */}
+            <StaggerItem className="relative h-[350px] group overflow-hidden lg:col-span-2" role="listitem">
+              <figure>
+                <Image
+                  src="/images/about/infra-loading.jpeg"
+                  alt="Container Loading Operations"
+                  fill
+                  className="object-cover  transition-opacity duration-500"
+                />
+                <figcaption className="sr-only">Container loading operations</figcaption>
+              </figure>
               <div className="absolute bottom-6 left-6">
-                <h4 className="font-heading bg-primary/60 px-3  text-2xl font-medium">Container Loading Operations</h4>
+                <h3 className="font-heading bg-primary/60 px-3  text-2xl font-medium">Container Loading Operations</h3>
               </div>
             </StaggerItem>
           </StaggerContainer>
@@ -413,13 +463,13 @@ export default function AboutPage() {
       </section>
 
       {/* SECTION 09: WHY BUYERS CHOOSE SHEESH */}
-      <section className="py-24 sm:py-32 bg-white">
+      <section aria-labelledby="why-buyers-heading" className="py-24 sm:py-32 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center">
           <FadeIn>
-            <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-16">
+            <h2 id="why-buyers-heading" className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-16">
               Why Buyers Work With Us
             </h2>
-            <ul className="space-y-6">
+            <ul className="space-y-6" role="list" aria-label="Buyer benefits">
               {BUYER_BENEFITS.map((benefit, idx) => (
                 <li
                   key={idx}
@@ -434,16 +484,16 @@ export default function AboutPage() {
       </section>
 
       {/* SECTION 10: LEADERSHIP NOTE */}
-      <section className="py-24 bg-background border-y border-primary/10">
+      <section aria-labelledby="leadership-heading" className="py-24 bg-background border-y border-primary/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
           <FadeIn>
-            <div className="mx-auto w-12 h-12 mb-8 text-secondary">
+            <figure className="mx-auto w-12 h-12 mb-8 text-secondary" aria-hidden="true">
               <FileText className="w-full h-full" strokeWidth={1} />
-            </div>
-            <h2 className="font-heading text-3xl sm:text-4xl font-medium text-primary mb-10">
+            </figure>
+            <h2 id="leadership-heading" className="font-heading text-3xl sm:text-4xl font-medium text-primary mb-10">
               A Message From Sheesh Exports
             </h2>
-            <div className="space-y-6 text-lg text-foreground/80 font-light leading-relaxed italic">
+            <blockquote className="space-y-6 text-lg text-foreground/80 font-light leading-relaxed italic">
               <p>
                 "In international commodity trade, the foundation of every successful transaction is
                 trust. We understand that our buyers are managing complex supply chains across
@@ -455,51 +505,21 @@ export default function AboutPage() {
                 long-term global partnerships. When you import from Sheesh Exports, you are not just
                 buying a product; you are securing peace of mind."
               </p>
-            </div>
+            </blockquote>
           </FadeIn>
         </div>
       </section>
 
-      {/* SECTION 11: FINAL CTA */}
-      <section className="py-24 sm:py-32 bg-primary text-white text-center">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-          <FadeIn>
-            <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-medium mb-12">
-              Ready To Source Premium
-              <br className="hidden sm:block" /> Indian Agricultural Products?
-            </h2>
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
-              <Link
-                href="/request-quote"
-                className={buttonVariants({
-                  size: "lg",
-                  className:
-                    "bg-secondary text-primary hover:bg-secondary/90 font-medium tracking-wide w-full sm:w-auto h-14 px-8 text-lg rounded-none",
-                })}
-              >
-                Request Quote
-              </Link>
-              <a
-                href="#"
-                className={buttonVariants({
-                  variant: "outline",
-                  size: "lg",
-                  className:
-                    "bg-transparent border-white/30 text-white hover:bg-white/10 w-full sm:w-auto h-14 px-8 text-lg rounded-none",
-                })}
-              >
-                Download Company Profile
-              </a>
-              <Link
-                href="/contact"
-                className="text-white hover:text-secondary underline-offset-4 hover:underline transition-all mt-4 sm:mt-0 font-light"
-              >
-                Talk To Procurement Team
-              </Link>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
+      {/* SECTION 11: SEO FAQ */}
+      <FAQSection 
+        title="Corporate & Export FAQs" 
+        subtitle="Common Inquiries" 
+        faqs={ABOUT_FAQS} 
+        className="bg-white"
+      />
+
+      {/* SECTION 12: FINAL CTA */}
+      <CTASection />
     </main>
   );
 }

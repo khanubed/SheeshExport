@@ -42,7 +42,7 @@ export function QuotationFormSection() {
                 </div>
                 <div>
                   <h4 className="font-bold text-foreground">Corporate Office</h4>
-                  <p className="text-muted-foreground">MG Road, Indore, Madhya Pradesh - 452001</p>
+                  <p className="text-muted-foreground">507, B-Block, The One Building<br/>5 RNT Marg, Indore, Madhya Pradesh - 452001</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -51,7 +51,7 @@ export function QuotationFormSection() {
                 </div>
                 <div>
                   <h4 className="font-bold text-foreground">Call Us Directly</h4>
-                  <p className="text-muted-foreground">+91 98765 43210</p>
+                  <p className="text-muted-foreground">+91 9826270888<br/>+91 90399 20069</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -60,7 +60,7 @@ export function QuotationFormSection() {
                 </div>
                 <div>
                   <h4 className="font-bold text-foreground">Email Inquiries</h4>
-                  <p className="text-muted-foreground">sales@sheeshexports.com</p>
+                  <p className="text-muted-foreground">info@sheeshexports.in</p>
                 </div>
               </div>
             </div>

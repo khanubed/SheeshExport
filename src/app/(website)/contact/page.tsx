@@ -22,16 +22,16 @@ const FAQ = [
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20">
+    <main className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20" role="main">
       
       {/* 1. HERO SECTION */}
-      <section className="pt-20 pb-12 lg:pt-24 lg:pb-16 border-b border-border bg-[#FAFAFA]">
+      <section aria-labelledby="contact-hero-heading" className="pt-20 pb-12 lg:pt-24 lg:pb-16 border-b border-border bg-[#FAFAFA]">
         <div className="container mx-auto px-6 lg:px-12 max-w-8xl">
           <div className="max-w-4xl">
             <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground mb-6">
               Global Support Desk
             </span>
-            <h1 className="font-heading text-5xl lg:text-7xl font-bold text-foreground leading-[1.1] mb-6">
+            <h1 id="contact-hero-heading" className="font-heading text-5xl lg:text-7xl font-bold text-foreground leading-[1.1] mb-6">
               Connect With Our Export Specialists
             </h1>
             <p className="text-lg lg:text-xl text-muted-foreground font-sans leading-relaxed max-w-2xl">
@@ -42,22 +42,23 @@ export default function ContactPage() {
       </section>
 
       {/* 2. CONTACT METRICS STRIP */}
-      <section className="border-b border-border bg-white">
+      <section aria-labelledby="contact-metrics-heading" className="border-b border-border bg-white">
         <div className="container mx-auto px-6 lg:px-12 max-w-8xl">
-          <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-border border-x border-border -mx-px">
-            <div className="p-8 lg:p-10">
+          <h2 id="contact-metrics-heading" className="sr-only">Contact Metrics</h2>
+          <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-border border-x border-border -mx-px" role="list" aria-label="Contact information">
+            <div role="listitem" className="p-8 lg:p-10">
               <div className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">Call Us</div>
-              <div className="font-heading text-xl lg:text-2xl font-bold text-foreground">+91 98765 43210</div>
+              <div className="font-heading text-xl lg:text-2xl font-bold text-foreground">+91 9826270888</div>
             </div>
-            <div className="p-8 lg:p-10">
+            <div role="listitem" className="p-8 lg:p-10">
               <div className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">General Enquiries</div>
-              <div className="font-heading text-xl lg:text-2xl font-bold text-foreground truncate">export@sheeshexports.com</div>
+              <div className="font-heading text-xl lg:text-2xl font-bold text-foreground truncate">info@sheeshexports.in</div>
             </div>
-            <div className="p-8 lg:p-10">
+            <div role="listitem" className="p-8 lg:p-10">
               <div className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">WhatsApp</div>
-              <div className="font-heading text-xl lg:text-2xl font-bold text-foreground">+91 98765 43210</div>
+              <div className="font-heading text-xl lg:text-2xl font-bold text-foreground">+91 90399 20069</div>
             </div>
-            <div className="p-8 lg:p-10">
+            <div role="listitem" className="p-8 lg:p-10">
               <div className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">Response Time</div>
               <div className="font-heading text-xl lg:text-2xl font-bold text-foreground">Within 24 Hours</div>
             </div>
@@ -69,11 +70,11 @@ export default function ContactPage() {
       <ContactSection />
 
       {/* 4. FAQ SECTION */}
-      <section className="bg-[#FAFAFA]">
+      <section aria-labelledby="contact-faq-heading" className="bg-[#FAFAFA]">
         <div className="container mx-auto px-6 lg:px-12 max-w-8xl">
           <div className="grid lg:grid-cols-12 border-x border-border -mx-px">
             <div className="lg:col-span-5 p-8 lg:p-12 lg:border-r border-border">
-              <h2 className="font-heading text-4xl sm:text-5xl font-bold text-foreground mb-6">
+              <h2 id="contact-faq-heading" className="font-heading text-4xl sm:text-5xl font-bold text-foreground mb-6">
                 Frequently Asked Questions
               </h2>
               <p className="text-muted-foreground font-sans text-lg">
@@ -83,10 +84,10 @@ export default function ContactPage() {
             <div className="lg:col-span-7 p-8 lg:p-12 bg-white">
               <div className="space-y-10 max-w-3xl">
                 {FAQ.map((item, idx) => (
-                  <div key={idx} className="border-b border-border pb-8 last:border-0 last:pb-0">
-                    <h4 className="text-xl font-bold font-heading text-foreground mb-4">{item.q}</h4>
+                  <article key={idx} className="border-b border-border pb-8 last:border-0 last:pb-0">
+                    <h3 className="text-xl font-bold font-heading text-foreground mb-4">{item.q}</h3>
                     <p className="text-muted-foreground font-sans leading-relaxed">{item.a}</p>
-                  </div>
+                  </article>
                 ))}
               </div>
             </div>
@@ -95,9 +96,9 @@ export default function ContactPage() {
       </section>
 
       {/* 5. FINAL CTA */}
-      <section className="bg-[#1A1A1A] text-white py-24 lg:py-32">
+      <section aria-labelledby="contact-cta-heading" className="bg-[#1A1A1A] text-white py-24 lg:py-32">
         <div className="container mx-auto px-6 lg:px-12 max-w-4xl text-center">
-          <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold mb-8">
+          <h2 id="contact-cta-heading" className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold mb-8">
             Ready To Request A Quote?
           </h2>
           <p className="text-xl text-white/60 font-sans font-light mb-12 max-w-2xl mx-auto leading-relaxed">
@@ -110,9 +111,10 @@ export default function ContactPage() {
       </section>
 
       {/* 6. BOTTOM TRUST SECTION */}
-      <section className="border-t border-[#333] bg-[#1A1A1A] py-10">
+      <section aria-labelledby="trust-features-heading" className="border-t border-[#333] bg-[#1A1A1A] py-10">
         <div className="container mx-auto px-6 lg:px-12 max-w-8xl">
-          <div className="flex flex-wrap justify-center gap-x-10 gap-y-4 text-sm font-semibold tracking-widest uppercase text-white/40">
+          <h2 id="trust-features-heading" className="sr-only">Trust Features</h2>
+          <ul className="flex flex-wrap justify-center gap-x-10 gap-y-4 text-sm font-semibold tracking-widest uppercase text-white/40" role="list" aria-label="Service features">
             {[
               "Export Documentation Support",
               "Private Label Manufacturing",
@@ -121,11 +123,11 @@ export default function ContactPage() {
               "Global Logistics Coordination",
               "Dedicated Procurement Team"
             ].map((feat, idx) => (
-              <span key={idx} className="flex items-center gap-2">
-                <Check className="w-4 h-4 text-[#D4AF37]" /> {feat}
-              </span>
+              <li key={idx} className="flex items-center gap-2" role="listitem">
+                <Check className="w-4 h-4 text-[#D4AF37]" aria-hidden="true" /> {feat}
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 

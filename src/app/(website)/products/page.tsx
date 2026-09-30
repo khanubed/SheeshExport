@@ -19,25 +19,27 @@ export default function ProductsPage() {
   ]);
 
   return (
-    <main className="min-h-screen bg-background pt-8 pb-24 border-t border-border">
+    <main className="min-h-screen bg-background pt-8 pb-24 border-t border-border" role="main">
       <JsonLd data={breadcrumbSchema} />
       {/* Small hero/banner for catalog */}
-      <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8 mb-8 mt-4">
-        <div className="rounded-3xl bg-primary/10 dark:bg-primary/5 p-8 sm:p-12 border border-primary/20 flex flex-col sm:flex-row items-center justify-between gap-8">
-          <div>
-            <span className="text-xs font-semibold uppercase tracking-wider text-primary mb-2 block">
-              Global B2B Catalog
-            </span>
-            <h1 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4 tracking-tight">
-              Premium Agricultural Commodities
-            </h1>
-            <p className="text-muted-foreground max-w-2xl text-lg">
-              Source authentic Indian produce with confidence. All products undergo rigorous quality
-              checks and are certified for international trade.
-            </p>
+      <section aria-labelledby="products-hero-heading" className="mb-8 mt-4">
+        <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-3xl bg-primary/10 dark:bg-primary/5 p-8 sm:p-12 border border-primary/20 flex flex-col sm:flex-row items-center justify-between gap-8">
+            <div>
+              <span className="text-xs font-semibold uppercase tracking-wider text-primary mb-2 block">
+                Global B2B Catalog
+              </span>
+              <h1 id="products-hero-heading" className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4 tracking-tight">
+                Premium Agricultural Commodities
+              </h1>
+              <p className="text-muted-foreground max-w-2xl text-lg">
+                Source authentic Indian produce with confidence. All products undergo rigorous quality
+                checks and are certified for international trade.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <ProductCatalogClient />
     </main>

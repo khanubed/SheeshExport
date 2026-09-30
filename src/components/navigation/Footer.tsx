@@ -8,11 +8,11 @@ import { faLinkedinIn, faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 export function Footer() {
   return (
-    <footer className="bg-card text-card-foreground border-t border-border">
+    <footer className="bg-card text-card-foreground border-t border-border" role="contentinfo">
       <div className="mx-auto max-w-8xl px-4 pb-8 pt-16 sm:px-6 lg:px-8">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
-            <Link href="/" className="flex items-center space-x-2">
+            <Link href="/" className="flex items-center space-x-2" aria-label="Sheesh Exports Home">
               <Image
                 src="/images/sheesh-logo.jpeg"
                 alt="Sheesh Exports Logo"
@@ -25,23 +25,31 @@ export function Footer() {
               Bringing the richness of Indian agriculture to the world. Premium quality spices,
               grains, and agro-commodities.
             </p>
-            <div className="flex space-x-6 items-center">
-              <a href="#" className="text-muted-foreground hover:text-primary">
-                <span className="sr-only">LinkedIn</span>
-                <FontAwesomeIcon icon={faLinkedinIn} className="h-6 w-6" aria-hidden="true" />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary">
-                <span className="sr-only">Twitter</span>
-                <FontAwesomeIcon icon={faTwitter} className="h-6 w-6" aria-hidden="true" />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary">
-                <span className="sr-only">Email</span>
-                <Mail className="h-6 w-6" aria-hidden="true" />
-              </a>
-            </div>
+            <nav aria-label="Social media links">
+              <ul className="flex space-x-6 items-center" role="list">
+                <li>
+                  <a href="#" className="text-muted-foreground hover:text-primary" aria-label="LinkedIn">
+                    <span className="sr-only">LinkedIn</span>
+                    <FontAwesomeIcon icon={faLinkedinIn} className="h-6 w-6" aria-hidden="true" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-muted-foreground hover:text-primary" aria-label="Twitter">
+                    <span className="sr-only">Twitter</span>
+                    <FontAwesomeIcon icon={faTwitter} className="h-6 w-6" aria-hidden="true" />
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:info@sheeshexports.in" className="text-muted-foreground hover:text-primary" aria-label="Email">
+                    <span className="sr-only">Email</span>
+                    <Mail className="h-6 w-6" aria-hidden="true" />
+                  </a>
+                </li>
+              </ul>
+            </nav>
           </div>
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-            <div className="md:grid md:grid-cols-2 md:gap-8">
+            <nav aria-label="Company links" className="md:grid md:grid-cols-2 md:gap-8">
               <div>
                 <h3 className="text-sm font-semibold leading-6 text-foreground font-heading tracking-wide uppercase">
                   Company
@@ -76,8 +84,8 @@ export function Footer() {
                   ))}
                 </ul>
               </div>
-            </div>
-            <div className="md:grid md:grid-cols-2 md:gap-8">
+            </nav>
+            <nav aria-label="Services and newsletter" className="md:grid md:grid-cols-2 md:gap-8">
               <div>
                 <h3 className="text-sm font-semibold leading-6 text-foreground font-heading tracking-wide uppercase">
                   Services
@@ -102,7 +110,7 @@ export function Footer() {
                 <p className="mt-6 text-sm leading-6 text-muted-foreground">
                   Stay updated with the latest export insights and market trends.
                 </p>
-                <form className="mt-6 flex flex-col gap-3 max-w-xs">
+                <form className="mt-6 flex flex-col gap-3 max-w-xs" aria-label="Newsletter subscription">
                   <label htmlFor="email-address" className="sr-only">
                     Email address
                   </label>
@@ -120,7 +128,7 @@ export function Footer() {
                   </Button>
                 </form>
               </div>
-            </div>
+            </nav>
           </div>
         </div>
         <div className="mt-16 border-t border-border pt-8 sm:mt-20 lg:mt-24">
@@ -128,6 +136,9 @@ export function Footer() {
             &copy; {new Date().getFullYear()} Sheesh Exports. All rights reserved.
           </p>
         </div>
+        <address className="mt-4 text-xs text-muted-foreground not-italic" aria-label="Company address">
+          507, B-Block, The One Building, 5 RNT Marg, Indore, Madhya Pradesh - 452001, India
+        </address>
       </div>
     </footer>
   );

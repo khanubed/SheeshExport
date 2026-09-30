@@ -256,22 +256,22 @@ export function ProductVariants({ product, selectedVariant, onSelect }: ProductV
                   <h3 className="text-[10px] uppercase tracking-[0.15em] text-foreground mb-4 font-bold font-sans">
                     Commercial Logistics
                   </h3>
-                  <div className="flex flex-col gap-3 text-sm font-sans">
-                    <div className="flex justify-between border-b border-border/50 pb-2">
+                  <div className="flex flex-col gap-4 sm:gap-3 text-xs sm:text-sm font-sans">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end border-b border-border/50 pb-2 gap-1 sm:gap-4">
                       <span className="text-muted-foreground">20FT Container</span>
-                      <span className="font-mono font-medium text-foreground">
+                      <span className="font-mono font-medium text-foreground sm:text-right">
                         {product.shipping.capacity20ft}
                       </span>
                     </div>
-                    <div className="flex justify-between border-b border-border/50 pb-2">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end border-b border-border/50 pb-2 gap-1 sm:gap-4">
                       <span className="text-muted-foreground">40FT Container</span>
-                      <span className="font-mono font-medium text-foreground">
+                      <span className="font-mono font-medium text-foreground sm:text-right">
                         {product.shipping.capacity40ft}
                       </span>
                     </div>
-                    <div className="flex justify-between border-b border-border/50 pb-2">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end border-b border-border/50 pb-2 gap-1 sm:gap-4">
                       <span className="text-muted-foreground">Transit Time</span>
-                      <span className="font-mono font-medium text-foreground">
+                      <span className="font-mono font-medium text-foreground sm:text-right">
                         {product.shipping.transitTime.split(" ")[0]} Days
                       </span>
                     </div>

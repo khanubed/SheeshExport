@@ -16,15 +16,15 @@ export const metadata: Metadata = buildMetadata({
 
 export default function CategoriesIndexPage() {
   return (
-    <main className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20">
+    <main className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20" role="main">
       {/* 1. HERO SECTION */}
-      <section className="pt-20 pb-12 lg:pt-24 lg:pb-16 border-b border-border bg-[#FAFAFA]">
+      <section aria-labelledby="categories-hero-heading" className="pt-20 pb-12 lg:pt-24 lg:pb-16 border-b border-border bg-[#FAFAFA]">
         <div className="container mx-auto px-6 lg:px-12 max-w-8xl">
           <div className="max-w-4xl">
             <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground mb-6">
               Product Categories
             </span>
-            <h1 className="font-heading text-5xl lg:text-7xl font-bold text-foreground leading-[1.1] mb-6">
+            <h1 id="categories-hero-heading" className="font-heading text-5xl lg:text-7xl font-bold text-foreground leading-[1.1] mb-6">
               Export-Grade Agricultural Commodities
             </h1>
             <p className="text-lg lg:text-xl text-muted-foreground font-sans leading-relaxed max-w-2xl">
@@ -37,9 +37,10 @@ export default function CategoriesIndexPage() {
       </section>
 
       {/* 2. CATEGORIES GRID */}
-      <section className="py-16 lg:py-24 bg-white">
+      <section aria-labelledby="categories-grid-heading" className="py-16 lg:py-24 bg-white">
         <div className="container mx-auto px-6 lg:px-12 max-w-8xl">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <h2 id="categories-grid-heading" className="sr-only">Product Categories Grid</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" role="list" aria-label="Product categories">
             {CATEGORIES_DATA.map((category) => (
               <CategoryCard key={category.id} category={category} />
             ))}
@@ -48,12 +49,12 @@ export default function CategoriesIndexPage() {
       </section>
 
       {/* 3. SEO / SOURCING CONTENT */}
-      <section className="py-16 lg:py-24 bg-[#FAFAFA] border-y border-border">
+      <section aria-labelledby="why-india-heading" className="py-16 lg:py-24 bg-[#FAFAFA] border-y border-border">
         <div className="container mx-auto px-6 lg:px-12 max-w-4xl">
           <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground mb-4">
             Why Source From India?
           </span>
-          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-foreground mb-6">
+          <h2 id="why-india-heading" className="font-heading text-3xl sm:text-4xl font-bold text-foreground mb-6">
             Global Agricultural Dominance & Unmatched Supply Capacity
           </h2>
           <div className="space-y-6 text-muted-foreground font-sans leading-relaxed">
@@ -106,9 +107,9 @@ export default function CategoriesIndexPage() {
       />
 
       {/* 5. CTA */}
-      <section className="bg-[#1A1A1A] text-white py-24 lg:py-32">
+      <section aria-labelledby="categories-cta-heading" className="bg-[#1A1A1A] text-white py-24 lg:py-32">
         <div className="container mx-auto px-6 lg:px-12 max-w-4xl text-center">
-          <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold mb-8">
+          <h2 id="categories-cta-heading" className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold mb-8">
             Ready To Request A Quote?
           </h2>
           <p className="text-xl text-white/60 font-sans font-light mb-12 max-w-2xl mx-auto leading-relaxed">

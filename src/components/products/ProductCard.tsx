@@ -11,7 +11,7 @@ export function ProductCard({ product }: { product: Product }) {
   const productHref = `/products/${product.categorySlug}/${product.slug}`;
   
   return (
-    <div className="group relative flex flex-col bg-card border border-border/50 rounded-xl overflow-hidden hover:shadow-lg hover:border-primary/30 transition-all duration-300 cursor-pointer h-full">
+    <article className="group relative flex flex-col bg-card border border-border/50 rounded-xl overflow-hidden hover:shadow-lg hover:border-primary/30 transition-all duration-300 cursor-pointer h-full">
       {/* Entire Card Clickable Link */}
       <Link 
         href={productHref} 
@@ -103,6 +103,6 @@ export function ProductCard({ product }: { product: Product }) {
           </Link>
         </div>
       </div>
-    </div>
+    </article>
   );
 }

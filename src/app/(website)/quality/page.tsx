@@ -164,25 +164,27 @@ export default function QualityPage() {
 
       {/* SECTION 05: TESTING PARAMETERS */}
       <section id="standards" className="py-16 lg:py-24 bg-background border-y border-border">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1200px]">
-          <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-24 max-w-[1200px]">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-medium text-primary mb-10 lg:mb-12">
             Standard Testing Parameters
           </h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse min-w-[800px]">
+          
+          {/* Responsive Table View */}
+          <div className="w-full">
+            <table className="w-full text-left border-collapse">
               <thead>
                 <tr>
-                  <th className="border-b-2 border-[#1E1E1E] py-4 px-4 font-heading text-xl font-medium text-primary w-1/4">Parameter</th>
-                  <th className="border-b-2 border-[#1E1E1E] py-4 px-4 font-heading text-xl font-medium text-primary w-1/4">Why It Matters</th>
-                  <th className="border-b-2 border-[#1E1E1E] py-4 px-4 font-heading text-xl font-medium text-primary w-1/2">Technical Implication</th>
+                  <th className="border-b-2 border-[#1E1E1E] py-3 md:py-4 px-2 md:px-4 font-heading text-sm sm:text-base md:text-xl font-medium text-primary w-[25%] align-bottom">Parameter</th>
+                  <th className="border-b-2 border-[#1E1E1E] py-3 md:py-4 px-2 md:px-4 font-heading text-sm sm:text-base md:text-xl font-medium text-primary w-[30%] align-bottom">Why It Matters</th>
+                  <th className="border-b-2 border-[#1E1E1E] py-3 md:py-4 px-2 md:px-4 font-heading text-sm sm:text-base md:text-xl font-medium text-primary w-[45%] align-bottom">Technical Implication</th>
                 </tr>
               </thead>
-              <tbody className="text-base text-muted-foreground font-sans font-light">
+              <tbody className="text-xs sm:text-sm md:text-base text-muted-foreground font-sans font-light">
                 {TESTING_PARAMETERS.map((row, idx) => (
                   <tr key={idx} className="border-b border-border hover:bg-background/50 transition-colors">
-                    <td className="py-5 px-4 font-medium text-foreground">{row.param}</td>
-                    <td className="py-5 px-4 font-medium text-primary">{row.reason}</td>
-                    <td className="py-5 px-4">{row.detail}</td>
+                    <td className="py-4 md:py-5 px-2 md:px-4 font-medium text-foreground align-top leading-snug">{row.param}</td>
+                    <td className="py-4 md:py-5 px-2 md:px-4 font-medium text-primary align-top leading-snug">{row.reason}</td>
+                    <td className="py-4 md:py-5 px-2 md:px-4 leading-relaxed align-top">{row.detail}</td>
                   </tr>
                 ))}
               </tbody>

@@ -61,7 +61,7 @@ export function ProcessSection() {
               <StaggerItem key={idx} className="relative group">
                 <div className="flex flex-col text-left">
                   {/* Image Container */}
-                  <div className="w-full aspect-[4/5] bg-muted relative mb-8 overflow-hidden group-hover:-translate-y-2 group-hover:shadow-2xl transition-all duration-500 z-10 border border-border">
+                  <div className="w-full aspect-[4/3] md:aspect-[4/5] bg-muted relative mb-8 overflow-hidden group-hover:-translate-y-2 group-hover:shadow-2xl transition-all duration-500 z-10 border border-border">
                     <Image 
                       src={step.image} 
                       alt={step.title} 

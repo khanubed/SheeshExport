@@ -188,31 +188,31 @@ export default function CertificationsPage() {
 
       {/* SECTION 04: MARKET ACCESS MATRIX */}
       <section className="py-16 lg:py-20 bg-background">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1200px]">
-          <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-24 max-w-[1200px]">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-medium text-primary mb-10 lg:mb-12">
             Certification Requirements By Market
           </h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse min-w-[800px]">
+          <div className="w-full">
+            <table className="w-full text-left border-collapse">
               <thead>
                 <tr>
-                  <th className="border-b-2 border-[#1E1E1E] py-4 px-4 font-heading text-2xl font-medium text-primary">Certification</th>
-                  <th className="border-b-2 border-[#1E1E1E] py-4 px-4 font-heading text-2xl font-medium text-primary">USA</th>
-                  <th className="border-b-2 border-[#1E1E1E] py-4 px-4 font-heading text-2xl font-medium text-primary">EU</th>
-                  <th className="border-b-2 border-[#1E1E1E] py-4 px-4 font-heading text-2xl font-medium text-primary">UAE</th>
-                  <th className="border-b-2 border-[#1E1E1E] py-4 px-4 font-heading text-2xl font-medium text-primary">Saudi</th>
-                  <th className="border-b-2 border-[#1E1E1E] py-4 px-4 font-heading text-2xl font-medium text-primary">UK</th>
+                  <th className="border-b-2 border-[#1E1E1E] py-3 md:py-4 px-2 md:px-4 font-heading text-sm sm:text-base md:text-xl font-medium text-primary w-[30%] sm:w-auto align-bottom">Certification</th>
+                  <th className="border-b-2 border-[#1E1E1E] py-3 md:py-4 px-1 md:px-4 font-heading text-xs sm:text-base md:text-xl font-medium text-primary text-center align-bottom">USA</th>
+                  <th className="border-b-2 border-[#1E1E1E] py-3 md:py-4 px-1 md:px-4 font-heading text-xs sm:text-base md:text-xl font-medium text-primary text-center align-bottom">EU</th>
+                  <th className="border-b-2 border-[#1E1E1E] py-3 md:py-4 px-1 md:px-4 font-heading text-xs sm:text-base md:text-xl font-medium text-primary text-center align-bottom">UAE</th>
+                  <th className="border-b-2 border-[#1E1E1E] py-3 md:py-4 px-1 md:px-4 font-heading text-xs sm:text-base md:text-xl font-medium text-primary text-center align-bottom">Saudi</th>
+                  <th className="border-b-2 border-[#1E1E1E] py-3 md:py-4 px-1 md:px-4 font-heading text-xs sm:text-base md:text-xl font-medium text-primary text-center align-bottom">UK</th>
                 </tr>
               </thead>
-              <tbody className="text-lg">
+              <tbody className="text-xs sm:text-sm md:text-lg">
                 {MATRIX.map((row, idx) => (
                   <tr key={idx} className="border-b border-border hover:bg-background/50 transition-colors">
-                    <td className="py-4 px-4 font-medium text-foreground">{row.cert}</td>
-                    <td className={`py-4 px-4 ${row.usa === '✓' ? 'text-primary' : 'text-muted-foreground font-sans'}`}>{row.usa}</td>
-                    <td className={`py-4 px-4 ${row.eu === '✓' ? 'text-primary' : 'text-muted-foreground font-sans'}`}>{row.eu}</td>
-                    <td className={`py-4 px-4 ${row.uae === '✓' ? 'text-primary' : 'text-muted-foreground font-sans'}`}>{row.uae}</td>
-                    <td className={`py-4 px-4 ${row.saudi === '✓' ? 'text-primary' : 'text-muted-foreground font-sans'}`}>{row.saudi}</td>
-                    <td className={`py-4 px-4 ${row.uk === '✓' ? 'text-primary' : 'text-muted-foreground font-sans'}`}>{row.uk}</td>
+                    <td className="py-3 md:py-4 px-2 md:px-4 font-medium text-foreground leading-snug">{row.cert}</td>
+                    <td className={`py-3 md:py-4 px-1 md:px-4 text-center ${row.usa === '✓' ? 'text-primary' : 'text-muted-foreground font-sans'}`}>{row.usa}</td>
+                    <td className={`py-3 md:py-4 px-1 md:px-4 text-center ${row.eu === '✓' ? 'text-primary' : 'text-muted-foreground font-sans'}`}>{row.eu}</td>
+                    <td className={`py-3 md:py-4 px-1 md:px-4 text-center ${row.uae === '✓' ? 'text-primary' : 'text-muted-foreground font-sans'}`}>{row.uae}</td>
+                    <td className={`py-3 md:py-4 px-1 md:px-4 text-center ${row.saudi === '✓' ? 'text-primary' : 'text-muted-foreground font-sans'}`}>{row.saudi}</td>
+                    <td className={`py-3 md:py-4 px-1 md:px-4 text-center ${row.uk === '✓' ? 'text-primary' : 'text-muted-foreground font-sans'}`}>{row.uk}</td>
                   </tr>
                 ))}
               </tbody>

@@ -51,7 +51,7 @@ export function FilterSidebar({ filters, setFilters }: FilterSidebarProps) {
   );
 
   return (
-    <div className="space-y-6 w-full">
+    <aside className="space-y-6 w-full">
       {/* Search */}
       <div>
         <h3 className="font-semibold text-foreground mb-3 text-sm tracking-tight">Search Catalog</h3>
@@ -77,6 +77,6 @@ export function FilterSidebar({ filters, setFilters }: FilterSidebarProps) {
         {renderFilterGroup("Export Markets", "exportMarkets", FILTER_OPTIONS.exportMarkets)}
         {renderFilterGroup("Packaging Types", "packagingTypes", FILTER_OPTIONS.packagingTypes)}
       </Accordion>
-    </div>
+    </aside>
   );
 }

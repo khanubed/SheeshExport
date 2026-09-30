@@ -80,16 +80,16 @@ export default function RequestQuotePage() {
   const selectedProductVariants = formData.product ? (VARIANTS[formData.product] || []) : [];
 
   return (
-    <main className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20">
+    <main className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20" role="main">
       
       {/* 1. HERO SECTION */}
-      <section className="pt-20 pb-12 lg:pt-24 lg:pb-16 border-b border-border bg-[#FAFAFA]">
+      <section aria-labelledby="rfq-hero-heading" className="pt-20 pb-12 lg:pt-24 lg:pb-16 border-b border-border bg-[#FAFAFA]">
         <div className="container mx-auto px-6 lg:px-12 max-w-8xl">
           <div className="max-w-4xl">
             <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground mb-6">
               Request For Quotation
             </span>
-            <h1 className="font-heading text-5xl lg:text-7xl font-bold text-foreground leading-[1.1] mb-6">
+            <h1 id="rfq-hero-heading" className="font-heading text-5xl lg:text-7xl font-bold text-foreground leading-[1.1] mb-6">
               Source Export-Grade Agricultural Products Directly From India
             </h1>
             <p className="text-lg lg:text-xl text-muted-foreground font-sans leading-relaxed max-w-2xl">
@@ -100,22 +100,23 @@ export default function RequestQuotePage() {
       </section>
 
       {/* 2. TRUST STRIP */}
-      <section className="border-b border-border bg-white">
+      <section aria-labelledby="trust-strip-heading" className="border-b border-border bg-white">
         <div className="container mx-auto px-6 lg:px-12 max-w-8xl">
-          <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-border border-x border-border -mx-px">
-            <div className="p-8 lg:p-10">
+          <h2 id="trust-strip-heading" className="sr-only">Key Metrics</h2>
+          <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-border border-x border-border -mx-px" role="list" aria-label="Key metrics">
+            <div role="listitem" className="p-8 lg:p-10">
               <div className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">Response Time</div>
               <div className="font-heading text-2xl font-bold text-foreground">Within 24 Hours</div>
             </div>
-            <div className="p-8 lg:p-10">
+            <div role="listitem" className="p-8 lg:p-10">
               <div className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">Export Markets</div>
               <div className="font-heading text-2xl font-bold text-foreground">50+ Countries</div>
             </div>
-            <div className="p-8 lg:p-10">
+            <div role="listitem" className="p-8 lg:p-10">
               <div className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">Packaging Options</div>
               <div className="font-heading text-2xl font-bold text-foreground">Private Label + Bulk</div>
             </div>
-            <div className="p-8 lg:p-10">
+            <div role="listitem" className="p-8 lg:p-10">
               <div className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">Shipment Types</div>
               <div className="font-heading text-xl lg:text-2xl font-bold text-foreground">FCL • LCL • Mixed</div>
             </div>
@@ -124,12 +125,12 @@ export default function RequestQuotePage() {
       </section>
 
       {/* 3. MAIN LAYOUT (35% Sticky / 65% Scrollable) */}
-      <section className="bg-white">
+      <section aria-labelledby="rfq-form-heading" className="bg-white">
         <div className="container mx-auto px-6 lg:px-12 max-w-8xl">
           <div className="flex flex-col lg:flex-row border-x border-border -mx-px min-h-[1000px]">
             
             {/* LEFT PANEL: Sticky Inquiry Summary (35%) */}
-            <div className="w-full lg:w-[35%] lg:border-r border-border bg-[#FAFAFA] hidden lg:block">
+            <aside className="w-full lg:w-[35%] lg:border-r border-border bg-[#FAFAFA] hidden lg:block" aria-label="Inquiry summary">
               <div className="sticky top-20 p-8 lg:p-12 h-[calc(100vh-80px)] overflow-y-auto flex flex-col">
                 <h3 className="font-heading text-3xl font-bold text-foreground mb-8 pb-4 border-b border-border">
                   Your Inquiry
@@ -175,20 +176,23 @@ export default function RequestQuotePage() {
                   <div className="font-heading text-xl font-bold text-[#556B2F]">Within 24 Hours</div>
                 </div>
               </div>
-            </div>
+            </aside>
 
             {/* RIGHT PANEL: Scrollable RFQ Procurement Form Workflow (65%) */}
             <div className="w-full lg:w-[65%] p-6 lg:p-12 xl:p-16 bg-white">
-              <div className="max-w-3xl mx-auto space-y-12 lg:space-y-16">
+              <form className="max-w-3xl mx-auto space-y-12 lg:space-y-16" aria-label="Request for quotation form">
                 
                 {/* STEP 1 */}
-                <div>
-                  <h2 className="font-heading text-3xl font-bold text-foreground mb-8">What Products Are You Looking For?</h2>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                <fieldset>
+                  <legend className="font-heading text-3xl font-bold text-foreground mb-8">What Products Are You Looking For?</legend>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4" role="radiogroup" aria-label="Product selection">
                     {PRODUCTS.map(p => (
                       <button
                         key={p.id}
+                        type="button"
                         onClick={() => { updateForm('product', p.id); updateForm('variant', ''); }}
+                        role="radio"
+                        aria-checked={formData.product === p.id}
                         className={cn(
                           "flex flex-col items-start p-4 border transition-all text-left group",
                           formData.product === p.id 
@@ -196,24 +200,28 @@ export default function RequestQuotePage() {
                             : "border-border hover:border-primary/30"
                         )}
                       >
-                        <div className="relative w-full aspect-[4/3] bg-muted mb-4 overflow-hidden">
+                        <figure className="relative w-full aspect-[4/3] bg-muted mb-4 overflow-hidden">
                           <Image src={p.image} alt={p.name} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
-                        </div>
+                          <figcaption className="sr-only">{p.name}</figcaption>
+                        </figure>
                         <span className="font-sans font-semibold text-foreground">{p.name}</span>
                       </button>
                     ))}
                   </div>
-                </div>
+                </fieldset>
 
                 {/* STEP 2 */}
                 {selectedProductVariants.length > 0 && (
-                  <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-                    <h2 className="font-heading text-3xl font-bold text-foreground mb-8">Select Product Variant</h2>
-                    <div className="grid sm:grid-cols-2 gap-4">
+                  <fieldset className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+                    <legend className="font-heading text-3xl font-bold text-foreground mb-8">Select Product Variant</legend>
+                    <div className="grid sm:grid-cols-2 gap-4" role="radiogroup" aria-label="Variant selection">
                       {selectedProductVariants.map(v => (
                         <button
                           key={v.id}
+                          type="button"
                           onClick={() => updateForm('variant', v.id)}
+                          role="radio"
+                          aria-checked={formData.variant === v.id}
                           className={cn(
                             "flex flex-col text-left border p-5 transition-all group",
                             formData.variant === v.id 
@@ -221,9 +229,10 @@ export default function RequestQuotePage() {
                               : "border-border hover:border-primary/30"
                           )}
                         >
-                          <div className="relative w-full h-32 bg-muted mb-5 overflow-hidden">
+                          <figure className="relative w-full h-32 bg-muted mb-5 overflow-hidden">
                             <Image src={v.image} alt={v.name} fill className="object-cover" />
-                          </div>
+                            <figcaption className="sr-only">{v.name}</figcaption>
+                          </figure>
                           <h4 className="font-heading text-xl font-bold text-foreground mb-3">{v.name}</h4>
                           <div className="flex gap-4 mb-3 border-b border-border/50 pb-3 w-full">
                             <div>
@@ -239,17 +248,20 @@ export default function RequestQuotePage() {
                         </button>
                       ))}
                     </div>
-                  </div>
+                  </fieldset>
                 )}
 
                 {/* STEP 3 */}
-                <div>
-                  <h2 className="font-heading text-3xl font-bold text-foreground mb-8">Estimated Purchase Quantity</h2>
-                  <div className="flex flex-wrap gap-3">
+                <fieldset>
+                  <legend className="font-heading text-3xl font-bold text-foreground mb-8">Estimated Purchase Quantity</legend>
+                  <div className="flex flex-wrap gap-3" role="radiogroup" aria-label="Quantity selection">
                     {QUANTITIES.map(q => (
                       <button
                         key={q}
+                        type="button"
                         onClick={() => updateForm('quantity', q)}
+                        role="radio"
+                        aria-checked={formData.quantity === q}
                         className={cn(
                           "px-6 py-4 border text-sm font-semibold transition-all",
                           formData.quantity === q
@@ -261,16 +273,19 @@ export default function RequestQuotePage() {
                       </button>
                     ))}
                   </div>
-                </div>
+                </fieldset>
 
                 {/* STEP 4 */}
-                <div>
-                  <h2 className="font-heading text-3xl font-bold text-foreground mb-8">Packaging Requirements</h2>
-                  <div className="flex flex-col gap-4">
+                <fieldset>
+                  <legend className="font-heading text-3xl font-bold text-foreground mb-8">Packaging Requirements</legend>
+                  <div className="flex flex-col gap-4" role="radiogroup" aria-label="Packaging selection">
                     {PACKAGING.map(p => (
                       <button
                         key={p.id}
+                        type="button"
                         onClick={() => updateForm('packaging', p.id)}
+                        role="radio"
+                        aria-checked={formData.packaging === p.id}
                         className={cn(
                           "flex flex-col sm:flex-row sm:items-center text-left border p-6 transition-all",
                           formData.packaging === p.id
@@ -283,22 +298,23 @@ export default function RequestQuotePage() {
                           <p className="text-sm text-muted-foreground font-sans">{p.desc}</p>
                         </div>
                         {formData.packaging === p.id && (
-                          <div className="mt-4 sm:mt-0 sm:ml-4 w-6 h-6 rounded-full bg-primary flex items-center justify-center text-primary-foreground flex-shrink-0">
+                          <div className="mt-4 sm:mt-0 sm:ml-4 w-6 h-6 rounded-full bg-primary flex items-center justify-center text-primary-foreground flex-shrink-0" aria-hidden="true">
                             <Check className="w-4 h-4" />
                           </div>
                         )}
                       </button>
                     ))}
                   </div>
-                </div>
+                </fieldset>
 
                 {/* STEP 5 */}
-                <div>
-                  <h2 className="font-heading text-3xl font-bold text-foreground mb-8">Destination Details</h2>
+                <fieldset>
+                  <legend className="font-heading text-3xl font-bold text-foreground mb-8">Destination Details</legend>
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-xs uppercase tracking-widest font-bold text-muted-foreground mb-3">Country</label>
+                      <label htmlFor="rfq-country" className="block text-xs uppercase tracking-widest font-bold text-muted-foreground mb-3">Country</label>
                       <input 
+                        id="rfq-country"
                         type="text" 
                         placeholder="e.g. United Arab Emirates" 
                         value={formData.country}
@@ -307,8 +323,9 @@ export default function RequestQuotePage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs uppercase tracking-widest font-bold text-muted-foreground mb-3">Destination Port</label>
+                      <label htmlFor="rfq-port" className="block text-xs uppercase tracking-widest font-bold text-muted-foreground mb-3">Destination Port</label>
                       <input 
+                        id="rfq-port"
                         type="text" 
                         placeholder="e.g. Jebel Ali" 
                         value={formData.port}
@@ -317,16 +334,19 @@ export default function RequestQuotePage() {
                       />
                     </div>
                   </div>
-                </div>
+                </fieldset>
 
                 {/* STEP 6 */}
-                <div>
-                  <h2 className="font-heading text-3xl font-bold text-foreground mb-8">Compliance Requirements</h2>
-                  <div className="flex flex-wrap gap-3">
+                <fieldset>
+                  <legend className="font-heading text-3xl font-bold text-foreground mb-8">Compliance Requirements</legend>
+                  <div className="flex flex-wrap gap-3" role="group" aria-label="Certification selection">
                     {CERTIFICATIONS.map(c => (
                       <button
                         key={c}
+                        type="button"
                         onClick={() => toggleCert(c)}
+                        role="checkbox"
+                        aria-checked={formData.certifications.includes(c)}
                         className={cn(
                           "px-6 py-3 border text-sm font-semibold transition-all rounded-full",
                           formData.certifications.includes(c)
@@ -338,50 +358,54 @@ export default function RequestQuotePage() {
                       </button>
                     ))}
                   </div>
-                </div>
+                </fieldset>
 
                 {/* STEP 7 */}
-                <div>
-                  <h2 className="font-heading text-3xl font-bold text-foreground mb-8">Buyer Information</h2>
+                <fieldset>
+                  <legend className="font-heading text-3xl font-bold text-foreground mb-8">Buyer Information</legend>
                   <div className="grid sm:grid-cols-2 gap-8 lg:gap-12">
                     <div>
-                      <label className="block text-xs uppercase tracking-widest font-bold text-muted-foreground mb-2">Full Name</label>
-                      <input type="text" value={formData.fullName} onChange={e => updateForm('fullName', e.target.value)} className="w-full border-b border-border bg-transparent py-2 text-base focus:border-primary focus:outline-none transition-colors rounded-none font-sans" />
+                      <label htmlFor="rfq-fullname" className="block text-xs uppercase tracking-widest font-bold text-muted-foreground mb-2">Full Name</label>
+                      <input id="rfq-fullname" type="text" value={formData.fullName} onChange={e => updateForm('fullName', e.target.value)} className="w-full border-b border-border bg-transparent py-2 text-base focus:border-primary focus:outline-none transition-colors rounded-none font-sans" />
                     </div>
                     <div>
-                      <label className="block text-xs uppercase tracking-widest font-bold text-muted-foreground mb-2">Company Name</label>
-                      <input type="text" value={formData.companyName} onChange={e => updateForm('companyName', e.target.value)} className="w-full border-b border-border bg-transparent py-2 text-base focus:border-primary focus:outline-none transition-colors rounded-none font-sans" />
+                      <label htmlFor="rfq-company" className="block text-xs uppercase tracking-widest font-bold text-muted-foreground mb-2">Company Name</label>
+                      <input id="rfq-company" type="text" value={formData.companyName} onChange={e => updateForm('companyName', e.target.value)} className="w-full border-b border-border bg-transparent py-2 text-base focus:border-primary focus:outline-none transition-colors rounded-none font-sans" />
                     </div>
                     <div>
-                      <label className="block text-xs uppercase tracking-widest font-bold text-muted-foreground mb-2">Business Email</label>
-                      <input type="email" value={formData.email} onChange={e => updateForm('email', e.target.value)} className="w-full border-b border-border bg-transparent py-2 text-base focus:border-primary focus:outline-none transition-colors rounded-none font-sans" />
+                      <label htmlFor="rfq-email" className="block text-xs uppercase tracking-widest font-bold text-muted-foreground mb-2">Business Email</label>
+                      <input id="rfq-email" type="email" value={formData.email} onChange={e => updateForm('email', e.target.value)} className="w-full border-b border-border bg-transparent py-2 text-base focus:border-primary focus:outline-none transition-colors rounded-none font-sans" />
                     </div>
                     <div>
-                      <label className="block text-xs uppercase tracking-widest font-bold text-muted-foreground mb-2">WhatsApp</label>
-                      <input type="tel" value={formData.whatsapp} onChange={e => updateForm('whatsapp', e.target.value)} className="w-full border-b border-border bg-transparent py-2 text-base focus:border-primary focus:outline-none transition-colors rounded-none font-sans" />
+                      <label htmlFor="rfq-whatsapp" className="block text-xs uppercase tracking-widest font-bold text-muted-foreground mb-2">WhatsApp</label>
+                      <input id="rfq-whatsapp" type="tel" value={formData.whatsapp} onChange={e => updateForm('whatsapp', e.target.value)} className="w-full border-b border-border bg-transparent py-2 text-base focus:border-primary focus:outline-none transition-colors rounded-none font-sans" />
                     </div>
                     <div>
-                      <label className="block text-xs uppercase tracking-widest font-bold text-muted-foreground mb-2">Designation</label>
-                      <input type="text" value={formData.designation} onChange={e => updateForm('designation', e.target.value)} className="w-full border-b border-border bg-transparent py-2 text-base focus:border-primary focus:outline-none transition-colors rounded-none font-sans" />
+                      <label htmlFor="rfq-designation" className="block text-xs uppercase tracking-widest font-bold text-muted-foreground mb-2">Designation</label>
+                      <input id="rfq-designation" type="text" value={formData.designation} onChange={e => updateForm('designation', e.target.value)} className="w-full border-b border-border bg-transparent py-2 text-base focus:border-primary focus:outline-none transition-colors rounded-none font-sans" />
                     </div>
                     <div>
-                      <label className="block text-xs uppercase tracking-widest font-bold text-muted-foreground mb-2">Website</label>
-                      <input type="url" value={formData.website} onChange={e => updateForm('website', e.target.value)} className="w-full border-b border-border bg-transparent py-2 text-base focus:border-primary focus:outline-none transition-colors rounded-none font-sans" />
+                      <label htmlFor="rfq-website" className="block text-xs uppercase tracking-widest font-bold text-muted-foreground mb-2">Website</label>
+                      <input id="rfq-website" type="url" value={formData.website} onChange={e => updateForm('website', e.target.value)} className="w-full border-b border-border bg-transparent py-2 text-base focus:border-primary focus:outline-none transition-colors rounded-none font-sans" />
                     </div>
                   </div>
-                </div>
+                </fieldset>
 
                 {/* STEP 8 */}
-                <div>
-                  <h2 className="font-heading text-3xl font-bold text-foreground mb-8">Additional Notes</h2>
-                  <textarea 
-                    value={formData.notes}
-                    onChange={e => updateForm('notes', e.target.value)}
-                    rows={4}
-                    placeholder="Mention destination port, target pricing, packaging requirements, special certifications, or any additional procurement details."
-                    className="w-full border border-border bg-[#FAFAFA] p-6 text-base focus:border-primary focus:outline-none transition-colors font-sans resize-y min-h-[150px] placeholder:text-muted-foreground/50"
-                  />
-                </div>
+                <fieldset>
+                  <legend className="font-heading text-3xl font-bold text-foreground mb-8">Additional Notes</legend>
+                  <div>
+                    <label htmlFor="rfq-notes" className="sr-only">Additional Notes</label>
+                    <textarea 
+                      id="rfq-notes"
+                      value={formData.notes}
+                      onChange={e => updateForm('notes', e.target.value)}
+                      rows={4}
+                      placeholder="Mention destination port, target pricing, packaging requirements, special certifications, or any additional procurement details."
+                      className="w-full border border-border bg-[#FAFAFA] p-6 text-base focus:border-primary focus:outline-none transition-colors font-sans resize-y min-h-[150px] placeholder:text-muted-foreground/50"
+                    />
+                  </div>
+                </fieldset>
 
                 {/* FORM SUBMIT */}
                 <div className="pt-4 border-t border-border flex flex-col gap-4">
@@ -391,27 +415,28 @@ export default function RequestQuotePage() {
                   <p className="text-muted-foreground font-sans max-w-xl">
                     Our procurement specialists will review your requirements and provide a detailed commercial proposal.
                   </p>
-                  <button className="w-full sm:w-auto bg-primary text-primary-foreground font-bold uppercase tracking-widest px-10 py-5 text-sm hover:bg-primary/90 transition-colors mt-2">
+                  <button type="submit" className="w-full sm:w-auto bg-primary text-primary-foreground font-bold uppercase tracking-widest px-10 py-5 text-sm hover:bg-primary/90 transition-colors mt-2">
                     Submit Procurement Request
                   </button>
                 </div>
 
-              </div>
+              </form>
             </div>
           </div>
         </div>
       </section>
 
       {/* 5. BOTTOM TRUST SECTION */}
-      <section className="border-t border-[#333] bg-[#1A1A1A] py-10">
+      <section aria-labelledby="rfq-trust-heading" className="border-t border-[#333] bg-[#1A1A1A] py-10">
         <div className="container mx-auto px-6 lg:px-12 max-w-8xl">
-          <div className="flex flex-wrap justify-center gap-x-10 gap-y-4 text-sm font-semibold tracking-widest uppercase text-white/40">
+          <h2 id="rfq-trust-heading" className="sr-only">Trust Features</h2>
+          <ul className="flex flex-wrap justify-center gap-x-10 gap-y-4 text-sm font-semibold tracking-widest uppercase text-white/40" role="list" aria-label="Service features">
             {TRUST_FEATURES.map((feat, idx) => (
-              <span key={idx} className="flex items-center gap-2">
-                <Check className="w-4 h-4 text-[#D4AF37]" /> {feat}
-              </span>
+              <li key={idx} className="flex items-center gap-2" role="listitem">
+                <Check className="w-4 h-4 text-[#D4AF37]" aria-hidden="true" /> {feat}
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 

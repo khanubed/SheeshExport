@@ -58,9 +58,9 @@ export function FAQSection({
         <Accordion className="w-full">
           {faqs.map((faq, idx) => (
             <AccordionItem key={idx} value={`item-${idx}`} className="border-border">
-              <AccordionTrigger className="font-heading text-xl lg:text-2xl font-bold text-foreground text-left py-6 hover:no-underline hover:text-primary transition-colors">
-                {faq.question}
-              </AccordionTrigger>
+                <AccordionTrigger className="font-heading text-xl lg:text-2xl font-bold text-foreground text-left py-6 hover:no-underline hover:text-primary transition-colors">
+                  {faq.question}
+                </AccordionTrigger>
               <AccordionContent className="text-lg text-muted-foreground font-sans font-light leading-relaxed pb-8">
                 {faq.answer}
               </AccordionContent>

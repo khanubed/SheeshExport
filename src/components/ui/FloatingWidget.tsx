@@ -165,8 +165,8 @@ export function FloatingWidget() {
               </p>
               
               <div className="w-full space-y-4">
-                <a href="tel:+919876543210" className={`w-full ${buttonVariants({ variant: "outline" })} font-bold`}>
-                  Dial +91-98765-43210
+                <a href="tel:+919826270888" className={`w-full ${buttonVariants({ variant: "outline" })} font-bold`}>
+                  Dial +91-98262-70888
                 </a>
                 <div className="relative">
                   <div className="absolute inset-0 flex items-center"><span className="w-full border-t border-border" /></div>
@@ -214,7 +214,7 @@ export function FloatingWidget() {
         )}
 
         <a 
-          href="https://wa.me/919876543210"
+          href="https://wa.me/919039920069"
           target="_blank"
           rel="noreferrer"
           className="w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-transform hover:scale-110 bg-[#25D366] text-white"

@@ -1,13 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper/modules";
 import { Star, BadgeCheck, ChevronRight, ChevronLeft } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
-
-import "swiper/css";
 
 const REVIEWS = [
   {
@@ -69,6 +65,42 @@ const GoogleIcon = () => (
 );
 
 export function TestimonialsSection() {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const checkScrollState = () => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(Math.ceil(scrollLeft + clientWidth) < scrollWidth);
+    }
+  };
+
+  useEffect(() => {
+    checkScrollState();
+    window.addEventListener("resize", checkScrollState);
+    return () => window.removeEventListener("resize", checkScrollState);
+  }, []);
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollContainerRef.current) {
+      const { clientWidth } = scrollContainerRef.current;
+      // Scroll by one card width at a time roughly (card width is approx 300px + gap)
+      const scrollAmount = clientWidth > 640 ? clientWidth / 2 : clientWidth;
+      
+      scrollContainerRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "ArrowLeft") scroll("left");
+    if (e.key === "ArrowRight") scroll("right");
+  };
+
   return (
     <section className="py-12 bg-background border-t border-border overflow-hidden">
       <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
@@ -118,26 +150,23 @@ export function TestimonialsSection() {
             </a>
           </div>
 
-          {/* Swiper Column */}
-          <div className="lg:col-span-3 relative px-0 sm:px-10">
-            <Swiper
-              modules={[Navigation, Autoplay]}
-              spaceBetween={24}
-              slidesPerView={1}
-              breakpoints={{
-                640: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 },
-              }}
-              navigation={{
-                nextEl: ".swiper-button-next-custom",
-                prevEl: ".swiper-button-prev-custom",
-              }}
-              loop={true}
-              autoplay={{ delay: 6000, disableOnInteraction: true }}
-              className="py-4 px-2"
+          {/* Native Slider Column */}
+          <div className="lg:col-span-3 relative px-0 sm:px-10 min-w-0 w-full group">
+            <div 
+              className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-4 pt-2 [&::-webkit-scrollbar]:hidden"
+              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+              ref={scrollContainerRef}
+              onScroll={checkScrollState}
+              onKeyDown={handleKeyDown}
+              tabIndex={0}
+              role="region"
+              aria-label="Testimonials Carousel"
             >
               {REVIEWS.map((review, idx) => (
-                <SwiperSlide key={idx} className="h-auto">
+                <div 
+                  key={idx} 
+                  className="snap-start shrink-0 w-[85%] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] h-auto"
+                >
                   <div className="bg-slate-50 dark:bg-card border border-border/50 rounded-2xl p-6 h-full flex flex-col hover:shadow-md transition-shadow">
                     <div className="flex justify-between items-start mb-4">
                       <div className="flex items-center gap-3">
@@ -157,24 +186,34 @@ export function TestimonialsSection() {
                       {[...Array(5)].map((_, i) => (
                         <Star key={i} className="w-4 h-4 fill-[#FBBC05] text-[#FBBC05]" />
                       ))}
-                      <BadgeCheck className="w-4 h-4 text-blue-500 ml-1" />
+                      <BadgeCheck className="w-4 h-4 text-blue-50 ml-1" fill="#3b82f6" />
                     </div>
                     <p className="text-sm text-foreground leading-relaxed line-clamp-4">
                       {review.text}
                     </p>
-                    <button className="text-xs text-muted-foreground hover:text-primary mt-2 text-left w-fit font-medium">
+                    <button className="text-xs text-muted-foreground hover:text-primary mt-auto pt-4 text-left w-fit font-medium">
                       Read more
                     </button>
                   </div>
-                </SwiperSlide>
+                </div>
               ))}
-            </Swiper>
+            </div>
 
             {/* Custom Navigation */}
-            <button className="swiper-button-prev-custom absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 bg-background border border-border rounded-full shadow-sm flex items-center justify-center text-foreground hover:bg-accent hover:text-accent-foreground z-10 transition-colors hidden sm:flex">
+            <button 
+              onClick={() => scroll("left")}
+              disabled={!canScrollLeft}
+              className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 bg-background border border-border rounded-full shadow-sm flex items-center justify-center text-foreground hover:bg-accent hover:text-accent-foreground z-10 transition-colors hidden sm:flex disabled:opacity-50 disabled:cursor-not-allowed"
+              aria-label="Previous testimonial"
+            >
               <ChevronLeft className="w-5 h-5" />
             </button>
-            <button className="swiper-button-next-custom absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 bg-background border border-border rounded-full shadow-sm flex items-center justify-center text-foreground hover:bg-accent hover:text-accent-foreground z-10 transition-colors hidden sm:flex">
+            <button 
+              onClick={() => scroll("right")}
+              disabled={!canScrollRight}
+              className="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 bg-background border border-border rounded-full shadow-sm flex items-center justify-center text-foreground hover:bg-accent hover:text-accent-foreground z-10 transition-colors hidden sm:flex disabled:opacity-50 disabled:cursor-not-allowed"
+              aria-label="Next testimonial"
+            >
               <ChevronRight className="w-5 h-5" />
             </button>
           </div>

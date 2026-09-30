@@ -104,27 +104,30 @@ const OFFER_DOCUMENTS = [
 ];
 
 const OfferDocumentsSection = () => (
-  <section id="offer-documents" className="py-24 bg-muted/30 border-b border-border">
+  <section id="offer-documents" className="py-12 bg-muted/30 border-b border-border">
     <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
-      <header className="mb-16">
-        <span className="text-[10px] font-bold uppercase tracking-widest text-primary mb-4 block">Section 01</span>
+      <header className="mb-8">
+        <span className="text-[10px] font-bold uppercase tracking-widest text-primary mb-2 block">Section 01</span>
         <h2 className="font-heading text-4xl lg:text-5xl font-black uppercase">Offer Documents</h2>
       </header>
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="flex flex-col border border-border bg-background divide-y divide-border shadow-sm">
         {OFFER_DOCUMENTS.map((doc, idx) => (
-          <a key={idx} href={doc.url} target="_blank" rel="noopener noreferrer" className="group flex flex-col justify-between p-8 border border-border bg-background hover:border-primary transition-colors h-full">
-            <div>
-              <div className="flex items-center justify-between mb-6">
-                <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400">
-                  <FileText className="w-3 h-3 mr-1" /> PDF
-                </span>
-                <span className="text-xs text-muted-foreground font-mono">{doc.date}</span>
+          <a key={idx} href={doc.url} target="_blank" rel="noopener noreferrer" className="group flex flex-col sm:flex-row sm:items-center justify-between py-2 px-6 sm:px-8 hover:bg-muted/30 transition-colors gap-6">
+            <div className="flex items-start sm:items-center gap-5 flex-1">
+              <span className="inline-flex items-center justify-center p-3 rounded-full bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400 shrink-0">
+                <FileText className="w-5 h-5" />
+              </span>
+              <div>
+                <h3 className="font-heading text-xl lg:text-2xl font-bold mb-1 group-hover:text-primary transition-colors">{doc.title}</h3>
+                <p className="text-muted-foreground text-sm">{doc.desc}</p>
               </div>
-              <h3 className="font-heading text-2xl font-bold mb-3 group-hover:text-primary transition-colors">{doc.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed mb-8">{doc.desc}</p>
             </div>
-            <div className="flex items-center text-sm font-bold uppercase tracking-widest text-foreground group-hover:text-primary transition-colors mt-auto">
-              View PDF <ArrowUpRight className="w-4 h-4 ml-2" />
+            
+            <div className="flex items-center justify-between sm:justify-end gap-6 sm:w-auto shrink-0 border-t border-border sm:border-0 pt-4 sm:pt-0 mt-2 sm:mt-0">
+              <span className="text-xs text-muted-foreground font-mono bg-muted px-2.5 py-1 rounded-sm">{doc.date}</span>
+              <div className="flex items-center text-sm font-bold uppercase tracking-widest text-foreground group-hover:text-primary transition-colors">
+                View PDF <ArrowUpRight className="w-4 h-4 ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              </div>
             </div>
           </a>
         ))}
@@ -144,31 +147,6 @@ const ANNUAL_REPORTS = [
   { year: "FY 2021-22", title: "Annual Report", url: "/pdfs/AR-21-22.pdf" },
 ];
 
-const AnnualReportsSection = () => (
-  <section id="annual-reports" className="py-24 bg-background border-b border-border">
-    <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
-      <header className="mb-16">
-        <span className="text-[10px] font-bold uppercase tracking-widest text-primary mb-4 block">Section 02</span>
-        <h2 className="font-heading text-4xl lg:text-5xl font-black uppercase">Annual Reports</h2>
-      </header>
-      <div className="relative border-l border-border pl-8 ml-4 md:ml-0 md:pl-12 space-y-12 py-4">
-        {ANNUAL_REPORTS.map((report, idx) => (
-          <div key={idx} className="relative group">
-            <div className="absolute w-3 h-3 bg-border rounded-full -left-[38px] md:-left-[54px] top-2 group-hover:bg-primary transition-colors" />
-            <a href={report.url} target="_blank" rel="noopener noreferrer" className="block max-w-2xl">
-              <span className="text-sm font-bold text-primary mb-1 block">{report.year}</span>
-              <h3 className="font-heading text-3xl font-bold mb-4 group-hover:text-primary transition-colors">{report.title}</h3>
-              <div className="flex items-center text-xs font-bold uppercase tracking-widest text-muted-foreground group-hover:text-foreground transition-colors">
-                Open PDF <ArrowUpRight className="w-3 h-3 ml-2" />
-              </div>
-            </a>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
-
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // ANNUAL RETURNS
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -179,28 +157,55 @@ const ANNUAL_RETURNS = [
   { year: "FY 2021-22", title: "Annual Return", url: "/pdfs/Return-21-22.pdf" },
 ];
 
-const AnnualReturnsSection = () => (
-  <section id="annual-returns" className="py-24 bg-muted/30 border-b border-border">
+const AnnualFilingsSection = () => (
+  <section id="annual-filings" className="py-24 bg-background border-b border-border">
     <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
-      <header className="mb-16">
-        <span className="text-[10px] font-bold uppercase tracking-widest text-primary mb-4 block">Section 03</span>
-        <h2 className="font-heading text-4xl lg:text-5xl font-black uppercase">Annual Returns</h2>
-      </header>
-      <div className="flex flex-col gap-4">
-        {ANNUAL_RETURNS.map((item, idx) => (
-          <a key={idx} href={item.url} target="_blank" rel="noopener noreferrer" className="group flex flex-col sm:flex-row sm:items-center justify-between p-6 border border-border bg-background hover:border-primary transition-colors">
-            <div className="flex items-center gap-6 mb-4 sm:mb-0">
-              <span className="text-sm font-bold text-muted-foreground w-24">{item.year}</span>
-              <h3 className="font-heading text-xl font-bold group-hover:text-primary transition-colors">{item.title}</h3>
-            </div>
-            <div className="flex items-center gap-6">
-              <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-secondary/10 text-secondary">PDF</span>
-              <span className="flex items-center text-xs font-bold uppercase tracking-widest text-foreground group-hover:text-primary transition-colors">
-                View <ArrowRight className="w-3 h-3 ml-2 group-hover:translate-x-1 transition-transform" />
-              </span>
-            </div>
-          </a>
-        ))}
+      <div className="grid md:grid-cols-2 gap-16 lg:gap-24">
+        
+        {/* Left Column: Annual Reports */}
+        <div>
+          <header className="mb-16">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-primary mb-4 block">Section 02</span>
+            <h2 className="font-heading text-4xl lg:text-5xl font-black uppercase">Annual Reports</h2>
+          </header>
+          <div className="relative border-l border-border pl-8 ml-4 md:ml-0 md:pl-12 space-y-12 py-4">
+            {ANNUAL_REPORTS.map((report, idx) => (
+              <div key={idx} className="relative group">
+                <div className="absolute w-3 h-3 bg-border rounded-full -left-[38px] md:-left-[54px] top-2 group-hover:bg-primary transition-colors" />
+                <a href={report.url} target="_blank" rel="noopener noreferrer" className="block max-w-2xl">
+                  <span className="text-sm font-bold text-primary mb-1 block">{report.year}</span>
+                  <h3 className="font-heading text-3xl font-bold mb-4 group-hover:text-primary transition-colors">{report.title}</h3>
+                  <div className="flex items-center text-xs font-bold uppercase tracking-widest text-muted-foreground group-hover:text-foreground transition-colors">
+                    Open PDF <ArrowUpRight className="w-3 h-3 ml-2" />
+                  </div>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Right Column: Annual Returns */}
+        <div>
+          <header className="mb-16">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-primary mb-4 block">Section 03</span>
+            <h2 className="font-heading text-4xl lg:text-5xl font-black uppercase">Annual Returns</h2>
+          </header>
+          <div className="relative border-l border-border pl-8 ml-4 md:ml-0 md:pl-12 space-y-12 py-4">
+            {ANNUAL_RETURNS.map((item, idx) => (
+              <div key={idx} className="relative group">
+                <div className="absolute w-3 h-3 bg-border rounded-full -left-[38px] md:-left-[54px] top-2 group-hover:bg-primary transition-colors" />
+                <a href={item.url} target="_blank" rel="noopener noreferrer" className="block max-w-2xl">
+                  <span className="text-sm font-bold text-primary mb-1 block">{item.year}</span>
+                  <h3 className="font-heading text-3xl font-bold mb-4 group-hover:text-primary transition-colors">{item.title}</h3>
+                  <div className="flex items-center text-xs font-bold uppercase tracking-widest text-muted-foreground group-hover:text-foreground transition-colors">
+                    Open PDF <ArrowUpRight className="w-3 h-3 ml-2" />
+                  </div>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -210,47 +215,71 @@ const AnnualReturnsSection = () => (
 // GOVERNANCE & KMP
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 const DIRECTORS = [
-  { name: "Sridhar Acharya", role: "Managing Director" },
-  { name: "Madhu Hulisandra Krishnamoorthy", role: "Whole Time Director" },
-  { name: "Rashmi Sridhar Acharya", role: "Non-Executive Director" },
-  { name: "Soumya Madhu", role: "Whole Time Director" },
-  { name: "Maniyil Indrabalan", role: "Independent Director" },
-  { name: "Subramanian Ganesan", role: "Independent Director" }
+  { name: "Sridhar Acharya", role: "Managing Director", email: "sridhar@sheeshexports.com" },
+  { name: "Madhu Hulisandra Krishnamoorthy", role: "Whole Time Director", email: "madhu@sheeshexports.com" },
+  { name: "Rashmi Sridhar Acharya", role: "Non-Executive Director", email: "rashmi@sheeshexports.com" },
+  { name: "Soumya Madhu", role: "Whole Time Director", email: "soumya@sheeshexports.com" },
+  { name: "Maniyil Indrabalan", role: "Independent Director", email: "maniyil@sheeshexports.com" },
+  { name: "Subramanian Ganesan", role: "Independent Director", email: "subramanian@sheeshexports.com" }
 ];
 
 const KMP = [
-  { name: "Ashwath Narayana H M", role: "Chief Financial Officer" },
-  { name: "Srivathsan K N", role: "Company Secretary & Compliance Officer" }
+  { name: "Ashwath Narayana H M", role: "Chief Financial Officer", email: "ashwath@sheeshexports.com" },
+  { name: "Srivathsan K N", role: "Company Secretary & Compliance Officer", email: "srivathsan@sheeshexports.com" }
 ];
 
+interface PersonCardProps {
+  name: string;
+  role: string;
+  email?: string;
+  image?: string;
+}
+
+const PersonCard: React.FC<PersonCardProps> = ({ name, role, email, image }) => (
+  <div className="group flex flex-col sm:flex-row sm:items-center gap-6 p-6 border border-border bg-background hover:border-primary transition-colors h-full">
+    <div className="w-full sm:w-28 sm:h-28 aspect-square sm:aspect-auto relative overflow-hidden shrink-0 bg-muted border border-border group-hover:border-primary transition-colors">
+      <Image 
+        src={image || "/images/sheesh-logo.jpeg"} 
+        alt={name} 
+        fill 
+        className="object-cover group-hover:scale-105 transition-transform duration-700" 
+      />
+    </div>
+    <div className="flex-1 min-w-0 flex flex-col justify-center">
+      <h4 className="font-heading text-lg sm:text-xl font-bold group-hover:text-primary transition-colors">{name}</h4>
+      <p className="text-[10px] sm:text-xs text-primary font-bold uppercase tracking-widest mt-1">{role}</p>
+      {email && (
+        <a href={`mailto:${email}`} className="text-xs text-muted-foreground mt-2 break-all hover:text-primary transition-colors flex items-start sm:items-center gap-1.5">
+          <Mail className="w-3.5 h-3.5 shrink-0 mt-0.5 sm:mt-0" /> 
+          <span>{email}</span>
+        </a>
+      )}
+    </div>
+  </div>
+);
+
 const GovernanceSection = () => (
-  <section id="governance" className="py-24 bg-background border-b border-border">
+  <section id="governance" className="py-12 bg-background border-b border-border">
     <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
-      <header className="mb-20">
+      <header className="mb-10">
         <span className="text-[10px] font-bold uppercase tracking-widest text-primary mb-4 block">Section 04</span>
         <h2 className="font-heading text-4xl lg:text-5xl font-black uppercase max-w-3xl leading-tight">Directors & Key Managerial Personnel</h2>
       </header>
       
       <div className="mb-20">
         <h3 className="text-xl font-bold uppercase tracking-widest border-b-2 border-foreground pb-4 mb-8">Directors</h3>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
           {DIRECTORS.map((person, idx) => (
-            <div key={idx} className="p-6 border border-border bg-muted/20">
-              <h4 className="font-heading text-xl font-bold mb-2">{person.name}</h4>
-              <p className="text-xs text-primary font-bold uppercase tracking-widest">{person.role}</p>
-            </div>
+            <PersonCard key={idx} {...person} />
           ))}
         </div>
       </div>
 
       <div>
         <h3 className="text-xl font-bold uppercase tracking-widest border-b-2 border-foreground pb-4 mb-8">Key Managerial Personnel</h3>
-        <div className="grid sm:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
           {KMP.map((person, idx) => (
-            <div key={idx} className="p-6 border border-border bg-muted/20">
-              <h4 className="font-heading text-xl font-bold mb-2">{person.name}</h4>
-              <p className="text-xs text-primary font-bold uppercase tracking-widest">{person.role}</p>
-            </div>
+            <PersonCard key={idx} {...person} />
           ))}
         </div>
       </div>
@@ -265,33 +294,33 @@ const COMMITTEES = [
   {
     name: "Audit Committee",
     members: [
-      { name: "Subramanian Ganesan", role: "Chairman" },
-      { name: "Maniyil Indrabalan", role: "Member" },
-      { name: "Sridhar Acharya", role: "Member" }
+      { name: "Subramanian Ganesan", role: "Chairman", email: "subramanian@sheeshexports.com" },
+      { name: "Maniyil Indrabalan", role: "Member", email: "maniyil@sheeshexports.com" },
+      { name: "Sridhar Acharya", role: "Member", email: "sridhar@sheeshexports.com" }
     ]
   },
   {
     name: "Nomination & Remuneration Committee",
     members: [
-      { name: "Maniyil Indrabalan", role: "Chairman" },
-      { name: "Subramanian Ganesan", role: "Member" },
-      { name: "Rashmi Sridhar Acharya", role: "Member" }
+      { name: "Maniyil Indrabalan", role: "Chairman", email: "maniyil@sheeshexports.com" },
+      { name: "Subramanian Ganesan", role: "Member", email: "subramanian@sheeshexports.com" },
+      { name: "Rashmi Sridhar Acharya", role: "Member", email: "rashmi@sheeshexports.com" }
     ]
   },
   {
     name: "Stakeholders Relationship Committee",
     members: [
-      { name: "Rashmi Sridhar Acharya", role: "Member" },
-      { name: "Sridhar Acharya", role: "Member" },
-      { name: "Subramanian Ganesan", role: "Member" }
+      { name: "Rashmi Sridhar Acharya", role: "Member", email: "rashmi@sheeshexports.com" },
+      { name: "Sridhar Acharya", role: "Member", email: "sridhar@sheeshexports.com" },
+      { name: "Subramanian Ganesan", role: "Member", email: "subramanian@sheeshexports.com" }
     ]
   },
   {
     name: "CSR Committee",
     members: [
-      { name: "Maniyil Indrabalan", role: "Chairman" },
-      { name: "Madhu Hulisandra Krishnamoorthy", role: "Member" },
-      { name: "Soumya Madhu", role: "Member" }
+      { name: "Maniyil Indrabalan", role: "Chairman", email: "maniyil@sheeshexports.com" },
+      { name: "Madhu Hulisandra Krishnamoorthy", role: "Member", email: "madhu@sheeshexports.com" },
+      { name: "Soumya Madhu", role: "Member", email: "soumya@sheeshexports.com" }
     ]
   }
 ];
@@ -303,16 +332,13 @@ const CommitteesSection = () => (
         <h2 className="font-heading text-4xl lg:text-5xl font-black uppercase text-center md:text-left">Board Committees</h2>
       </header>
       
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid lg:grid-cols-2 gap-8">
         {COMMITTEES.map((com, idx) => (
           <div key={idx} className="bg-background border border-border p-8 lg:p-10">
             <h3 className="font-heading text-2xl font-bold mb-8 uppercase border-b border-border pb-4">{com.name}</h3>
-            <div className="space-y-6">
+            <div className="grid grid-cols-1 gap-6">
               {com.members.map((member, mIdx) => (
-                <div key={mIdx} className="flex justify-between items-center">
-                  <h5 className="font-bold text-sm md:text-base">{member.name}</h5>
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-primary text-right ml-4">{member.role}</p>
-                </div>
+                <PersonCard key={mIdx} {...member} />
               ))}
             </div>
           </div>
@@ -518,19 +544,18 @@ const ContactSection = () => (
             <div className="flex items-start gap-4">
               <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
               <p className="leading-relaxed">
-                458/1, 10th A Cross,<br/>
-                4th Phase Peenya Industrial Area,<br/>
-                Near Brundavan Bus Stop,<br/>
-                Bangalore – 560058
+                507, B-Block, The One Building,<br/>
+                5 RNT Marg, Indore,<br/>
+                Madhya Pradesh - 452001
               </p>
             </div>
             <div className="flex items-center gap-4">
               <Phone className="w-5 h-5 text-primary shrink-0" />
-              <p className="font-mono">+91 91870 45959</p>
+              <p className="font-mono">+91 9826270888</p>
             </div>
             <div className="flex items-center gap-4">
               <Mail className="w-5 h-5 text-primary shrink-0" />
-              <a href="mailto:cs@company.com" className="hover:text-primary font-bold transition-colors">cs@company.com</a>
+              <a href="mailto:info@sheeshexports.in" className="hover:text-primary font-bold transition-colors">info@sheeshexports.in</a>
             </div>
           </div>
         </div>
@@ -562,9 +587,9 @@ const ContactSection = () => (
               <Globe className="w-5 h-5 text-primary shrink-0" />
               <a href="https://www.purvashare.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary font-bold transition-colors">www.purvashare.com</a>
             </div>
-            <div className="pt-6 border-t border-border mt-2">
-              <span className="text-[10px] text-muted-foreground uppercase tracking-widest block mb-1">Contact Person</span>
-              <p className="font-bold">Ms. Deepali Dhuri</p>
+            <div className="pt-6 border-t border-border mt-6">
+              <span className="text-[10px] text-muted-foreground uppercase tracking-widest block mb-4">Contact Person</span>
+              <PersonCard name="Ms. Deepali Dhuri" role="Operations & Support" email="newissue@purvashare.com" />
             </div>
           </div>
         </div>
@@ -580,10 +605,9 @@ export default function InvestorRelationsPage() {
   return (
     <main className="min-h-screen bg-background selection:bg-primary selection:text-primary-foreground">
       <HeroSection />
-      <DirectorySection />
+      {/* <DirectorySection /> */}
       <OfferDocumentsSection />
-      <AnnualReportsSection />
-      <AnnualReturnsSection />
+      <AnnualFilingsSection />
       <GovernanceSection />
       <CommitteesSection />
       <FinancialStatementsSection />

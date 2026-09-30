@@ -74,11 +74,11 @@ export default function InternationalMarketsHub() {
   };
 
   return (
-    <main className="min-h-screen bg-background text-foreground selection:bg-primary/30">
+    <main className="min-h-screen bg-background text-foreground selection:bg-primary/30" role="main">
       <JsonLd data={schemaData} />
 
       {/* SECTION 1: GLOBAL TRADE HERO */}
-      <section className="relative min-h-[100vh] flex items-center overflow-hidden border-b border-border">
+      <section aria-labelledby="intl-hero-heading" className="relative min-h-[100vh] flex items-center overflow-hidden border-b border-border">
         <div className="absolute inset-0 z-0">
           <Image
             src={IMAGES.worldMap}
@@ -93,7 +93,7 @@ export default function InternationalMarketsHub() {
         <div className="container mx-auto px-6 lg:px-12 relative z-10 h-full flex flex-col justify-center pt-20">
           {/* Typography */}
           <div className="max-w-5xl">
-            <h1 className="font-heading text-6xl sm:text-7xl lg:text-[90px] font-black tracking-tighter leading-[0.85] mb-8 uppercase text-white">
+            <h1 id="intl-hero-heading" className="font-heading text-6xl sm:text-7xl lg:text-[90px] font-black tracking-tighter leading-[0.85] mb-8 uppercase text-white">
               India to the World
             </h1>
             <p className="text-lg sm:text-xl text-white/90 font-sans font-light leading-relaxed max-w-2xl mb-10 border-l-4 border-primary pl-6">
@@ -105,11 +105,11 @@ export default function InternationalMarketsHub() {
       </section>
 
       {/* SECTION 2: PLATFORM INTRODUCTION */}
-      <section className="py-24 lg:py-32 bg-background border-b border-border">
+      <section aria-labelledby="platform-intro-heading" className="py-24 lg:py-32 bg-background border-b border-border">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
             <div className="lg:col-span-5">
-              <h2 className="font-heading text-4xl lg:text-6xl font-black uppercase leading-[1.1] mb-8">
+              <h2 id="platform-intro-heading" className="font-heading text-4xl lg:text-6xl font-black uppercase leading-[1.1] mb-8">
                 Bridging Indian Origin With Global Markets
               </h2>
               <div className="w-24 h-2 bg-primary mb-8" />
@@ -148,36 +148,37 @@ export default function InternationalMarketsHub() {
       </section>
 
       {/* SECTION 3: MARKET DIRECTORY (Magazine Style) */}
-      <section className="py-16 bg-background border-b border-border">
+      <section aria-labelledby="market-directory-heading" className="py-16 bg-background border-b border-border">
         <div className="container mx-auto px-6 lg:px-12">
-          <h2 className="font-heading text-5xl lg:text-7xl font-bold mb-24 max-w-3xl">
+          <h2 id="market-directory-heading" className="font-heading text-5xl lg:text-7xl font-bold mb-24 max-w-3xl">
             Global Import Markets Directory
           </h2>
 
           <div className="flex flex-col gap-16">
             {/* Market 1: USA */}
-            <div className="grid lg:grid-cols-2 gap-16 items-center group">
-              <div className="relative aspect-[4/3] w-full overflow-hidden border border-border">
+            <article className="grid lg:grid-cols-2 gap-16 items-center group">
+              <figure className="relative aspect-[4/3] w-full overflow-hidden border border-border">
                 <Image
                   src={IMAGES.portNy}
                   alt="USA Market"
                   fill
                   className="object-cover transition-transform duration-1000 group-hover:scale-105"
                 />
-              </div>
+                <figcaption className="sr-only">New York port</figcaption>
+              </figure>
               <div className="flex flex-col justify-center">
                 <span className="text-sm font-bold tracking-widest uppercase text-muted-foreground mb-4 block">
                   North America
                 </span>
                 <h3 className="font-heading text-6xl font-black mb-6">United States</h3>
-                <div className="flex flex-wrap gap-3 mb-8">
-                  <span className="px-4 py-1.5 bg-muted text-xs font-bold uppercase tracking-widest">
+                <div className="flex flex-wrap gap-3 mb-8" role="list" aria-label="USA market focus areas">
+                  <span role="listitem" className="px-4 py-1.5 bg-muted text-xs font-bold uppercase tracking-widest">
                     Food Ingredients
                   </span>
-                  <span className="px-4 py-1.5 bg-muted text-xs font-bold uppercase tracking-widest">
+                  <span role="listitem" className="px-4 py-1.5 bg-muted text-xs font-bold uppercase tracking-widest">
                     Private Label
                   </span>
-                  <span className="px-4 py-1.5 bg-muted text-xs font-bold uppercase tracking-widest">
+                  <span role="listitem" className="px-4 py-1.5 bg-muted text-xs font-bold uppercase tracking-widest">
                     FDA Compliance
                   </span>
                 </div>
@@ -192,23 +193,23 @@ export default function InternationalMarketsHub() {
                   View Market Intelligence <ArrowRight className="ml-3 w-5 h-5" />
                 </Link>
               </div>
-            </div>
+            </article>
 
             {/* Market 2: Germany */}
-            <div className="grid lg:grid-cols-2 gap-16 items-center group">
+            <article className="grid lg:grid-cols-2 gap-16 items-center group">
               <div className="flex flex-col justify-center lg:order-1 order-2">
                 <span className="text-sm font-bold tracking-widest uppercase text-muted-foreground mb-4 block">
                   European Union
                 </span>
                 <h3 className="font-heading text-6xl font-black mb-6">Germany</h3>
-                <div className="flex flex-wrap gap-3 mb-8">
-                  <span className="px-4 py-1.5 bg-muted text-xs font-bold uppercase tracking-widest">
+                <div className="flex flex-wrap gap-3 mb-8" role="list" aria-label="Germany market focus areas">
+                  <span role="listitem" className="px-4 py-1.5 bg-muted text-xs font-bold uppercase tracking-widest">
                     Organic Sourcing
                   </span>
-                  <span className="px-4 py-1.5 bg-muted text-xs font-bold uppercase tracking-widest">
+                  <span role="listitem" className="px-4 py-1.5 bg-muted text-xs font-bold uppercase tracking-widest">
                     Pesticide MRLs
                   </span>
-                  <span className="px-4 py-1.5 bg-muted text-xs font-bold uppercase tracking-widest">
+                  <span role="listitem" className="px-4 py-1.5 bg-muted text-xs font-bold uppercase tracking-widest">
                     Food Manufacturing
                   </span>
                 </div>
@@ -223,39 +224,41 @@ export default function InternationalMarketsHub() {
                   View Market Intelligence <ArrowRight className="ml-3 w-5 h-5" />
                 </Link>
               </div>
-              <div className="relative aspect-[4/3] w-full overflow-hidden border border-border lg:order-2 order-1">
+              <figure className="relative aspect-[4/3] w-full overflow-hidden border border-border lg:order-2 order-1">
                 <Image
                   src={IMAGES.portHamburg}
                   alt="Germany Market"
                   fill
                   className="object-cover transition-transform duration-1000 group-hover:scale-105"
                 />
-              </div>
-            </div>
+                <figcaption className="sr-only">Hamburg port</figcaption>
+              </figure>
+            </article>
 
             {/* Market 3: UAE */}
-            <div className="grid lg:grid-cols-2 gap-16 items-center group">
-              <div className="relative aspect-[4/3] w-full overflow-hidden border border-border">
+            <article className="grid lg:grid-cols-2 gap-16 items-center group">
+              <figure className="relative aspect-[4/3] w-full overflow-hidden border border-border">
                 <Image
                   src={IMAGES.portDubai}
                   alt="UAE Market"
                   fill
                   className="object-cover transition-transform duration-1000 group-hover:scale-105"
                 />
-              </div>
+                <figcaption className="sr-only">Dubai port</figcaption>
+              </figure>
               <div className="flex flex-col justify-center">
                 <span className="text-sm font-bold tracking-widest uppercase text-muted-foreground mb-4 block">
                   Middle East & GCC
                 </span>
                 <h3 className="font-heading text-6xl font-black mb-6">UAE & Dubai</h3>
-                <div className="flex flex-wrap gap-3 mb-8">
-                  <span className="px-4 py-1.5 bg-muted text-xs font-bold uppercase tracking-widest">
+                <div className="flex flex-wrap gap-3 mb-8" role="list" aria-label="UAE market focus areas">
+                  <span role="listitem" className="px-4 py-1.5 bg-muted text-xs font-bold uppercase tracking-widest">
                     Bulk Commodities
                   </span>
-                  <span className="px-4 py-1.5 bg-muted text-xs font-bold uppercase tracking-widest">
+                  <span role="listitem" className="px-4 py-1.5 bg-muted text-xs font-bold uppercase tracking-widest">
                     HoReCa
                   </span>
-                  <span className="px-4 py-1.5 bg-muted text-xs font-bold uppercase tracking-widest">
+                  <span role="listitem" className="px-4 py-1.5 bg-muted text-xs font-bold uppercase tracking-widest">
                     Re-Export Hub
                   </span>
                 </div>
@@ -270,16 +273,16 @@ export default function InternationalMarketsHub() {
                   View Market Intelligence <ArrowRight className="ml-3 w-5 h-5" />
                 </Link>
               </div>
-            </div>
+            </article>
           </div>
         </div>
       </section>
 
       {/* SECTION 4: MARKET INTELLIGENCE REPORTS (Newspaper Style) */}
-      <section className="py-24 bg-muted/10 border-b border-border">
+      <section aria-labelledby="trade-reports-heading" className="py-24 bg-muted/10 border-b border-border">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="flex items-center justify-between border-b-4 border-foreground pb-6 mb-8">
-            <h2 className="font-heading text-4xl lg:text-5xl font-black uppercase">
+            <h2 id="trade-reports-heading" className="font-heading text-4xl lg:text-5xl font-black uppercase">
               Trade Reports
             </h2>
             <span className="text-sm font-bold tracking-widest uppercase text-muted-foreground hidden sm:block">
@@ -287,12 +290,13 @@ export default function InternationalMarketsHub() {
             </span>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-2 divide-y md:divide-y-0 md:divide-x divide-border">
+          <div className="grid md:grid-cols-3 gap-2 divide-y md:divide-y-0 md:divide-x divide-border" role="list" aria-label="Trade reports">
             {/* Report 1 */}
-            <div className="md:pr-8 pt-8 md:pt-0">
-              <div className="aspect-video relative mb-6">
+            <article role="listitem" className="md:pr-8 pt-8 md:pt-0">
+              <figure className="aspect-video relative mb-6">
                 <Image src={IMAGES.retail} alt="Retail" fill className="object-cover" />
-              </div>
+                <figcaption className="sr-only">Retail spice packaging</figcaption>
+              </figure>
               <span className="text-xs font-bold uppercase tracking-widest text-primary mb-3 block">
                 United States
               </span>
@@ -303,13 +307,14 @@ export default function InternationalMarketsHub() {
                 As major US retailers expand their internal brands, the demand for origin-packed,
                 FDA-compliant private label spices from India has grown by 34% YoY.
               </p>
-            </div>
+            </article>
 
             {/* Report 2 */}
-            <div className="md:px-8 pt-8 md:pt-0">
-              <div className="aspect-video relative mb-6">
+            <article role="listitem" className="md:px-8 pt-8 md:pt-0">
+              <figure className="aspect-video relative mb-6">
                 <Image src={IMAGES.lab} alt="Lab Testing" fill className="object-cover" />
-              </div>
+                <figcaption className="sr-only">Laboratory testing</figcaption>
+              </figure>
               <span className="text-xs font-bold uppercase tracking-widest text-primary mb-3 block">
                 European Union
               </span>
@@ -320,13 +325,14 @@ export default function InternationalMarketsHub() {
                 European border rejections are rising due to ethylene oxide and pesticide traces.
                 How specialized sourcing and Eurofins testing secures your supply chain.
               </p>
-            </div>
+            </article>
 
             {/* Report 3 */}
-            <div className="md:pl-8 pt-8 md:pt-0">
-              <div className="aspect-video relative mb-6">
+            <article role="listitem" className="md:pl-8 pt-8 md:pt-0">
+              <figure className="aspect-video relative mb-6">
                 <Image src={IMAGES.portSingapore} alt="Singapore" fill className="object-cover" />
-              </div>
+                <figcaption className="sr-only">Singapore port</figcaption>
+              </figure>
               <span className="text-xs font-bold uppercase tracking-widest text-primary mb-3 block">
                 Asia Pacific
               </span>
@@ -337,13 +343,13 @@ export default function InternationalMarketsHub() {
                 Logistics speed is driving procurement strategies in Southeast Asia, with Singapore
                 importers utilizing rapid LCL shipments for specialized ingredients.
               </p>
-            </div>
+            </article>
           </div>
         </div>
       </section>
 
       {/* SECTION 5: GLOBAL BUYER BEHAVIOUR */}
-      <section className="relative py-32 bg-black text-white overflow-hidden">
+      <section aria-labelledby="buyer-behavior-heading" className="relative py-32 bg-black text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src={IMAGES.commandCenter}
@@ -354,13 +360,13 @@ export default function InternationalMarketsHub() {
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent" />
         </div>
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
-          <h2 className="font-heading text-5xl lg:text-7xl font-bold mb-20 text-center">
+          <h2 id="buyer-behavior-heading" className="font-heading text-5xl lg:text-7xl font-bold mb-20 text-center">
             Global Buyer Behavior
           </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8" role="list" aria-label="Regional buyer behavior">
             {/* Region 1 */}
-            <div className="border border-white/20 bg-black/50 backdrop-blur-md p-8 hover:bg-white/5 transition-colors">
+            <article role="listitem" className="border border-white/20 bg-black/50 backdrop-blur-md p-8 hover:bg-white/5 transition-colors">
               <h3 className="font-heading text-3xl font-bold mb-6 border-b border-white/20 pb-4">
                 North America
               </h3>
@@ -390,9 +396,9 @@ export default function InternationalMarketsHub() {
                   Supermarkets, Mega-Distributors
                 </li>
               </ul>
-            </div>
+            </article>
             {/* Region 2 */}
-            <div className="border border-white/20 bg-black/50 backdrop-blur-md p-8 hover:bg-white/5 transition-colors">
+            <article role="listitem" className="border border-white/20 bg-black/50 backdrop-blur-md p-8 hover:bg-white/5 transition-colors">
               <h3 className="font-heading text-3xl font-bold mb-6 border-b border-white/20 pb-4">
                 Europe
               </h3>
@@ -422,9 +428,9 @@ export default function InternationalMarketsHub() {
                   Food Manufacturers, Organic Brands
                 </li>
               </ul>
-            </div>
+            </article>
             {/* Region 3 */}
-            <div className="border border-white/20 bg-black/50 backdrop-blur-md p-8 hover:bg-white/5 transition-colors">
+            <article role="listitem" className="border border-white/20 bg-black/50 backdrop-blur-md p-8 hover:bg-white/5 transition-colors">
               <h3 className="font-heading text-3xl font-bold mb-6 border-b border-white/20 pb-4">
                 Middle East
               </h3>
@@ -454,9 +460,9 @@ export default function InternationalMarketsHub() {
                   Wholesalers, HoReCa Suppliers
                 </li>
               </ul>
-            </div>
+            </article>
             {/* Region 4 */}
-            <div className="border border-white/20 bg-black/50 backdrop-blur-md p-8 hover:bg-white/5 transition-colors">
+            <article role="listitem" className="border border-white/20 bg-black/50 backdrop-blur-md p-8 hover:bg-white/5 transition-colors">
               <h3 className="font-heading text-3xl font-bold mb-6 border-b border-white/20 pb-4">
                 Asia Pacific
               </h3>
@@ -486,20 +492,21 @@ export default function InternationalMarketsHub() {
                   Spice Blenders, Noodle Mfg
                 </li>
               </ul>
-            </div>
+            </article>
           </div>
         </div>
       </section>
 
       {/* SECTION 7: COUNTRY SPOTLIGHT */}
-      <section className="py-12 bg-background border-b border-border">
+      <section aria-labelledby="country-spotlight-heading" className="py-12 bg-background border-b border-border">
         <div className="container mx-auto px-6 lg:px-12">
           <span className="text-sm font-bold tracking-widest uppercase text-muted-foreground mb-6 block">
             Market Spotlight of the Month
           </span>
           <div className="grid lg:grid-cols-12 gap-8 items-stretch">
-            <div className="lg:col-span-8 relative aspect-[16/10] bg-muted overflow-hidden">
+            <figure className="lg:col-span-8 relative aspect-[16/10] bg-muted overflow-hidden">
               <Image src={IMAGES.warehouse} alt="USA Warehouse" fill className="object-cover" />
+              <figcaption className="sr-only">USA warehouse facility</figcaption>
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
               <div className="absolute bottom-8 left-8 text-white">
                 <h3 className="font-heading text-5xl lg:text-7xl font-bold mb-4">United States</h3>
@@ -507,27 +514,27 @@ export default function InternationalMarketsHub() {
                   The rapid expansion of Private Label Spices in North America.
                 </p>
               </div>
-            </div>
+            </figure>
 
             <div className="lg:col-span-4 flex flex-col gap-8">
-              <div className="flex-1 bg-muted/20 border border-border p-8 hover:bg-muted/30 transition-colors">
+              <article className="flex-1 bg-muted/20 border border-border p-8 hover:bg-muted/30 transition-colors">
                 <h4 className="font-heading text-2xl font-bold mb-4">Popular Imports</h4>
                 <ul className="space-y-3 font-light text-muted-foreground">
                   <li className="flex items-center gap-2">
-                    <ChevronRight className="w-4 h-4 text-primary" /> Stemless Red Chilli (Teja)
+                    <ChevronRight className="w-4 h-4 text-primary" aria-hidden="true" /> Stemless Red Chilli (Teja)
                   </li>
                   <li className="flex items-center gap-2">
-                    <ChevronRight className="w-4 h-4 text-primary" /> High-Curcumin Turmeric
+                    <ChevronRight className="w-4 h-4 text-primary" aria-hidden="true" /> High-Curcumin Turmeric
                   </li>
                   <li className="flex items-center gap-2">
-                    <ChevronRight className="w-4 h-4 text-primary" /> Cumin Seeds (Premium)
+                    <ChevronRight className="w-4 h-4 text-primary" aria-hidden="true" /> Cumin Seeds (Premium)
                   </li>
                   <li className="flex items-center gap-2">
-                    <ChevronRight className="w-4 h-4 text-primary" /> Psyllium Husk (99%)
+                    <ChevronRight className="w-4 h-4 text-primary" aria-hidden="true" /> Psyllium Husk (99%)
                   </li>
                 </ul>
-              </div>
-              <div className="flex-1 relative overflow-hidden group">
+              </article>
+              <article className="flex-1 relative overflow-hidden group">
                 <Image
                   src={IMAGES.portNy}
                   alt="NY Port"
@@ -542,133 +549,146 @@ export default function InternationalMarketsHub() {
                     Read Report <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
-              </div>
+              </article>
             </div>
           </div>
         </div>
       </section>
 
       {/* SECTION 8: GLOBAL GALLERY (Masonry) */}
-      <section className="py-12 bg-muted/10 border-b border-border overflow-hidden">
+      <section aria-labelledby="export-infra-heading" className="py-12 bg-muted/10 border-b border-border overflow-hidden">
         <div className="container mx-auto px-6 lg:px-12 mb-16 text-center">
-          <h2 className="font-heading text-5xl font-bold">The Export Infrastructure</h2>
+          <h2 id="export-infra-heading" className="font-heading text-5xl font-bold">The Export Infrastructure</h2>
         </div>
 
         {/* Simple CSS Grid masonry approximation */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 px-4">
-          <div className="flex flex-col gap-4">
-            <div className="relative aspect-square">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 px-4" role="list" aria-label="Export infrastructure images">
+          <div className="flex flex-col gap-4" role="listitem">
+            <figure className="relative aspect-square">
               <Image src={IMAGES.farm} alt="Farm" fill className="object-cover" />
-            </div>
-            <div className="relative aspect-[3/4]">
+              <figcaption className="sr-only">Farm sourcing</figcaption>
+            </figure>
+            <figure className="relative aspect-[3/4]">
               <Image src={IMAGES.processing} alt="Processing" fill className="object-cover" />
-            </div>
+              <figcaption className="sr-only">Processing facility</figcaption>
+            </figure>
           </div>
-          <div className="flex flex-col gap-4 pt-12">
-            <div className="relative aspect-[3/4]">
+          <div className="flex flex-col gap-4 pt-12" role="listitem">
+            <figure className="relative aspect-[3/4]">
               <Image src={IMAGES.lab} alt="Lab" fill className="object-cover" />
-            </div>
-            <div className="relative aspect-square">
+              <figcaption className="sr-only">Quality testing lab</figcaption>
+            </figure>
+            <figure className="relative aspect-square">
               <Image src={IMAGES.loading} alt="Loading" fill className="object-cover" />
-            </div>
+              <figcaption className="sr-only">Container loading</figcaption>
+            </figure>
           </div>
-          <div className="flex flex-col gap-4">
-            <div className="relative aspect-square">
+          <div className="flex flex-col gap-4" role="listitem">
+            <figure className="relative aspect-square">
               <Image src={IMAGES.warehouse} alt="Warehouse" fill className="object-cover" />
-            </div>
-            <div className="relative aspect-[4/3]">
+              <figcaption className="sr-only">Warehouse storage</figcaption>
+            </figure>
+            <figure className="relative aspect-[4/3]">
               <Image src={IMAGES.portHamburg} alt="Port" fill className="object-cover" />
-            </div>
+              <figcaption className="sr-only">Port operations</figcaption>
+            </figure>
           </div>
-          <div className="flex flex-col gap-4 pt-8">
-            <div className="relative aspect-[3/4]">
+          <div className="flex flex-col gap-4 pt-8" role="listitem">
+            <figure className="relative aspect-[3/4]">
               <Image src={IMAGES.retail} alt="Retail" fill className="object-cover" />
-            </div>
-            <div className="relative aspect-square">
+              <figcaption className="sr-only">Retail packaging</figcaption>
+            </figure>
+            <figure className="relative aspect-square">
               <Image src={IMAGES.foodMfg} alt="Manufacturing" fill className="object-cover" />
-            </div>
+              <figcaption className="sr-only">Food manufacturing</figcaption>
+            </figure>
           </div>
         </div>
       </section>
 
       {/* SECTION 9: TRADE TIMELINE (Horizontal Journey) */}
-      <section className="py-12 bg-background border-b border-border overflow-x-hidden">
+      <section aria-labelledby="farm-to-port-heading" className="py-12 bg-background border-b border-border overflow-x-hidden">
         <div className="container mx-auto px-6 lg:px-12 mb-20">
-          <h2 className="font-heading text-5xl font-bold">Farm To Port Journey</h2>
+          <h2 id="farm-to-port-heading" className="font-heading text-5xl font-bold">Farm To Port Journey</h2>
         </div>
 
-        <div className="flex overflow-x-auto pb-12 snap-x snap-mandatory hide-scrollbar pl-6 lg:pl-12">
+        <nav className="flex overflow-x-auto pb-12 snap-x snap-mandatory hide-scrollbar pl-6 lg:pl-12" aria-label="Farm to port journey steps">
           {/* Step 1 */}
-          <div className="min-w-[85vw] md:min-w-[40vw] lg:min-w-[30vw] pr-8 snap-start">
-            <div className="aspect-[4/3] relative mb-6">
+          <article className="min-w-[85vw] md:min-w-[40vw] lg:min-w-[30vw] pr-8 snap-start" role="listitem">
+            <figure className="aspect-[4/3] relative mb-6">
               <Image src={IMAGES.farm} alt="Farm Procurement" fill className="object-cover" />
+              <figcaption className="sr-only">Farm procurement</figcaption>
               <div className="absolute top-4 left-4 bg-background text-foreground font-heading text-2xl font-bold w-12 h-12 flex items-center justify-center">
                 1
               </div>
-            </div>
+            </figure>
             <h4 className="font-bold text-xl mb-2">Farm Procurement</h4>
             <p className="text-muted-foreground font-light">
               Direct sourcing from agricultural yards ensuring peak harvest freshness.
             </p>
-          </div>
+          </article>
           {/* Step 2 */}
-          <div className="min-w-[85vw] md:min-w-[40vw] lg:min-w-[30vw] pr-8 snap-start">
-            <div className="aspect-[4/3] relative mb-6">
+          <article className="min-w-[85vw] md:min-w-[40vw] lg:min-w-[30vw] pr-8 snap-start" role="listitem">
+            <figure className="aspect-[4/3] relative mb-6">
               <Image
                 src={IMAGES.processing}
                 alt="Industrial Processing"
                 fill
                 className="object-cover"
               />
+              <figcaption className="sr-only">Industrial processing</figcaption>
               <div className="absolute top-4 left-4 bg-background text-foreground font-heading text-2xl font-bold w-12 h-12 flex items-center justify-center">
                 2
               </div>
-            </div>
+            </figure>
             <h4 className="font-bold text-xl mb-2">Industrial Processing</h4>
             <p className="text-muted-foreground font-light">
               Automated sortex cleaning and destoning in ISO certified facilities.
             </p>
-          </div>
+          </article>
           {/* Step 3 */}
-          <div className="min-w-[85vw] md:min-w-[40vw] lg:min-w-[30vw] pr-8 snap-start">
-            <div className="aspect-[4/3] relative mb-6">
+          <article className="min-w-[85vw] md:min-w-[40vw] lg:min-w-[30vw] pr-8 snap-start" role="listitem">
+            <figure className="aspect-[4/3] relative mb-6">
               <Image src={IMAGES.lab} alt="Lab Testing" fill className="object-cover" />
+              <figcaption className="sr-only">Laboratory testing</figcaption>
               <div className="absolute top-4 left-4 bg-background text-foreground font-heading text-2xl font-bold w-12 h-12 flex items-center justify-center">
                 3
               </div>
-            </div>
+            </figure>
             <h4 className="font-bold text-xl mb-2">Lab Testing</h4>
             <p className="text-muted-foreground font-light">
               SGS/Eurofins pre-shipment analysis for pesticide MRLs and Aflatoxins.
             </p>
-          </div>
+          </article>
           {/* Step 4 */}
-          <div className="min-w-[85vw] md:min-w-[40vw] lg:min-w-[30vw] pr-8 snap-start">
-            <div className="aspect-[4/3] relative mb-6">
+          <article className="min-w-[85vw] md:min-w-[40vw] lg:min-w-[30vw] pr-8 snap-start" role="listitem">
+            <figure className="aspect-[4/3] relative mb-6">
               <Image src={IMAGES.loading} alt="Container Loading" fill className="object-cover" />
+              <figcaption className="sr-only">Container loading</figcaption>
               <div className="absolute top-4 left-4 bg-background text-foreground font-heading text-2xl font-bold w-12 h-12 flex items-center justify-center">
                 4
               </div>
-            </div>
+            </figure>
             <h4 className="font-bold text-xl mb-2">Container Loading</h4>
             <p className="text-muted-foreground font-light">
               Hygienic stuffing and fumigation of FCL/LCL cargo.
             </p>
-          </div>
+          </article>
           {/* Step 5 */}
-          <div className="min-w-[85vw] md:min-w-[40vw] lg:min-w-[30vw] pr-8 snap-start">
-            <div className="aspect-[4/3] relative mb-6">
+          <article className="min-w-[85vw] md:min-w-[40vw] lg:min-w-[30vw] pr-8 snap-start" role="listitem">
+            <figure className="aspect-[4/3] relative mb-6">
               <Image src={IMAGES.portDubai} alt="Destination Port" fill className="object-cover" />
+              <figcaption className="sr-only">Destination port</figcaption>
               <div className="absolute top-4 left-4 bg-background text-foreground font-heading text-2xl font-bold w-12 h-12 flex items-center justify-center">
                 5
               </div>
-            </div>
+            </figure>
             <h4 className="font-bold text-xl mb-2">Destination Port</h4>
             <p className="text-muted-foreground font-light">
               Customs clearance handoff with exact compliance documentation.
             </p>
-          </div>
-        </div>
+          </article>
+        </nav>
       </section>
 
       {/* SECTION 11: SEO FAQ */}

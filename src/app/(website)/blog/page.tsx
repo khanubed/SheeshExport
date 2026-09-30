@@ -29,15 +29,15 @@ export default async function BlogPage() {
   const regularPosts = posts.length > 1 ? posts.slice(1) : [];
 
   return (
-    <main className="bg-background min-h-screen text-foreground font-sans">
+    <main className="bg-background min-h-screen text-foreground font-sans" role="main">
       
       {/* HEADER SECTION */}
-      <section className="pt-24 pb-12 bg-primary text-primary-foreground border-b border-border">
+      <section aria-labelledby="blog-hero-heading" className="pt-24 pb-12 bg-primary text-primary-foreground border-b border-border">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1400px]">
           <span className="inline-block text-secondary font-semibold tracking-[0.2em] uppercase text-xs mb-6 border-b border-secondary/30 pb-2">
             Industry Intelligence
           </span>
-          <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl font-medium leading-[1.05] mb-8 max-w-4xl">
+          <h1 id="blog-hero-heading" className="font-heading text-5xl sm:text-6xl md:text-7xl font-medium leading-[1.05] mb-8 max-w-4xl">
             Market Insights &<br /> Trade Intelligence
           </h1>
           <p className="text-xl text-primary-foreground/80 max-w-2xl font-light leading-relaxed font-sans">
@@ -48,7 +48,7 @@ export default async function BlogPage() {
 
       {/* FEATURED EDITORIAL */}
       {featuredPost && (
-        <section className="py-16 bg-background border-b border-border">
+        <section aria-labelledby="featured-heading" className="py-16 bg-background border-b border-border">
           <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1400px]">
             <span className="text-xs uppercase tracking-widest font-semibold text-muted-foreground mb-8 block">
               Featured Report
@@ -65,8 +65,8 @@ export default async function BlogPage() {
                   {featuredPost.excerpt}
                 </p>
                 <div className="flex items-center text-sm font-medium text-muted-foreground mb-8">
-                  <span>{formatDate(featuredPost.publishedAt)}</span>
-                  <span className="mx-3 border-l border-border h-4" />
+                  <time dateTime={featuredPost.publishedAt}>{formatDate(featuredPost.publishedAt)}</time>
+                  <span className="mx-3 border-l border-border h-4" aria-hidden="true" />
                   <span>{featuredPost.readingTimeMinutes} min read</span>
                 </div>
                 <div className="inline-flex items-center text-primary font-medium tracking-wide uppercase text-sm group-hover:underline underline-offset-4">
@@ -75,12 +75,15 @@ export default async function BlogPage() {
               </Link>
               <Link href={`/blog/${featuredPost.slug}`} className="order-1 lg:order-2 relative h-[400px] lg:h-[500px] w-full overflow-hidden bg-muted">
                 {/* Fallback image if no featuredImage is present */}
-                <Image 
-                  src="/images/about/factory-processing.jpg" 
-                  alt={featuredPost.title} 
-                  fill 
-                  className="object-cover transition-transform duration-700 group-hover:scale-105 mix-blend-multiply opacity-90" 
-                />
+                <figure>
+                  <Image 
+                    src="/images/about/factory-processing.jpg" 
+                    alt={featuredPost.title} 
+                    fill 
+                    className="object-cover transition-transform duration-700 group-hover:scale-105 mix-blend-multiply opacity-90" 
+                  />
+                  <figcaption className="sr-only">{featuredPost.title}</figcaption>
+                </figure>
               </Link>
             </article>
           </div>
@@ -88,15 +91,16 @@ export default async function BlogPage() {
       )}
 
       {/* CATEGORY QUICK LINKS */}
-      <section className="py-12 bg-muted border-b border-border">
+      <section aria-labelledby="categories-heading" className="py-12 bg-muted border-b border-border">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1400px]">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <h2 id="categories-heading" className="sr-only">Blog Categories</h2>
+          <nav className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" aria-label="Blog categories">
             {CATEGORIES.map((cat, idx) => {
               const Icon = cat.icon;
               return (
                 <Link key={idx} href={cat.href} className="flex items-center p-6 bg-card border border-border hover:border-primary transition-colors group">
                   <div className="w-12 h-12 bg-muted flex items-center justify-center mr-4 group-hover:bg-primary/10 transition-colors">
-                    <Icon className="w-5 h-5 text-foreground group-hover:text-primary" />
+                    <Icon className="w-5 h-5 text-foreground group-hover:text-primary" aria-hidden="true" />
                   </div>
                   <div>
                     <h4 className="font-medium text-foreground group-hover:text-primary transition-colors">{cat.name}</h4>
@@ -105,30 +109,33 @@ export default async function BlogPage() {
                 </Link>
               )
             })}
-          </div>
+          </nav>
         </div>
       </section>
 
       {/* RECENT INTELLIGENCE GRID */}
-      <section className="py-16 lg:py-24 bg-background">
+      <section aria-labelledby="latest-heading" className="py-16 lg:py-24 bg-background">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1400px]">
           <div className="flex items-center justify-between mb-12">
-            <h3 className="font-heading text-3xl font-medium text-foreground">Latest Publications</h3>
+            <h3 id="latest-heading" className="font-heading text-3xl font-medium text-foreground">Latest Publications</h3>
             <Link href="/blog/archive" className="hidden sm:flex items-center text-sm font-medium text-primary hover:underline underline-offset-4 uppercase tracking-widest">
               View All Archive <ArrowRight className="ml-2 w-4 h-4" />
             </Link>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16" role="list" aria-label="Latest blog posts">
             {regularPosts.map((post) => (
-              <article key={post.id} className="group flex flex-col">
+              <article key={post.id} className="group flex flex-col" role="listitem">
                 <Link href={`/blog/${post.slug}`} className="block relative h-64 mb-6 bg-muted overflow-hidden">
-                  <Image 
-                    src="/images/about/infra-warehouse.jpg" 
-                    alt={post.title} 
-                    fill 
-                    className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" 
-                  />
+                  <figure>
+                    <Image 
+                      src="/images/about/infra-warehouse.jpg" 
+                      alt={post.title} 
+                      fill 
+                      className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" 
+                    />
+                    <figcaption className="sr-only">{post.title}</figcaption>
+                  </figure>
                 </Link>
                 <div className="flex-1">
                   <span className="text-xs font-semibold uppercase tracking-wider text-primary mb-3 block">
@@ -144,7 +151,7 @@ export default async function BlogPage() {
                   </p>
                 </div>
                 <div className="flex items-center justify-between text-xs font-medium text-muted-foreground pt-4 border-t border-border mt-auto">
-                  <span>{formatDate(post.publishedAt)}</span>
+                  <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
                   <span>{post.readingTimeMinutes} min read</span>
                 </div>
               </article>
@@ -160,14 +167,15 @@ export default async function BlogPage() {
       </section>
       
       {/* NEWSLETTER CTA */}
-      <section className="py-24 bg-primary text-primary-foreground text-center">
+      <section aria-labelledby="newsletter-heading" className="py-24 bg-primary text-primary-foreground text-center">
          <div className="container mx-auto px-6 max-w-2xl">
-            <h2 className="font-heading text-4xl sm:text-5xl font-medium mb-6">Subscribe To Market Updates</h2>
+            <h2 id="newsletter-heading" className="font-heading text-4xl sm:text-5xl font-medium mb-6">Subscribe To Market Updates</h2>
             <p className="text-primary-foreground/80 text-lg mb-10 font-light">
               Receive monthly commodity reports, harvest forecasts, and regulatory updates directly in your inbox.
             </p>
-            <form className="flex flex-col sm:flex-row gap-4 justify-center">
-              <input type="email" placeholder="Enter your corporate email" className="w-full sm:w-96 bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground px-6 py-4 outline-none focus:border-secondary placeholder:text-primary-foreground/50" />
+            <form className="flex flex-col sm:flex-row gap-4 justify-center" aria-label="Newsletter subscription">
+              <label htmlFor="newsletter-email" className="sr-only">Email address</label>
+              <input id="newsletter-email" type="email" placeholder="Enter your corporate email" className="w-full sm:w-96 bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground px-6 py-4 outline-none focus:border-secondary placeholder:text-primary-foreground/50" />
               <button type="button" className="bg-secondary text-primary px-8 py-4 font-medium tracking-wide hover:bg-secondary/90 transition-colors whitespace-nowrap">
                 Subscribe Now
               </button>

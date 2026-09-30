@@ -72,23 +72,30 @@ export default async function CertificationDetailPage({ params }: PageProps) {
     <main className="bg-background min-h-screen text-foreground font-sans selection:bg-primary selection:text-primary-foreground">
       <JsonLd data={schema} />
 
-      {/* SECTION 01: HERO */}
-      <section className="pt-24 pb-12 px-6 sm:px-12 lg:px-24 container mx-auto max-w-[1200px]">
-        <div className="flex items-center gap-2 text-sm text-muted-foreground font-sans mb-8 uppercase tracking-wider font-medium">
-          <Link href="/" className="hover:text-primary">Home</Link>
-          <ChevronRight className="w-4 h-4" />
-          <Link href="/certifications" className="hover:text-primary">Certifications</Link>
-          <ChevronRight className="w-4 h-4" />
-          <span className="text-primary">{name}</span>
+      {/* BREADCRUMBS */}
+      <div className="border-b border-border bg-muted/20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-24 max-w-[1200px] py-4">
+          <nav className="flex flex-wrap items-center gap-2 text-[10px] sm:text-xs text-muted-foreground font-sans uppercase tracking-wider font-semibold" aria-label="Breadcrumb">
+            <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+            <ChevronRight className="w-3 h-3" />
+            <Link href="/certifications" className="hover:text-primary transition-colors">Certifications</Link>
+            <ChevronRight className="w-3 h-3" />
+            <span className="text-primary" aria-current="page">{name}</span>
+          </nav>
         </div>
-        
-        <div className="max-w-4xl">
-          <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl font-medium text-primary leading-[1.05] mb-6">
-            {name} Certification
-          </h1>
-          <p className="text-xl sm:text-2xl text-muted-foreground font-sans font-light leading-relaxed font-sans max-w-3xl">
-            {desc}
-          </p>
+      </div>
+
+      {/* SECTION 01: HERO */}
+      <section className="pt-12 md:pt-16 pb-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-24 max-w-[1200px]">
+          <div className="max-w-4xl">
+            <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl font-medium text-primary leading-[1.05] mb-6">
+              {name} Certification
+            </h1>
+            <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground font-sans font-light leading-relaxed max-w-3xl">
+              {desc}
+            </p>
+          </div>
         </div>
       </section>
 
