@@ -77,7 +77,7 @@ export function ProductCatalogClient() {
   };
 
   return (
-    <section aria-labelledby="catalog-heading" className="py-8 bg-background">
+    <section aria-labelledby="catalog-heading" className=" bg-background">
       <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
         <CatalogHeader
           resultCount={totalItems}

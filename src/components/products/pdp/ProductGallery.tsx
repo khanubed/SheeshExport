@@ -13,14 +13,15 @@ export function ProductGallery({ variant }: { variant: Variant }) {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {variant.images.map((img, idx) => {
-            const imgSrc = typeof img === "string" ? img : ((img as any)?.src || "/images/placeholder.jpg");
+            const imgSrc = typeof img === "string" ? img : ((img as any)?.src || "/images/sheesh-logo.webp");
             const imgAlt = typeof img === "string" ? variant.name : ((img as any)?.alt || variant.name);
             return (
-            <div key={idx} className="relative aspect-square bg-muted/50 group overflow-hidden">
+            <div key={idx} className="relative aspect-square bg-muted/50 group overflow-hidden" style={{ position: "relative" }}>
               <Image
                 src={imgSrc}
                 alt={imgAlt}
                 fill
+                sizes="(max-width: 768px) 50vw, 33vw"
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
               />
             </div>

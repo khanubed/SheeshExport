@@ -1,9 +1,9 @@
 "use client"
 
-import { motion } from "framer-motion";
+import { HTMLMotionProps, motion } from "framer-motion";
 import { ReactNode } from "react";
 
-export function FadeIn({ children, delay = 0, className = "" }: { children: ReactNode, delay?: number, className?: string }) {
+export function FadeIn({ children, delay = 0, className = "", ...props }: { children: ReactNode, delay?: number, className?: string } & HTMLMotionProps<"div">) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -11,13 +11,14 @@ export function FadeIn({ children, delay = 0, className = "" }: { children: Reac
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.5, delay }}
       className={className}
+      {...props}
     >
       {children}
     </motion.div>
   );
 }
 
-export function StaggerContainer({ children, className = "" }: { children: ReactNode, className?: string }) {
+export function StaggerContainer({ children, className = "", ...props }: { children: ReactNode, className?: string } & HTMLMotionProps<"div">) {
   return (
     <motion.div
       initial="hidden"
@@ -32,13 +33,14 @@ export function StaggerContainer({ children, className = "" }: { children: React
         }
       }}
       className={className}
+      {...props}
     >
       {children}
     </motion.div>
   );
 }
 
-export function StaggerItem({ children, className = "" }: { children: ReactNode, className?: string }) {
+export function StaggerItem({ children, className = "", ...props }: { children: ReactNode, className?: string } & HTMLMotionProps<"div">) {
   return (
     <motion.div
       variants={{
@@ -46,6 +48,7 @@ export function StaggerItem({ children, className = "" }: { children: ReactNode,
         visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
       }}
       className={className}
+      {...props}
     >
       {children}
     </motion.div>

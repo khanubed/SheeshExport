@@ -90,7 +90,7 @@ export default function QualityPage() {
               </div>
             </div>
             <div className="relative h-full min-h-[400px] bg-background">
-              <Image src="/images/about/factory-processing.jpg" alt="Quality Inspection" fill className="object-cover grayscale-[20%]" />
+              <Image src="/images/about/factory-processing.webp" alt="Quality Inspection" fill className="object-cover grayscale-[20%]" />
               <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
             </div>
           </div>
@@ -129,7 +129,7 @@ export default function QualityPage() {
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1400px]">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="relative h-[500px] lg:h-[700px] w-full">
-              <Image src="/images/about/infra-testing.jpeg" alt="Laboratory Analysis" fill className="object-cover" />
+              <Image src="/images/about/infra-testing.webp" alt="Laboratory Analysis" fill className="object-cover" />
             </div>
             <div>
               <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-8">
@@ -271,7 +271,7 @@ export default function QualityPage() {
               </div>
             </div>
             <div className="w-full lg:w-1/2 relative h-[400px] lg:h-[600px]">
-              <Image src="/images/about/infra-warehouse.jpeg" alt="Controlled Hygiene Facility" fill className="object-cover" />
+              <Image src="/images/about/infra-warehouse.webp" alt="Controlled Hygiene Facility" fill className="object-cover" />
             </div>
           </div>
         </div>

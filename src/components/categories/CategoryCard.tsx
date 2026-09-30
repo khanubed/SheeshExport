@@ -19,11 +19,12 @@ export function CategoryCard({ category, className }: CategoryCardProps) {
         href={`/categories/${category.slug}`}
         className="flex flex-col h-full"
       >
-        <figure className="relative h-64 w-full overflow-hidden border-b border-border">
+        <figure className="relative h-64 w-full overflow-hidden border-b border-border" style={{ position: "relative" }}>
           <Image
             src={category.heroImage}
             alt={category.name}
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
           />
           <figcaption className="sr-only">{category.name} category</figcaption>

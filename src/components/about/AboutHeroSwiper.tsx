@@ -12,7 +12,7 @@ export function AboutHeroSwiper() {
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
       >
-        <source src="/images/about/about-hero.mp4" type="video/mp4" />
+        <source src="/images/about/ABOUT-HERO.webm" type="video/webm" />
       </video>
       {/* <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-primary/20 to-transparent " /> */}
       <div className="absolute inset-0 bg-black/50" />

@@ -28,9 +28,9 @@ export const INDUSTRIES_DATA: Industry[] = [
     name: "Food Manufacturing",
     shortDescription: "Industrial ingredient sourcing for processed foods, sauces, snacks and ready-to-eat products.",
     heroDescription: "Reliable sourcing of export-grade spices, grains, oilseeds and agricultural ingredients for industrial food production and processing operations worldwide.",
-    heroImage: "/images/industries/food-manufacturing.jpg",
-    workflowImage: "/images/about/factory-processing.jpg",
-    caseStudyImage: "/images/about/infra-warehouse.jpeg",
+    heroImage: "/images/industries/food-manufacturing.webp",
+    workflowImage: "/images/about/factory-processing.webp",
+    caseStudyImage: "/images/about/infra-warehouse.webp",
     overview: {
       heading: "Understanding Ingredient Procurement For Food Manufacturers",
       content: [
@@ -115,9 +115,9 @@ export const INDUSTRIES_DATA: Industry[] = [
     name: "Retail & Private Label",
     shortDescription: "Custom packaging and private label solutions for retail food brands and supermarkets.",
     heroDescription: "End-to-end OEM manufacturing and private label packaging services for retail food brands, supermarket chains, and FMCG companies worldwide.",
-    heroImage: "/images/industries/retail-private-label.jpg",
-    workflowImage: "/images/about/infra-packaging.jpeg",
-    caseStudyImage: "/images/about/factory-processing.jpg",
+    heroImage: "/images/industries/retail-private-label.webp",
+    workflowImage: "/images/about/infra-packaging.webp",
+    caseStudyImage: "/images/about/factory-processing.webp",
     overview: {
       heading: "Building Retail-Ready Spice & Grocery Brands",
       content: [
@@ -202,9 +202,9 @@ export const INDUSTRIES_DATA: Industry[] = [
     name: "Importers & Distributors",
     shortDescription: "Bulk commodity sourcing with flexible shipment and consolidation options.",
     heroDescription: "Reliable bulk supply and mixed container solutions for global agricultural commodity importers, wholesale distributors, and trading houses.",
-    heroImage: "/images/industries/importers-distributors.jpg",
-    workflowImage: "/images/about/global-delivery.jpeg",
-    caseStudyImage: "/images/about/infra-sourcing.png",
+    heroImage: "/images/industries/importers-distributors.webp",
+    workflowImage: "/images/about/global-delivery.webp",
+    caseStudyImage: "/images/about/infra-sourcing.webp",
     overview: {
       heading: "Streamlining Procurement For Wholesale Distributors",
       content: [
@@ -289,9 +289,9 @@ export const INDUSTRIES_DATA: Industry[] = [
     name: "Hospitality & HORECA",
     shortDescription: "Foodservice-grade ingredients for restaurants, hotel chains and catering businesses.",
     heroDescription: "Consistent, high-quality bulk spices, rice, and ingredients tailored for the demanding fast-paced foodservice and hospitality sectors.",
-    heroImage: "/images/industries/horeca-hospitality.jpg",
-    workflowImage: "/images/about/infra-testing.jpeg",
-    caseStudyImage: "/images/about/global-delivery.jpeg",
+    heroImage: "/images/industries/horeca-hospitality.webp",
+    workflowImage: "/images/about/infra-testing.webp",
+    caseStudyImage: "/images/about/global-delivery.webp",
     overview: {
       heading: "Elevating Culinary Standards In Global Hospitality",
       content: [
@@ -376,9 +376,9 @@ export const INDUSTRIES_DATA: Industry[] = [
     name: "Nutraceuticals & Supplements",
     shortDescription: "High-curcumin turmeric, ashwagandha, and botanical extracts for health brands.",
     heroDescription: "Scientifically tested, high-potency agricultural ingredients for the global nutraceutical and dietary supplement manufacturing industry.",
-    heroImage: "/images/industries/nutraceuticals-supplements.jpg",
-    workflowImage: "/images/about/infra-warehouse.jpeg",
-    caseStudyImage: "/images/about/infra-testing.jpeg",
+    heroImage: "/images/industries/nutraceuticals-supplements.webp",
+    workflowImage: "/images/about/infra-warehouse.webp",
+    caseStudyImage: "/images/about/infra-testing.webp",
     overview: {
       heading: "Sourcing High-Potency Botanicals For Dietary Supplements",
       content: [
@@ -439,9 +439,9 @@ export const INDUSTRIES_DATA: Industry[] = [
     name: "Spice Blenders & Seasoning",
     shortDescription: "Bulk pure spices for B2B seasoning manufacturers and flavor houses.",
     heroDescription: "Providing consistent, high-aroma whole and ground spices to global spice blending, seasoning, and flavor manufacturing companies.",
-    heroImage: "/images/industries/spice-blenders-seasoning.jpg",
-    workflowImage: "/images/about/factory-processing.jpg",
-    caseStudyImage: "/images/about/infra-sourcing.png",
+    heroImage: "/images/industries/spice-blenders-seasoning.webp",
+    workflowImage: "/images/about/factory-processing.webp",
+    caseStudyImage: "/images/about/infra-sourcing.webp",
     overview: {
       heading: "The Foundation of Global Flavor Profiles",
       content: [
@@ -502,9 +502,9 @@ export const INDUSTRIES_DATA: Industry[] = [
     name: "Oleoresin Extractors",
     shortDescription: "High-yield raw spices for essential oil and oleoresin extraction.",
     heroDescription: "Specialized sourcing of raw spices optimized for maximum yield in oleoresin and essential oil extraction facilities globally.",
-    heroImage: "/images/industries/oleoresin-extractors.jpg",
-    workflowImage: "/images/about/infra-sourcing.png",
-    caseStudyImage: "/images/about/infra-packaging.jpeg",
+    heroImage: "/images/industries/oleoresin-extractors.webp",
+    workflowImage: "/images/about/infra-sourcing.webp",
+    caseStudyImage: "/images/about/infra-packaging.webp",
     overview: {
       heading: "Maximizing Extraction Yields with Precision Sourcing",
       content: [

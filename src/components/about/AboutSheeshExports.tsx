@@ -93,7 +93,7 @@ export function AboutSheeshExports() {
               transition={{ duration: 0.8 }}
             >
               <Image
-                src="/images/sheesh-logo.jpeg" // Using existing logo as a placeholder until an authentic factory image is provided
+                src="/images/sheesh-logo.webp" // Using existing logo as a placeholder until an authentic factory image is provided
                 alt="Premium spice processing facility and export operations"
                 fill
                 className="object-cover"

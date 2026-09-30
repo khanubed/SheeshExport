@@ -1,4 +1,4 @@
-k98const fs = require('fs');
+const fs = require('fs');
 const path = require('path');
 
 const categoriesPath = path.join(__dirname, '../../src/lib/data/categories.ts');

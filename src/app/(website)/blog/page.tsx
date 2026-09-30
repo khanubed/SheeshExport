@@ -75,11 +75,12 @@ export default async function BlogPage() {
               </Link>
               <Link href={`/blog/${featuredPost.slug}`} className="order-1 lg:order-2 relative h-[400px] lg:h-[500px] w-full overflow-hidden bg-muted">
                 {/* Fallback image if no featuredImage is present */}
-                <figure>
+                <figure className="relative h-full w-full" style={{ position: "relative" }}>
                   <Image 
-                    src="/images/about/factory-processing.jpg" 
+                    src="/images/about/factory-processing.webp" 
                     alt={featuredPost.title} 
                     fill 
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105 mix-blend-multiply opacity-90" 
                   />
                   <figcaption className="sr-only">{featuredPost.title}</figcaption>

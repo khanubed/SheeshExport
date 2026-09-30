@@ -1,11 +1,32 @@
 import { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { buildBreadcrumbSchema } from "@/lib/seo/breadcrumb";
+import { buildFAQSchema } from "@/lib/seo/faq";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SITE_CONFIG } from "@/config/site";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Container, Box, FileText, CheckCircle2, TrendingDown, Factory, Landmark, MapPin, ShieldCheck } from "lucide-react";
+import { FAQSection } from "@/components/shared/FAQSection";
+
+const MIXED_CONTAINER_FAQS = [
+  {
+    question: "What is Mixed Container Consolidation?",
+    answer: "Mixed container consolidation allows international buyers to source multiple different commodities (like spices, pulses, and oil seeds) and combine them into a single 20ft or 40ft export container. This is ideal for distributors looking to offer a wide variety of products without committing to massive bulk volumes of a single item."
+  },
+  {
+    question: "How does consolidation reduce my inventory risk?",
+    answer: "Instead of ordering 20 metric tons of a single spice, you can order 5 tons of cumin, 5 tons of turmeric, and 10 tons of pulses in the same container. This diversifies your inventory, improves cash flow, and minimizes the risk of overstocking a single product."
+  },
+  {
+    question: "Is there a minimum volume required for each product in a mixed container?",
+    answer: "Yes, we typically require a minimum volume of 1 to 2 Metric Tons per product category to ensure efficient packing and compliance with export documentation requirements. Contact our operations team for exact product-specific limits."
+  },
+  {
+    question: "How do you handle export documentation for a multi-commodity shipment?",
+    answer: "Our operations team issues a consolidated Commercial Invoice and Packing List. We also ensure that all necessary product-specific Phytosanitary Certificates and Certificates of Origin are accurately prepared for the entire container to guarantee seamless customs clearance."
+  }
+];
 
 export const metadata: Metadata = buildMetadata({
   title: "Mixed Container Spice Export Consolidation India",
@@ -33,13 +54,15 @@ export default function MixedContainerPage() {
     url: `${SITE_CONFIG.url}/services/mixed-container`,
   };
 
+  const faqSchema = buildFAQSchema(MIXED_CONTAINER_FAQS);
+
   return (
     <main className="bg-background min-h-screen text-foreground font-sans selection:bg-primary selection:text-primary-foreground">
-      <JsonLd data={[breadcrumbSchema, serviceSchema]} />
+      <JsonLd data={[breadcrumbSchema, serviceSchema, faqSchema]} />
       {/* SECTION 01: HERO */}
       <section className="relative min-h-[70vh] flex flex-col justify-center bg-primary text-primary-foreground">
         <div className="absolute inset-0 opacity-40 mix-blend-luminosity">
-          <Image src="/images/about/factory-processing.jpg" alt="Mixed container consolidation" fill className="object-cover" priority />
+          <Image src="/images/about/factory-processing.webp" alt="Mixed container consolidation" fill className="object-cover" priority />
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#0B2F26] via-[#0B2F26]/80 to-transparent" />
         
@@ -279,6 +302,9 @@ export default function MixedContainerPage() {
           </div>
         </div>
       </section>
+
+      {/* SECTION FAQ */}
+      <FAQSection title="Consolidation Queries" subtitle="Frequently Asked Questions" faqs={MIXED_CONTAINER_FAQS} />
 
       {/* SECTION 08: CTA */}
       <section className="py-20 lg:py-24 bg-background border-t border-border">

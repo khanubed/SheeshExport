@@ -1,11 +1,32 @@
 import { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { buildBreadcrumbSchema } from "@/lib/seo/breadcrumb";
+import { buildFAQSchema } from "@/lib/seo/faq";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SITE_CONFIG } from "@/config/site";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Package, ShieldCheck, Factory } from "lucide-react";
+import { FAQSection } from "@/components/shared/FAQSection";
+
+const PRIVATE_LABEL_FAQS = [
+  {
+    question: "Do you offer custom OEM packaging for spices?",
+    answer: "Yes, we specialize in OEM private label manufacturing. We can pack your spices in custom stand-up pouches, glass jars, PET containers, and tin packaging tailored to your brand's specific requirements."
+  },
+  {
+    question: "Can you assist with regulatory labeling and barcode generation?",
+    answer: "Absolutely. Our compliance team ensures your labels meet the strict regulatory requirements of your destination market (such as FDA or EU standards) and can assist with EAN/UPC barcode integration."
+  },
+  {
+    question: "What is the Minimum Order Quantity (MOQ) for private label services?",
+    answer: "Our MOQ for private label packaging typically depends on the packaging format chosen. Please contact our OEM specialists to discuss specific MOQs for your desired pouches, jars, or tins."
+  },
+  {
+    question: "Which spices and commodities are eligible for private labeling?",
+    answer: "We offer private label manufacturing for our entire premium range, including whole spices like Red Chilli, Turmeric, Cumin, Coriander, and Black Pepper, as well as powdered spices and blends."
+  }
+];
 
 export const metadata: Metadata = buildMetadata({
   title: "Private Label Spice Manufacturing & Packaging India | Sheesh Exports",
@@ -33,13 +54,15 @@ export default function PrivateLabelPage() {
     url: `${SITE_CONFIG.url}/services/private-label`,
   };
 
+  const faqSchema = buildFAQSchema(PRIVATE_LABEL_FAQS);
+
   return (
     <main className="bg-background min-h-screen text-foreground font-sans selection:bg-primary selection:text-primary-foreground">
-      <JsonLd data={[breadcrumbSchema, serviceSchema]} />
+      <JsonLd data={[breadcrumbSchema, serviceSchema, faqSchema]} />
       {/* SECTION 01: HERO */}
       <section className="relative min-h-[70vh] flex flex-col justify-center bg-primary text-primary-foreground">
         <div className="absolute inset-0 ">
-          <Image src="/images/services/private-labelling.png" alt="Premium Retail Spice Packaging" fill className="object-cover" priority />
+          <Image src="/images/services/private-labelling.webp" alt="Premium Retail Spice Packaging" fill className="object-cover" priority />
         </div>
         <div className="absolute inset-0 bg-black/20" />
         
@@ -133,7 +156,7 @@ export default function PrivateLabelPage() {
             {/* Format 1 */}
             <div className="bg-card border border-border group">
               <div className="relative h-[300px] w-full bg-muted overflow-hidden">
-                <Image src="/images/services/standup-pouch-package.jpeg" alt="Stand-Up Pouches" fill className="object-cover grayscale mix-blend-multiply group-hover:scale-105 transition-transform duration-700" />
+                <Image src="/images/services/standup-pouch-package.webp" alt="Stand-Up Pouches" fill className="object-cover transition-transform duration-700" />
               </div>
               <div className="p-8">
                 <h3 className="font-heading text-2xl font-medium text-foreground mb-4">Stand-Up Pouches</h3>
@@ -148,7 +171,7 @@ export default function PrivateLabelPage() {
             {/* Format 2 */}
             <div className="bg-card border border-border group">
               <div className="relative h-[300px] w-full bg-muted overflow-hidden">
-                <Image src="/images/services/glass-jars.jpeg" alt="Glass Jars" fill className="object-cover grayscale mix-blend-multiply group-hover:scale-105 transition-transform duration-700" />
+                <Image src="/images/services/glass-jars.webp" alt="Glass Jars" fill className="object-cover transition-transform duration-700" />
               </div>
               <div className="p-8">
                 <h3 className="font-heading text-2xl font-medium text-foreground mb-4">Glass Jars</h3>
@@ -163,7 +186,7 @@ export default function PrivateLabelPage() {
             {/* Format 3 */}
             <div className="bg-card border border-border group">
               <div className="relative h-[300px] w-full bg-muted overflow-hidden">
-                <Image src="/images/services/pet-containers.png" alt="PET Containers" fill className="object-cover grayscale mix-blend-multiply group-hover:scale-105 transition-transform duration-700" />
+                <Image src="/images/services/pet-containers.webp" alt="PET Containers" fill className="object-cover transition-transform duration-700" />
               </div>
               <div className="p-8">
                 <h3 className="font-heading text-2xl font-medium text-foreground mb-4">PET Containers</h3>
@@ -178,7 +201,7 @@ export default function PrivateLabelPage() {
             {/* Format 4 */}
             <div className="bg-card border border-border group">
               <div className="relative h-[300px] w-full bg-muted overflow-hidden">
-                <Image src="/images/services/tin-container.png" alt="Tin Packaging" fill className="object-cover grayscale mix-blend-multiply group-hover:scale-105 transition-transform duration-700" />
+                <Image src="/images/services/tin-container.webp" alt="Tin Packaging" fill className="object-cover transition-transform duration-700" />
               </div>
               <div className="p-8">
                 <h3 className="font-heading text-2xl font-medium text-foreground mb-4">Tin Packaging</h3>
@@ -278,7 +301,7 @@ export default function PrivateLabelPage() {
             
             <div className="relative h-[400px] lg:h-[500px] w-full rounded-xl overflow-hidden shadow-2xl border border-primary-foreground/10 bg-white">
               <Image 
-                src="/images/services/label-.png" 
+                src="/images/services/label-.webp" 
                 alt="Compliant Artwork Example" 
                 fill 
                 className="object-contain p-6" 
@@ -303,6 +326,9 @@ export default function PrivateLabelPage() {
           </div>
         </div>
       </section>
+
+      {/* SECTION FAQ */}
+      <FAQSection title="Private Label Queries" subtitle="Frequently Asked Questions" faqs={PRIVATE_LABEL_FAQS} />
 
       {/* SECTION 07: CTA */}
       <section className="py-20 lg:py-24 bg-background">

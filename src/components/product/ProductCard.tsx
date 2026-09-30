@@ -39,7 +39,7 @@ export function ProductCard({
   ...props
 }: ProductCardProps) {
   // Determine primary image
-  const primaryImage = product.images?.[0]?.url || "/images/placeholder.jpg"
+  const primaryImage = product.images?.[0]?.url || "/images/sheesh-logo.webp"
   const primaryImageAlt = (product.images?.[0] as any)?.altText || product.name
 
   if (variant === "compact") {

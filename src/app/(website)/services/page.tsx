@@ -1,10 +1,32 @@
 import { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { buildBreadcrumbSchema } from "@/lib/seo/breadcrumb";
+import { buildFAQSchema } from "@/lib/seo/faq";
 import { JsonLd } from "@/components/seo/JsonLd";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Package, Box, Container } from "lucide-react";
+import { FAQSection } from "@/components/shared/FAQSection";
+import { SITE_CONFIG } from "@/config/site";
+
+const SERVICES_FAQS = [
+  {
+    question: "What types of export services do you offer?",
+    answer: "We offer three primary commercial services: Bulk Commodity Export (FCL shipments for manufacturers and importers), Private Label Manufacturing (OEM packaging for retail brands), and Mixed Container Consolidation (combining multiple products into one shipment for distributors)."
+  },
+  {
+    question: "Do you handle export documentation and customs clearance?",
+    answer: "Yes, our export operations team handles all mandatory origin documentation, including Commercial Invoices, Packing Lists, Certificates of Origin, Phytosanitary Certificates, and Lab Analysis reports to ensure smooth customs clearance at the destination port."
+  },
+  {
+    question: "Can I combine spices, pulses, and grains in a single shipment?",
+    answer: "Absolutely. Our Mixed Container Consolidation service allows you to combine various categories like spices, oil seeds, grains, and pulses into a single Full Container Load (FCL). This reduces inventory risk and optimizes freight costs."
+  },
+  {
+    question: "What are your quality control procedures before shipping?",
+    answer: "All shipments undergo mandatory pre-shipment inspections and stringent lab testing (often through SGS, Eurofins, or Spices Board of India) to ensure they meet the specific import regulations and quality standards of the destination country."
+  }
+];
 
 export const metadata: Metadata = buildMetadata({
   title: "Global Export Services | Sheesh Exports",
@@ -19,13 +41,27 @@ export default function ServicesHubPage() {
     { label: "Services", href: "/services" },
   ]);
 
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Global Export Services | Sheesh Exports",
+    description: "From bulk commodity shipments and private label manufacturing to mixed-container consolidation, we support every stage of international food procurement.",
+    provider: {
+      "@type": "Organization",
+      name: SITE_CONFIG.name,
+    },
+    url: `${SITE_CONFIG.url}/services`,
+  };
+
+  const faqSchema = buildFAQSchema(SERVICES_FAQS);
+
   return (
     <main className="bg-background min-h-screen text-foreground font-sans selection:bg-primary selection:text-primary-foreground" role="main">
-      <JsonLd data={breadcrumbSchema} />
+      <JsonLd data={[breadcrumbSchema, serviceSchema, faqSchema]} />
       {/* SECTION 01: HERO */}
       <section aria-labelledby="services-hero-heading" className="relative min-h-[60vh] flex flex-col justify-center bg-primary text-primary-foreground">
         <div className="absolute inset-0 opacity-100">
-          <Image src="/images/services/factory-eagle-eye.png" alt="Global Supply Chain" fill className="object-cover" priority />
+          <Image src="/images/services/factory-eagle-eye.webp" alt="Global Supply Chain" fill className="object-cover" priority />
         </div>
         <div className="absolute inset-0 bg-black/60 " />
         
@@ -50,8 +86,8 @@ export default function ServicesHubPage() {
             
             {/* Private Label */}
             <article className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
-              <figure className="w-full lg:w-1/2 relative h-[350px] lg:h-[450px]">
-                <Image src="/images/services/private-labelling.png" alt="Retail spice packaging" fill className="object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700" />
+              <figure className="w-full lg:w-1/2 relative h-[350px] lg:h-[450px]" style={{ position: "relative" }}>
+                <Image src="/images/services/private-labelling.webp" alt="Retail spice packaging" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700" />
                 <figcaption className="sr-only">Private label spice packaging</figcaption>
               </figure>
               <div className="w-full lg:w-1/2">
@@ -73,8 +109,8 @@ export default function ServicesHubPage() {
 
             {/* Bulk Export */}
             <article className="flex flex-col lg:flex-row-reverse gap-12 lg:gap-20 items-center">
-              <figure className="w-full lg:w-1/2 relative h-[350px] lg:h-[450px]">
-                <Image src="/images/services/bulk-exports.png" alt="Warehouse stacked with bags" fill className="object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700" />
+              <figure className="w-full lg:w-1/2 relative h-[350px] lg:h-[450px]" style={{ position: "relative" }}>
+                <Image src="/images/services/bulk-exports.webp" alt="Warehouse stacked with bags" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700" />
                 <figcaption className="sr-only">Bulk export warehouse</figcaption>
               </figure>
               <div className="w-full lg:w-1/2">
@@ -96,8 +132,8 @@ export default function ServicesHubPage() {
 
             {/* Mixed Container */}
             <article className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
-              <figure className="w-full lg:w-1/2 relative h-[350px] lg:h-[450px]">
-                <Image src="/images/services/mixed-shipment.png" alt="Container with multiple commodities" fill className="object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700" />
+              <figure className="w-full lg:w-1/2 relative h-[350px] lg:h-[450px]" style={{ position: "relative" }}>
+                <Image src="/images/services/mixed-shipment.webp" alt="Container with multiple commodities" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700" />
                 <figcaption className="sr-only">Mixed container shipment</figcaption>
               </figure>
               <div className="w-full lg:w-1/2">
@@ -155,6 +191,9 @@ export default function ServicesHubPage() {
           </ul>
         </div>
       </section>
+      
+      {/* SECTION 04: FAQ */}
+      <FAQSection title="Export Services Queries" subtitle="Frequently Asked Questions" faqs={SERVICES_FAQS} />
       
     </main>
   );

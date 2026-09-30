@@ -122,7 +122,7 @@ export function TestimonialsSection() {
           <div className="lg:col-span-1 flex flex-col items-center lg:items-start text-center lg:text-left bg-transparent lg:bg-card p-2 lg:p-6 rounded-2xl lg:border lg:border-border lg:shadow-sm">
             <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-4 shadow-sm border border-border p-1">
               <Image
-                src="/images/sheesh-logo.jpeg"
+                src="/images/sheesh-logo.webp"
                 alt="Sheesh Exports"
                 width={60}
                 height={60}

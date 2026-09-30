@@ -120,11 +120,12 @@ export default function AboutPage() {
               delay={0.2}
               className="relative h-[600px] w-full rounded-sm overflow-hidden shadow-2xl"
             >
-              <figure>
+              <figure className="relative w-full h-full" style={{ position: "relative" }}>
                 <Image
-                  src="/images/about/factory-processing.jpg"
+                  src="/images/about/factory-processing.webp"
                   alt="Spice Processing Facility"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
                 />
                 <figcaption className="sr-only">Our state-of-the-art spice processing facility</figcaption>
@@ -149,13 +150,14 @@ export default function AboutPage() {
                 className="group relative aspect-square overflow-hidden bg-[#1C1C1C]"
                 role="listitem"
               >
-                <article>
+                <article className="h-full w-full">
                   <Link href={`/categories/${cat.slug}`} className="block w-full h-full">
-                    <figure>
+                    <figure className="relative h-full w-full" style={{ position: "relative" }}>
                       <Image
                         src={cat.heroImage}
                         alt={cat.name}
                         fill
+                        sizes="(max-width: 1024px) 50vw, 33vw"
                         className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out grayscale-[20%] group-hover:grayscale-0"
                       />
                       <figcaption className="sr-only">{cat.name} category</figcaption>
@@ -178,7 +180,7 @@ export default function AboutPage() {
       {/* SECTION 04: FARM TO GLOBAL MARKET */}
       <section aria-labelledby="farm-to-market-heading" className="py-32 bg-primary text-white overflow-hidden relative">
         <div className="absolute inset-0 opacity-10">
-          <Image src="/images/about/texture-map.jpg" alt="Texture" fill className="object-cover" />
+          <Image src="/images/about/texture-map.webp" alt="Texture" fill className="object-cover" />
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-8xl relative z-10">
           <FadeIn className="mb-20">
@@ -190,21 +192,29 @@ export default function AboutPage() {
             </p>
           </FadeIn>
 
-          <div className="relative">
-            {/* Connecting Line */}
-            <div className="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-white/20 -translate-y-1/2" aria-hidden="true" />
+          <div className="relative mt-12 lg:mt-24">
+            {/* Desktop horizontal line */}
+            <div className="hidden lg:block absolute top-[7px] left-0 w-full h-[2px] bg-white/20" aria-hidden="true" />
+            
+            {/* Mobile/Tablet vertical line */}
+            <div className="lg:hidden absolute top-[7px] bottom-[7px] left-[7px] w-[2px] bg-white/20" aria-hidden="true" />
 
-            <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6 relative z-10" role="list" aria-label="Supply chain steps">
+            <StaggerContainer className="grid grid-cols-1 lg:grid-cols-8 gap-y-10 lg:gap-x-4 relative z-10" role="list" aria-label="Supply chain steps">
               {JOURNEY_STEPS.map((step, idx) => (
-                <StaggerItem key={idx} className="flex flex-col items-center text-center group" role="listitem">
-                  <article>
-                    <div className="w-4 h-4 rounded-full bg-secondary mb-6 shadow-[0_0_15px_rgba(197,160,89,0.5)] group-hover:scale-150 transition-transform duration-300" aria-hidden="true" />
-                    <h3 className="font-heading text-xl font-medium text-[#F9F8F6] mb-2">
-                      {step.title}
-                    </h3>
-                    <p className="text-xs text-white/60 font-light px-2 leading-relaxed">
-                      {step.desc}
-                    </p>
+                <StaggerItem key={idx} className="relative group" role="listitem">
+                  <article className="flex flex-row lg:flex-col items-start lg:items-center text-left lg:text-center w-full">
+                    {/* The Dot */}
+                    <div className="shrink-0 w-[16px] h-[16px] rounded-full bg-secondary shadow-[0_0_15px_rgba(197,160,89,0.5)] group-hover:scale-150 transition-transform duration-300 relative z-20 mt-1 lg:mt-0 mr-6 lg:mr-0 lg:mb-6" aria-hidden="true" />
+                    
+                    {/* Content */}
+                    <div className="flex-1 lg:w-full">
+                      <h3 className="font-heading text-xl lg:text-sm xl:text-base font-medium text-[#F9F8F6] mb-2">
+                        {step.title}
+                      </h3>
+                      <p className="text-sm lg:text-xs text-white/60 font-light leading-relaxed">
+                        {step.desc}
+                      </p>
+                    </div>
                   </article>
                 </StaggerItem>
               ))}
@@ -219,12 +229,14 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <FadeIn className="order-2 lg:order-1 relative h-[600px] w-full">
               {/* Using a clean map placeholder, user mentioned "Clean India Map. Not interactive." */}
-              <figure>
+              <figure className="relative w-full h-full" style={{ position: "relative" }}>
                 <Image
-                  src="/images/about/india-map-clean.jpg"
+                  src="/images/about/india-map-clean.webp"
                   alt="Sourcing Regions in India"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-contain object-left"
+                  priority
                 />
                 <figcaption className="sr-only">Map of India showing sourcing regions</figcaption>
               </figure>
@@ -285,30 +297,32 @@ export default function AboutPage() {
       </section>
 
       {/* SECTION 06: GLOBAL REACH */}
-      <section aria-labelledby="global-reach-heading" className="py-16 md:py-24 lg:py-32 bg-white text-center">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-8xl">
-          <FadeIn>
-            <h2 id="global-reach-heading" className="font-heading text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-medium text-primary mb-8 md:mb-16">
+      <section aria-labelledby="global-reach-heading" className="py-12 md:py-16 lg:py-24 bg-white text-center flex flex-col justify-center max-h-screen overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-8xl h-full flex flex-col justify-center">
+          <FadeIn className="flex flex-col items-center h-full">
+            <h2 id="global-reach-heading" className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-primary mb-6 md:mb-10">
               Serving Importers Across 50+ Countries
             </h2>
-            <figure className="relative h-[250px] sm:h-[400px] md:h-[600px] lg:h-[800px] w-full mb-8 md:mb-16 opacity-80 mix-blend-multiply">
+            <figure className="relative w-full h-[35vh] sm:h-[40vh] md:h-[50vh] lg:h-[55vh] max-h-[600px] mb-8 md:mb-10 opacity-80 mix-blend-multiply" style={{ position: "relative" }}>
               <Image
-                src="/world-map.png"
+                src="/world-map.webp"
                 alt="Global Export Routes"
                 fill
+                sizes="(max-width: 768px) 100vw, 80vw"
                 className="object-contain"
+                priority
               />
               <figcaption className="sr-only">World map showing export routes to 50+ countries</figcaption>
             </figure>
-            <nav className="flex flex-wrap justify-center items-center gap-x-4 md:gap-x-8 lg:gap-x-12 gap-y-4 text-foreground/80 font-heading text-lg sm:text-xl lg:text-2xl tracking-wide" aria-label="Export regions">
+            <nav className="flex flex-wrap justify-center items-center gap-x-3 sm:gap-x-6 md:gap-x-10 gap-y-3 text-foreground/80 font-heading text-sm sm:text-lg lg:text-xl tracking-wide" aria-label="Export regions">
               <span>North America</span>
-              <span aria-hidden="true" className="hidden sm:inline text-primary/40">•</span>
+              <span aria-hidden="true" className="text-primary/40">•</span>
               <span>Europe</span>
-              <span aria-hidden="true" className="hidden sm:inline text-primary/40">•</span>
+              <span aria-hidden="true" className="text-primary/40">•</span>
               <span>Middle East</span>
               <span aria-hidden="true" className="hidden sm:inline text-primary/40">•</span>
               <span>Africa</span>
-              <span aria-hidden="true" className="hidden sm:inline text-primary/40">•</span>
+              <span aria-hidden="true" className="text-primary/40">•</span>
               <span>Asia Pacific</span>
             </nav>
           </FadeIn>
@@ -389,12 +403,13 @@ export default function AboutPage() {
 
           <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" role="list" aria-label="Infrastructure facilities">
             <StaggerItem className="relative h-[350px] group overflow-hidden" role="listitem">
-              <figure>
+              <figure className="relative w-full h-full" style={{ position: "relative" }}>
                 <Image
-                  src="/images/about/infra-processing.jpeg"
+                  src="/images/about/infra-processing.webp"
                   alt="Processing Facilities"
                   fill
-                  className="object-cover  transition-opacity duration-500"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover transition-opacity duration-500"
                 />
                 <figcaption className="sr-only">Processing facilities</figcaption>
               </figure>
@@ -403,12 +418,13 @@ export default function AboutPage() {
               </div>
             </StaggerItem>
             <StaggerItem className="relative h-[350px] group overflow-hidden" role="listitem">
-              <figure>
+              <figure className="relative w-full h-full" style={{ position: "relative" }}>
                 <Image
-                  src="/images/about/infra-warehouse.jpeg"
+                  src="/images/about/infra-warehouse.webp"
                   alt="Warehousing"
                   fill
-                  className="object-cover  transition-opacity duration-500"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover transition-opacity duration-500"
                 />
                 <figcaption className="sr-only">Warehousing facilities</figcaption>
               </figure>
@@ -417,12 +433,13 @@ export default function AboutPage() {
               </div>
             </StaggerItem>
             <StaggerItem className="relative h-[350px] group overflow-hidden" role="listitem">
-              <figure>
+              <figure className="relative w-full h-full" style={{ position: "relative" }}>
                 <Image
-                  src="/images/about/infra-packaging.jpeg"
+                  src="/images/about/infra-packaging.webp"
                   alt="Packaging Lines"
                   fill
-                  className="object-cover  transition-opacity duration-500"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover transition-opacity duration-500"
                 />
                 <figcaption className="sr-only">Packaging lines</figcaption>
               </figure>
@@ -431,12 +448,13 @@ export default function AboutPage() {
               </div>
             </StaggerItem>
             <StaggerItem className="relative h-[350px] group overflow-hidden" role="listitem">
-              <figure>
+              <figure className="relative w-full h-full" style={{ position: "relative" }}>
                 <Image
-                  src="/images/about/infra-testing.jpeg"
+                  src="/images/about/infra-testing.webp"
                   alt="Quality Testing"
                   fill
-                  className="object-cover  transition-opacity duration-500"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover transition-opacity duration-500"
                 />
                 <figcaption className="sr-only">Quality testing laboratory</figcaption>
               </figure>
@@ -445,12 +463,13 @@ export default function AboutPage() {
               </div>
             </StaggerItem>
             <StaggerItem className="relative h-[350px] group overflow-hidden lg:col-span-2" role="listitem">
-              <figure>
+              <figure className="relative w-full h-full" style={{ position: "relative" }}>
                 <Image
-                  src="/images/about/infra-loading.jpeg"
+                  src="/images/about/infra-loading.webp"
                   alt="Container Loading Operations"
                   fill
-                  className="object-cover  transition-opacity duration-500"
+                  sizes="(max-width: 1024px) 100vw, 66vw"
+                  className="object-cover transition-opacity duration-500"
                 />
                 <figcaption className="sr-only">Container loading operations</figcaption>
               </figure>

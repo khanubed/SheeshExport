@@ -7,7 +7,7 @@ import { PackageSearch, ShieldCheck, ListTree } from "lucide-react";
 
 export function ProductCard({ product }: { product: Product }) {
   const firstImage = product.variants?.[0]?.images?.[0] || product.variants?.[0]?.originStory?.images?.[0];
-  const imageUrl = typeof firstImage === "string" ? firstImage : (firstImage?.src || "/images/placeholder.jpg");
+  const imageUrl = typeof firstImage === "string" ? firstImage : (firstImage?.src || "/images/sheesh-logo.webp");
   const productHref = `/products/${product.categorySlug}/${product.slug}`;
   
   return (

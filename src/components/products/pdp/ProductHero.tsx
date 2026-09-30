@@ -15,7 +15,7 @@ export function ProductHero({
   selectedVariant: Variant;
 }) {
   const firstImg = product.variants[0]?.images?.[0] || product.variants[0]?.originStory?.images?.[0];
-  const heroImgSrc = typeof firstImg === "string" ? firstImg : ((firstImg as any)?.src || "/images/placeholder.jpg");
+  const heroImgSrc = typeof firstImg === "string" ? firstImg : ((firstImg as any)?.src || "/images/sheesh-logo.webp");
 
   return (
     <section aria-labelledby="product-name" className="relative pt-12 pb-8 lg:pt-16 lg:pb-8 overflow-hidden border-b border-border">
@@ -79,11 +79,12 @@ export function ProductHero({
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <figure>
+            <figure className="relative h-full w-full" style={{ position: "relative" }}>
               <Image
                 src={heroImgSrc}
                 alt={product.name}
                 fill
+                sizes="(max-width: 1024px) 100vw, 40vw"
                 className="object-cover"
                 priority
               />

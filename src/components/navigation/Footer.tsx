@@ -14,7 +14,7 @@ export function Footer() {
           <div className="space-y-8">
             <Link href="/" className="flex items-center space-x-2" aria-label="Sheesh Exports Home">
               <Image
-                src="/images/sheesh-logo.jpeg"
+                src="/images/sheesh-logo.webp"
                 alt="Sheesh Exports Logo"
                 width={150}
                 height={50}

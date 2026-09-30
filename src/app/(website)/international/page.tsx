@@ -19,21 +19,21 @@ import { ContactSection } from "@/components/contact/ContactSection";
 
 // Pre-defined images based on our generated assets and existing folder
 const IMAGES = {
-  worldMap: "/images/about/texture-map.jpg",
-  routeVis: "/images/international/intl_route_vis_1790683449601.jpg",
-  commandCenter: "/images/international/intl_command_center_1790683463614.jpg",
-  portNy: "/images/international/intl_port_ny_1790683487543.jpg",
-  portHamburg: "/images/international/intl_port_hamburg_1790683504127.jpg",
-  portDubai: "/images/international/intl_port_dubai_1790683516299.jpg",
-  portSingapore: "/images/international/intl_port_singapore_1790683576116.jpg",
-  warehouse: "/images/about/infra-warehouse.jpeg",
-  farm: "/images/about/infra-sourcing.png",
-  processing: "/images/about/infra-processing.jpeg",
-  lab: "/images/about/infra-testing.jpeg",
-  loading: "/images/about/infra-loading.jpeg",
-  packaging: "/images/about/infra-packaging.jpeg",
-  retail: "/images/industries/retail-private-label.jpg",
-  foodMfg: "/images/industries/food-manufacturing.jpg",
+  worldMap: "/images/international/port-image.png",
+  routeVis: "/images/international/intl_route_vis_1790683449601.webp",
+  commandCenter: "/images/international/intl_command_center_1790683463614.webp",
+  portNy: "/images/international/intl_port_ny_1790683487543.webp",
+  portHamburg: "/images/international/intl_port_hamburg_1790683504127.webp",
+  portDubai: "/images/international/intl_port_dubai_1790683516299.webp",
+  portSingapore: "/images/international/intl_port_singapore_1790683576116.webp",
+  warehouse: "/images/about/infra-warehouse.webp",
+  farm: "/images/about/infra-sourcing.webp",
+  processing: "/images/about/infra-processing.webp",
+  lab: "/images/about/infra-testing.webp",
+  loading: "/images/about/infra-loading.webp",
+  packaging: "/images/about/infra-packaging.webp",
+  retail: "/images/industries/retail-private-label.webp",
+  foodMfg: "/images/industries/food-manufacturing.webp",
 };
 
 const INTERNATIONAL_FAQS = [

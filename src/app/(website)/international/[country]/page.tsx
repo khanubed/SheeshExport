@@ -67,7 +67,7 @@ export default async function CountryMarketPage({ params }: PageProps) {
     }
   ];
   
-  const heroImage = market.heroImage || '/images/international/intl_route_vis_1790683449601.jpg';
+  const heroImage = market.heroImage || '/images/international/intl_route_vis_1790683449601.webp';
 
   return (
     <main className="min-h-screen bg-background text-foreground">
@@ -205,7 +205,7 @@ export default async function CountryMarketPage({ params }: PageProps) {
               <div className="lg:col-span-8 group">
                 <div className="aspect-[16/9] lg:aspect-[21/9] relative mb-6 overflow-hidden border border-border">
                   <Image 
-                    src={featuredProduct.variants[0]?.images[0]?.src || "/images/placeholder.jpg"} 
+                    src={featuredProduct.variants[0]?.images[0]?.src || "/images/sheesh-logo.webp"} 
                     alt={featuredProduct.name}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -268,7 +268,7 @@ export default async function CountryMarketPage({ params }: PageProps) {
             <div className="lg:col-span-8 flex flex-col gap-2">
               <div className="aspect-[16/9] relative border border-border">
                 <Image
-                  src={market.logisticsImages?.[0] || "/images/placeholder.jpg"}
+                  src={market.logisticsImages?.[0] || "/images/sheesh-logo.webp"}
                   alt="Loading operations at Indian export port"
                   fill
                   className="object-cover"
@@ -277,7 +277,7 @@ export default async function CountryMarketPage({ params }: PageProps) {
               <div className="grid grid-cols-2 gap-2">
                 <div className="aspect-[16/9] relative border border-border">
                   <Image
-                    src={market.logisticsImages?.[1] || "/images/placeholder.jpg"}
+                    src={market.logisticsImages?.[1] || "/images/sheesh-logo.webp"}
                     alt="Ocean vessel container logistics"
                     fill
                     className="object-cover"
@@ -285,7 +285,7 @@ export default async function CountryMarketPage({ params }: PageProps) {
                 </div>
                 <div className="aspect-[16/9] relative border border-border">
                   <Image
-                    src={market.logisticsImages?.[2] || "/images/placeholder.jpg"}
+                    src={market.logisticsImages?.[2] || "/images/sheesh-logo.webp"}
                     alt={`Cargo containers arriving at ${market.ports[0] || "destination port"}`}
                     fill
                     className="object-cover"

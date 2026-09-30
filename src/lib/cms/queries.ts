@@ -62,8 +62,8 @@ const MOCK_PRODUCTS: Product[] = [
     origin: "Guntur, Andhra Pradesh, India",
     harvestSeason: "January to April",
     images: [
-      { url: "/images/products/red-chilli-1.jpg", alt: "Whole Dry S4 Red Chilli Stemless", isFeatured: true },
-      { url: "/images/products/red-chilli-2.jpg", alt: "Bulk Red Chilli Packaging in PP Bags", isFeatured: false },
+      { url: "/images/products/red-chilli-1.webp", alt: "Whole Dry S4 Red Chilli Stemless", isFeatured: true },
+      { url: "/images/products/red-chilli-2.webp", alt: "Bulk Red Chilli Packaging in PP Bags", isFeatured: false },
     ],
     specifications: [
       { label: "Moisture", value: "Max 10% - 11%" },

@@ -15,8 +15,8 @@ export const IMAGES = {
     spices: "/images/product-categories/HERO-BG.webp",
     grains: "/images/product-categories/grains.webp",
     pulses: "/images/product-categories/PULSES.webp",
-    oilSeeds: "/images/product-categories/OIL-SEEDS.jpg",
-    dryFruits: "/images/product-categories/dry-fruits.jpg",
+    oilSeeds: "/images/product-categories/OIL-SEEDS.webp",
+    dryFruits: "/images/product-categories/dry-fruits.webp",
     foodIngredients: "/images/product-categories/food-ingredients.avif",
   },
 

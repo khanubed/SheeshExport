@@ -84,7 +84,7 @@ export const COUNTRY_MARKETS: CountryMarket[] = [
     seoDescription: "Direct origin exporter of ASTA-certified Indian spices, pulses, & oilseeds to the USA. FSVP compliant, low moisture, laboratory tested bulk supply.",
     heroTitle: "Bulk Indian Agricultural Commodities Exported Direct to the USA",
     heroDescription: "FDA-registered, FSMA-compliant supply chain delivering premium spices, oilseeds, and grains to US food manufacturers, private labels, and wholesale distributors.",
-    heroImage: "/images/international/intl_port_ny_1790683487543.jpg",
+    heroImage: "/images/international/intl_port_ny_1790683487543.webp",
     dossierDemandHeading: "US Market Demand Analysis",
     dossierDemandText: "The US import market for Indian agricultural commodities exceeds $2.5B annually, driven by surging ethnic food retail, plant-based processing, and private-label growth. US buyers prioritize high-curcumin turmeric, ASTA-graded red chillies, steam-sterilized cumin seeds, and non-GMO oilseeds with guaranteed low moisture and micro-clearance.",
     dossierRegulationsHeading: "FDA, FSMA & ASTA Regulatory Standards",
@@ -103,9 +103,9 @@ export const COUNTRY_MARKETS: CountryMarket[] = [
     logisticsHeading: "Direct Ocean Freight & US Customs Routing",
     logisticsText: "We streamline transatlantic and transpacific shipping routes with pre-cleared FDA Prior Notice filings and ISF 10+2 compliance, delivering direct ocean container shipments from Indian export hubs to major US gateways.",
     logisticsImages: [
-      "/images/international/intl_port_ny_1790683487543.jpg",
-      "/images/international/intl_route_vis_1790683449601.jpg",
-      "/images/placeholder.jpg"
+      "/images/international/intl_port_ny_1790683487543.webp",
+      "/images/international/intl_route_vis_1790683449601.webp",
+      "/images/sheesh-logo.webp"
     ],
     transitTime: "25-40 Days",
     ports: [
@@ -176,10 +176,10 @@ export const COUNTRY_MARKETS: CountryMarket[] = [
     ],
     galleryHeading: "US Export Operations & Quality Control",
     galleryImages: [
-      { src: "/images/about/infra-sourcing.png", alt: "Direct Farm Sourcing in India", caption: "Farm-Direct Sourcing" },
-      { src: "/images/about/infra-cleaning.jpeg", alt: "Sortex Cleaning Facility", caption: "Sortex Cleaning" },
-      { src: "/images/about/factory-processing.jpg", alt: "Steam Sterilization Processing Plant", caption: "Micro-Sterilization" },
-      { src: "/images/international/intl_route_vis_1790683449601.jpg", alt: "Maritime Container Shipping to US Ports", caption: "Ocean Logistics" }
+      { src: "/images/about/infra-sourcing.webp", alt: "Direct Farm Sourcing in India", caption: "Farm-Direct Sourcing" },
+      { src: "/images/about/infra-cleaning.webp", alt: "Sortex Cleaning Facility", caption: "Sortex Cleaning" },
+      { src: "/images/about/factory-processing.webp", alt: "Steam Sterilization Processing Plant", caption: "Micro-Sterilization" },
+      { src: "/images/international/intl_route_vis_1790683449601.webp", alt: "Maritime Container Shipping to US Ports", caption: "Ocean Logistics" }
     ],
     faqs: [
       {
@@ -207,7 +207,7 @@ export const COUNTRY_MARKETS: CountryMarket[] = [
     seoDescription: "Leading exporter of EU MRL-tested Indian spices, organic turmeric, & oilseeds to Germany. IFS & Eurofins certified bulk agricultural supply.",
     heroTitle: "EU-Compliant Indian Spices & Agricultural Exports to Germany",
     heroDescription: "Laboratory-tested, low-pesticide-residue, and organic-certified bulk ingredients direct to German food processors, spice mills, and European distributors.",
-    heroImage: "/images/international/intl_port_hamburg_1790683504127.jpg",
+    heroImage: "/images/international/intl_port_hamburg_1790683504127.webp",
     dossierDemandHeading: "German & Central European Market Demand",
     dossierDemandText: "Germany represents the largest market for spices, extractives, and organic agricultural products in the European Union. German spice millers, extractors, and retail brands enforce stringent quality controls, prioritizing ultra-low pesticide residues, organic certification, and complete farm-to-fork traceability.",
     dossierRegulationsHeading: "EU MRLs, Contaminants & TRACES NT Standards",
@@ -226,9 +226,9 @@ export const COUNTRY_MARKETS: CountryMarket[] = [
     logisticsHeading: "Direct Logistics Routing to North Sea Ports",
     logisticsText: "We operate dedicated shipping lanes from Nhava Sheva (JNPT) and Mundra directly to Hamburg and Bremerhaven, providing complete EU TRACES NT documentation for fast customs release.",
     logisticsImages: [
-      "/images/international/intl_port_hamburg_1790683504127.jpg",
-      "/images/international/intl_route_vis_1790683449601.jpg",
-      "/images/placeholder.jpg"
+      "/images/international/intl_port_hamburg_1790683504127.webp",
+      "/images/international/intl_route_vis_1790683449601.webp",
+      "/images/sheesh-logo.webp"
     ],
     transitTime: "18-25 Days",
     ports: [
@@ -297,10 +297,10 @@ export const COUNTRY_MARKETS: CountryMarket[] = [
     ],
     galleryHeading: "German Export Processing & Standards",
     galleryImages: [
-      { src: "/images/about/infra-sourcing.png", alt: "Farm Sourcing in India", caption: "Farm Traceability" },
-      { src: "/images/about/infra-cleaning.jpeg", alt: "Cleaning Facility", caption: "Sorting & Gravity Cleaning" },
-      { src: "/images/about/factory-processing.jpg", alt: "German Standard Processing Plant", caption: "Lab Processing" },
-      { src: "/images/international/intl_route_vis_1790683449601.jpg", alt: "Maritime Shipping to Hamburg", caption: "Port Logistics" }
+      { src: "/images/about/infra-sourcing.webp", alt: "Farm Sourcing in India", caption: "Farm Traceability" },
+      { src: "/images/about/infra-cleaning.webp", alt: "Cleaning Facility", caption: "Sorting & Gravity Cleaning" },
+      { src: "/images/about/factory-processing.webp", alt: "German Standard Processing Plant", caption: "Lab Processing" },
+      { src: "/images/international/intl_route_vis_1790683449601.webp", alt: "Maritime Shipping to Hamburg", caption: "Port Logistics" }
     ],
     faqs: [
       {
@@ -328,7 +328,7 @@ export const COUNTRY_MARKETS: CountryMarket[] = [
     seoDescription: "Leading bulk supplier of Indian spices, Basmati rice, & pulses to UAE. Halal certified, Dubai Municipality FoodWATCH pre-cleared Jebel Ali shipments.",
     heroTitle: "Bulk Indian Commodity Sourcing Partner for UAE & GCC Markets",
     heroDescription: "Express ocean freight, Halal-certified quality, and seamless Dubai Municipality customs clearance for re-exporters, food service, and retail leaders.",
-    heroImage: "/images/international/intl_port_dubai_1790683516299.jpg",
+    heroImage: "/images/international/intl_port_dubai_1790683516299.webp",
     dossierDemandHeading: "UAE & Middle East Hub Market Demand",
     dossierDemandText: "The UAE, anchored by Jebel Ali Port, serves as the primary trading and re-export nexus for the GCC, North Africa, and South Asia. Demand is defined by rapid turnover, high-volume staple commodities like 1121 Basmati Rice, Cumin, Green Cardamom, and premium-grade spice blends.",
     dossierRegulationsHeading: "Dubai Municipality, ESMA & MoIAT Compliance",
@@ -347,9 +347,9 @@ export const COUNTRY_MARKETS: CountryMarket[] = [
     logisticsHeading: "Express West Coast India to Jebel Ali Routing",
     logisticsText: "We offer market-leading ocean transit times of 3 to 5 days from India's western ports (Mundra / Nhava Sheva) directly to Jebel Ali and Khalifa Port, enabling lean inventory cycles.",
     logisticsImages: [
-      "/images/international/intl_port_dubai_1790683516299.jpg",
-      "/images/international/intl_route_vis_1790683449601.jpg",
-      "/images/placeholder.jpg"
+      "/images/international/intl_port_dubai_1790683516299.webp",
+      "/images/international/intl_route_vis_1790683449601.webp",
+      "/images/sheesh-logo.webp"
     ],
     transitTime: "3-5 Days",
     ports: [
@@ -418,10 +418,10 @@ export const COUNTRY_MARKETS: CountryMarket[] = [
     ],
     galleryHeading: "UAE Supply Chain Operations",
     galleryImages: [
-      { src: "/images/about/infra-sourcing.png", alt: "Sourcing Raw Produce", caption: "Raw Sourcing" },
-      { src: "/images/about/infra-cleaning.jpeg", alt: "Processing and Sorting", caption: "High-Speed Sortex" },
-      { src: "/images/about/factory-processing.jpg", alt: "Hygienic Packaging Plant", caption: "Bulk Packaging" },
-      { src: "/images/international/intl_route_vis_1790683449601.jpg", alt: "Shipping to Jebel Ali Port", caption: "Jebel Ali Express" }
+      { src: "/images/about/infra-sourcing.webp", alt: "Sourcing Raw Produce", caption: "Raw Sourcing" },
+      { src: "/images/about/infra-cleaning.webp", alt: "Processing and Sorting", caption: "High-Speed Sortex" },
+      { src: "/images/about/factory-processing.webp", alt: "Hygienic Packaging Plant", caption: "Bulk Packaging" },
+      { src: "/images/international/intl_route_vis_1790683449601.webp", alt: "Shipping to Jebel Ali Port", caption: "Jebel Ali Express" }
     ],
     faqs: [
       {

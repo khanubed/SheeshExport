@@ -49,7 +49,7 @@ export function ProductVariants({ product, selectedVariant, onSelect }: ProductV
     } else if (v.originStory?.images && v.originStory.images.length > 0) {
       img = v.originStory.images[0];
     }
-    if (!img) return "/images/placeholder.jpg";
+    if (!img) return "/images/sheesh-logo.webp";
     return typeof img === "string" ? img : img.src;
   };
 
@@ -162,6 +162,7 @@ export function ProductVariants({ product, selectedVariant, onSelect }: ProductV
                   src={currentDisplayImage}
                   alt={displayVariant.name}
                   fill
+                  sizes="(max-width: 1024px) 100vw, 35vw"
                   className="object-cover"
                   priority
                 />

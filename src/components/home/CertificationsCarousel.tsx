@@ -41,7 +41,7 @@ export function CertificationsCarousel({ certifications }: CertificationsCarouse
           const content = (
             <>
               <div className="relative h-20 w-full max-w-[120px] bg-white rounded flex items-center justify-center p-2 mb-2 shadow-sm">
-                <Image src={cert.img} alt={cert.name} fill className="object-contain p-2" />
+                <Image src={cert.img} alt={cert.name} fill sizes="(max-width: 768px) 50vw, 20vw" className="object-contain p-2" />
               </div>
               <div>
                 <div className="font-bold text-foreground group-hover:text-primary transition-colors">{cert.name}</div>

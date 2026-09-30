@@ -55,6 +55,7 @@ export const MAIN_NAV: NavItem[] = [
     title: "International Trade",
     href: "/international",
     children: [
+      { title: "Indian Exporter Hub", href: "/indian-exporter", description: "Global supply partner for premium agricultural exports." },
       { title: "Middle East & GCC", href: "/international/uae", description: "UAE, Saudi Arabia, Oman, Qatar, Kuwait." },
       { title: "European Union", href: "/international/germany", description: "Germany, Netherlands, UK, Spain." },
       { title: "Americas", href: "/international/usa", description: "United States, Canada, Latin America." },

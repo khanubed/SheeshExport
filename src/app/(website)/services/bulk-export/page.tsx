@@ -1,11 +1,36 @@
 import { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { buildBreadcrumbSchema } from "@/lib/seo/breadcrumb";
+
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SITE_CONFIG } from "@/config/site";
 import Image from "next/image";
 import Link from "next/link";
 import { Anchor, ShieldAlert, Box, Database, TrendingDown } from "lucide-react";
+import { FAQSection } from "@/components/shared/FAQSection";
+
+const BULK_EXPORT_FAQS = [
+  {
+    question: "What is the minimum order quantity (MOQ) for bulk exports?",
+    answer: "Our standard MOQ for bulk exports is one 20ft Full Container Load (FCL). However, we can also accommodate Less than Container Load (LCL) shipments or mixed container consolidation depending on your requirements."
+  },
+  {
+    question: "How do you protect bulk shipments from moisture damage during ocean transit?",
+    answer: "We use high-capacity calcium chloride container desiccants, strategic desiccant poles, and kraft paper linings to absorb ambient moisture and prevent condensation (Container Rain) during 30+ day ocean voyages."
+  },
+  {
+    question: "Do you provide custom packaging options for bulk orders?",
+    answer: "Yes, we offer 25kg and 50kg PP (Polypropylene) or Jute bags. We can also provide customized, food-grade bulk packaging based on your specific requirements."
+  },
+  {
+    question: "Which quality certifications do your bulk exports carry?",
+    answer: "All our bulk shipments are accompanied by phytosanitary certificates, certificates of origin, and SGS/Spices Board accredited lab test reports to ensure full compliance with international import regulations."
+  },
+  {
+    question: "Which major ports do you ship from in India?",
+    answer: "We primarily ship from Nhava Sheva (Mumbai), Mundra Port (Gujarat), Chennai Port, and Krishnapatnam depending on the product origin to optimize transit times and freight costs."
+  }
+];
 
 export const metadata: Metadata = buildMetadata({
   title: "Bulk Spice Exporter India | Container & FCL Spice Shipments",
@@ -39,7 +64,7 @@ export default function BulkExportPage() {
       {/* SECTION 01: HERO */}
       <section className="relative min-h-[70vh] flex flex-col justify-center text-primary-foreground">
         <div className="absolute inset-0 ">
-          <Image src="/images/about/infra-warehouse.jpeg" alt="Warehouse stacked with bags of spices" fill className="object-cover" priority />
+          <Image src="/images/about/infra-warehouse.webp" alt="Warehouse stacked with bags of spices" fill className="object-cover" priority />
         </div>
         <div className="absolute inset-0 bg-black/50 " />
         
@@ -209,6 +234,9 @@ export default function BulkExportPage() {
           </div>
         </div>
       </section>
+
+      {/* SECTION FAQ */}
+      <FAQSection title="Bulk Export Queries" subtitle="Frequently Asked Questions" faqs={BULK_EXPORT_FAQS} />
 
       {/* SECTION 06: CTA */}
       <section className="py-20 lg:py-24 bg-background border-t border-border">

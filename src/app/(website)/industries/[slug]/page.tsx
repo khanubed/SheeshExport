@@ -270,21 +270,21 @@ export default async function IndustryDetailPage({ params }: { params: Promise<{
       )}
 
       {/* SECTION 7 — FINAL EDITORIAL CTA */}
-      <section className="py-32 bg-foreground text-background">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-8xl flex flex-col md:flex-row items-end justify-between gap-12">
+      <section className="py-16 md:py-24 lg:py-32 bg-foreground text-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-8xl flex flex-col md:flex-row md:items-end justify-between gap-8 md:gap-12">
           <div className="max-w-4xl">
-            <h2 className="font-heading text-6xl md:text-8xl font-bold tracking-tighter leading-[0.9] mb-8 uppercase">
+            <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tighter leading-[1.1] md:leading-[0.9] mb-6 md:mb-8 uppercase">
               Initiate<br/>Procurement
             </h2>
-            <p className="text-2xl text-background/70 font-light font-sans max-w-2xl">
+            <p className="text-lg sm:text-xl md:text-2xl text-background/70 font-light font-sans max-w-2xl">
               Discuss your commercial sourcing requirements with our export operations team for a tailored compliance and pricing framework.
             </p>
           </div>
-          <div className="flex flex-col gap-4 w-full md:w-auto shrink-0">
-            <Link href="/request-quote" className="inline-flex items-center justify-center bg-secondary text-primary px-12 py-6 font-bold tracking-widest uppercase text-sm hover:bg-secondary/90 transition-colors w-full md:w-auto">
+          <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row gap-4 w-full md:w-auto shrink-0 mt-4 md:mt-0">
+            <Link href="/request-quote" className="inline-flex items-center justify-center bg-secondary text-primary px-8 lg:px-12 py-4 lg:py-6 font-bold tracking-widest uppercase text-xs lg:text-sm hover:bg-secondary/90 transition-colors w-full sm:w-auto text-center">
               Request Quotation
             </Link>
-            <Link href="/contact" className="inline-flex items-center justify-center border border-background/30 px-12 py-6 font-bold tracking-widest uppercase text-sm hover:bg-white/10 transition-colors w-full md:w-auto">
+            <Link href="/contact" className="inline-flex items-center justify-center border border-background/30 px-8 lg:px-12 py-4 lg:py-6 font-bold tracking-widest uppercase text-xs lg:text-sm hover:bg-white/10 transition-colors w-full sm:w-auto text-center">
               Contact Operations
             </Link>
           </div>

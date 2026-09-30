@@ -24,7 +24,6 @@ import { CertificationsCarousel } from "@/components/home/CertificationsCarousel
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { QuotationFormSection } from "@/components/home/QuotationFormSection";
 import { ProcessSection } from "@/components/home/ProcessSection";
-import { FadeIn, StaggerContainer, StaggerItem } from "@/components/home/AnimatedSection";
 import { FAQSection } from "@/components/shared/FAQSection";
 import { CTASection } from "@/components/shared/CTASection";
 import { ContactSection } from "@/components/contact/ContactSection";
@@ -172,14 +171,14 @@ export default function HomePage() {
             className="object-cover w-full h-full -scale-x-100"
           >
             <source
-              src="/hero-video.mp4"
+              src="/hero-video.webm"
               type="video/mp4"
             />
           </video>
           <div className="absolute inset-0 bg-black/60 dark:bg-black/20" />
         </div>
         <div className="relative z-10 mx-auto max-w-8xl px-4 sm:px-6 lg:px-8 w-full text-white">
-          <FadeIn>
+          <div>
             <span className="text-xs font-semibold tracking-[0.2em] uppercase text-secondary mb-4 block">
               Indian Origin. Global Reach.
             </span>
@@ -227,14 +226,14 @@ export default function HomePage() {
                 <div className="text-sm text-slate-400">Years of Excellence</div>
               </div>
             </div>
-          </FadeIn>
+          </div>
         </div>
       </section>
       {/* Certifications */}
       <section aria-labelledby="certifications-heading" className="py-12 bg-background">
         <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-4">
-            <FadeIn>
+            <div>
               <span className="text-xs font-semibold tracking-wider uppercase text-primary mb-4 block">
                 Quality & Compliance
               </span>
@@ -245,27 +244,27 @@ export default function HomePage() {
                 We adhere to the highest international standards of food safety, quality control,
                 and export compliance, ensuring every shipment meets your regulatory requirements.
               </p>
-            </FadeIn>
+            </div>
           </div>
 
-          <FadeIn>
+          <div>
             <CertificationsCarousel certifications={CERTIFICATIONS} />
-          </FadeIn>
+          </div>
 
-          <FadeIn className="mt-6 text-center">
+          <div className="mt-6 text-center">
             <Link
               href="/certifications"
               className={buttonVariants({ variant: "outline", className: "font-sans" })}
             >
               View All Certificates <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
-          </FadeIn>
+          </div>
         </div>
       </section>
       {/* Product Range */}
       <section aria-labelledby="products-heading" className="pb-24 bg-background">
         <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
-          <FadeIn className="flex flex-col md:flex-row md:items-end justify-between mb-16">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
             <div className="max-w-2xl">
               <span className="text-xs font-semibold tracking-wider uppercase text-muted-foreground mb-2 block">
                 Our Product Range
@@ -288,11 +287,11 @@ export default function HomePage() {
                 View All Products <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
-          </FadeIn>
+          </div>
 
-          <FadeIn className="mt-4">
+          <div className="mt-4">
             <ProductCarousel categories={CATEGORIES_DATA} />
-          </FadeIn>
+          </div>
         </div>
       </section>
 
@@ -300,17 +299,17 @@ export default function HomePage() {
       <section aria-labelledby="advantage-heading" className="relative py-16 border-y border-border overflow-hidden bg-black">
         <div className="absolute inset-0 z-0">
           <video autoPlay loop muted playsInline className="object-cover w-full h-full grayscale opacity-30">
-            <source src="/12351626_3840_2160_30fps.mp4" type="video/mp4" />
+            <source src="/12351626_3840_2160_30fps.webm" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-black/50" />
           {/* Subtle noise/texture overlay to remove pure flatness */}
-          <div className="absolute inset-0 opacity-10 bg-[url('/images/noise.png')] mix-blend-overlay pointer-events-none" />
+          <div className="absolute inset-0 opacity-10 bg-[url('/images/noise.webp')] mix-blend-overlay pointer-events-none" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           
           {/* Section Header */}
-          <FadeIn className="max-w-[700px] mx-auto text-center mb-16">
+          <div className="max-w-[700px] mx-auto text-center mb-16">
             <span className="text-xs font-bold tracking-widest uppercase text-white/50 mb-4 block">
               OUR COMPETITIVE ADVANTAGE
             </span>
@@ -320,10 +319,10 @@ export default function HomePage() {
             <p className="text-white/70 text-[0.95rem] leading-[1.7] max-w-2xl mx-auto">
               We help importers and distributors source export-grade commodities directly from India's trusted regions, simplifying international procurement with end-to-end support.
             </p>
-          </FadeIn>
+          </div>
 
           {/* Metrics Strip */}
-          <FadeIn delay={0.1} className="mb-20 border-y border-white/10 py-10">
+          <div className="mb-20 border-y border-white/10 py-10">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-4 md:gap-8 md:divide-x md:divide-white/10 text-center" role="list" aria-label="Key metrics">
               <div role="listitem">
                 <div className="text-5xl font-bold text-white mb-2">50+</div>
@@ -342,10 +341,10 @@ export default function HomePage() {
                 <div className="text-white/50 text-xs font-semibold tracking-widest uppercase">Export Focused</div>
               </div>
             </div>
-          </FadeIn>
+          </div>
 
           {/* Capability Grid */}
-          <FadeIn delay={0.2} className="mb-16">
+          <div className="mb-16">
             <div className="grid md:grid-cols-2 gap-[1px] bg-white/10 border border-white/10 shadow-2xl" role="list" aria-label="Competitive advantages">
               {ADVANTAGES.map((adv, idx) => {
                 const Icon = adv.icon;
@@ -360,10 +359,10 @@ export default function HomePage() {
                 );
               })}
             </div>
-          </FadeIn>
+          </div>
 
           {/* Certifications */}
-          <FadeIn delay={0.3} className="mb-16 text-center flex flex-col items-center">
+          <div className="mb-16 text-center flex flex-col items-center">
             <span className="text-[10px] uppercase tracking-widest text-white/40 mb-4 block font-semibold">
               ACCREDITATIONS & COMPLIANCE
             </span>
@@ -374,24 +373,24 @@ export default function HomePage() {
                 </span>
               ))}
             </div>
-          </FadeIn>
+          </div>
 
           {/* CTA */}
-          <FadeIn delay={0.4} className="text-center">
+          <div className="text-center">
             <Link
               href="/about"
               className="inline-flex items-center text-[0.95rem] font-semibold text-white hover:text-white/70 transition-colors group border-b border-transparent hover:border-white/70 pb-1"
             >
               Learn More About Sheesh Exports <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Link>
-          </FadeIn>
+          </div>
         </div>
       </section>
 
       {/* Journey Section */}
       <section aria-labelledby="journey-heading" className="py-24 bg-background border-y border-border">
         <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
-          <FadeIn className="relative mx-auto max-w-6xl">
+          <div className="relative mx-auto max-w-6xl">
             <figure className="aspect-video w-full rounded-2xl overflow-hidden shadow-2xl border border-border bg-black">
               <video 
                 autoPlay 
@@ -400,12 +399,12 @@ export default function HomePage() {
                 playsInline 
                 className="w-full h-full object-contain"
               >
-                <source src="/Sheesh_Journey.mp4" type="video/mp4" />
+                <source src="/Sheesh_Journey.webm" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
               <figcaption className="sr-only">Sheesh Exports journey from farm to global markets</figcaption>
             </figure>
-          </FadeIn>
+          </div>
         </div>
       </section>
 
@@ -413,44 +412,36 @@ export default function HomePage() {
       <ProcessSection />
 
       {/* Global Reach */}
-      <section aria-labelledby="global-reach-heading" className="relative py-24 border-y border-border overflow-hidden">
-        <div className="absolute inset-0 z-0">
+      <section aria-labelledby="global-reach-heading" className="relative py-24 border-y border-border overflow-hidden bg-muted/10">
+        <div className="absolute inset-0 z-0  pointer-events-none">
           <Image
-            src="/world-map.png"
+            src="/world-map.webp"
             alt="Global Reach Background"
             fill
-            className="object-cover object-right"
+            className="object-cover object-center"
           />
-          <div className="absolute inset-0 " />
         </div>
-        <div className="relative z-10 mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <FadeIn>
-              <span className="text-xs font-semibold tracking-wider uppercase text-primary mb-4 block">
-                Our Global Reach
-              </span>
-              <h2 id="global-reach-heading" className="font-heading text-4xl sm:text-5xl font-bold text-foreground mb-6 leading-tight">
-                Trusted by Importers
-                <br />
-                Across 50+ Countries
-              </h2>
-              <p className="text-muted-foreground text-lg mb-8 max-w-xl">
-                We export to 50+ countries across Asia, Europe, North America, Africa and Oceania,
-                serving importers, distributors, food processors and retail chains.
-              </p>
-              <Link
-                href="/international"
-                className={buttonVariants({
-                  className: "font-sans bg-foreground text-background hover:bg-foreground/90",
-                })}
-              >
-                Explore Countries <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </FadeIn>
-
-            <FadeIn delay={0.2} className="relative h-100 hidden lg:block" aria-hidden="true">
-              <div />
-            </FadeIn>
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex justify-end text-right">
+          <div className="max-w-2xl">
+            <span className="text-xs font-semibold tracking-wider uppercase text-primary mb-4 block">
+              Our Global Reach
+            </span>
+            <h2 id="global-reach-heading" className="font-heading text-4xl sm:text-5xl font-bold text-foreground mb-6 leading-tight">
+              Trusted by Importers<br />Across 50+ Countries
+            </h2>
+            <p className="text-muted-foreground text-lg mb-10 leading-relaxed">
+              We export to 50+ countries across Asia, Europe, North America, Africa and Oceania,
+              serving importers, distributors, food processors and retail chains with consistent quality.
+            </p>
+            <Link
+              href="/international"
+              className={buttonVariants({
+                size: "lg",
+                className: "font-sans bg-foreground text-background hover:bg-foreground/90 px-8",
+              })}
+            >
+              Explore Countries <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>
@@ -459,21 +450,21 @@ export default function HomePage() {
       <section aria-labelledby="industries-heading" className="py-16 bg-card border-y border-border">
         <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <FadeIn className="order-2 lg:order-1 relative rounded-lg overflow-hidden">
-              <figure>
+            <div className="order-2 lg:order-1 relative rounded-lg overflow-hidden">
+              <figure className="relative h-full min-h-[400px]" style={{ position: "relative" }}>
                 <Image
-                  src="/images/ChatGPT%20Image%20Sep%2022,%202026,%2003_04_18%20PM.png"
-                  alt="Industry Processing"
-                  width={800}
-                  height={800}
-                  className="w-full h-auto object-cover"
+                  src="/images/about/factory-processing.webp"
+                  alt="Food processing facility"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
                 />
                 <figcaption className="sr-only">Food processing facility</figcaption>
               </figure>
-            </FadeIn>
+            </div>
 
             <div className="order-1 lg:order-2">
-              <FadeIn>
+              <div>
                 <span className="text-xs font-semibold tracking-wider uppercase text-muted-foreground mb-4 block">
                   Industry Solutions
                 </span>
@@ -507,7 +498,7 @@ export default function HomePage() {
                 >
                   View All Industries <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
-              </FadeIn>
+              </div>
             </div>
           </div>
         </div>
@@ -519,7 +510,7 @@ export default function HomePage() {
       {/* Insights */}
       <section aria-labelledby="insights-heading" className="py-12 bg-background">
         <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
-          <FadeIn className="mb-16">
+          <div className="mb-16">
             <span className="text-xs font-semibold tracking-wider uppercase text-muted-foreground mb-4 block">
               Stay Informed
             </span>
@@ -542,18 +533,19 @@ export default function HomePage() {
                 Explore Resources <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
-          </FadeIn>
+          </div>
 
-          <StaggerContainer className="grid md:grid-cols-3 gap-8" role="list" aria-label="Latest insights">
+          <div className="grid md:grid-cols-3 gap-8" role="list" aria-label="Latest insights">
             {INSIGHTS.map((insight, idx) => (
-              <StaggerItem key={idx} role="listitem">
+              <div key={idx} role="listitem">
                 <article>
                   <Link href={insight.href} className="group block">
-                    <figure className="relative h-56 mb-6 overflow-hidden rounded-lg">
+                    <figure className="relative h-56 mb-6 overflow-hidden rounded-lg" style={{ position: "relative" }}>
                       <Image
                         src={insight.img}
                         alt={insight.title}
                         fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       <figcaption className="sr-only">{insight.title}</figcaption>
@@ -569,9 +561,9 @@ export default function HomePage() {
                     </div>
                   </Link>
                 </article>
-              </StaggerItem>
+              </div>
             ))}
-          </StaggerContainer>
+          </div>
         </div>
       </section>
 
@@ -581,7 +573,7 @@ export default function HomePage() {
       {/* Contact Header */}
       <section aria-labelledby="contact-heading" className="pt-24 pb-12 bg-background border-t border-border">
         <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
-          <FadeIn className="max-w-3xl">
+          <div className="max-w-3xl">
             <span className="text-xs font-semibold tracking-widest uppercase text-primary mb-4 block">
               Global Partnerships
             </span>
@@ -591,7 +583,7 @@ export default function HomePage() {
             <p className="text-lg text-muted-foreground font-sans leading-relaxed">
               Whether you are looking for specific origin certifications, bulk FOB pricing, or end-to-end private-label manufacturing, our international procurement team is ready to assist you.
             </p>
-          </FadeIn>
+          </div>
         </div>
       </section>
 

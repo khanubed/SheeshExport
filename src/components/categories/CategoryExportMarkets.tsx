@@ -29,7 +29,7 @@ export function CategoryExportMarkets({ category }: { category: Category }) {
           </div>
           <div className="w-full lg:w-1/2 relative h-[400px] flex items-center justify-center">
             {/* Minimalist World Map */}
-            <div className="absolute inset-0  bg-[url('/world-map.png')] bg-center bg-contain bg-no-repeat"></div>
+            <div className="absolute inset-0  bg-[url('/world-map.webp')] bg-center bg-contain bg-no-repeat"></div>
             <div className="relative z-10 text-center bg-card/20 backdrop-blur-sm p-8 border border-white/20 dark:border-border shadow-sm rounded-sm">
               <div className="text-6xl font-heading font-bold text-foreground mb-2">50+</div>
               <div className="text-sm font-bold uppercase tracking-widest text-muted-foreground">

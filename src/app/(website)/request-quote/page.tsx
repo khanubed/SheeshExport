@@ -8,22 +8,22 @@ import { cn } from "@/lib/utils";
 // --- Mock Data ---
 const PRODUCTS = [
   { id: "red-chilli", name: "Red Chilli", image: "/images/products/whole-spices/red-chilli-guntur-whole/stemless.webp" },
-  { id: "turmeric", name: "Turmeric", image: "/images/products/whole-spices/turmeric-finger-guntur-whole/nizamabad-double-polished.jpg" },
-  { id: "cumin", name: "Cumin", image: "/images/placeholder.jpg" },
-  { id: "coriander", name: "Coriander", image: "/images/placeholder.jpg" },
-  { id: "sesame", name: "Sesame Seeds", image: "/images/placeholder.jpg" },
+  { id: "turmeric", name: "Turmeric", image: "/images/products/whole-spices/turmeric-finger-guntur-whole/nizamabad-double-polished.webp" },
+  { id: "cumin", name: "Cumin", image: "/images/sheesh-logo.webp" },
+  { id: "coriander", name: "Coriander", image: "/images/sheesh-logo.webp" },
+  { id: "sesame", name: "Sesame Seeds", image: "/images/sheesh-logo.webp" },
 ];
 
 const VARIANTS: Record<string, any[]> = {
   "red-chilli": [
     { id: "teja-s17", name: "Teja S17", heat: "75K-100K SHU", color: "50-70 ASTA", desc: "Fiery, extra-hot variety widely favored for industrial extraction.", image: "/images/products/whole-spices/red-chilli-guntur-whole/stemless.webp" },
     { id: "byadgi", name: "Byadgi", heat: "8K-15K SHU", color: "120-160 ASTA", desc: "Deep crimson, low-heat chilli valued for high color extraction.", image: "/images/products/whole-spices/red-chilli-guntur-whole/byadgi.webp" },
-    { id: "s4-sannam", name: "S4 Sannam", heat: "25K-35K SHU", color: "40-60 ASTA", desc: "The world's largest volume export chilli variety.", image: "/images/products/whole-spices/red-chilli-guntur-whole/Sannam-Stemless.jpg" },
-    { id: "273", name: "Wrinkled 273", heat: "15K-25K SHU", color: "60-90 ASTA", desc: "Popular medium-heat variety with distinct wrinkled pericarp.", image: "/images/products/whole-spices/red-chilli-guntur-whole/wrinkled.jpg" },
+    { id: "s4-sannam", name: "S4 Sannam", heat: "25K-35K SHU", color: "40-60 ASTA", desc: "The world's largest volume export chilli variety.", image: "/images/products/whole-spices/red-chilli-guntur-whole/Sannam-Stemless.webp" },
+    { id: "273", name: "Wrinkled 273", heat: "15K-25K SHU", color: "60-90 ASTA", desc: "Popular medium-heat variety with distinct wrinkled pericarp.", image: "/images/products/whole-spices/red-chilli-guntur-whole/wrinkled.webp" },
   ],
   "turmeric": [
-    { id: "nizamabad", name: "Nizamabad", heat: "N/A", color: "2.5-3.5% Curcumin", desc: "Smooth, clean-surfaced golden finger.", image: "/images/products/whole-spices/turmeric-finger-guntur-whole/nizamabad-double-polished.jpg" },
-    { id: "alleppey", name: "Alleppey", heat: "N/A", color: "5.0-6.5% Curcumin", desc: "Premium dark-orange turmeric with exceptional oil content.", image: "/images/products/whole-spices/turmeric-finger-guntur-whole/alleppey-high-curcumin.jpg" },
+    { id: "nizamabad", name: "Nizamabad", heat: "N/A", color: "2.5-3.5% Curcumin", desc: "Smooth, clean-surfaced golden finger.", image: "/images/products/whole-spices/turmeric-finger-guntur-whole/nizamabad-double-polished.webp" },
+    { id: "alleppey", name: "Alleppey", heat: "N/A", color: "5.0-6.5% Curcumin", desc: "Premium dark-orange turmeric with exceptional oil content.", image: "/images/products/whole-spices/turmeric-finger-guntur-whole/alleppey-high-curcumin.webp" },
   ]
 };
 

@@ -28,7 +28,7 @@ export default function IndustriesHubPage() {
       {/* SECTION 1 — MASSIVE EDITORIAL HERO */}
       <section className="relative h-screen flex flex-col justify-end pb-12 lg:pb-24 border-b border-border overflow-hidden">
         <Image
-          src="/images/about/global-delivery.jpeg"
+          src="/images/about/global-delivery.webp"
           alt="Global Trade and Shipping"
           fill
           className="object-cover"
@@ -114,52 +114,20 @@ export default function IndustriesHubPage() {
             The Procurement Ecosystem
           </h2>
 
-          <div className="max-w-4xl mx-auto flex flex-col items-center">
-            {/* Origin */}
-            <div className="mb-8">
-              <span className="block font-heading text-4xl md:text-7xl font-bold text-primary tracking-tighter">INDIA</span>
-              <span className="block text-sm uppercase tracking-widest text-muted-foreground font-bold mt-2">Origin & Processing</span>
-            </div>
-            
-            <div className="h-24 w-px bg-border relative">
-              <div className="absolute inset-x-0 bottom-0 text-secondary translate-y-full">↓</div>
-            </div>
-
-            {/* Hubs */}
-            <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 mb-8">
-              <div className="border-t-2 border-primary pt-4 text-center">
-                <span className="block font-heading text-xl font-bold">Manufacturers</span>
-              </div>
-              <div className="border-t-2 border-secondary pt-4 text-center">
-                <span className="block font-heading text-xl font-bold">Importers</span>
-              </div>
-              <div className="border-t-2 border-primary pt-4 text-center">
-                <span className="block font-heading text-xl font-bold">Retail Brands</span>
-              </div>
-              <div className="border-t-2 border-secondary pt-4 text-center">
-                <span className="block font-heading text-xl font-bold">Hospitality</span>
-              </div>
-            </div>
-
-            <div className="h-24 w-px bg-border relative mb-8">
-              <div className="absolute inset-x-0 bottom-0 text-secondary translate-y-full">↓</div>
-            </div>
-
-            {/* Destinations */}
-            <div className="flex flex-wrap justify-center gap-6 md:gap-12 text-muted-foreground font-bold tracking-widest uppercase text-sm md:text-lg">
-              <span>USA</span>
-              <span>•</span>
-              <span>Germany</span>
-              <span>•</span>
-              <span>UAE</span>
-              <span>•</span>
-              <span>UK</span>
-              <span>•</span>
-              <span>Canada</span>
-              <span>•</span>
-              <span>Australia</span>
-            </div>
-            <span className="block text-xs uppercase tracking-widest text-muted-foreground/60 font-bold mt-8">Destination Markets</span>
+          <div className="max-w-6xl mx-auto flex flex-col items-center">
+            <figure className="relative w-full aspect-video md:aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl mb-8" style={{ position: "relative" }}>
+              <Image 
+                src="/images/procurement-ecosystem.jpg" 
+                alt="Global Trade Supply Chain Network radiating from India" 
+                fill 
+                sizes="(max-width: 1024px) 100vw, 80vw" 
+                className="object-cover"
+              />
+              <figcaption className="sr-only">Global Trade Supply Chain Network radiating from India</figcaption>
+            </figure>
+            <p className="text-muted-foreground font-sans text-sm md:text-base max-w-2xl mx-auto">
+              A robust, streamlined flow of premium agricultural commodities—from the rich soils of India directly to manufacturers, retail brands, and the hospitality sector across 50+ global destinations.
+            </p>
           </div>
         </div>
       </section>

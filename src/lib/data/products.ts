@@ -162,9 +162,9 @@ export const PRODUCTS_DATA: Product[] = [
           story:
             "Cultivated in the mineral-rich black soils of the Guntur belt under hot, dry climatic conditions, Guntur chillies are globally renowned for their unmatched heat (capsaicin) and natural color pigments. The Whole Red Chilli grade is specifically prized because it is fiery, extra-hot variety widely favored for industrial capsaicin extraction, hot sauces, and spice grinding. By pairing age-old sun-curing techniques with modern GAP-compliant farming, Sheesh Exports guarantees 100% farm-to-port traceability, direct community sourcing, and absolute purity without middleman markups.",
           images: [
-            { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-whole.jpg", alt: "Guntur red chilli farms and sun-curing yards" },
-            { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-1.jpg", alt: "Guntur red chilli farms and sun-curing yards" },
-            { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-2.jpg", alt: "Guntur red chilli farms and sun-curing yards" },
+            { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-whole.webp", alt: "Guntur red chilli farms and sun-curing yards" },
+            { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-1.webp", alt: "Guntur red chilli farms and sun-curing yards" },
+            { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-2.webp", alt: "Guntur red chilli farms and sun-curing yards" },
           ],
         },
       },
@@ -192,9 +192,9 @@ export const PRODUCTS_DATA: Product[] = [
           story:
             "Cultivated in the mineral-rich black soils of the Guntur belt under hot, dry climatic conditions, Guntur chillies are globally renowned for their unmatched heat (capsaicin) and natural color pigments. The Byadgi KDL grade is specifically prized because it is deep crimson, low-heat chilli valued for high asta color extraction, food coloring, and oleoresin production. By pairing age-old sun-curing techniques with modern GAP-compliant farming, Sheesh Exports guarantees 100% farm-to-port traceability, direct community sourcing, and absolute purity without middleman markups.",
           images: [
-            { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-whole.jpg", alt: "Guntur red chilli farms and sun-curing yards" },
-            { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-1.jpg", alt: "Guntur red chilli farms and sun-curing yards" },
-            { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-2.jpg", alt: "Guntur red chilli farms and sun-curing yards" },
+            { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-whole.webp", alt: "Guntur red chilli farms and sun-curing yards" },
+            { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-1.webp", alt: "Guntur red chilli farms and sun-curing yards" },
+            { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-2.webp", alt: "Guntur red chilli farms and sun-curing yards" },
           ],
         },
       },
@@ -203,7 +203,7 @@ export const PRODUCTS_DATA: Product[] = [
         slug: "s4-sannam-stemless",
         name: "S4 / Sannam (334) (Stemless & With Stem)",
         shortDescription: "The world's largest volume export chilli variety, known for balanced heat, medium color, and consistent quality.",
-        images: [{ src: "/images/products/whole-spices/red-chilli-guntur-whole/Sannam-Stemless.jpg", alt: "S4 Sannam 334 bright red whole chillies, stemless export grade" }],
+        images: [{ src: "/images/products/whole-spices/red-chilli-guntur-whole/Sannam-Stemless.webp", alt: "S4 Sannam 334 bright red whole chillies, stemless export grade" }],
         attributes: [
           { label: "Color", value: "Bright Red" },
           { label: "Heat (SHU)", value: "25,000 - 35,000" },
@@ -222,9 +222,9 @@ export const PRODUCTS_DATA: Product[] = [
           story:
             "Cultivated in the mineral-rich black soils of the Guntur belt under hot, dry climatic conditions, Guntur chillies are globally renowned for their unmatched heat (capsaicin) and natural color pigments. The S4 / Sannam grade is specifically prized because it is the world's largest volume export chilli variety, known for balanced heat, medium color, and consistent quality. By pairing age-old sun-curing techniques with modern GAP-compliant farming, Sheesh Exports guarantees 100% farm-to-port traceability, direct community sourcing, and absolute purity without middleman markups.",
           images: [
-            { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-whole.jpg", alt: "Guntur red chilli farms and sun-curing yards" },
-            { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-1.jpg", alt: "Guntur red chilli farms and sun-curing yards" },
-            { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-2.jpg", alt: "Guntur red chilli farms and sun-curing yards" },
+            { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-whole.webp", alt: "Guntur red chilli farms and sun-curing yards" },
+            { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-1.webp", alt: "Guntur red chilli farms and sun-curing yards" },
+            { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-2.webp", alt: "Guntur red chilli farms and sun-curing yards" },
           ],
         },
       },
@@ -233,7 +233,7 @@ export const PRODUCTS_DATA: Product[] = [
         slug: "wrinkled-273-stemless",
         name: "Wrinkled 273 (Stemless)",
         shortDescription: "Popular medium-heat variety with distinct wrinkled pericarp, excellent for blended curry powders and oleoresin.",
-        images: [{ src: "/images/products/whole-spices/red-chilli-guntur-whole/wrinkled.jpg", alt: "Wrinkled 273 dark red stemless whole chillies" }],
+        images: [{ src: "/images/products/whole-spices/red-chilli-guntur-whole/wrinkled.webp", alt: "Wrinkled 273 dark red stemless whole chillies" }],
         attributes: [
           { label: "Color", value: "Dark Red" },
           { label: "Heat (SHU)", value: "15,000 - 25,000" },
@@ -251,9 +251,9 @@ export const PRODUCTS_DATA: Product[] = [
           story:
             "Cultivated in the mineral-rich black soils of the Guntur belt under hot, dry climatic conditions, Guntur chillies are globally renowned for their unmatched heat (capsaicin) and natural color pigments. The Wrinkled 273 grade is specifically prized because it is popular medium-heat variety with distinct wrinkled pericarp, excellent for blended curry powders and oleoresin. By pairing age-old sun-curing techniques with modern GAP-compliant farming, Sheesh Exports guarantees 100% farm-to-port traceability, direct community sourcing, and absolute purity without middleman markups.",
           images: [
-            { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-whole.jpg", alt: "Guntur red chilli farms and sun-curing yards" },
-            { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-1.jpg", alt: "Guntur red chilli farms and sun-curing yards" },
-            { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-2.jpg", alt: "Guntur red chilli farms and sun-curing yards" },
+            { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-whole.webp", alt: "Guntur red chilli farms and sun-curing yards" },
+            { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-1.webp", alt: "Guntur red chilli farms and sun-curing yards" },
+            { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-2.webp", alt: "Guntur red chilli farms and sun-curing yards" },
           ],
         },
       },
@@ -262,7 +262,7 @@ export const PRODUCTS_DATA: Product[] = [
         slug: "indo-5-with-stem",
         name: "Indo-5 / ENDO 5 (With Stem)",
         shortDescription: "Long-pod, thick-skinned variety delivering sharp pungency and ideal durability for long ocean transportation.",
-        images: [{ src: "/images/products/whole-spices/red-chilli-guntur-whole/indo-5-chilli.jpg", alt: "Indo-5 long-pod whole red chillies with stem, vibrant red" }],
+        images: [{ src: "/images/products/whole-spices/red-chilli-guntur-whole/indo-5-chilli.webp", alt: "Indo-5 long-pod whole red chillies with stem, vibrant red" }],
         attributes: [
           { label: "Color", value: "Light to Vibrant Red" },
           { label: "Heat (SHU)", value: "50,000 - 65,000" },
@@ -280,9 +280,9 @@ export const PRODUCTS_DATA: Product[] = [
           story:
             "Cultivated in the mineral-rich black soils of the Guntur belt under hot, dry climatic conditions, Guntur chillies are globally renowned for their unmatched heat (capsaicin) and natural color pigments. The Indo-5 / ENDO 5 grade is specifically prized because it is long-pod, thick-skinned variety delivering sharp pungency and ideal durability for long ocean transportation. By pairing age-old sun-curing techniques with modern GAP-compliant farming, Sheesh Exports guarantees 100% farm-to-port traceability, direct community sourcing, and absolute purity without middleman markups.",
           images: [
-            { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-whole.jpg", alt: "Guntur red chilli farms and sun-curing yards" },
-            { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-1.jpg", alt: "Guntur red chilli farms and sun-curing yards" },
-            { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-2.jpg", alt: "Guntur red chilli farms and sun-curing yards" },
+            { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-whole.webp", alt: "Guntur red chilli farms and sun-curing yards" },
+            { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-1.webp", alt: "Guntur red chilli farms and sun-curing yards" },
+            { src: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-2.webp", alt: "Guntur red chilli farms and sun-curing yards" },
           ],
         },
       },
@@ -390,7 +390,7 @@ export const PRODUCTS_DATA: Product[] = [
         slug: "nizamabad-double-polished",
         name: "Nizamabad Finger (Double Polished)",
         shortDescription: "Smooth, clean-surfaced golden finger widely preferred by commercial grinders and spice blending brands.",
-        images: [{ src: "/images/products/whole-spices/turmeric-finger-guntur-whole/nizamabad-double-polished.jpg", alt: "Nizamabad double polished golden turmeric fingers" }],
+        images: [{ src: "/images/products/whole-spices/turmeric-finger-guntur-whole/nizamabad-double-polished.webp", alt: "Nizamabad double polished golden turmeric fingers" }],
         attributes: [
           { label: "Color", value: "Bright Golden Yellow" },
           { label: "Curcumin Content", value: "2.5% - 3.5%" },
@@ -416,7 +416,7 @@ export const PRODUCTS_DATA: Product[] = [
         slug: "alleppey-high-curcumin",
         name: "Alleppey Finger (High Curcumin)",
         shortDescription: "Premium dark-orange turmeric with exceptional natural oil and curcumin content, ideal for extractors and nutraceuticals.",
-        images: [{ src: "/images/products/whole-spices/turmeric-finger-guntur-whole/alleppey-high-curcumin.jpg", alt: "Alleppey high curcumin deep orange turmeric fingers" }],
+        images: [{ src: "/images/products/whole-spices/turmeric-finger-guntur-whole/alleppey-high-curcumin.webp", alt: "Alleppey high curcumin deep orange turmeric fingers" }],
         attributes: [
           { label: "Color", value: "Deep Orange-Yellow" },
           { label: "Curcumin Content", value: "5.0% - 6.5%+" },
@@ -442,7 +442,7 @@ export const PRODUCTS_DATA: Product[] = [
         slug: "salem-finger-polished",
         name: "Salem Finger (Double Polished)",
         shortDescription: "Renowned for its bright yellow hue and long finger shape, ideal for high-end retail packaging and spice mixes.",
-        images: [{ src: "/images/products/whole-spices/turmeric-finger-guntur-whole/salem-finger-polished.jpg", alt: "Salem double polished canary yellow turmeric fingers" }],
+        images: [{ src: "/images/products/whole-spices/turmeric-finger-guntur-whole/salem-finger-polished.webp", alt: "Salem double polished canary yellow turmeric fingers" }],
         attributes: [
           { label: "Color", value: "Vibrant Canary Yellow" },
           { label: "Curcumin Content", value: "3.0% - 4.0%" },
@@ -468,7 +468,7 @@ export const PRODUCTS_DATA: Product[] = [
         slug: "rajapore-finger-unpolished",
         name: "Rajapore Finger (Unpolished / Polished)",
         shortDescription: "Thick, bold-sized turmeric fingers preferred for whole-spice distribution, traditional grinding, and culinary blends.",
-        images: [{ src: "/images/products/whole-spices/turmeric-finger-guntur-whole/rajapore-finger-unpolished.jpg", alt: "Rajapore thick unpolished turmeric fingers, deep yellow-red" }],
+        images: [{ src: "/images/products/whole-spices/turmeric-finger-guntur-whole/rajapore-finger-unpolished.webp", alt: "Rajapore thick unpolished turmeric fingers, deep yellow-red" }],
         attributes: [
           { label: "Color", value: "Deep Yellow-Reddish" },
           { label: "Curcumin Content", value: "3.5% - 4.5%" },
@@ -493,7 +493,7 @@ export const PRODUCTS_DATA: Product[] = [
         slug: "erode-finger-single-polished",
         name: "Erode Finger (Single & Double Polished)",
         shortDescription: "Globally commercialized medium-sized variety valued for standard quality consistency and industrial utility.",
-        images: [{ src: "/images/products/whole-spices/turmeric-finger-guntur-whole/erode-finger-single-polished.jpg", alt: "Erode bright yellow turmeric fingers, single and double polished" }],
+        images: [{ src: "/images/products/whole-spices/turmeric-finger-guntur-whole/erode-finger-single-polished.webp", alt: "Erode bright yellow turmeric fingers, single and double polished" }],
         attributes: [
           { label: "Color", value: "Bright Yellow" },
           { label: "Curcumin Content", value: "2.5% - 3.5%" },
@@ -616,7 +616,7 @@ export const PRODUCTS_DATA: Product[] = [
         slug: "malabar-garbled-mg1",
         name: "Malabar Garbled Black Pepper (MG-1)",
         shortDescription: "The benchmark export grade — clean, uniform, heavy berries with strong natural pungency and aroma.",
-        images: [{ src: "/images/products/whole-spices/black-pepper-malabar-garbled/malabar-garbled-mg1.jpg", alt: "Malabar Garbled MG-1 whole black peppercorns, dark and uniform" }],
+        images: [{ src: "/images/products/whole-spices/black-pepper-malabar-garbled/malabar-garbled-mg1.webp", alt: "Malabar Garbled MG-1 whole black peppercorns, dark and uniform" }],
         attributes: [
           { label: "Color", value: "Dark Brown / Black" },
           { label: "Density", value: "500 - 520 g/l" },
@@ -641,7 +641,7 @@ export const PRODUCTS_DATA: Product[] = [
         slug: "bold-black-pepper-550gl",
         name: "Bold Black Pepper (550 GL)",
         shortDescription: "Extra-heavy, high-density berries favored by premium spice blenders and oleoresin extractors for maximum yield.",
-        images: [{ src: "/images/products/whole-spices/black-pepper-malabar-garbled/bold-black-pepper-550gl.jpg", alt: "Bold 550 GL heavy density black pepper berries" }],
+        images: [{ src: "/images/products/whole-spices/black-pepper-malabar-garbled/bold-black-pepper-550gl.webp", alt: "Bold 550 GL heavy density black pepper berries" }],
         attributes: [
           { label: "Color", value: "Deep Black" },
           { label: "Density", value: "550 g/l Min" },
@@ -666,7 +666,7 @@ export const PRODUCTS_DATA: Product[] = [
         slug: "malabar-white-pepper",
         name: "Malabar White Pepper",
         shortDescription: "De-husked, water-retted pepper with a milder, cleaner heat — a staple for light-colored sauces and refined seasoning blends.",
-        images: [{ src: "/images/products/whole-spices/black-pepper-malabar-garbled/malabar-white-pepper.jpg", alt: "Malabar white pepper whole berries, cream colored" }],
+        images: [{ src: "/images/products/whole-spices/black-pepper-malabar-garbled/malabar-white-pepper.webp", alt: "Malabar white pepper whole berries, cream colored" }],
         attributes: [
           { label: "Color", value: "Creamy White" },
           { label: "Density", value: "600 g/l Min" },
@@ -774,7 +774,7 @@ export const PRODUCTS_DATA: Product[] = [
         slug: "coriander-powder-fine",
         name: "Coriander Powder (Fine Ground)",
         shortDescription: "Finely milled, free-flowing powder ideal for spice blends, seasoning mixes, and packaged retail sachets.",
-        images: [{ src: "/images/products/powdered-spices/coriander-powder-ground-dhania/coriander-powder-fine.jpg", alt: "Fine ground coriander powder, light green-brown, in bulk" }],
+        images: [{ src: "/images/products/powdered-spices/coriander-powder-ground-dhania/coriander-powder-fine.webp", alt: "Fine ground coriander powder, light green-brown, in bulk" }],
         attributes: [
           { label: "Color", value: "Light Greenish Brown" },
           { label: "Mesh Size", value: "60 - 80 Mesh" },
@@ -799,7 +799,7 @@ export const PRODUCTS_DATA: Product[] = [
         slug: "coriander-powder-coarse",
         name: "Coriander Powder (Coarse Ground)",
         shortDescription: "Coarser texture with a more pronounced bite, favored by curry powder blenders and traditional masala manufacturers.",
-        images: [{ src: "/images/products/powdered-spices/coriander-powder-ground-dhania/coriander-powder-coarse.jpg", alt: "Coarse ground coriander powder, textured granules" }],
+        images: [{ src: "/images/products/powdered-spices/coriander-powder-ground-dhania/coriander-powder-coarse.webp", alt: "Coarse ground coriander powder, textured granules" }],
         attributes: [
           { label: "Color", value: "Greenish Brown" },
           { label: "Mesh Size", value: "20 - 30 Mesh" },
@@ -824,7 +824,7 @@ export const PRODUCTS_DATA: Product[] = [
         slug: "coriander-powder-roasted",
         name: "Roasted Coriander Powder",
         shortDescription: "Lightly dry-roasted before grinding for a deeper, nutty aroma — popular for chutneys, dry rubs, and snack seasoning.",
-        images: [{ src: "/images/products/powdered-spices/coriander-powder-ground-dhania/coriander-powder-roasted.jpg", alt: "Roasted coriander powder, deep brown, aromatic" }],
+        images: [{ src: "/images/products/powdered-spices/coriander-powder-ground-dhania/coriander-powder-roasted.webp", alt: "Roasted coriander powder, deep brown, aromatic" }],
         attributes: [
           { label: "Color", value: "Deep Brown" },
           { label: "Mesh Size", value: "40 - 60 Mesh" },
@@ -920,7 +920,7 @@ export const PRODUCTS_DATA: Product[] = [
         slug: "yellow-maize-food-grade",
         name: "Yellow Maize (Food Grade)",
         shortDescription: "Premium grade Yellow Maize (Food Grade) specifically processed and sorted for bulk B2B export.",
-        images: [{ src: "/images/products/grains-millets/maize-white-yellow/yellow-maize-food-grade.jpg", alt: "Yellow food-grade maize kernels, sortex cleaned" }],
+        images: [{ src: "/images/products/grains-millets/maize-white-yellow/yellow-maize-food-grade.webp", alt: "Yellow food-grade maize kernels, sortex cleaned" }],
         attributes: [
           { label: "Color", value: "Bright Yellow" },
           { label: "Grade", value: "Food Grade (Sortex Cleaned)" },
@@ -944,7 +944,7 @@ export const PRODUCTS_DATA: Product[] = [
         id: "v-yellow-maize-feed",
         slug: "yellow-maize-feed-grade",
         name: "Yellow Maize (Feed Grade)",
-        images: [{ src: "/images/products/grains-millets/maize-white-yellow/yellow-maize-feed-grade.jpg", alt: "Yellow feed-grade maize kernels for poultry and cattle feed" }],
+        images: [{ src: "/images/products/grains-millets/maize-white-yellow/yellow-maize-feed-grade.webp", alt: "Yellow feed-grade maize kernels for poultry and cattle feed" }],
         attributes: [
           { label: "Color", value: "Yellow" },
           { label: "Grade", value: "Feed Grade" },
@@ -1016,7 +1016,7 @@ export const PRODUCTS_DATA: Product[] = [
         slug: "arabica-plantation-a",
         name: "Arabica Plantation A",
         shortDescription: "Premium grade Arabica Plantation A specifically processed and sorted for bulk B2B export.",
-        images: [{ src: "/images/products/tea-coffee/coffee-arabica-robusta/arabica-plantation-a.jpg", alt: "Green Arabica Plantation A coffee beans, washed grade" }],
+        images: [{ src: "/images/products/tea-coffee/coffee-arabica-robusta/arabica-plantation-a.webp", alt: "Green Arabica Plantation A coffee beans, washed grade" }],
         attributes: [
           { label: "Type", value: "Washed Arabica" },
           { label: "Screen Size", value: "17" },
@@ -1040,7 +1040,7 @@ export const PRODUCTS_DATA: Product[] = [
         id: "v-robusta-cherry-ab",
         slug: "robusta-cherry-ab",
         name: "Robusta Cherry AB",
-        images: [{ src: "/images/products/tea-coffee/coffee-arabica-robusta/robusta-cherry-ab.jpg", alt: "Green Robusta Cherry AB coffee beans, unwashed grade" }],
+        images: [{ src: "/images/products/tea-coffee/coffee-arabica-robusta/robusta-cherry-ab.webp", alt: "Green Robusta Cherry AB coffee beans, unwashed grade" }],
         attributes: [
           { label: "Type", value: "Unwashed Robusta" },
           { label: "Screen Size", value: "15-16" },
@@ -1109,7 +1109,7 @@ export const PRODUCTS_DATA: Product[] = [
         slug: "assam-ctc-bopl",
         name: "Assam CTC (BOPL/BP)",
         shortDescription: "Premium grade Assam CTC (BOPL/BP) specifically processed and sorted for bulk B2B export.",
-        images: [{ src: "/images/products/tea-coffee/tea-assam-darjeeling/assam-ctc-bopl.jpg", alt: "Assam CTC black tea granules, BOPL/BP grade" }],
+        images: [{ src: "/images/products/tea-coffee/tea-assam-darjeeling/assam-ctc-bopl.webp", alt: "Assam CTC black tea granules, BOPL/BP grade" }],
         attributes: [
           { label: "Type", value: "Black Tea (CTC)" },
           { label: "Grade", value: "BOPL / BP" },
@@ -1133,7 +1133,7 @@ export const PRODUCTS_DATA: Product[] = [
         id: "v-darjeeling-orthodox",
         slug: "darjeeling-orthodox",
         name: "Darjeeling Orthodox",
-        images: [{ src: "/images/products/tea-coffee/tea-assam-darjeeling/darjeeling-orthodox.jpg", alt: "Darjeeling Orthodox whole-leaf black tea, FTGFOP1 grade" }],
+        images: [{ src: "/images/products/tea-coffee/tea-assam-darjeeling/darjeeling-orthodox.webp", alt: "Darjeeling Orthodox whole-leaf black tea, FTGFOP1 grade" }],
         attributes: [
           { label: "Type", value: "Black Tea (Orthodox)" },
           { label: "Grade", value: "FTGFOP1" },
@@ -1205,7 +1205,7 @@ export const PRODUCTS_DATA: Product[] = [
         slug: "soya-chunks-large",
         name: "Large Soya Chunks",
         shortDescription: "Premium grade Large Soya Chunks specifically processed and sorted for bulk B2B export.",
-        images: [{ src: "/images/products/soya-products/soya-chunks-tvp/soya-chunks-large.jpg", alt: "Large textured soya protein chunks, dry, meat-substitute" }],
+        images: [{ src: "/images/products/soya-products/soya-chunks-tvp/soya-chunks-large.webp", alt: "Large textured soya protein chunks, dry, meat-substitute" }],
         attributes: [
           { label: "Size", value: "Large (20-25mm)" },
           { label: "Protein", value: "52% Min" },
@@ -1229,7 +1229,7 @@ export const PRODUCTS_DATA: Product[] = [
         id: "v-soya-granules",
         slug: "soya-granules",
         name: "Soya Granules / Mince",
-        images: [{ src: "/images/products/soya-products/soya-chunks-tvp/soya-granules.jpg", alt: "Fine soya granules, mince-like texture" }],
+        images: [{ src: "/images/products/soya-products/soya-chunks-tvp/soya-granules.webp", alt: "Fine soya granules, mince-like texture" }],
         attributes: [
           { label: "Size", value: "Fine Granules (2-4mm)" },
           { label: "Protein", value: "52% Min" },
@@ -1301,7 +1301,7 @@ export const PRODUCTS_DATA: Product[] = [
         slug: "1121-creamy-sella",
         name: "1121 Creamy Sella",
         shortDescription: "Premium grade 1121 Creamy Sella specifically processed and sorted for bulk B2B export.",
-        images: [{ src: "/images/products/rice/basmati-rice-1121/1121-creamy-sella.jpg", alt: "1121 Creamy Sella parboiled basmati rice grains" }],
+        images: [{ src: "/images/products/rice/basmati-rice-1121/1121-creamy-sella.webp", alt: "1121 Creamy Sella parboiled basmati rice grains" }],
         attributes: [
           { label: "Type", value: "Parboiled (Sella)" },
           { label: "Average Length", value: "8.35mm+" },
@@ -1325,7 +1325,7 @@ export const PRODUCTS_DATA: Product[] = [
         id: "v-1121-steam",
         slug: "1121-steam",
         name: "1121 Steam Basmati",
-        images: [{ src: "/images/products/rice/basmati-rice-1121/1121-steam.jpg", alt: "1121 Steam Basmati pearl white rice grains" }],
+        images: [{ src: "/images/products/rice/basmati-rice-1121/1121-steam.webp", alt: "1121 Steam Basmati pearl white rice grains" }],
         attributes: [
           { label: "Type", value: "Steamed White" },
           { label: "Average Length", value: "8.35mm+" },
@@ -1405,7 +1405,7 @@ export const PRODUCTS_DATA: Product[] = [
         slug: "almond-nonpareil",
         name: "Nonpareil Supreme",
         shortDescription: "Premium grade Nonpareil Supreme specifically processed and sorted for bulk B2B export.",
-        images: [{ src: "/images/products/dry-fruits-nuts/almond-kernels/almond-nonpareil.jpg", alt: "Nonpareil Supreme almond kernels, flat, light colored" }],
+        images: [{ src: "/images/products/dry-fruits-nuts/almond-kernels/almond-nonpareil.webp", alt: "Nonpareil Supreme almond kernels, flat, light colored" }],
         attributes: [
           { label: "Type", value: "Flat, Light Colored" },
           { label: "Size", value: "23/25, 27/30 count/oz" },
@@ -1429,7 +1429,7 @@ export const PRODUCTS_DATA: Product[] = [
         id: "v-almond-carmel",
         slug: "almond-carmel",
         name: "Carmel Type",
-        images: [{ src: "/images/products/dry-fruits-nuts/almond-kernels/almond-carmel.jpg", alt: "Carmel type almond kernels, slightly wrinkled, darker" }],
+        images: [{ src: "/images/products/dry-fruits-nuts/almond-kernels/almond-carmel.webp", alt: "Carmel type almond kernels, slightly wrinkled, darker" }],
         attributes: [
           { label: "Type", value: "Slightly wrinkled, darker" },
           { label: "Size", value: "27/30, 30/32 count/oz" },
@@ -1489,7 +1489,7 @@ export const PRODUCTS_DATA: Product[] = [
         slug: "peanut-bold",
         name: "Bold Peanuts",
         shortDescription: "Premium grade Bold Peanuts specifically processed and sorted for bulk B2B export.",
-        images: [{ src: "/images/products/dry-fruits-nuts/peanuts-groundnuts/peanut-bold.jpg", alt: "Bold long elongated peanuts, reddish brown skin" }],
+        images: [{ src: "/images/products/dry-fruits-nuts/peanuts-groundnuts/peanut-bold.webp", alt: "Bold long elongated peanuts, reddish brown skin" }],
         attributes: [
           { label: "Shape", value: "Long, Elongated" },
           { label: "Skin Color", value: "Reddish Brown" },
@@ -1513,7 +1513,7 @@ export const PRODUCTS_DATA: Product[] = [
         id: "v-peanut-java",
         slug: "peanut-java",
         name: "Java Peanuts",
-        images: [{ src: "/images/products/dry-fruits-nuts/peanuts-groundnuts/peanut-java.jpg", alt: "Java round peanuts, light pink skin" }],
+        images: [{ src: "/images/products/dry-fruits-nuts/peanuts-groundnuts/peanut-java.webp", alt: "Java round peanuts, light pink skin" }],
         attributes: [
           { label: "Shape", value: "Round" },
           { label: "Skin Color", value: "Light Pink" },
@@ -1587,7 +1587,7 @@ export const PRODUCTS_DATA: Product[] = [
         slug: "whole-green-peas",
         name: "Whole Green Peas",
         shortDescription: "Premium grade Whole Green Peas specifically processed and sorted for bulk B2B export.",
-        images: [{ src: "/images/products/pulses-beans/green-peas-dry/whole-green-peas.jpg", alt: "Whole dried green peas, vibrant green, sortex cleaned" }],
+        images: [{ src: "/images/products/pulses-beans/green-peas-dry/whole-green-peas.webp", alt: "Whole dried green peas, vibrant green, sortex cleaned" }],
         attributes: [
           { label: "Type", value: "Whole, Unsplit" },
           { label: "Color", value: "Vibrant Green" },
@@ -1648,7 +1648,7 @@ export const PRODUCTS_DATA: Product[] = [
         slug: "psyllium-husk-99",
         name: "Psyllium Husk 99%",
         shortDescription: "Premium grade Psyllium Husk 99% specifically processed and sorted for bulk B2B export.",
-        images: [{ src: "/images/products/herbs-botanicals/psyllium-seed-husk/psyllium-husk-99.jpg", alt: "Psyllium husk 99% purity, light off-white fiber" }],
+        images: [{ src: "/images/products/herbs-botanicals/psyllium-seed-husk/psyllium-husk-99.webp", alt: "Psyllium husk 99% purity, light off-white fiber" }],
         attributes: [
           { label: "Purity", value: "99%" },
           { label: "Format", value: "Whole Husk or Powder" },
@@ -1672,7 +1672,7 @@ export const PRODUCTS_DATA: Product[] = [
         id: "v-psyllium-seed",
         slug: "psyllium-seed-whole",
         name: "Psyllium Seeds",
-        images: [{ src: "/images/products/herbs-botanicals/psyllium-seed-husk/psyllium-seed-whole.jpg", alt: "Whole psyllium seeds, pinkish brown" }],
+        images: [{ src: "/images/products/herbs-botanicals/psyllium-seed-husk/psyllium-seed-whole.webp", alt: "Whole psyllium seeds, pinkish brown" }],
         attributes: [
           { label: "Purity", value: "99%" },
           { label: "Format", value: "Whole Seed" },
@@ -1747,7 +1747,7 @@ export const PRODUCTS_DATA: Product[] = [
         slug: "chakki-atta-standard",
         name: "100% Whole Wheat Atta",
         shortDescription: "Premium grade 100% Whole Wheat Atta specifically processed and sorted for bulk B2B export.",
-        images: [{ src: "/images/products/flours-starches/wheat-flour-chakki-atta/chakki-atta-standard.jpg", alt: "100% whole wheat Chakki Atta flour, creamy brownish" }],
+        images: [{ src: "/images/products/flours-starches/wheat-flour-chakki-atta/chakki-atta-standard.webp", alt: "100% whole wheat Chakki Atta flour, creamy brownish" }],
         attributes: [
           { label: "Type", value: "Stone Ground" },
           { label: "Color", value: "Creamy Brownish" },
