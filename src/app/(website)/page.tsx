@@ -412,7 +412,7 @@ export default function HomePage() {
       <ProcessSection />
 
       {/* Global Reach */}
-      <section aria-labelledby="global-reach-heading" className="relative py-24 border-y border-border overflow-hidden bg-muted/10">
+      <section aria-labelledby="global-reach-heading" className="relative py-12 border-y border-border overflow-hidden bg-muted/10">
         <div className="absolute inset-0 z-0  pointer-events-none">
           <Image
             src="/world-map.webp"
@@ -421,7 +421,7 @@ export default function HomePage() {
             className="object-cover object-center"
           />
         </div>
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex justify-end text-right">
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex justify-start text-left">
           <div className="max-w-2xl">
             <span className="text-xs font-semibold tracking-wider uppercase text-primary mb-4 block">
               Our Global Reach
