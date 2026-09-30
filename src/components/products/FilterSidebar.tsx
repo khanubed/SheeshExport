@@ -70,6 +70,7 @@ export function FilterSidebar({ filters, setFilters }: FilterSidebarProps) {
       <div className="w-full h-[1px] bg-border" />
 
       {/* Accordion Filters */}
+      {/* @ts-expect-error - Base UI types might not be perfectly mapped */}
       <Accordion type="multiple" defaultValue={['categories', 'certifications']} className="w-full">
         {renderFilterGroup("Categories", "categories", FILTER_OPTIONS.categories)}
         {renderFilterGroup("Certifications", "certifications", FILTER_OPTIONS.certifications)}

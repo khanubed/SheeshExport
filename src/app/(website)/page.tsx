@@ -25,7 +25,7 @@ import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { QuotationFormSection } from "@/components/home/QuotationFormSection";
 import { ProcessSection } from "@/components/home/ProcessSection";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/home/AnimatedSection";
-import { HomeFAQ } from "@/components/home/HomeFAQ";
+import { FAQSection } from "@/components/shared/FAQSection";
 import { ContactSection } from "@/components/contact/ContactSection";
 import { CATEGORIES_DATA } from "@/lib/data/categories";
 import { buildMetadata } from "@/lib/seo/metadata";
@@ -71,6 +71,30 @@ const ADVANTAGES = [
     icon: Globe2
   },
 ];
+
+const HOME_FAQS = [
+  {
+    question: "What agricultural commodities do you export?",
+    answer: "We export a comprehensive range of Indian agricultural commodities including Whole Spices, Powdered Spices, Basmati & Non-Basmati Rice, Oil Seeds, Pulses, Grains & Millets, and Dry Fruits."
+  },
+  {
+    question: "Do you supply products for Private Labeling?",
+    answer: "Yes, we offer complete OEM and private label manufacturing services. We can supply our products in bulk or pack them in custom retail-ready pouches and boxes with your branding."
+  },
+  {
+    question: "What are your minimum order quantities (MOQ)?",
+    answer: "Our standard MOQ for most commodities is 1x20FT FCL (Full Container Load). However, we offer Mixed Container solutions allowing you to consolidate multiple products to meet the threshold."
+  },
+  {
+    question: "Are your products compliant with EU and US FDA regulations?",
+    answer: "Absolutely. We adhere strictly to international quality standards including ASTA, ESA, and EU maximum residue limits. Our facilities are ISO 22000, HACCP, and FDA compliant, and we provide third-party assay certificates with shipments."
+  },
+  {
+    question: "Do you offer CIF or FOB pricing?",
+    answer: "We offer flexible INCOTERMS including FOB, CIF, and CFR, working closely with top-tier ocean freight forwarders to ensure the most competitive shipping rates to your destination port."
+  }
+];
+
 
 const INDUSTRIES = [
   { icon: Factory, title: "Food Manufacturing", slug: "food-manufacturing" },
@@ -299,20 +323,20 @@ export default function HomePage() {
 
           {/* Metrics Strip */}
           <FadeIn delay={0.1} className="mb-20 border-y border-white/10 py-10">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-white/10 text-center">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-4 md:gap-8 md:divide-x md:divide-white/10 text-center">
               <div>
                 <div className="text-5xl font-bold text-white mb-2">50+</div>
                 <div className="text-white/50 text-xs font-semibold tracking-widest uppercase">Export Markets</div>
               </div>
-              <div className="border-t border-white/10 pt-8 mt-8 md:border-t-0 md:pt-0 md:mt-0">
+              <div>
                 <div className="text-5xl font-bold text-white mb-2">100+</div>
                 <div className="text-white/50 text-xs font-semibold tracking-widest uppercase">Commercial SKUs</div>
               </div>
-              <div className="border-t border-white/10 pt-8 mt-8 md:border-t-0 md:pt-0 md:mt-0">
+              <div>
                 <div className="text-5xl font-bold text-white mb-2">20+</div>
                 <div className="text-white/50 text-xs font-semibold tracking-widest uppercase">Product Categories</div>
               </div>
-              <div className="border-t border-white/10 pt-8 mt-8 md:border-t-0 md:pt-0 md:mt-0">
+              <div>
                 <div className="text-5xl font-bold text-white mb-2">100%</div>
                 <div className="text-white/50 text-xs font-semibold tracking-widest uppercase">Export Focused</div>
               </div>
@@ -413,7 +437,7 @@ export default function HomePage() {
                 serving importers, distributors, food processors and retail chains.
               </p>
               <Link
-                href="/export-markets"
+                href="/international"
                 className={buttonVariants({
                   className: "font-sans bg-foreground text-background hover:bg-foreground/90",
                 })}
@@ -546,7 +570,7 @@ export default function HomePage() {
       </section>
 
       {/* FAQ Section */}
-      <HomeFAQ />
+      <FAQSection title="Sourcing & Export Queries" subtitle="Frequently Asked Questions" faqs={HOME_FAQS} />
 
       {/* Contact Header */}
       <section className="pt-24 pb-12 bg-background border-t border-border">

@@ -39,7 +39,7 @@ export function CatalogHeader({
 
         <div className="hidden sm:flex items-center gap-3">
           <span className="text-sm font-medium text-foreground whitespace-nowrap">Sort by:</span>
-          <Select value={sort} onValueChange={setSort}>
+          <Select value={sort} onValueChange={(val) => val && setSort(val.toString())}>
             <SelectTrigger className="w-[180px] bg-background">
               <SelectValue placeholder="Sort order" />
             </SelectTrigger>
@@ -53,7 +53,7 @@ export function CatalogHeader({
 
         {/* Mobile Sort Dropdown */}
         <div className="sm:hidden w-full max-w-[150px]">
-          <Select value={sort} onValueChange={setSort}>
+          <Select value={sort} onValueChange={(val) => val && setSort(val.toString())}>
             <SelectTrigger className="w-full bg-background">
               <SelectValue placeholder="Sort" />
             </SelectTrigger>

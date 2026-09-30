@@ -3,6 +3,7 @@ import { buildMetadata } from "@/lib/seo/metadata";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowDown, FileText, Download, ShieldCheck, Microscope, Database, CheckCircle2 } from "lucide-react";
+import { FAQSection } from "@/components/shared/FAQSection";
 
 export const metadata: Metadata = buildMetadata({
   title: "Quality Assurance & Laboratory Testing Standards | Sheesh Exports",
@@ -324,31 +325,28 @@ export default function QualityPage() {
       </section>
 
       {/* SECTION 10: FAQ */}
-      <section className="py-16 lg:py-24 bg-background">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[800px]">
-          <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-12 text-center">
-            Quality & Testing FAQ
-          </h2>
-          <div className="space-y-10">
-            <div>
-              <h4 className="text-xl font-medium text-foreground mb-2">How do you test spices before export?</h4>
-              <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">All spices undergo comprehensive physicochemical and microbiological analysis in accordance with ASTA/ESA guidelines before shipment.</p>
-            </div>
-            <div>
-              <h4 className="text-xl font-medium text-foreground mb-2">Do you perform aflatoxin testing?</h4>
-              <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">Yes, aflatoxin testing (B1, B2, G1, G2) is mandatory, especially for highly regulated markets like the EU. We maintain strict sub-ppb limits.</p>
-            </div>
-            <div>
-              <h4 className="text-xl font-medium text-foreground mb-2">Do you provide Certificates of Analysis (CoA)?</h4>
-              <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">Every individual shipment is dispatched with a batch-specific CoA detailing moisture, purity, and microbial parameters.</p>
-            </div>
-            <div>
-              <h4 className="text-xl font-medium text-foreground mb-2">Can third-party inspections be arranged?</h4>
-              <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">Absolutely. We regularly facilitate SGS, Eurofins, and Bureau Veritas inspections at our warehousing facilities prior to container stuffing.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FAQSection
+        title="Quality & Testing FAQ"
+        subtitle="Common Queries"
+        faqs={[
+          {
+            question: "How do you test spices before export?",
+            answer: "All spices undergo comprehensive physicochemical and microbiological analysis in accordance with ASTA/ESA guidelines before shipment."
+          },
+          {
+            question: "Do you perform aflatoxin testing?",
+            answer: "Yes, aflatoxin testing (B1, B2, G1, G2) is mandatory, especially for highly regulated markets like the EU. We maintain strict sub-ppb limits."
+          },
+          {
+            question: "Do you provide Certificates of Analysis (CoA)?",
+            answer: "Every individual shipment is dispatched with a batch-specific CoA detailing moisture, purity, and microbial parameters."
+          },
+          {
+            question: "Can third-party inspections be arranged?",
+            answer: "Absolutely. We regularly facilitate SGS, Eurofins, and Bureau Veritas inspections at our warehousing facilities prior to container stuffing."
+          }
+        ]}
+      />
 
       {/* SECTION 11: CTA */}
       <section className="py-20 lg:py-24 bg-primary text-primary-foreground">

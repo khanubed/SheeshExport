@@ -25,7 +25,7 @@ export function ProductOriginStory({ product }: { product: Product }) {
             </p>
           </div>
           <div className="w-full lg:w-1/2 grid grid-cols-2 gap-4">
-            {originStory.images.slice(0, 2).map((img: any, idx: any) => {
+            {originStory.images?.slice(0, 2).map((img: any, idx: any) => {
               const imgSrc = typeof img === "string" ? img : (img?.src || "/images/placeholder.jpg");
               const imgAlt = typeof img === "string" ? "Origin" : (img?.alt || "Origin");
               return (

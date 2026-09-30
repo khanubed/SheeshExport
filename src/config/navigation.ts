@@ -14,6 +14,7 @@ export const MAIN_NAV: NavItem[] = [
       { title: "Quality & Testing", href: "/quality", description: "Laboratory infrastructure, grading, and parameters." },
       { title: "Certifications", href: "/certifications", description: "APEDA, Spices Board, ISO 22000, Halal, Kosher, FDA." },
       { title: "Export Process", href: "/export-process", description: "From farm procurement to port dispatch workflow." },
+      { title: "Investor Relations", href: "/investor", description: "Corporate governance, financial disclosures, and shareholder info." },
     ],
   },
   {
@@ -51,13 +52,13 @@ export const MAIN_NAV: NavItem[] = [
     ],
   },
   {
-    title: "Export Markets",
-    href: "/export-markets",
+    title: "International Trade",
+    href: "/international",
     children: [
-      { title: "Middle East & GCC", href: "/export-markets/uae", description: "UAE, Saudi Arabia, Oman, Qatar, Kuwait." },
-      { title: "European Union", href: "/export-markets/germany", description: "Germany, Netherlands, UK, Spain." },
-      { title: "Americas", href: "/export-markets/usa", description: "United States, Canada, Latin America." },
-      { title: "All Global Destinations", href: "/export-markets", description: "Overview of port corridors & compliance." },
+      { title: "Middle East & GCC", href: "/international/uae", description: "UAE, Saudi Arabia, Oman, Qatar, Kuwait." },
+      { title: "European Union", href: "/international/germany", description: "Germany, Netherlands, UK, Spain." },
+      { title: "Americas", href: "/international/usa", description: "United States, Canada, Latin America." },
+      { title: "All Global Destinations", href: "/international", description: "Overview of port corridors & compliance." },
     ],
   },
   {
@@ -84,6 +85,7 @@ export const FOOTER_NAV = {
     { title: "Quality & Assurance", href: "/quality" },
     { title: "Certifications", href: "/certifications" },
     { title: "Export Workflow", href: "/export-process" },
+    { title: "Investor Relations", href: "/investor" },
     { title: "Request a Quote", href: "/request-quote" },
     { title: "Contact Us", href: "/contact" },
   ],

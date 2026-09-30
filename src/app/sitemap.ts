@@ -23,7 +23,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/services/private-label",
     "/services/bulk-export",
     "/services/mixed-container",
-    "/export-markets",
+    "/international",
     "/blog",
     "/contact",
     "/request-quote",
@@ -57,7 +57,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Dynamic markets
   const markets = await getMarkets();
   const marketRoutes: MetadataRoute.Sitemap = markets.map((m) => ({
-    url: `${baseUrl}/export-markets/${m.slug}`,
+    url: `${baseUrl}/international/${m.slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.75,

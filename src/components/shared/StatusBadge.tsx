@@ -40,7 +40,7 @@ const statusBadgeVariants = cva(
 
 export interface StatusBadgeProps
   extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof statusBadgeVariants> {
+    Omit<VariantProps<typeof statusBadgeVariants>, "status" | "statusType"> {
   status: string
   type: "rfq" | "order" | "product"
 }

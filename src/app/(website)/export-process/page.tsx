@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, FileText, CheckCircle2, Package, Globe, ShieldCheck, Box, Anchor } from "lucide-react";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { FAQSection } from "@/components/shared/FAQSection";
 
 export const metadata: Metadata = buildMetadata({
   title: "Export Process & Supply Chain Operations | Sheesh Exports",
@@ -353,35 +354,32 @@ export default function ExportProcessPage() {
       </section>
 
       {/* SECTION 07: FAQ */}
-      <section className="py-12 lg:py-16 bg-background">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-6xl">
-          <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-12 text-center">
-            Export Operations FAQ
-          </h2>
-          <div className="space-y-8">
-            <div>
-              <h4 className="text-xl font-medium text-foreground mb-2">How long does the export process take?</h4>
-              <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">The timeline varies based on product readiness, packaging requirements, and vessel availability, typically ranging from 7 to 21 days from order confirmation to vessel departure.</p>
-            </div>
-            <div>
-              <h4 className="text-xl font-medium text-foreground mb-2">Can products be mixed in one container?</h4>
-              <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">Yes, we specialize in Mixed Container solutions, allowing buyers to consolidate multiple commodities into a single FCL shipment to optimize freight costs.</p>
-            </div>
-            <div>
-              <h4 className="text-xl font-medium text-foreground mb-2">Do you provide Certificates of Analysis?</h4>
-              <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">Every shipment is accompanied by a batch-specific Certificate of Analysis detailing moisture, purity, and safety parameters.</p>
-            </div>
-            <div>
-              <h4 className="text-xl font-medium text-foreground mb-2">Can packaging be customized?</h4>
-              <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">Yes, we support extensive packaging customization including Private Labeling directly from our processing facilities.</p>
-            </div>
-            <div>
-              <h4 className="text-xl font-medium text-foreground mb-2">Which countries do you export to?</h4>
-              <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">We ship globally, with a strong focus on high-compliance markets including the USA, Europe (EU & UK), the Middle East, and Asia Pacific.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FAQSection
+        title="Export Operations FAQ"
+        subtitle="Common Logistics Queries"
+        faqs={[
+          {
+            question: "How long does the export process take?",
+            answer: "The timeline varies based on product readiness, packaging requirements, and vessel availability, typically ranging from 7 to 21 days from order confirmation to vessel departure."
+          },
+          {
+            question: "Can products be mixed in one container?",
+            answer: "Yes, we specialize in Mixed Container solutions, allowing buyers to consolidate multiple commodities into a single FCL shipment to optimize freight costs."
+          },
+          {
+            question: "Do you provide Certificates of Analysis?",
+            answer: "Every shipment is accompanied by a batch-specific Certificate of Analysis detailing moisture, purity, and safety parameters."
+          },
+          {
+            question: "Can packaging be customized?",
+            answer: "Yes, we support extensive packaging customization including Private Labeling directly from our processing facilities."
+          },
+          {
+            question: "Which countries do you export to?",
+            answer: "We ship globally, with a strong focus on high-compliance markets including the USA, Europe (EU & UK), the Middle East, and Asia Pacific."
+          }
+        ]}
+      />
 
       {/* SECTION 08: CTA */}
       <section className="py-16 lg:py-20 bg-primary text-primary-foreground">

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
+import { FAQSection } from "@/components/shared/FAQSection";
 
 export const metadata: Metadata = buildMetadata({
   title: "Certifications & Export Compliance | Sheesh Exports",
@@ -289,31 +290,28 @@ export default function CertificationsPage() {
       </section>
 
       {/* SECTION 07: FAQ */}
-      <section className="py-16 lg:py-20 bg-background">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[800px]">
-          <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-12 text-center">
-            Compliance FAQ
-          </h2>
-          <div className="space-y-10">
-            <div>
-              <h4 className="text-xl font-medium text-foreground mb-2">What certifications do you provide?</h4>
-              <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">We provide globally recognized certifications including ISO 22000, US FDA Registration, HALAL, KOSHER, HACCP, and compliance documents from APEDA and Spices Board of India.</p>
-            </div>
-            <div>
-              <h4 className="text-xl font-medium text-foreground mb-2">Can certificates be shared before ordering?</h4>
-              <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">Yes, authenticated copies of our certifications and sample lab reports can be provided to verified buyers during the procurement due diligence phase.</p>
-            </div>
-            <div>
-              <h4 className="text-xl font-medium text-foreground mb-2">Do certifications cover all products?</h4>
-              <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">Most certifications like ISO 22000 and APEDA cover our entire processing facility and export operations. Specific product batches receive unique Phytosanitary and SGS testing certificates.</p>
-            </div>
-            <div>
-              <h4 className="text-xl font-medium text-foreground mb-2">Do you support third-party inspections?</h4>
-              <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">Absolutely. We routinely work with international surveying agencies like SGS, Bureau Veritas, and Eurofins for pre-shipment inspection (PSI) and container stuffing supervision.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FAQSection
+        title="Compliance FAQ"
+        subtitle="Certification Queries"
+        faqs={[
+          {
+            question: "What certifications do you provide?",
+            answer: "We provide globally recognized certifications including ISO 22000, US FDA Registration, HALAL, KOSHER, HACCP, and compliance documents from APEDA and Spices Board of India."
+          },
+          {
+            question: "Can certificates be shared before ordering?",
+            answer: "Yes, authenticated copies of our certifications and sample lab reports can be provided to verified buyers during the procurement due diligence phase."
+          },
+          {
+            question: "Do certifications cover all products?",
+            answer: "Most certifications like ISO 22000 and APEDA cover our entire processing facility and export operations. Specific product batches receive unique Phytosanitary and SGS testing certificates."
+          },
+          {
+            question: "Do you support third-party inspections?",
+            answer: "Absolutely. We routinely work with international surveying agencies like SGS, Bureau Veritas, and Eurofins for pre-shipment inspection (PSI) and container stuffing supervision."
+          }
+        ]}
+      />
 
       {/* SECTION 08: CTA */}
       <section className="py-20 lg:py-24 bg-primary text-primary-foreground">

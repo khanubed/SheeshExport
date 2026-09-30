@@ -3,13 +3,23 @@
 import * as React from "react"
 import { ThemeProvider as NextThemesProvider } from "next-themes"
 
-// Filter out the React 19 script tag warning in development
+// Filter out the React 19 script tag warning and fdprocessedid hydration warnings in development
 if (typeof window !== "undefined" && process.env.NODE_ENV === "development") {
   const orig = console.error;
   console.error = (...args: any[]) => {
-    if (typeof args[0] === "string" && args[0].includes("Encountered a script tag")) {
+    const stringified = args.map(arg => 
+      typeof arg === "string" ? arg : (arg instanceof Error ? arg.message : String(arg))
+    ).join(" ");
+    
+    if (stringified.includes("Encountered a script tag")) {
       return;
     }
+    
+    // Ignore browser extension injected attributes (e.g., fdprocessedid from password managers)
+    if (stringified.includes("fdprocessedid")) {
+      return;
+    }
+
     orig.apply(console, args);
   };
 }

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { CATEGORIES_DATA } from "@/lib/data/categories";
+import { FAQSection } from "@/components/shared/FAQSection";
 import { CategoryCard } from "@/components/categories/CategoryCard";
 
 export const metadata: Metadata = buildMetadata({
@@ -81,50 +82,28 @@ export default function CategoriesIndexPage() {
       </section>
 
       {/* 4. FAQ SECTION */}
-      <section className="py-16 lg:py-24 bg-white">
-        <div className="container mx-auto px-6 lg:px-12 max-w-8xl">
-          <div className="grid lg:grid-cols-12 border-x border-border -mx-px">
-            <div className="lg:col-span-5 p-8 lg:p-12 lg:border-r border-border bg-[#FAFAFA]">
-              <h2 className="font-heading text-4xl sm:text-5xl font-bold text-foreground mb-6">
-                Procurement FAQs
-              </h2>
-              <p className="text-muted-foreground font-sans text-lg">
-                Common questions from global importers regarding our commodity categories and export
-                operations.
-              </p>
-            </div>
-            <div className="lg:col-span-7 p-8 lg:p-12">
-              <div className="space-y-10 max-w-3xl">
-                {[
-                  {
-                    q: "Can I mix multiple categories in a single container?",
-                    a: "Yes, we specialize in Mixed Container Consolidation. You can combine whole spices, oil seeds, and pulses into a single 20FT or 40FT container to optimize your freight costs and inventory management.",
-                  },
-                  {
-                    q: "Are your commodities compliant with EU and US FDA regulations?",
-                    a: "Absolutely. All our commodities undergo rigorous sorting and cleaning processes. We mandate SGS or Geo-Chem pre-shipment inspections (PSI) and provide necessary phytosanitary certificates, COAs, and aflatoxin reports to ensure full customs compliance.",
-                  },
-                  {
-                    q: "What is the Minimum Order Quantity (MOQ) across categories?",
-                    a: "While MOQs vary slightly by crop weight and density, we generally require a minimum of 5-14 Metric Tons (MT) or a standard 1x20FT Full Container Load (FCL) for international wholesale pricing.",
-                  },
-                  {
-                    q: "Do you offer private labeling across all categories?",
-                    a: "Yes. From 100g retail pouches for spices to 5kg bags for Basmati rice, we offer complete OEM private label manufacturing tailored to your brand's packaging specifications.",
-                  },
-                ].map((item, idx) => (
-                  <div key={idx} className="border-b border-border pb-8 last:border-0 last:pb-0">
-                    <h4 className="text-xl font-bold font-heading text-foreground mb-4">
-                      {item.q}
-                    </h4>
-                    <p className="text-muted-foreground font-sans leading-relaxed">{item.a}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FAQSection 
+        title="Procurement FAQs" 
+        subtitle="Common Questions"
+        faqs={[
+          {
+            question: "Can I mix multiple categories in a single container?",
+            answer: "Yes, we specialize in Mixed Container Consolidation. You can combine whole spices, oil seeds, and pulses into a single 20FT or 40FT container to optimize your freight costs and inventory management.",
+          },
+          {
+            question: "Are your commodities compliant with EU and US FDA regulations?",
+            answer: "Absolutely. All our commodities undergo rigorous sorting and cleaning processes. We mandate SGS or Geo-Chem pre-shipment inspections (PSI) and provide necessary phytosanitary certificates, COAs, and aflatoxin reports to ensure full customs compliance.",
+          },
+          {
+            question: "What is the Minimum Order Quantity (MOQ) across categories?",
+            answer: "While MOQs vary slightly by crop weight and density, we generally require a minimum of 5-14 Metric Tons (MT) or a standard 1x20FT Full Container Load (FCL) for international wholesale pricing.",
+          },
+          {
+            question: "Do you offer private labeling across all categories?",
+            answer: "Yes. From 100g retail pouches for spices to 5kg bags for Basmati rice, we offer complete OEM private label manufacturing tailored to your brand's packaging specifications.",
+          },
+        ]}
+      />
 
       {/* 5. CTA */}
       <section className="bg-[#1A1A1A] text-white py-24 lg:py-32">

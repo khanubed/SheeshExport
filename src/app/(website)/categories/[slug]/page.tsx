@@ -15,7 +15,7 @@ import { CategoryQuality } from "@/components/categories/CategoryQuality";
 import { CategoryPackaging } from "@/components/categories/CategoryPackaging";
 import { CategoryExportMarkets } from "@/components/categories/CategoryExportMarkets";
 import { CategoryApplications } from "@/components/categories/CategoryApplications";
-import { CategoryFAQ } from "@/components/categories/CategoryFAQ";
+import { FAQSection } from "@/components/shared/FAQSection";
 import { CategoryRFQCTA } from "@/components/categories/CategoryRFQCTA";
 import { RelatedCategories } from "@/components/categories/RelatedCategories";
 
@@ -102,7 +102,14 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
       <CategoryApplications category={category} />
       
       {/* 10. FAQ */}
-      <CategoryFAQ category={category} />
+      {category.faqs && category.faqs.length > 0 && (
+        <FAQSection 
+          title={`${category.name} FAQs`} 
+          subtitle="Frequently Asked Questions"
+          faqs={category.faqs}
+          className="!py-16"
+        />
+      )}
       
       {/* 11. REQUEST QUOTE CTA */}
       <CategoryRFQCTA category={category} />

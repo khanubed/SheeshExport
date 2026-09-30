@@ -6,6 +6,7 @@ import { ArrowRight, Download, Eye, ShieldCheck, ChevronRight, CheckCircle2 } fr
 import { getCertificationBySlug, getCertifications } from "@/lib/cms/queries";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { FAQSection } from "@/components/shared/FAQSection";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -327,27 +328,24 @@ export default async function CertificationDetailPage({ params }: PageProps) {
       </section>
 
       {/* SECTION 10: FAQ */}
-      <section className="py-16 lg:py-20">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[800px]">
-          <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-12 text-center">
-            {name} FAQ
-          </h2>
-          <div className="space-y-10">
-            <div>
-              <h4 className="text-xl font-medium text-foreground mb-2">Is Sheesh Exports {name} certified?</h4>
-              <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">Yes, Sheesh Exports holds a valid and active {name} certification, ensuring strict compliance with all associated global trade and food safety requirements.</p>
-            </div>
-            <div>
-              <h4 className="text-xl font-medium text-foreground mb-2">Can I verify the {name} certificate online?</h4>
-              <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">Verified buyers can request an authenticated copy of our certification, which includes the registration number. This number can be verified directly through the issuing authority’s official portal.</p>
-            </div>
-            <div>
-              <h4 className="text-xl font-medium text-foreground mb-2">Does this cover all product shipments?</h4>
-              <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">The {name} standard applies to our overarching processing and export operations. For shipment-specific assurance, it is supplemented by batch-wise lab analysis reports and phytosanitary certificates.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FAQSection
+        title={`${name} FAQ`}
+        subtitle="Common Queries"
+        faqs={[
+          {
+            question: `Is Sheesh Exports ${name} certified?`,
+            answer: `Yes, Sheesh Exports holds a valid and active ${name} certification, ensuring strict compliance with all associated global trade and food safety requirements.`
+          },
+          {
+            question: `Can I verify the ${name} certificate online?`,
+            answer: `Verified buyers can request an authenticated copy of our certification, which includes the registration number. This number can be verified directly through the issuing authority’s official portal.`
+          },
+          {
+            question: "Does this cover all product shipments?",
+            answer: `The ${name} standard applies to our overarching processing and export operations. For shipment-specific assurance, it is supplemented by batch-wise lab analysis reports and phytosanitary certificates.`
+          }
+        ]}
+      />
     </main>
   );
 }

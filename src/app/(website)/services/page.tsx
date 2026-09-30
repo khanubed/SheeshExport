@@ -144,6 +144,10 @@ export default function ServicesHubPage() {
               <h3 className="font-heading text-2xl font-medium text-foreground mb-3">Global Logistics Expertise</h3>
               <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">Decades of experience routing shipments to highly regulated markets including the EU, USA, and Middle East.</p>
             </div>
+            <div className="border-t border-secondary pt-4">
+              <h3 className="font-heading text-2xl font-medium text-foreground mb-3">Stringent Quality Control</h3>
+              <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">Mandatory pre-shipment inspections and lab testing through SGS or Eurofins for strict compliance with destination standards.</p>
+            </div>
           </div>
         </div>
       </section>

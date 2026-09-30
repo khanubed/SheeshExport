@@ -108,7 +108,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<{
             
             {/* Left side: Sticky Editorial Title */}
             <div className="lg:col-span-5 lg:sticky lg:top-32 pr-8">
-              <span className="text-secondary font-bold tracking-[0.2em] uppercase text-[10px] mb-6 block">01 / The Procurement Reality</span>
+              <span className="text-secondary font-bold tracking-[0.2em] uppercase text-[10px] mb-6 block">The Procurement Reality</span>
               <h2 className="font-heading text-5xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.1] mb-8">
                 {industry.overview.heading}
               </h2>
@@ -179,7 +179,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<{
       <section className="py-24 lg:py-32 bg-foreground text-background border-b border-border">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-8xl">
           <div className="mb-24 md:w-2/3">
-            <span className="text-secondary font-bold tracking-[0.2em] uppercase text-[10px] mb-6 block">02 / Execution Framework</span>
+            <span className="text-secondary font-bold tracking-[0.2em] uppercase text-[10px] mb-6 block">Execution Framework</span>
             <h2 className="font-heading text-5xl lg:text-7xl font-bold tracking-tight text-background leading-[1.1]">
               Operational Supply Chain Mechanics
             </h2>
@@ -209,7 +209,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<{
       {/* SECTION 5 — EDITORIAL CASE STUDY */}
       <section className="py-24 lg:py-32 bg-muted/20 border-b border-border">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-8xl">
-          <span className="text-secondary font-bold tracking-[0.2em] uppercase text-[10px] mb-6 block">03 / Market Intelligence</span>
+          <span className="text-secondary font-bold tracking-[0.2em] uppercase text-[10px] mb-6 block">Market Intelligence</span>
           
           <div className="grid lg:grid-cols-2 gap-16 mb-16">
             <div>
@@ -225,7 +225,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<{
             
             {industry.caseStudyImage && (
               <div className="relative h-[400px] lg:h-full w-full bg-muted">
-                <Image src={industry.caseStudyImage} alt="Case Study" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+                <Image src={industry.caseStudyImage} alt="Case Study" fill className="object-cover transition-all duration-700" />
               </div>
             )}
           </div>
@@ -255,7 +255,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<{
         <section className="py-24 lg:py-32 bg-background border-b border-border">
           <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-8xl">
             <div className="mb-16 md:w-1/2">
-              <span className="text-secondary font-bold tracking-[0.2em] uppercase text-[10px] mb-6 block">04 / Raw Materials</span>
+              <span className="text-secondary font-bold tracking-[0.2em] uppercase text-[10px] mb-6 block">Raw Materials</span>
               <h2 className="font-heading text-5xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.1]">
                 Commodities Extracted For {industry.name}
               </h2>
