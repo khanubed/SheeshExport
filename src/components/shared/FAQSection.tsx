@@ -47,7 +47,7 @@ export function FAQSection({
       
       <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-5xl">
         <header className="mb-12 md:mb-16 text-center">
-          <span className="text-secondary font-bold tracking-[0.2em] uppercase text-[10px] mb-4 block">
+          <span className="text-primary font-bold tracking-[0.2em] uppercase text-[10px] mb-4 block">
             {subtitle}
           </span>
           <h2 id="faq-heading" className="font-heading text-4xl lg:text-5xl font-black tracking-tight text-foreground uppercase">

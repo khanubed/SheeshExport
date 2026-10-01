@@ -38,7 +38,7 @@ export default function IndustriesHubPage() {
 
         <div className="container relative z-10 mx-auto px-6 sm:px-12 lg:px-24 max-w-8xl">
           <div className="max-w-6xl">
-            <span className="inline-block text-secondary font-bold tracking-[0.2em] uppercase text-xs mb-8 border-b border-secondary pb-2">
+            <span className="inline-block text-primary font-bold tracking-[0.2em] uppercase text-xs mb-8 border-b border-primary pb-2">
               Global Procurement Network
             </span>
             <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-[6.5rem] font-semibold tracking-tighter text-white leading-[0.9] mb-8  drop-shadow-lg">
@@ -72,7 +72,7 @@ export default function IndustriesHubPage() {
       <section className="py-24 lg:py-32 bg-background border-b border-border">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-8xl">
           <div className="mb-20">
-            <span className="text-secondary font-bold tracking-[0.2em] uppercase text-[10px] mb-6 block">01 / Industry Index</span>
+            <span className="text-primary font-bold tracking-[0.2em] uppercase text-[10px] mb-6 block">01 / Industry Index</span>
             <h2 className="font-heading text-4xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1]">
               Sector Capabilities
             </h2>
@@ -109,7 +109,7 @@ export default function IndustriesHubPage() {
       {/* SECTION 3 — GLOBAL PROCUREMENT ECOSYSTEM (Diagram) */}
       <section className="py-24 lg:py-32 bg-muted/20 border-b border-border overflow-hidden">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-8xl text-center">
-          <span className="text-secondary font-bold tracking-[0.2em] uppercase text-[10px] mb-6 block">02 / Trade Architecture</span>
+          <span className="text-primary font-bold tracking-[0.2em] uppercase text-[10px] mb-6 block">02 / Trade Architecture</span>
           <h2 className="font-heading text-4xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1] mb-24">
             The Procurement Ecosystem
           </h2>
@@ -136,7 +136,7 @@ export default function IndustriesHubPage() {
       <section className="py-24 lg:py-32 bg-background border-b border-border">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-8xl">
           <div className="mb-20">
-            <span className="text-secondary font-bold tracking-[0.2em] uppercase text-[10px] mb-6 block">03 / Sourcing Models</span>
+            <span className="text-primary font-bold tracking-[0.2em] uppercase text-[10px] mb-6 block">03 / Sourcing Models</span>
             <h2 className="font-heading text-4xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1]">
               Procurement Architectures
             </h2>
@@ -186,7 +186,7 @@ export default function IndustriesHubPage() {
       <section className="py-24 lg:py-32 bg-muted/30 border-b border-border">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-8xl">
           <div className="mb-20">
-            <span className="text-secondary font-bold tracking-[0.2em] uppercase text-[10px] mb-6 block">04 / Execution Workflows</span>
+            <span className="text-primary font-bold tracking-[0.2em] uppercase text-[10px] mb-6 block">04 / Execution Workflows</span>
             <h2 className="font-heading text-4xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1]">
               How Supply Chains Move
             </h2>

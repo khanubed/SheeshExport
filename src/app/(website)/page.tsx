@@ -167,11 +167,12 @@ export default function HomePage() {
             loop
             muted
             playsInline
+            aria-hidden="true"
             className="object-cover w-full h-full -scale-x-100"
           >
             <source
               src="/hero-video.webm"
-              type="video/mp4"
+              type="video/webm"
             />
           </video>
           <div className="absolute inset-0 bg-black/60 dark:bg-black/20" />
@@ -297,8 +298,8 @@ export default function HomePage() {
       {/* Why Choose Us / Competitive Advantage */}
       <section aria-labelledby="advantage-heading" className="relative py-16 border-y border-border overflow-hidden bg-black">
         <div className="absolute inset-0 z-0">
-          <video autoPlay loop muted playsInline className="object-cover w-full h-full grayscale opacity-30">
-            <source src="/12351626_3840_2160_30fps.webm" type="video/mp4" />
+          <video autoPlay loop muted playsInline aria-hidden="true" className="object-cover w-full h-full grayscale opacity-30">
+            <source src="/12351626_3840_2160_30fps.webm" type="video/webm" />
           </video>
           <div className="absolute inset-0 bg-black/50" />
           {/* Subtle noise/texture overlay to remove pure flatness */}
@@ -477,19 +478,19 @@ export default function HomePage() {
                   their sourcing and procurement needs.
                 </p>
 
-                <nav className="grid grid-cols-2 gap-6 mb-10" aria-label="Industry solutions">
+                <ul className="grid grid-cols-2 gap-6 mb-10" aria-label="Industry solutions" role="list">
                   {INDUSTRIES.map((ind, idx) => {
                     const Icon = ind.icon;
                     return (
-                      <article key={idx} className="bg-background border border-border p-6 rounded-lg text-center flex flex-col items-center justify-center gap-3 transition-colors hover:border-primary/50 group" role="listitem">
+                      <li key={idx} className="bg-background border border-border p-6 rounded-lg text-center flex flex-col items-center justify-center gap-3 transition-colors hover:border-primary/50 group">
                         <Link href={`/industries/${ind.slug}`} className="w-full h-full flex flex-col items-center justify-center gap-3">
                           <Icon className="h-8 w-8 text-primary group-hover:scale-110 transition-transform" aria-hidden="true" />
                           <span className="font-semibold text-sm group-hover:text-primary transition-colors">{ind.title}</span>
                         </Link>
-                      </article>
+                      </li>
                     );
                   })}
-                </nav>
+                </ul>
 
                 <Link
                   href="/industries"
