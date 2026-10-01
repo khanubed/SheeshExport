@@ -142,7 +142,7 @@ const INSIGHTS = [
 
 
 export default function HomePage() {
-  preload("/hero-video.webm", { as: "video", type: "video/webm", fetchPriority: "high" });
+  preload("/hero-video.webm", { as: "fetch", type: "video/webm", fetchPriority: "high" });
 
   return (
     <main className="flex flex-col min-h-screen" role="main">

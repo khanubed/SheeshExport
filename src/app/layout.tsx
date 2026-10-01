@@ -12,17 +12,23 @@ import { NuqsAdapter } from "nuqs/adapters/next/app";
 const fontSans = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
+  display: "swap",
+  preload: false,
 });
 
 const fontHeading = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-heading",
+  display: "swap",
+  preload: false,
 });
 
 const fontMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
+  display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = DEFAULT_SEO_METADATA;

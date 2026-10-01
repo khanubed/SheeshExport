@@ -7,7 +7,7 @@ export const IMAGES = {
   homeHeroBg: "/images/HERO-BG.webp", // Spices background
   homeWhyChooseUs: "https://images.unsplash.com/photo-1581622558667-3419a8dc5f83?auto=format&fit=crop&q=80", // Hands holding spices/grains
   homeGlobalMap: "/images/global-map-placeholder.svg", // Map graphic
-  homeIndustrySolutions: "https://images.unsplash.com/photo-1616422285623-13824967389a?auto=format&fit=crop&q=80", // Manufacturing/Processing facility
+  homeIndustrySolutions: "/images/about/factory-processing.webp", // Manufacturing/Processing facility
   homeCtaBg: "https://images.unsplash.com/photo-1605651202774-7d573fd3f12d?auto=format&fit=crop&q=80", // Landscape/Farming field
 
   // Product Categories
@@ -22,8 +22,16 @@ export const IMAGES = {
 
   // Insights/Blog Thumbnails
   insights: {
-    spiceMarket: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&q=80",
-    exportGuide: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&q=80", // Cargo ship
-    agroOpportunities: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80", // Green fields
+    spiceMarket: "/images/product-categories/whole-spices.webp",
+    exportGuide: "/images/about/global-delivery.webp", // Cargo ship / logistics
+    agroOpportunities: "/images/product-categories/grains-millets.webp", // Green fields / agro
+    euCompliance: "/images/about/quality-assurance.webp", // Compliance / lab checks
+    asta: "/images/product-categories/powdered-spices.webp", // Red powder / spices
+    chilliVarieties: "/images/products/whole-spices/red-chilli-guntur-whole/red-chilli-whole.webp", // Chillies
+    apeda: "/images/about/documentation.webp", // Registration / documentation
+    aflatoxin: "/images/about/infra-testing.webp", // Lab / testing
+    curcumin: "/images/products/whole-spices/turmeric-finger-guntur-whole/alleppey-high-curcumin.webp", // Turmeric / curcumin
+    basmatiPrice: "/images/products/rice/basmati-rice-1121/1121-steam.webp", // Rice field / grains
+    rfqVsDirect: "/images/about/infra-sourcing.webp", // Direct sourcing / procurement
   },
 };
