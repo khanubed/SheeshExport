@@ -26,10 +26,10 @@ export function ProductCarousel({ categories }: ProductCarouselProps) {
           1024: { slidesPerView: 3 },
         }}
         loop={true}
-        speed={5000}
+        speed={800}
         pagination={{ clickable: true }}
-        autoplay={{ delay: 0, disableOnInteraction: false }}
-        className="product-swiper continuous-swiper !pb-14"
+        autoplay={{ delay: 4000, disableOnInteraction: true }}
+        className="product-swiper !pb-14"
       >
         {categories.map((cat, idx) => (
           <SwiperSlide key={idx} className="h-auto">

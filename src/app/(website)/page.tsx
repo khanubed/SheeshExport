@@ -19,8 +19,7 @@ import {
   Globe2,
 } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
-import { ProductCarousel } from "@/components/home/ProductCarousel";
-import { CertificationsCarousel } from "@/components/home/CertificationsCarousel";
+import { DynamicProductCarousel, DynamicCertificationsCarousel } from "@/components/home/DynamicCarousels";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { QuotationFormSection } from "@/components/home/QuotationFormSection";
 import { ProcessSection } from "@/components/home/ProcessSection";
@@ -248,7 +247,7 @@ export default function HomePage() {
           </div>
 
           <div>
-            <CertificationsCarousel certifications={CERTIFICATIONS} />
+            <DynamicCertificationsCarousel certifications={CERTIFICATIONS} />
           </div>
 
           <div className="mt-6 text-center">
@@ -290,7 +289,7 @@ export default function HomePage() {
           </div>
 
           <div className="mt-4">
-            <ProductCarousel categories={CATEGORIES_DATA} />
+            <DynamicProductCarousel categories={CATEGORIES_DATA} />
           </div>
         </div>
       </section>

@@ -33,9 +33,9 @@ export function CertificationsCarousel({ certifications }: CertificationsCarouse
           1280: { slidesPerView: 5 },
         }}
         loop={true}
-        speed={4000}
-        autoplay={{ delay: 0, disableOnInteraction: false }}
-        className="continuous-swiper"
+        speed={800}
+        autoplay={{ delay: 3000, disableOnInteraction: true }}
+        className="certifications-swiper"
       >
         {certifications.map((cert, idx) => {
           const content = (
