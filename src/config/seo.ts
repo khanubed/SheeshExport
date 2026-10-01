@@ -18,6 +18,11 @@ export const DEFAULT_SEO_METADATA: Metadata = {
     "APEDA registered spice exporter",
     "FSSAI certified bulk spices",
   ],
+  icons: {
+    icon: [
+      { url: "/favicon.webp", type: "image/webp" },
+    ],
+  },
   authors: [{ name: SITE_CONFIG.name }],
   creator: SITE_CONFIG.name,
   publisher: SITE_CONFIG.name,
