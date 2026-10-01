@@ -24,7 +24,8 @@ export function CategoryCard({ category, className }: CategoryCardProps) {
             src={category.heroImage}
             alt={category.name}
             fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            quality={60}
             className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
           />
           <figcaption className="sr-only">{category.name} category</figcaption>

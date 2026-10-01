@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { preload } from "react-dom";
 import { Metadata } from "next";
 import { IMAGES } from "@/lib/assets";
 import {
@@ -141,6 +142,8 @@ const INSIGHTS = [
 
 
 export default function HomePage() {
+  preload("/hero-video.webm", { as: "video", type: "video/webm", fetchPriority: "high" });
+
   return (
     <main className="flex flex-col min-h-screen" role="main">
       <script
@@ -168,6 +171,7 @@ export default function HomePage() {
             muted
             playsInline
             aria-hidden="true"
+            preload="auto"
             className="object-cover w-full h-full -scale-x-100"
           >
             <source
@@ -302,8 +306,6 @@ export default function HomePage() {
             <source src="/12351626_3840_2160_30fps.webm" type="video/webm" />
           </video>
           <div className="absolute inset-0 bg-black/50" />
-          {/* Subtle noise/texture overlay to remove pure flatness */}
-          <div className="absolute inset-0 opacity-10 bg-[url('/images/noise.webp')] mix-blend-overlay pointer-events-none" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -396,10 +398,11 @@ export default function HomePage() {
                 autoPlay 
                 loop 
                 muted 
-                playsInline 
+                playsInline
+                aria-hidden="true"
                 className="w-full h-full object-contain"
               >
-                <source src="/Sheesh_Journey.webm" type="video/mp4" />
+                <source src="/Sheesh_Journey.webm" type="video/webm" />
                 Your browser does not support the video tag.
               </video>
               <figcaption className="sr-only">Sheesh Exports journey from farm to global markets</figcaption>
