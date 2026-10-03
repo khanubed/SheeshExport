@@ -142,7 +142,7 @@ const INSIGHTS = [
 
 
 export default function HomePage() {
-  preload("/hero-video.webm", { as: "fetch", type: "video/webm", fetchPriority: "high" });
+  preload("/images/hero-poster.webp", { as: "image", type: "image/webp", fetchPriority: "high" });
 
   return (
     <main className="flex flex-col min-h-screen" role="main">
@@ -166,12 +166,14 @@ export default function HomePage() {
       <section aria-labelledby="hero-heading" className="relative h-[85vh] min-h-150 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <video
+            src="/hero-video.webm"
             autoPlay
             loop
             muted
             playsInline
-            aria-hidden="true"
             preload="auto"
+            aria-hidden="true"
+            poster="/images/hero-poster.webp"
             className="object-cover w-full h-full -scale-x-100"
           >
             <source

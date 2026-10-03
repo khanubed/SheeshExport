@@ -13,7 +13,7 @@ const fontSans = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
-  preload: false,
+  preload: true,
 });
 
 const fontHeading = Cormorant_Garamond({
@@ -21,7 +21,7 @@ const fontHeading = Cormorant_Garamond({
   weight: ["400", "500", "600", "700"],
   variable: "--font-heading",
   display: "swap",
-  preload: false,
+  preload: true,
 });
 
 const fontMono = Geist_Mono({
