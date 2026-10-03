@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { FAQ } from "@/lib/data/types";
 import { FAQSection } from "@/components/shared/FAQSection";

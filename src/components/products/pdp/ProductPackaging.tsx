@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { PackagingOption } from "@/lib/data/types";
 import { Check } from "lucide-react";

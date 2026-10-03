@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
@@ -61,17 +59,21 @@ export function ProcessSection() {
               <StaggerItem key={idx} className="relative group">
                 <div className="flex flex-col text-left">
                   {/* Image Container */}
-                  <div className="w-full aspect-[4/3] md:aspect-[4/5] bg-muted relative mb-8 overflow-hidden group-hover:-translate-y-2 group-hover:shadow-2xl transition-all duration-500 z-10 border border-border" style={{ position: "relative" }}>
-                    <Image 
-                      src={step.image} 
-                      alt={step.title} 
-                      fill 
+                  <div
+                    className="w-full aspect-[4/3] md:aspect-[4/5] bg-muted relative mb-8 overflow-hidden group-hover:-translate-y-2 group-hover:shadow-2xl transition-all duration-500 z-10 border border-border"
+                    style={{ position: "relative" }}
+                  >
+                    <Image
+                      loading="lazy"
+                      src={step.image}
+                      alt={step.title}
+                      fill
                       sizes="(max-width: 768px) 100vw, 25vw"
-                      className="object-cover transition-all duration-700 scale-105 group-hover:scale-100" 
+                      className="object-cover transition-all duration-700 scale-105 group-hover:scale-100"
                     />
                     {/* Inner glowing pulse on hover */}
                     <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                    
+
                     {/* Step Number Badge */}
                     <div className="absolute top-4 left-4 bg-background/90 backdrop-blur-sm text-foreground px-4 py-2 font-heading text-xl font-bold border border-border shadow-sm">
                       {step.id}
@@ -82,9 +84,7 @@ export function ProcessSection() {
                   <h3 className="font-heading text-2xl font-medium text-foreground mb-3">
                     {step.title}
                   </h3>
-                  <p className="text-muted-foreground text-base leading-relaxed">
-                    {step.desc}
-                  </p>
+                  <p className="text-muted-foreground text-base leading-relaxed">{step.desc}</p>
                 </div>
               </StaggerItem>
             );

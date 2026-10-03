@@ -15,7 +15,11 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
   const resolvedParams = await params;
   const industry = INDUSTRIES_DATA.find((i) => i.slug === resolvedParams.slug);
   if (!industry) return {};
@@ -26,7 +30,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   });
 }
 
-export default async function IndustryDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function IndustryDetailPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const resolvedParams = await params;
   const industry = INDUSTRIES_DATA.find((i) => i.slug === resolvedParams.slug);
 
@@ -34,14 +42,14 @@ export default async function IndustryDetailPage({ params }: { params: Promise<{
     notFound();
   }
 
-  const relatedProducts = PRODUCTS_DATA.filter(p => industry.products.includes(p.slug));
+  const relatedProducts = PRODUCTS_DATA.filter((p) => industry.products.includes(p.slug));
 
   const schema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": industry.name + " Sourcing & Supply Chain",
-    "description": industry.heroDescription,
-    "image": "https://sheeshexports.com" + industry.heroImage
+    headline: industry.name + " Sourcing & Supply Chain",
+    description: industry.heroDescription,
+    image: "https://sheeshexports.com" + industry.heroImage,
   };
 
   return (
@@ -60,7 +68,10 @@ export default async function IndustryDetailPage({ params }: { params: Promise<{
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10"></div>
 
         <div className="absolute top-12 left-6 sm:left-12 lg:left-24 z-20">
-          <Link href="/industries" className="text-secondary font-semibold tracking-[0.2em] uppercase text-xs flex items-center hover:text-white transition-colors">
+          <Link
+            href="/industries"
+            className="text-secondary font-semibold tracking-[0.2em] uppercase text-xs flex items-center hover:text-white transition-colors"
+          >
             <ChevronRight className="w-4 h-4 mr-1 rotate-180" /> Back to Industries
           </Link>
         </div>
@@ -82,20 +93,36 @@ export default async function IndustryDetailPage({ params }: { params: Promise<{
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-8xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 md:divide-x divide-border">
             <div className="pl-0">
-              <span className="block text-[10px] uppercase tracking-widest text-muted-foreground font-bold mb-2">Primary Buyers</span>
-              <span className="block font-heading text-xl lg:text-2xl font-bold text-foreground">{industry.name}</span>
+              <span className="block text-[10px] uppercase tracking-widest text-muted-foreground font-bold mb-2">
+                Primary Buyers
+              </span>
+              <span className="block font-heading text-xl lg:text-2xl font-bold text-foreground">
+                {industry.name}
+              </span>
             </div>
             <div className="md:pl-12">
-              <span className="block text-[10px] uppercase tracking-widest text-muted-foreground font-bold mb-2">Typical MOQ</span>
-              <span className="block font-heading text-xl lg:text-2xl font-bold text-foreground">5-25 MT</span>
+              <span className="block text-[10px] uppercase tracking-widest text-muted-foreground font-bold mb-2">
+                Typical MOQ
+              </span>
+              <span className="block font-heading text-xl lg:text-2xl font-bold text-foreground">
+                5-25 MT
+              </span>
             </div>
             <div className="pl-0 md:pl-12">
-              <span className="block text-[10px] uppercase tracking-widest text-muted-foreground font-bold mb-2">Packaging</span>
-              <span className="block font-heading text-xl lg:text-2xl font-bold text-foreground">Bulk / OEM</span>
+              <span className="block text-[10px] uppercase tracking-widest text-muted-foreground font-bold mb-2">
+                Packaging
+              </span>
+              <span className="block font-heading text-xl lg:text-2xl font-bold text-foreground">
+                Bulk / OEM
+              </span>
             </div>
             <div className="md:pl-12">
-              <span className="block text-[10px] uppercase tracking-widest text-muted-foreground font-bold mb-2">Lead Time</span>
-              <span className="block font-heading text-xl lg:text-2xl font-bold text-foreground">15-30 Days</span>
+              <span className="block text-[10px] uppercase tracking-widest text-muted-foreground font-bold mb-2">
+                Lead Time
+              </span>
+              <span className="block font-heading text-xl lg:text-2xl font-bold text-foreground">
+                15-30 Days
+              </span>
             </div>
           </div>
         </div>
@@ -105,10 +132,11 @@ export default async function IndustryDetailPage({ params }: { params: Promise<{
       <section className="py-24 lg:py-32 bg-background border-b border-border">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-8xl">
           <div className="grid lg:grid-cols-12 gap-16 items-start">
-            
             {/* Left side: Sticky Editorial Title */}
             <div className="lg:col-span-5 lg:sticky lg:top-32 pr-8">
-              <span className="text-primary font-bold tracking-[0.2em] uppercase text-[10px] mb-6 block">The Procurement Reality</span>
+              <span className="text-primary font-bold tracking-[0.2em] uppercase text-[10px] mb-6 block">
+                The Procurement Reality
+              </span>
               <h2 className="font-heading text-5xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.1] mb-8">
                 {industry.overview.heading}
               </h2>
@@ -122,8 +150,10 @@ export default async function IndustryDetailPage({ params }: { params: Promise<{
             {/* Right side: Typographic Challenges */}
             <div className="lg:col-span-7">
               <div className="mb-16">
-                <span className="block font-heading text-3xl font-bold text-primary mb-12 pb-4 border-b border-border">Key Market Complexities</span>
-                
+                <span className="block font-heading text-3xl font-bold text-primary mb-12 pb-4 border-b border-border">
+                  Key Market Complexities
+                </span>
+
                 <div className="space-y-16">
                   {industry.challenges.map((challenge, idx) => (
                     <div key={idx} className="relative pl-16 md:pl-24">
@@ -143,26 +173,40 @@ export default async function IndustryDetailPage({ params }: { params: Promise<{
 
               {/* Seamlessly transition into Packaging & Compliance */}
               <div className="pt-16 border-t border-border">
-                <span className="block font-heading text-3xl font-bold text-primary mb-12 pb-4 border-b border-border">Packaging & Compliance Standards</span>
+                <span className="block font-heading text-3xl font-bold text-primary mb-12 pb-4 border-b border-border">
+                  Packaging & Compliance Standards
+                </span>
                 <div className="grid sm:grid-cols-2 gap-12">
                   <div>
-                    <span className="block text-[10px] uppercase tracking-widest text-muted-foreground font-bold mb-6">Format Specs</span>
+                    <span className="block text-[10px] uppercase tracking-widest text-muted-foreground font-bold mb-6">
+                      Format Specs
+                    </span>
                     <ul className="space-y-6">
                       {industry.packaging.map((pack, idx) => (
                         <li key={idx}>
-                          <strong className="block font-heading text-xl font-bold text-foreground mb-1">{pack.title}</strong>
-                          <span className="text-muted-foreground font-light text-sm">{pack.description}</span>
+                          <strong className="block font-heading text-xl font-bold text-foreground mb-1">
+                            {pack.title}
+                          </strong>
+                          <span className="text-muted-foreground font-light text-sm">
+                            {pack.description}
+                          </span>
                         </li>
                       ))}
                     </ul>
                   </div>
                   <div>
-                    <span className="block text-[10px] uppercase tracking-widest text-muted-foreground font-bold mb-6">Regulatory</span>
+                    <span className="block text-[10px] uppercase tracking-widest text-muted-foreground font-bold mb-6">
+                      Regulatory
+                    </span>
                     <ul className="space-y-6">
                       {industry.certifications.map((cert, idx) => (
                         <li key={idx}>
-                          <strong className="block font-heading text-xl font-bold text-foreground mb-1">{cert.name}</strong>
-                          <span className="text-muted-foreground font-light text-sm">{cert.description}</span>
+                          <strong className="block font-heading text-xl font-bold text-foreground mb-1">
+                            {cert.name}
+                          </strong>
+                          <span className="text-muted-foreground font-light text-sm">
+                            {cert.description}
+                          </span>
                         </li>
                       ))}
                     </ul>
@@ -170,7 +214,6 @@ export default async function IndustryDetailPage({ params }: { params: Promise<{
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -179,7 +222,9 @@ export default async function IndustryDetailPage({ params }: { params: Promise<{
       <section className="py-24 lg:py-32 bg-foreground text-background border-b border-border">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-8xl">
           <div className="mb-24 md:w-2/3">
-            <span className="text-primary font-bold tracking-[0.2em] uppercase text-[10px] mb-6 block">Execution Framework</span>
+            <span className="text-primary font-bold tracking-[0.2em] uppercase text-[10px] mb-6 block">
+              Execution Framework
+            </span>
             <h2 className="font-heading text-5xl lg:text-7xl font-bold tracking-tight text-background leading-[1.1]">
               Operational Supply Chain Mechanics
             </h2>
@@ -187,18 +232,28 @@ export default async function IndustryDetailPage({ params }: { params: Promise<{
 
           <div className="space-y-0 border-t border-background/20">
             {industry.workflow.map((step, idx) => (
-              <div key={idx} className="grid grid-cols-1 md:grid-cols-12 gap-8 py-12 border-b border-background/20 items-start group hover:bg-background/5 transition-colors">
+              <div
+                key={idx}
+                className="grid grid-cols-1 md:grid-cols-12 gap-8 py-12 border-b border-background/20 items-start group hover:bg-background/5 transition-colors"
+              >
                 <div className="md:col-span-2">
-                  <span className="font-heading text-4xl text-secondary font-bold tracking-tighter">0{idx + 1}</span>
+                  <span className="font-heading text-4xl text-secondary font-bold tracking-tighter">
+                    0{idx + 1}
+                  </span>
                 </div>
                 <div className="md:col-span-4">
-                  <span className="block text-[10px] uppercase tracking-widest text-muted-foreground/50 font-bold mb-2">Phase</span>
-                  <h4 className="font-heading text-3xl font-bold tracking-tight text-background uppercase">{['Discovery', 'Sampling', 'Production', 'Inspection', 'Shipment'][idx] || 'Execution'}</h4>
+                  <span className="block text-[10px] uppercase tracking-widest text-muted-foreground/50 font-bold mb-2">
+                    Phase
+                  </span>
+                  <h4 className="font-heading text-3xl font-bold tracking-tight text-background uppercase">
+                    {["Discovery", "Sampling", "Production", "Inspection", "Shipment"][idx] ||
+                      "Execution"}
+                  </h4>
                 </div>
                 <div className="md:col-span-6">
-                   <p className="text-background/70 font-sans text-xl font-light leading-relaxed">
-                     {step}
-                   </p>
+                  <p className="text-background/70 font-sans text-xl font-light leading-relaxed">
+                    {step}
+                  </p>
                 </div>
               </div>
             ))}
@@ -209,8 +264,10 @@ export default async function IndustryDetailPage({ params }: { params: Promise<{
       {/* SECTION 5 — EDITORIAL CASE STUDY */}
       <section className="py-24 lg:py-32 bg-muted/20 border-b border-border">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-8xl">
-          <span className="text-primary font-bold tracking-[0.2em] uppercase text-[10px] mb-6 block">Market Intelligence</span>
-          
+          <span className="text-primary font-bold tracking-[0.2em] uppercase text-[10px] mb-6 block">
+            Market Intelligence
+          </span>
+
           <div className="grid lg:grid-cols-2 gap-16 mb-16">
             <div>
               <h2 className="font-heading text-5xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.1] mb-8">
@@ -222,28 +279,48 @@ export default async function IndustryDetailPage({ params }: { params: Promise<{
                 ))}
               </div>
             </div>
-            
+
             {industry.caseStudyImage && (
               <div className="relative h-[400px] lg:h-full w-full bg-muted">
-                <Image src={industry.caseStudyImage} alt="Case Study" fill className="object-cover transition-all duration-700" />
+                <Image
+                  loading="lazy"
+                  src={industry.caseStudyImage}
+                  alt="Case Study"
+                  fill
+                  className="object-cover transition-all duration-700"
+                />
               </div>
             )}
           </div>
 
           <div className="bg-background border border-border p-12 lg:p-20 mt-16">
-            <span className="block font-heading text-3xl font-bold text-primary mb-12 pb-4 border-b border-border">Case Study: Execution In Practice</span>
+            <span className="block font-heading text-3xl font-bold text-primary mb-12 pb-4 border-b border-border">
+              Case Study: Execution In Practice
+            </span>
             <div className="grid md:grid-cols-3 gap-12 divide-y md:divide-y-0 md:divide-x divide-border">
               <div className="pt-8 md:pt-0 md:pr-12">
-                <h4 className="font-heading text-2xl font-bold text-foreground mb-4">The Challenge</h4>
-                <p className="text-muted-foreground font-sans text-lg font-light leading-relaxed">{industry.caseStudy.challenge}</p>
+                <h4 className="font-heading text-2xl font-bold text-foreground mb-4">
+                  The Challenge
+                </h4>
+                <p className="text-muted-foreground font-sans text-lg font-light leading-relaxed">
+                  {industry.caseStudy.challenge}
+                </p>
               </div>
               <div className="pt-8 md:pt-0 md:px-12">
-                <h4 className="font-heading text-2xl font-bold text-foreground mb-4">Our Solution</h4>
-                <p className="text-muted-foreground font-sans text-lg font-light leading-relaxed">{industry.caseStudy.solution}</p>
+                <h4 className="font-heading text-2xl font-bold text-foreground mb-4">
+                  Our Solution
+                </h4>
+                <p className="text-muted-foreground font-sans text-lg font-light leading-relaxed">
+                  {industry.caseStudy.solution}
+                </p>
               </div>
               <div className="pt-8 md:pt-0 md:pl-12">
-                <h4 className="font-heading text-2xl font-bold text-foreground mb-4">The Outcome</h4>
-                <p className="text-muted-foreground font-sans text-lg font-light leading-relaxed">{industry.caseStudy.outcome}</p>
+                <h4 className="font-heading text-2xl font-bold text-foreground mb-4">
+                  The Outcome
+                </h4>
+                <p className="text-muted-foreground font-sans text-lg font-light leading-relaxed">
+                  {industry.caseStudy.outcome}
+                </p>
               </div>
             </div>
           </div>
@@ -255,13 +332,15 @@ export default async function IndustryDetailPage({ params }: { params: Promise<{
         <section className="py-24 lg:py-32 bg-background border-b border-border">
           <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-8xl">
             <div className="mb-16 md:w-1/2">
-              <span className="text-primary font-bold tracking-[0.2em] uppercase text-[10px] mb-6 block">Raw Materials</span>
+              <span className="text-primary font-bold tracking-[0.2em] uppercase text-[10px] mb-6 block">
+                Raw Materials
+              </span>
               <h2 className="font-heading text-5xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.1]">
                 Commodities Extracted For {industry.name}
               </h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {relatedProducts.map(product => (
+              {relatedProducts.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
             </div>
@@ -270,21 +349,30 @@ export default async function IndustryDetailPage({ params }: { params: Promise<{
       )}
 
       {/* SECTION 7 — FINAL EDITORIAL CTA */}
-      <section className="py-16 md:py-24 lg:py-32 bg-foreground text-background">
+      <section aria-labelledby="industry-cta-heading" className="py-16 md:py-24 lg:py-32 bg-foreground text-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-8xl flex flex-col md:flex-row md:items-end justify-between gap-8 md:gap-12">
           <div className="max-w-4xl">
-            <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tighter leading-[1.1] md:leading-[0.9] mb-6 md:mb-8 uppercase">
-              Initiate<br/>Procurement
+            <h2 id="industry-cta-heading" className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tighter leading-[1.1] md:leading-[0.9] mb-6 md:mb-8 uppercase">
+              Initiate
+              <br />
+              Procurement
             </h2>
             <p className="text-lg sm:text-xl md:text-2xl text-background/70 font-light font-sans max-w-2xl">
-              Discuss your commercial sourcing requirements with our export operations team for a tailored compliance and pricing framework.
+              Discuss your commercial sourcing requirements with our export operations team for a
+              tailored compliance and pricing framework.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row gap-4 w-full md:w-auto shrink-0 mt-4 md:mt-0">
-            <Link href="/request-quote" className="inline-flex items-center justify-center bg-secondary text-primary px-8 lg:px-12 py-4 lg:py-6 font-bold tracking-widest uppercase text-xs lg:text-sm hover:bg-secondary/90 transition-colors w-full sm:w-auto text-center">
+            <Link
+              href="/request-quote"
+              className="inline-flex items-center justify-center bg-secondary text-secondary-foreground px-8 lg:px-12 py-4 lg:py-6 font-bold tracking-widest uppercase text-xs lg:text-sm hover:bg-secondary/90 transition-colors w-full sm:w-auto text-center shadow-sm"
+            >
               Request Quotation
             </Link>
-            <Link href="/contact" className="inline-flex items-center justify-center border border-background/30 px-8 lg:px-12 py-4 lg:py-6 font-bold tracking-widest uppercase text-xs lg:text-sm hover:bg-white/10 transition-colors w-full sm:w-auto text-center">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center border border-background/70 text-background px-8 lg:px-12 py-4 lg:py-6 font-bold tracking-widest uppercase text-xs lg:text-sm hover:bg-white/10 transition-colors w-full sm:w-auto text-center"
+            >
               Contact Operations
             </Link>
           </div>

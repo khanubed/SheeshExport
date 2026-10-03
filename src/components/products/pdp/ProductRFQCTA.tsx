@@ -1,7 +1,6 @@
-"use client";
 import React from "react";
 import { Product } from "@/lib/data/types";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight, Mail, Phone } from "lucide-react";
 
@@ -14,14 +13,27 @@ export function ProductRFQCTA({ product }: { product: Product }) {
           Partner with Sheesh Exports for reliable, bulk commodity fulfillment customized to your exact specifications.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Link href={`/request-quote?product=${product.slug}`}>
-            <Button size="lg" className="rounded-none bg-background text-primary hover:bg-muted/50 h-16 px-10 text-lg tracking-wide w-full sm:w-auto">
-              Request Quotation <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+          <Link
+            href={`/request-quote?product=${product.slug}`}
+            className={buttonVariants({
+              size: "lg",
+              className:
+                "rounded-none bg-background text-primary hover:bg-muted/90 h-16 px-10 text-lg tracking-wide w-full sm:w-auto font-semibold",
+            })}
+          >
+            Request Quotation <ArrowRight className="ml-2 w-5 h-5" />
           </Link>
-          <Button size="lg" variant="secondary" className="rounded-none h-16 px-10 border-white text-primary-foreground hover:bg-background/10 text-lg tracking-wide w-full sm:w-auto">
+          <Link
+            href="/contact"
+            className={buttonVariants({
+              variant: "outline",
+              size: "lg",
+              className:
+                "rounded-none h-16 px-10 border-white/70 text-white hover:bg-white/10 text-lg tracking-wide w-full sm:w-auto font-semibold",
+            })}
+          >
             <Mail className="mr-2 w-5 h-5" /> Contact Sales
-          </Button>
+          </Link>
         </div>
       </div>
     </section>

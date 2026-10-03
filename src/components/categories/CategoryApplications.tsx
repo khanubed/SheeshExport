@@ -17,7 +17,7 @@ export function CategoryApplications({ category }: { category: Category }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {category.applications.map((app, idx) => (
             <div key={idx} className="flex gap-6 items-start border-b border-border pb-8">
-              <div className="text-3xl font-heading text-muted-foreground/30 font-bold">0{idx + 1}</div>
+              <div className="text-3xl font-heading text-muted-foreground/40 font-bold" aria-hidden="true">0{idx + 1}</div>
               <div>
                 <h3 className="text-xl font-bold text-foreground mb-2">{app.industry}</h3>
                 <p className="text-muted-foreground leading-relaxed font-sans">{app.description}</p>

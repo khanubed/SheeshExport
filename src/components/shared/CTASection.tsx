@@ -18,25 +18,25 @@ export function CTASection() {
               className={buttonVariants({
                 size: "lg",
                 className:
-                  "bg-secondary text-primary hover:bg-secondary/90 font-medium tracking-wide w-full sm:w-auto h-14 px-8 text-lg rounded-none",
+                  "bg-secondary text-secondary-foreground hover:bg-secondary/90 font-bold tracking-wide w-full sm:w-auto h-14 px-8 text-lg rounded-none shadow-sm",
               })}
             >
               Request Quote
             </Link>
-            <a
-              href="#"
+            <Link
+              href="/contact"
               className={buttonVariants({
                 variant: "outline",
                 size: "lg",
                 className:
-                  "bg-transparent border-white/30 text-white hover:bg-white/10 w-full sm:w-auto h-14 px-8 text-lg rounded-none",
+                  "bg-transparent border-white/70 text-white hover:bg-white/10 w-full sm:w-auto h-14 px-8 text-lg rounded-none",
               })}
             >
               Download Company Profile
-            </a>
+            </Link>
             <Link
               href="/contact"
-              className="text-white hover:text-secondary underline-offset-4 hover:underline transition-all mt-4 sm:mt-0 font-light"
+              className="text-white hover:text-secondary underline-offset-4 hover:underline transition-all mt-4 sm:mt-0 font-medium"
             >
               Talk To Procurement Team
             </Link>

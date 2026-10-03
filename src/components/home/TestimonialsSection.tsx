@@ -1,9 +1,8 @@
-"use client";
-
-import React, { useRef, useState, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
-import { Star, BadgeCheck, ChevronRight, ChevronLeft } from "lucide-react";
+import { Star, BadgeCheck } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
+import { CarouselSlider } from "@/components/shared/CarouselSlider";
 
 const REVIEWS = [
   {
@@ -65,42 +64,6 @@ const GoogleIcon = () => (
 );
 
 export function TestimonialsSection() {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
-
-  const checkScrollState = () => {
-    if (scrollContainerRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
-      setCanScrollLeft(scrollLeft > 0);
-      setCanScrollRight(Math.ceil(scrollLeft + clientWidth) < scrollWidth);
-    }
-  };
-
-  useEffect(() => {
-    checkScrollState();
-    window.addEventListener("resize", checkScrollState);
-    return () => window.removeEventListener("resize", checkScrollState);
-  }, []);
-
-  const scroll = (direction: "left" | "right") => {
-    if (scrollContainerRef.current) {
-      const { clientWidth } = scrollContainerRef.current;
-      // Scroll by one card width at a time roughly (card width is approx 300px + gap)
-      const scrollAmount = clientWidth > 640 ? clientWidth / 2 : clientWidth;
-      
-      scrollContainerRef.current.scrollBy({
-        left: direction === "left" ? -scrollAmount : scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "ArrowLeft") scroll("left");
-    if (e.key === "ArrowRight") scroll("right");
-  };
-
   return (
     <section className="py-12 bg-background border-t border-border overflow-hidden">
       <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
@@ -150,24 +113,15 @@ export function TestimonialsSection() {
             </a>
           </div>
 
-          {/* Native Slider Column */}
-          <div className="lg:col-span-3 relative px-0 sm:px-10 min-w-0 w-full group">
-            <div 
-              className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-4 pt-2 [&::-webkit-scrollbar]:hidden"
-              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-              ref={scrollContainerRef}
-              onScroll={checkScrollState}
-              onKeyDown={handleKeyDown}
-              tabIndex={0}
-              role="region"
-              aria-label="Testimonials Carousel"
-            >
+          {/* Reusable Carousel Slider Column */}
+          <div className="lg:col-span-3 min-w-0 w-full">
+            <CarouselSlider ariaLabel="Testimonials Carousel" controlsPosition="sides">
               {REVIEWS.map((review, idx) => (
                 <div 
                   key={idx} 
                   className="snap-start shrink-0 w-[85%] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] h-auto"
                 >
-                  <div className="bg-slate-50 dark:bg-card border border-border/50 rounded-2xl p-6 h-full flex flex-col hover:shadow-md transition-shadow">
+                  <div className="bg-slate-50 border border-border/50 rounded-2xl p-6 h-full flex flex-col hover:shadow-md transition-shadow">
                     <div className="flex justify-between items-start mb-4">
                       <div className="flex items-center gap-3">
                         <div
@@ -197,25 +151,7 @@ export function TestimonialsSection() {
                   </div>
                 </div>
               ))}
-            </div>
-
-            {/* Custom Navigation */}
-            <button 
-              onClick={() => scroll("left")}
-              disabled={!canScrollLeft}
-              className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 bg-background border border-border rounded-full shadow-sm flex items-center justify-center text-foreground hover:bg-accent hover:text-accent-foreground z-10 transition-colors hidden sm:flex disabled:opacity-50 disabled:cursor-not-allowed"
-              aria-label="Previous testimonial"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button 
-              onClick={() => scroll("right")}
-              disabled={!canScrollRight}
-              className="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 bg-background border border-border rounded-full shadow-sm flex items-center justify-center text-foreground hover:bg-accent hover:text-accent-foreground z-10 transition-colors hidden sm:flex disabled:opacity-50 disabled:cursor-not-allowed"
-              aria-label="Next testimonial"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
+            </CarouselSlider>
           </div>
         </div>
       </div>

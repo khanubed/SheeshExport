@@ -61,7 +61,7 @@ export default async function CityMarketPage({ params }: PageProps) {
 
       {/* SECTION 1: Editorial Hero */}
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-32 border-b border-border relative bg-muted/20">
-        <div className="absolute inset-0 bg-grid-black/[0.02] dark:bg-grid-white/[0.02] bg-[size:32px_32px] pointer-events-none" />
+        <div className="absolute inset-0 bg-grid-black/[0.02] bg-[size:32px_32px] pointer-events-none" />
         <div className="container mx-auto px-6 sm:px-12 lg:px-24">
           <div className="max-w-4xl relative z-10">
             <div className="flex items-center gap-3 mb-8">

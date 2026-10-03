@@ -75,7 +75,7 @@ export function QuotationFormSection() {
                 allowFullScreen={false}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="absolute inset-0 grayscale dark:invert-[.9] dark:hue-rotate-180 contrast-75 opacity-80 group-hover:opacity-100 transition-all duration-500"
+                className="absolute inset-0 grayscale contrast-75 opacity-80 group-hover:opacity-100 transition-all duration-500"
               />
             </div>
           </FadeIn>

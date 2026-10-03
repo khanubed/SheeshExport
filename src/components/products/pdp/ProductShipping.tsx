@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { ShippingDetails } from "@/lib/data/types";
 import { Ship, Anchor, Clock, Box } from "lucide-react";

@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { Product as DataProduct } from "@/lib/data/products";
 import { Category } from "@/lib/data/categories";

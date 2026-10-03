@@ -1,10 +1,9 @@
-"use client";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Category } from "@/lib/data/categories";
 import { ArrowRight, Download } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 
 export function CategoryHero({ category }: { category: Category }) {
   return (
@@ -40,18 +39,20 @@ export function CategoryHero({ category }: { category: Category }) {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/products">
-              <Button
-                size="lg"
-                className="rounded-none h-14 px-8 bg-primary text-primary-foreground hover:bg-primary/90 text-sm tracking-widest uppercase font-bold w-full sm:w-auto group"
-              >
-                Explore Products
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-              </Button>
+            <Link
+              href="/products"
+              className={buttonVariants({
+                size: "lg",
+                className:
+                  "rounded-none h-14 px-8 bg-primary text-primary-foreground hover:bg-primary/90 text-sm tracking-widest uppercase font-bold w-full sm:w-auto group",
+              })}
+            >
+              Explore Products
+              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </Link>
             <Button
               size="lg"
-              className="rounded-none h-14 px-8 bg-transparent border border-white/20 text-white hover:bg-white/10 hover:text-white text-sm tracking-widest uppercase font-bold w-full sm:w-auto"
+              className="rounded-none h-14 px-8 bg-transparent border border-white/70 text-white hover:bg-white/10 hover:text-white text-sm tracking-widest uppercase font-bold w-full sm:w-auto"
             >
               <Download className="w-4 h-4 mr-2" aria-hidden="true" /> Download Catalog
             </Button>

@@ -3,8 +3,14 @@
 import { useState, useEffect } from "react";
 import { MessageCircle, PhoneCall, X, Send, User, Phone, CheckCircle2 } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+function WhatsAppIcon({ className = "w-6 h-6" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.993.587 1.936.879 3.092.879 3.181 0 5.767-2.586 5.767-5.766.001-3.18-2.585-5.766-5.767-5.766zm3.374 8.167c-.14.394-.716.744-1.002.775-.285.032-.656.147-2.227-.506-1.572-.654-2.584-2.254-2.662-2.358-.078-.104-.633-.842-.633-1.606 0-.764.399-1.14.541-1.294.142-.154.31-.193.414-.193.104 0 .208.001.299.006.096.005.225-.037.352.268.13.313.444 1.082.483 1.161.039.078.065.17.013.273-.052.104-.078.169-.156.26-.078.091-.164.204-.234.273-.078.077-.16.161-.069.317.091.156.404.667.868 1.079.596.53 1.098.694 1.254.772.156.078.247.065.338-.039.091-.104.39-.455.494-.611.104-.156.208-.13.35-.078.143.052.909.428 1.065.506.156.078.26.117.299.182.039.065.039.377-.101.771z" />
+      <path d="M12 2C6.477 2 2 6.477 2 12c0 1.891.528 3.662 1.449 5.176L2 22l4.957-1.413C8.423 21.498 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.063c-1.636 0-3.167-.47-4.464-1.282l-.32-.201-2.946.839.816-2.859-.22-.351C3.967 14.85 3.5 13.473 3.5 12c0-4.687 3.813-8.5 8.5-8.5s8.5 3.813 8.5 8.5-3.813 8.5-8.5 8.5z" />
+    </svg>
+  );
+}
 
 export function FloatingWidget() {
   const [isOpen, setIsOpen] = useState(false);
@@ -220,7 +226,7 @@ export function FloatingWidget() {
           className="w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-transform hover:scale-110 bg-[#25D366] text-white"
           aria-label="WhatsApp Support"
         >
-          <FontAwesomeIcon icon={faWhatsapp} className="w-6 h-6" />
+          <WhatsAppIcon className="w-6 h-6" />
         </a>
 
         <button 

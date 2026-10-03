@@ -97,7 +97,7 @@ export function ProductCard({ product }: { product: Product }) {
           </Link>
           <Link 
             href={productHref} 
-            className={buttonVariants({ variant: "outline", size: "sm", className: "w-full rounded-lg text-xs h-8 text-muted-foreground hover:text-foreground" })}
+            className={buttonVariants({ variant: "outline", size: "sm", className: "w-full rounded-lg text-xs h-8 text-foreground font-medium" })}
           >
             View Details
           </Link>

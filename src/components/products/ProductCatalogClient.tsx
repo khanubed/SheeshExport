@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useQueryStates, useQueryState, parseAsString, parseAsArrayOf, parseAsInteger } from "nuqs";
-import { useGetProductsQuery } from "@/lib/redux/api/productsApi";
+import { PRODUCTS_DATA } from "@/lib/data/products";
 import { CatalogHeader } from "./CatalogHeader";
 import { FilterSidebar } from "./FilterSidebar";
 import { ActiveFilters } from "./ActiveFilters";
@@ -16,7 +16,6 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
-import { Loader2 } from "lucide-react";
 
 export type FilterState = {
   search: string;
@@ -40,23 +39,56 @@ export function ProductCatalogClient() {
   const [sort, setSort] = useQueryState("sort", parseAsString.withDefault("relevance"));
   const [page, setPage] = useQueryState("page", parseAsInteger.withDefault(1));
 
-  const {
-    data: response,
-    isLoading,
-    isFetching,
-  } = useGetProductsQuery({
-    search: filters.search,
-    categories: filters.categories,
-    certifications: filters.certifications,
-    exportMarkets: filters.exportMarkets,
-    packagingTypes: filters.packagingTypes,
-    sort,
-    page,
-  });
+  const filteredProducts = React.useMemo(() => {
+    let result = [...PRODUCTS_DATA];
 
-  const currentItems = response?.data || [];
-  const totalItems = response?.total || 0;
+    if (filters.search) {
+      const q = filters.search.toLowerCase().trim();
+      result = result.filter(
+        (p) =>
+          p.name.toLowerCase().includes(q) ||
+          p.description.toLowerCase().includes(q) ||
+          p.category.toLowerCase().includes(q)
+      );
+    }
+
+    if (filters.categories && filters.categories.length > 0) {
+      result = result.filter((p) => filters.categories.includes(p.category));
+    }
+
+    if (filters.certifications && filters.certifications.length > 0) {
+      result = result.filter((p) =>
+        p.certifications?.some((c) => filters.certifications.includes(c))
+      );
+    }
+
+    if (filters.exportMarkets && filters.exportMarkets.length > 0) {
+      result = result.filter((p) =>
+        p.exportMarkets?.some((m) => filters.exportMarkets.includes(m))
+      );
+    }
+
+    if (filters.packagingTypes && filters.packagingTypes.length > 0) {
+      result = result.filter((p) =>
+        p.packagingOptions?.some((pt) => filters.packagingTypes.includes(pt.name))
+      );
+    }
+
+    if (sort === "name-asc") {
+      result.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (sort === "name-desc") {
+      result.sort((a, b) => b.name.localeCompare(a.name));
+    }
+
+    return result;
+  }, [filters, sort]);
+
+  const totalItems = filteredProducts.length;
   const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+  const currentItems = React.useMemo(() => {
+    const startIndex = (page - 1) * ITEMS_PER_PAGE;
+    return filteredProducts.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+  }, [filteredProducts, page]);
 
   const handleResetFilters = () => {
     setFilters({
@@ -122,15 +154,10 @@ export function ProductCatalogClient() {
               }}
             />
 
-            {isLoading ? (
-              <div className="flex justify-center items-center py-32 flex-col" role="status" aria-live="polite">
-                <Loader2 className="h-12 w-12 animate-spin text-primary mb-4" aria-hidden="true" />
-                <p className="text-muted-foreground animate-pulse">Loading products...</p>
-              </div>
-            ) : totalItems > 0 ? (
+            {totalItems > 0 ? (
               <>
                 <ul
-                  className={`grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 mt-4 transition-opacity duration-300 ${isFetching ? "opacity-50" : "opacity-100"}`}
+                  className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 mt-4"
                   role="list"
                   aria-label="Product listings"
                 >

@@ -23,7 +23,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
   const market = COUNTRY_MARKETS.find((m) => m.slug === resolvedParams.country);
-  
+
   if (!market) {
     return {};
   }
@@ -51,9 +51,9 @@ export default async function CountryMarketPage({ params }: PageProps) {
 
   // Get featured products based on popularProducts array
   const popularProductsDetails = market.popularProducts
-    .map(slug => PRODUCTS_DATA.find(p => p.slug === slug))
+    .map((slug) => PRODUCTS_DATA.find((p) => p.slug === slug))
     .filter(Boolean);
-    
+
   const featuredProduct = popularProductsDetails[0];
   const secondaryProducts = popularProductsDetails.slice(1, 4); // Limit to 3 secondary
 
@@ -64,10 +64,10 @@ export default async function CountryMarketPage({ params }: PageProps) {
       name: market.seoTitle,
       description: market.seoDescription,
       url: `https://sheeshexports.com/international/${market.slug}`,
-    }
+    },
   ];
-  
-  const heroImage = market.heroImage || '/images/international/intl_route_vis_1790683449601.webp';
+
+  const heroImage = market.heroImage || "/images/international/intl_route_vis_1790683449601.webp";
 
   return (
     <main className="min-h-screen bg-background text-foreground">
@@ -76,8 +76,7 @@ export default async function CountryMarketPage({ params }: PageProps) {
       {/* SECTION 1: Editorial Hero */}
       <section className="relative min-h-[90vh] flex items-center border-b border-border pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image 
-            src={heroImage}
+          <Image src={heroImage}
             alt={`${market.name} Port Infrastructure`}
             fill
             className="object-cover"
@@ -85,7 +84,7 @@ export default async function CountryMarketPage({ params }: PageProps) {
           />
           <div className="absolute inset-0 bg-black/70" />
         </div>
-        
+
         <div className="container mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-16 relative z-10">
           <div className="lg:w-1/2 pt-12 lg:pt-0">
             <h1 className="font-heading text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter leading-[0.85] uppercase mb-8 text-white">
@@ -95,31 +94,48 @@ export default async function CountryMarketPage({ params }: PageProps) {
               {market.heroDescription}
             </p>
           </div>
-          
+
           <div className="lg:w-1/2 w-full relative z-10 flex justify-end">
             {/* Floating Dossier */}
             <div className="bg-black/40 backdrop-blur-md border-t-4 border-primary border-x border-b border-white/10 shadow-2xl p-10 w-full max-w-lg relative text-white">
-              <span className="absolute -top-3 right-6 bg-primary text-primary-foreground text-xs font-bold uppercase tracking-widest px-3 py-1">Active Report</span>
-              
+              <span className="absolute -top-3 right-6 bg-primary text-primary-foreground text-xs font-bold uppercase tracking-widest px-3 py-1">
+                Active Report
+              </span>
+
               <div className="grid grid-cols-2 gap-x-8 gap-y-8">
                 <div>
-                  <span className="block text-xs font-bold uppercase tracking-widest text-white/60 mb-1">Destination</span>
+                  <span className="block text-xs font-bold uppercase tracking-widest text-white/60 mb-1">
+                    Destination
+                  </span>
                   <span className="font-heading text-2xl font-bold">{market.name}</span>
                 </div>
                 <div>
-                  <span className="block text-xs font-bold uppercase tracking-widest text-white/60 mb-1">Entry Ports</span>
-                  <span className="text-lg text-white/90">{market.ports.slice(0,2).join(", ")}</span>
+                  <span className="block text-xs font-bold uppercase tracking-widest text-white/60 mb-1">
+                    Entry Ports
+                  </span>
+                  <span className="text-lg text-white/90">
+                    {market.ports.slice(0, 2).join(", ")}
+                  </span>
                 </div>
                 <div className="col-span-2 border-t border-white/10 pt-6">
-                  <span className="block text-xs font-bold uppercase tracking-widest text-white/60 mb-3">Main Imports</span>
+                  <span className="block text-xs font-bold uppercase tracking-widest text-white/60 mb-3">
+                    Main Imports
+                  </span>
                   <div className="flex flex-wrap gap-2">
-                    {popularProductsDetails.slice(0, 4).map(p => (
-                      <span key={p?.slug} className="text-sm bg-white/10 border border-white/10 px-3 py-1">{p?.name}</span>
+                    {popularProductsDetails.slice(0, 4).map((p) => (
+                      <span
+                        key={p?.slug}
+                        className="text-sm bg-white/10 border border-white/10 px-3 py-1"
+                      >
+                        {p?.name}
+                      </span>
                     ))}
                   </div>
                 </div>
                 <div className="col-span-2 border-t border-white/10 pt-6">
-                  <span className="block text-xs font-bold uppercase tracking-widest text-white/60 mb-3">Compliance Regs</span>
+                  <span className="block text-xs font-bold uppercase tracking-widest text-white/60 mb-3">
+                    Compliance Regs
+                  </span>
                   <div className="flex flex-col gap-2">
                     {market.compliance.slice(0, 3).map((doc, i) => (
                       <div key={i} className="flex items-start gap-2">
@@ -140,35 +156,50 @@ export default async function CountryMarketPage({ params }: PageProps) {
         <div className="container mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-2 border-y border-border">
             <div className="p-8 lg:p-16 border-b lg:border-b-0 lg:border-r border-border">
-              <h3 className="font-heading text-3xl font-bold mb-6">{market.dossierDemandHeading}</h3>
+              <h3 className="font-heading text-3xl font-bold mb-6">
+                {market.dossierDemandHeading}
+              </h3>
               <p className="text-muted-foreground font-light leading-relaxed text-lg mb-8">
                 {market.dossierDemandText}
               </p>
               <ul className="space-y-4">
                 {market.marketInsights.map((insight, idx) => (
-                  <li key={idx} className="flex items-start gap-4 border-b border-muted pb-4 last:border-0 text-sm font-medium">
-                    <span className="text-primary font-bold">0{idx + 1}</span> 
+                  <li
+                    key={idx}
+                    className="flex items-start gap-4 border-b border-muted pb-4 last:border-0 text-sm font-medium"
+                  >
+                    <span className="text-primary font-bold">0{idx + 1}</span>
                     <span className="leading-relaxed">{insight}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            
+
             <div className="p-8 lg:p-16">
-              <h3 className="font-heading text-3xl font-bold mb-6">{market.dossierRegulationsHeading}</h3>
+              <h3 className="font-heading text-3xl font-bold mb-6">
+                {market.dossierRegulationsHeading}
+              </h3>
               <p className="text-muted-foreground font-light leading-relaxed text-lg mb-8">
                 {market.dossierRegulationsText}
               </p>
               <div className="grid grid-cols-2 gap-6">
                 <div className="bg-muted/30 p-6 border border-border">
                   <ShieldCheck className="w-8 h-8 text-primary mb-4" />
-                  <h4 className="font-bold text-sm uppercase tracking-widest mb-2">Quality Control</h4>
-                  <p className="text-sm text-muted-foreground font-light leading-relaxed">Rigorous pre-shipment SGS/Eurofins testing.</p>
+                  <h4 className="font-bold text-sm uppercase tracking-widest mb-2">
+                    Quality Control
+                  </h4>
+                  <p className="text-sm text-muted-foreground font-light leading-relaxed">
+                    Rigorous pre-shipment SGS/Eurofins testing.
+                  </p>
                 </div>
                 <div className="bg-muted/30 p-6 border border-border">
                   <FileText className="w-8 h-8 text-primary mb-4" />
-                  <h4 className="font-bold text-sm uppercase tracking-widest mb-2">Customs Clearance</h4>
-                  <p className="text-sm text-muted-foreground font-light leading-relaxed">Flawless Phyto & Origin documentation supplied.</p>
+                  <h4 className="font-bold text-sm uppercase tracking-widest mb-2">
+                    Customs Clearance
+                  </h4>
+                  <p className="text-sm text-muted-foreground font-light leading-relaxed">
+                    Flawless Phyto & Origin documentation supplied.
+                  </p>
                 </div>
               </div>
             </div>
@@ -178,7 +209,8 @@ export default async function CountryMarketPage({ params }: PageProps) {
 
       {/* SECTION 3: Massive Image Section */}
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
-        <Image 
+        <Image
+          loading="lazy"
           src={heroImage}
           alt={`Shipping to ${market.name}`}
           fill
@@ -187,8 +219,10 @@ export default async function CountryMarketPage({ params }: PageProps) {
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 text-center px-6">
           <h2 className="font-heading text-4xl sm:text-5xl lg:text-7xl font-black uppercase text-white leading-[0.9] tracking-tighter">
-            {market.name} Imported<br/>
-            <span className="text-primary">Massive Volumes</span><br/>
+            {market.name} Imported
+            <br />
+            <span className="text-primary">Massive Volumes</span>
+            <br />
             Of Spices Last Year
           </h2>
         </div>
@@ -198,14 +232,17 @@ export default async function CountryMarketPage({ params }: PageProps) {
       {featuredProduct && (
         <section className="py-16 lg:py-20 bg-background border-b border-border">
           <div className="container mx-auto px-6 lg:px-12">
-            <h2 className="font-heading text-4xl lg:text-5xl font-black uppercase mb-10">Procurement Targets</h2>
-            
+            <h2 className="font-heading text-4xl lg:text-5xl font-black uppercase mb-10">
+              Procurement Targets
+            </h2>
+
             <div className="grid lg:grid-cols-12 gap-12 items-start">
               {/* Massive Featured Product */}
               <div className="lg:col-span-8 group">
                 <div className="aspect-[16/9] lg:aspect-[21/9] relative mb-6 overflow-hidden border border-border">
-                  <Image 
-                    src={featuredProduct.variants[0]?.images[0]?.src || "/images/sheesh-logo.webp"} 
+                  <Image
+                    loading="lazy"
+                    src={featuredProduct.variants[0]?.images[0]?.src || "/images/sheesh-logo.webp"}
                     alt={featuredProduct.name}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -213,38 +250,66 @@ export default async function CountryMarketPage({ params }: PageProps) {
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
                   <div className="border-t-2 border-foreground pt-3">
-                    <span className="text-[10px] font-bold uppercase text-muted-foreground block mb-1">Commodity</span>
+                    <span className="text-[10px] font-bold uppercase text-muted-foreground block mb-1">
+                      Commodity
+                    </span>
                     <span className="text-sm font-bold line-clamp-1">{featuredProduct.name}</span>
                   </div>
                   <div className="border-t-2 border-muted pt-3">
-                    <span className="text-[10px] font-bold uppercase text-muted-foreground block mb-1">Format</span>
+                    <span className="text-[10px] font-bold uppercase text-muted-foreground block mb-1">
+                      Format
+                    </span>
                     <span className="text-sm font-bold">Bulk FCL</span>
                   </div>
                   <div className="border-t-2 border-muted pt-3">
-                    <span className="text-[10px] font-bold uppercase text-muted-foreground block mb-1">Compliance</span>
+                    <span className="text-[10px] font-bold uppercase text-muted-foreground block mb-1">
+                      Compliance
+                    </span>
                     <span className="text-sm font-bold">Tested</span>
                   </div>
                   <div className="border-t-2 border-muted pt-3">
-                    <span className="text-[10px] font-bold uppercase text-muted-foreground block mb-1">Origin</span>
+                    <span className="text-[10px] font-bold uppercase text-muted-foreground block mb-1">
+                      Origin
+                    </span>
                     <span className="text-sm font-bold">India</span>
                   </div>
                 </div>
-                <h3 className="font-heading text-3xl lg:text-4xl font-bold mb-4">{featuredProduct.name}</h3>
-                <p className="text-lg text-muted-foreground font-light mb-6 max-w-3xl leading-relaxed line-clamp-2">{featuredProduct.description}</p>
-                <Link href={`/products/${featuredProduct.categorySlug}/${featuredProduct.slug}`} className="inline-block bg-foreground text-background px-6 py-3 font-bold uppercase tracking-widest text-xs hover:bg-foreground/90 transition-colors">
+                <h3 className="font-heading text-3xl lg:text-4xl font-bold mb-4">
+                  {featuredProduct.name}
+                </h3>
+                <p className="text-lg text-muted-foreground font-light mb-6 max-w-3xl leading-relaxed line-clamp-2">
+                  {featuredProduct.description}
+                </p>
+                <Link
+                  href={`/products/${featuredProduct.categorySlug}/${featuredProduct.slug}`}
+                  className="inline-block bg-foreground text-background px-6 py-3 font-bold uppercase tracking-widest text-xs hover:bg-foreground/90 transition-colors"
+                >
                   View Full Specifications
                 </Link>
               </div>
-              
+
               {/* Secondary Editorial Strips */}
               <div className="lg:col-span-4 flex flex-col gap-0 border-l border-border pl-0 lg:pl-10 mt-10 lg:mt-0">
-                <h4 className="font-bold uppercase tracking-widest text-xs mb-6 border-b border-border pb-3">Other High-Demand Imports</h4>
-                {secondaryProducts.map(product => product && (
-                  <Link key={product.slug} href={`/products/${product.categorySlug}/${product.slug}`} className="group block py-5 border-b border-border last:border-0">
-                    <h5 className="font-heading text-xl font-bold mb-2 group-hover:text-primary transition-colors">{product.name}</h5>
-                    <p className="text-muted-foreground font-light line-clamp-2 text-xs leading-relaxed">{product.description}</p>
-                  </Link>
-                ))}
+                <h4 className="font-bold uppercase tracking-widest text-xs mb-6 border-b border-border pb-3">
+                  Other High-Demand Imports
+                </h4>
+                {secondaryProducts.map(
+                  (product) =>
+                    product && (
+                      <Link
+                        key={product.slug}
+                        href={`/products/${product.categorySlug}/${product.slug}`}
+                        className="group block py-5 border-b border-border last:border-0"
+                      >
+                        <h5 className="font-heading text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+                          {product.name}
+                        </h5>
+                        <p className="text-muted-foreground font-light line-clamp-2 text-xs leading-relaxed">
+                          {product.description}
+                        </p>
+                      </Link>
+                    )
+                )}
               </div>
             </div>
           </div>
@@ -297,25 +362,39 @@ export default async function CountryMarketPage({ params }: PageProps) {
             {/* Commercial Information Sidebar */}
             <div className="lg:col-span-4 flex flex-col gap-6 lg:pl-8 lg:border-l border-border mt-6 lg:mt-0">
               <div>
-                <h4 className="font-bold text-[10px] uppercase tracking-widest text-muted-foreground mb-2 border-b border-border pb-1">Transit Time</h4>
-                <p className="font-heading text-2xl font-bold">{market.transitTime || "15-30 Days"}</p>
+                <h4 className="font-bold text-[10px] uppercase tracking-widest text-muted-foreground mb-2 border-b border-border pb-1">
+                  Transit Time
+                </h4>
+                <p className="font-heading text-2xl font-bold">
+                  {market.transitTime || "15-30 Days"}
+                </p>
               </div>
 
               <div>
-                <h4 className="font-bold text-[10px] uppercase tracking-widest text-muted-foreground mb-2 border-b border-border pb-1">Destination Ports</h4>
+                <h4 className="font-bold text-[10px] uppercase tracking-widest text-muted-foreground mb-2 border-b border-border pb-1">
+                  Destination Ports
+                </h4>
                 <ul className="space-y-1">
                   {market.ports.map((port, idx) => (
-                    <li key={idx} className="font-heading text-xl font-bold">{port}</li>
+                    <li key={idx} className="font-heading text-xl font-bold">
+                      {port}
+                    </li>
                   ))}
                 </ul>
               </div>
 
               <div>
-                <h4 className="font-bold text-[10px] uppercase tracking-widest text-muted-foreground mb-2 border-b border-border pb-1">Container Formats</h4>
+                <h4 className="font-bold text-[10px] uppercase tracking-widest text-muted-foreground mb-2 border-b border-border pb-1">
+                  Container Formats
+                </h4>
                 <ul className="space-y-1">
-                  {(market.containerFormats || ["20ft FCL", "40ft FCL", "Mixed Container"]).map((format, idx) => (
-                    <li key={idx} className="font-heading text-xl font-bold">{format}</li>
-                  ))}
+                  {(market.containerFormats || ["20ft FCL", "40ft FCL", "Mixed Container"]).map(
+                    (format, idx) => (
+                      <li key={idx} className="font-heading text-xl font-bold">
+                        {format}
+                      </li>
+                    )
+                  )}
                 </ul>
               </div>
             </div>
@@ -327,14 +406,20 @@ export default async function CountryMarketPage({ params }: PageProps) {
       <section className="py-24 lg:py-32 bg-background border-b border-border">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="flex items-center justify-between border-b-4 border-foreground pb-6 mb-16">
-            <h2 className="font-heading text-4xl lg:text-5xl font-black uppercase">{market.buyerProfilesHeading}</h2>
+            <h2 className="font-heading text-4xl lg:text-5xl font-black uppercase">
+              {market.buyerProfilesHeading}
+            </h2>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-16">
-            {market.buyerProfiles.map(profile => (
+            {market.buyerProfiles.map((profile) => (
               <div key={profile.id}>
-                <h3 className="font-bold uppercase tracking-widest text-sm mb-6 border-b border-primary pb-3 text-primary">{profile.title}</h3>
-                <p className="text-muted-foreground font-light leading-relaxed text-lg">{profile.description}</p>
+                <h3 className="font-bold uppercase tracking-widest text-sm mb-6 border-b border-primary pb-3 text-primary">
+                  {profile.title}
+                </h3>
+                <p className="text-muted-foreground font-light leading-relaxed text-lg">
+                  {profile.description}
+                </p>
               </div>
             ))}
           </div>
@@ -347,16 +432,21 @@ export default async function CountryMarketPage({ params }: PageProps) {
           <h2 className="font-heading text-5xl lg:text-6xl font-black uppercase mb-16 max-w-2xl">
             {market.resourcesHeading}
           </h2>
-          
+
           <div className="grid md:grid-cols-2 gap-6">
-            {market.resources.map(resource => {
+            {market.resources.map((resource) => {
               const Icon = IconMap[resource.icon];
               return (
-                <div key={resource.id} className="bg-background p-10 border border-border group hover:border-primary transition-colors flex items-center justify-between cursor-pointer">
+                <div
+                  key={resource.id}
+                  className="bg-background p-10 border border-border group hover:border-primary transition-colors flex items-center justify-between cursor-pointer"
+                >
                   <div>
                     <Icon className="w-8 h-8 text-primary mb-6" />
                     <h4 className="font-heading text-3xl font-bold mb-3">{resource.title}</h4>
-                    <p className="text-lg text-muted-foreground font-light">{resource.description}</p>
+                    <p className="text-lg text-muted-foreground font-light">
+                      {resource.description}
+                    </p>
                   </div>
                   <ArrowRight className="w-8 h-8 text-muted-foreground group-hover:text-primary transition-colors" />
                 </div>
@@ -368,28 +458,37 @@ export default async function CountryMarketPage({ params }: PageProps) {
 
       {/* SECTION 8: Gallery */}
       <section className="py-24 bg-background border-b border-border">
-         <div className="container mx-auto px-6 lg:px-12">
-            <h2 className="font-heading text-5xl font-black uppercase mb-16 text-center">{market.galleryHeading}</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {market.galleryImages.map((img, idx) => (
-                <div key={idx} className="aspect-square relative overflow-hidden bg-muted">
-                   <Image src={img.src} alt={img.alt} fill className="object-cover hover:scale-105 transition-transform duration-700"/>
-                   <div className="absolute bottom-4 left-4 text-white font-bold tracking-widest text-xs uppercase bg-black/50 px-2 py-1">{img.caption}</div>
+        <div className="container mx-auto px-6 lg:px-12">
+          <h2 className="font-heading text-5xl font-black uppercase mb-16 text-center">
+            {market.galleryHeading}
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {market.galleryImages.map((img, idx) => (
+              <div key={idx} className="aspect-square relative overflow-hidden bg-muted">
+                <Image
+                  loading="lazy"
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute bottom-4 left-4 text-white font-bold tracking-widest text-xs uppercase bg-black/50 px-2 py-1">
+                  {img.caption}
                 </div>
-              ))}
-            </div>
-         </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* SECTION 9: Country Specific FAQ */}
-      <FAQSection 
+      <FAQSection
         title={`Importing to ${market.name}: FAQ`}
         subtitle="Trade & Compliance Queries"
-        faqs={market.faqs} 
+        faqs={market.faqs}
         layout="editorial-list"
         className="bg-muted/10 py-24"
       />
-
     </main>
   );
 }

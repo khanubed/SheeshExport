@@ -27,7 +27,7 @@ export function CategoryQuality({ category }: { category: Category }) {
                 "Fumigation & Phytosanitary",
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
                   <span className="text-sm font-sans">{item}</span>
                 </div>
               ))}
