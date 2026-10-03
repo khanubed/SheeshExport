@@ -20,7 +20,7 @@ const CERTIFICATION_DIRECTORY = [
     detail: "Government of India regulatory body compliance for agro commodities.",
     markets: "Global",
     slug: "apeda",
-    image: "/images/certificates/APEDA.png.webp"
+    image: "/images/certificates/APEDA.png.webp",
   },
   {
     name: "FSSAI",
@@ -28,7 +28,7 @@ const CERTIFICATION_DIRECTORY = [
     detail: "Mandatory domestic processing and safety benchmark.",
     markets: "India • Global",
     slug: "fssai",
-    image: "/images/certificates/FSSAI.webp"
+    image: "/images/certificates/FSSAI.webp",
   },
   {
     name: "Spices Board",
@@ -36,7 +36,7 @@ const CERTIFICATION_DIRECTORY = [
     detail: "Mandatory quality testing for global spice exports.",
     markets: "Global",
     slug: "spices-board",
-    image: "/images/certificates/SPICES-BOARD-CERTIFICATE.webp"
+    image: "/images/certificates/SPICES-BOARD-CERTIFICATE.webp",
   },
   {
     name: "FIEO",
@@ -44,7 +44,7 @@ const CERTIFICATION_DIRECTORY = [
     detail: "Apex body of Indian export promotion organizations.",
     markets: "Global",
     slug: "fieo",
-    image: "/images/certificates/FIEO-Logo-Trans-1.webp"
+    image: "/images/certificates/FIEO-Logo-Trans-1.webp",
   },
   {
     name: "Star Export House",
@@ -52,7 +52,7 @@ const CERTIFICATION_DIRECTORY = [
     detail: "Recognized status for significant export performance.",
     markets: "Global",
     slug: "star-export-house",
-    image: "/images/certificates/star.webp"
+    image: "/images/certificates/star.webp",
   },
 ];
 
@@ -76,19 +76,34 @@ export default function CertificationsPage() {
             Global Certifications Supporting International Food Trade
           </h1>
           <p className="text-xl text-muted-foreground font-sans max-w-2xl font-light leading-relaxed font-sans mb-12">
-            Sheesh Exports maintains internationally recognized food safety, regulatory and export certifications to support buyers, distributors and food manufacturers across global markets.
+            Sheesh Exports maintains internationally recognized food safety, regulatory and export
+            certifications to support buyers, distributors and food manufacturers across global
+            markets.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <a href="#directory" className="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-4 font-medium tracking-wide hover:bg-primary/90 transition-colors">
+            <a
+              href="#directory"
+              className="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-4 font-medium tracking-wide hover:bg-primary/90 transition-colors"
+            >
               Explore Certifications
             </a>
-            <Link href="/contact" className="inline-flex items-center justify-center border border-[#0B2F26] text-primary px-8 py-4 font-medium tracking-wide hover:bg-primary/5 transition-colors">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center border border-[#0B2F26] text-primary px-8 py-4 font-medium tracking-wide hover:bg-primary/5 transition-colors"
+            >
               Request Compliance Documents
             </Link>
           </div>
         </div>
         <div className="w-full lg:w-[40%] h-[40vh] lg:h-[60vh] relative">
-          <Image src="/images/about/quality-assurance.webp" alt="Quality Inspection and Laboratory Testing" fill className="object-cover" priority />
+          <Image
+            loading="lazy"
+            src="/images/about/quality-assurance.webp"
+            alt="Quality Inspection and Laboratory Testing"
+            fill
+            className="object-cover"
+            priority
+          />
         </div>
       </section>
 
@@ -102,16 +117,28 @@ export default function CertificationsPage() {
               </h2>
               <div className="space-y-6 text-lg text-muted-foreground font-sans font-light leading-relaxed font-sans">
                 <p>
-                  <strong className="text-foreground font-medium block mb-1">Food Safety & Quality Assurance</strong>
-                  Our operations integrate continuous hazard analysis and preventative controls, ensuring that from the moment raw materials enter our facilities to the final container sealing, food safety is never compromised.
+                  <strong className="text-foreground font-medium block mb-1">
+                    Food Safety & Quality Assurance
+                  </strong>
+                  Our operations integrate continuous hazard analysis and preventative controls,
+                  ensuring that from the moment raw materials enter our facilities to the final
+                  container sealing, food safety is never compromised.
                 </p>
                 <p>
-                  <strong className="text-foreground font-medium block mb-1">Global Regulations & Traceability</strong>
-                  We maintain strict adherence to international Maximum Residue Limits (MRLs), aflatoxin standards, and microbiological safety requirements. Our batch-coding system ensures 100% farm-to-port traceability.
+                  <strong className="text-foreground font-medium block mb-1">
+                    Global Regulations & Traceability
+                  </strong>
+                  We maintain strict adherence to international Maximum Residue Limits (MRLs),
+                  aflatoxin standards, and microbiological safety requirements. Our batch-coding
+                  system ensures 100% farm-to-port traceability.
                 </p>
                 <p>
-                  <strong className="text-foreground font-medium block mb-1">Export Documentation & Buyer Confidence</strong>
-                  International trade requires precision. We provide complete, error-free documentation including Certificates of Origin, Phytosanitary Certificates, and Third-Party Lab Reports (SGS/Eurofins) to ensure seamless customs clearance.
+                  <strong className="text-foreground font-medium block mb-1">
+                    Export Documentation & Buyer Confidence
+                  </strong>
+                  International trade requires precision. We provide complete, error-free
+                  documentation including Certificates of Origin, Phytosanitary Certificates, and
+                  Third-Party Lab Reports (SGS/Eurofins) to ensure seamless customs clearance.
                 </p>
               </div>
             </div>
@@ -137,11 +164,32 @@ export default function CertificationsPage() {
                   Third Party Verification
                 </li>
               </ul>
-              
+
               <div className="mt-8 pt-6 border-t border-border flex flex-wrap gap-4 items-center">
-                <Image src="/images/certificates/MSME_logo_colour.svg" alt="MSME" width={80} height={40} className="object-contain grayscale mix-blend-multiply opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" />
-                <Image src="/images/certificates/gst-1.webp" alt="GST" width={80} height={40} className="object-contain grayscale mix-blend-multiply opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" />
-                <Image src="/images/certificates/IEC-CERTIFICATE.png.webp" alt="IEC" width={80} height={40} className="object-contain grayscale mix-blend-multiply opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" />
+                <Image
+                  loading="lazy"
+                  src="/images/certificates/MSME_logo_colour.svg"
+                  alt="MSME"
+                  width={80}
+                  height={40}
+                  className="object-contain grayscale mix-blend-multiply opacity-70 hover:grayscale-0 hover:opacity-100 transition-all"
+                />
+                <Image
+                  loading="lazy"
+                  src="/images/certificates/gst-1.webp"
+                  alt="GST"
+                  width={80}
+                  height={40}
+                  className="object-contain grayscale mix-blend-multiply opacity-70 hover:grayscale-0 hover:opacity-100 transition-all"
+                />
+                <Image
+                  loading="lazy"
+                  src="/images/certificates/IEC-CERTIFICATE.png.webp"
+                  alt="IEC"
+                  width={80}
+                  height={40}
+                  className="object-contain grayscale mix-blend-multiply opacity-70 hover:grayscale-0 hover:opacity-100 transition-all"
+                />
               </div>
             </div>
           </div>
@@ -159,25 +207,40 @@ export default function CertificationsPage() {
               <div key={idx} className="border-t border-input pt-8 flex flex-col md:flex-row gap-8">
                 <div className="flex-1">
                   <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-3">
-                    <h3 className="font-heading text-4xl font-medium text-foreground">{cert.name}</h3>
-                    <span className="text-primary font-medium tracking-wide mt-2 md:mt-0">{cert.desc}</span>
+                    <h3 className="font-heading text-4xl font-medium text-foreground">
+                      {cert.name}
+                    </h3>
+                    <span className="text-primary font-medium tracking-wide mt-2 md:mt-0">
+                      {cert.desc}
+                    </span>
                   </div>
                   <p className="text-xl text-muted-foreground font-sans font-light mb-6 max-w-2xl">
                     {cert.detail}
                   </p>
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div>
-                      <span className="text-xs uppercase tracking-wider text-muted-foreground font-sans font-semibold block mb-1">Applicable Markets</span>
+                      <span className="text-xs uppercase tracking-wider text-muted-foreground font-sans font-semibold block mb-1">
+                        Applicable Markets
+                      </span>
                       <span className="text-foreground font-medium">{cert.markets}</span>
                     </div>
-                    <Link href={`/certifications/${cert.slug}`} className="inline-flex items-center text-foreground hover:text-primary font-medium tracking-wide uppercase text-sm transition-colors">
+                    <Link
+                      href={`/certifications/${cert.slug}`}
+                      className="inline-flex items-center text-foreground hover:text-primary font-medium tracking-wide uppercase text-sm transition-colors"
+                    >
                       View Certification <ArrowRight className="ml-2 w-4 h-4" />
                     </Link>
                   </div>
                 </div>
                 {cert.image && (
                   <div className="w-full md:w-[200px] h-[120px] bg-card border border-border flex items-center justify-center p-4 relative flex-shrink-0 group">
-                    <Image src={cert.image} alt={cert.name} fill className="object-contain p-4transition-all duration-500" />
+                    <Image
+                      loading="lazy"
+                      src={cert.image}
+                      alt={cert.name}
+                      fill
+                      className="object-contain p-4transition-all duration-500"
+                    />
                   </div>
                 )}
               </div>
@@ -196,23 +259,60 @@ export default function CertificationsPage() {
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr>
-                  <th className="border-b-2 border-[#1E1E1E] py-3 md:py-4 px-2 md:px-4 font-heading text-sm sm:text-base md:text-xl font-medium text-primary w-[30%] sm:w-auto align-bottom">Certification</th>
-                  <th className="border-b-2 border-[#1E1E1E] py-3 md:py-4 px-1 md:px-4 font-heading text-xs sm:text-base md:text-xl font-medium text-primary text-center align-bottom">USA</th>
-                  <th className="border-b-2 border-[#1E1E1E] py-3 md:py-4 px-1 md:px-4 font-heading text-xs sm:text-base md:text-xl font-medium text-primary text-center align-bottom">EU</th>
-                  <th className="border-b-2 border-[#1E1E1E] py-3 md:py-4 px-1 md:px-4 font-heading text-xs sm:text-base md:text-xl font-medium text-primary text-center align-bottom">UAE</th>
-                  <th className="border-b-2 border-[#1E1E1E] py-3 md:py-4 px-1 md:px-4 font-heading text-xs sm:text-base md:text-xl font-medium text-primary text-center align-bottom">Saudi</th>
-                  <th className="border-b-2 border-[#1E1E1E] py-3 md:py-4 px-1 md:px-4 font-heading text-xs sm:text-base md:text-xl font-medium text-primary text-center align-bottom">UK</th>
+                  <th className="border-b-2 border-[#1E1E1E] py-3 md:py-4 px-2 md:px-4 font-heading text-sm sm:text-base md:text-xl font-medium text-primary w-[30%] sm:w-auto align-bottom">
+                    Certification
+                  </th>
+                  <th className="border-b-2 border-[#1E1E1E] py-3 md:py-4 px-1 md:px-4 font-heading text-xs sm:text-base md:text-xl font-medium text-primary text-center align-bottom">
+                    USA
+                  </th>
+                  <th className="border-b-2 border-[#1E1E1E] py-3 md:py-4 px-1 md:px-4 font-heading text-xs sm:text-base md:text-xl font-medium text-primary text-center align-bottom">
+                    EU
+                  </th>
+                  <th className="border-b-2 border-[#1E1E1E] py-3 md:py-4 px-1 md:px-4 font-heading text-xs sm:text-base md:text-xl font-medium text-primary text-center align-bottom">
+                    UAE
+                  </th>
+                  <th className="border-b-2 border-[#1E1E1E] py-3 md:py-4 px-1 md:px-4 font-heading text-xs sm:text-base md:text-xl font-medium text-primary text-center align-bottom">
+                    Saudi
+                  </th>
+                  <th className="border-b-2 border-[#1E1E1E] py-3 md:py-4 px-1 md:px-4 font-heading text-xs sm:text-base md:text-xl font-medium text-primary text-center align-bottom">
+                    UK
+                  </th>
                 </tr>
               </thead>
               <tbody className="text-xs sm:text-sm md:text-lg">
                 {MATRIX.map((row, idx) => (
-                  <tr key={idx} className="border-b border-border hover:bg-background/50 transition-colors">
-                    <td className="py-3 md:py-4 px-2 md:px-4 font-medium text-foreground leading-snug">{row.cert}</td>
-                    <td className={`py-3 md:py-4 px-1 md:px-4 text-center ${row.usa === '✓' ? 'text-primary' : 'text-muted-foreground font-sans'}`}>{row.usa}</td>
-                    <td className={`py-3 md:py-4 px-1 md:px-4 text-center ${row.eu === '✓' ? 'text-primary' : 'text-muted-foreground font-sans'}`}>{row.eu}</td>
-                    <td className={`py-3 md:py-4 px-1 md:px-4 text-center ${row.uae === '✓' ? 'text-primary' : 'text-muted-foreground font-sans'}`}>{row.uae}</td>
-                    <td className={`py-3 md:py-4 px-1 md:px-4 text-center ${row.saudi === '✓' ? 'text-primary' : 'text-muted-foreground font-sans'}`}>{row.saudi}</td>
-                    <td className={`py-3 md:py-4 px-1 md:px-4 text-center ${row.uk === '✓' ? 'text-primary' : 'text-muted-foreground font-sans'}`}>{row.uk}</td>
+                  <tr
+                    key={idx}
+                    className="border-b border-border hover:bg-background/50 transition-colors"
+                  >
+                    <td className="py-3 md:py-4 px-2 md:px-4 font-medium text-foreground leading-snug">
+                      {row.cert}
+                    </td>
+                    <td
+                      className={`py-3 md:py-4 px-1 md:px-4 text-center ${row.usa === "✓" ? "text-primary" : "text-muted-foreground font-sans"}`}
+                    >
+                      {row.usa}
+                    </td>
+                    <td
+                      className={`py-3 md:py-4 px-1 md:px-4 text-center ${row.eu === "✓" ? "text-primary" : "text-muted-foreground font-sans"}`}
+                    >
+                      {row.eu}
+                    </td>
+                    <td
+                      className={`py-3 md:py-4 px-1 md:px-4 text-center ${row.uae === "✓" ? "text-primary" : "text-muted-foreground font-sans"}`}
+                    >
+                      {row.uae}
+                    </td>
+                    <td
+                      className={`py-3 md:py-4 px-1 md:px-4 text-center ${row.saudi === "✓" ? "text-primary" : "text-muted-foreground font-sans"}`}
+                    >
+                      {row.saudi}
+                    </td>
+                    <td
+                      className={`py-3 md:py-4 px-1 md:px-4 text-center ${row.uk === "✓" ? "text-primary" : "text-muted-foreground font-sans"}`}
+                    >
+                      {row.uk}
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -230,7 +330,9 @@ export default function CertificationsPage() {
           <div className="grid md:grid-cols-3 gap-12">
             <div>
               <Link href="/products/whole-spices/red-chilli" className="group">
-                <h3 className="font-heading text-3xl font-medium text-foreground mb-6 group-hover:text-secondary transition-colors">Red Chilli</h3>
+                <h3 className="font-heading text-3xl font-medium text-foreground mb-6 group-hover:text-secondary transition-colors">
+                  Red Chilli
+                </h3>
               </Link>
               <ul className="space-y-3 text-lg text-muted-foreground font-sans font-light">
                 <li>ISO 22000</li>
@@ -242,7 +344,9 @@ export default function CertificationsPage() {
             </div>
             <div>
               <Link href="/products/whole-spices/turmeric" className="group">
-                <h3 className="font-heading text-3xl font-medium text-foreground mb-6 group-hover:text-secondary transition-colors">Turmeric</h3>
+                <h3 className="font-heading text-3xl font-medium text-foreground mb-6 group-hover:text-secondary transition-colors">
+                  Turmeric
+                </h3>
               </Link>
               <ul className="space-y-3 text-lg text-muted-foreground font-sans font-light">
                 <li>ISO 22000</li>
@@ -254,7 +358,9 @@ export default function CertificationsPage() {
             </div>
             <div>
               <Link href="/products/whole-spices/cumin" className="group">
-                <h3 className="font-heading text-3xl font-medium text-foreground mb-6 group-hover:text-secondary transition-colors">Cumin Seeds</h3>
+                <h3 className="font-heading text-3xl font-medium text-foreground mb-6 group-hover:text-secondary transition-colors">
+                  Cumin Seeds
+                </h3>
               </Link>
               <ul className="space-y-3 text-lg text-muted-foreground font-sans font-light">
                 <li>ISO 22000</li>
@@ -296,20 +402,24 @@ export default function CertificationsPage() {
         faqs={[
           {
             question: "What certifications do you provide?",
-            answer: "We provide globally recognized certifications including ISO 22000, US FDA Registration, HALAL, KOSHER, HACCP, and compliance documents from APEDA and Spices Board of India."
+            answer:
+              "We provide globally recognized certifications including ISO 22000, US FDA Registration, HALAL, KOSHER, HACCP, and compliance documents from APEDA and Spices Board of India.",
           },
           {
             question: "Can certificates be shared before ordering?",
-            answer: "Yes, authenticated copies of our certifications and sample lab reports can be provided to verified buyers during the procurement due diligence phase."
+            answer:
+              "Yes, authenticated copies of our certifications and sample lab reports can be provided to verified buyers during the procurement due diligence phase.",
           },
           {
             question: "Do certifications cover all products?",
-            answer: "Most certifications like ISO 22000 and APEDA cover our entire processing facility and export operations. Specific product batches receive unique Phytosanitary and SGS testing certificates."
+            answer:
+              "Most certifications like ISO 22000 and APEDA cover our entire processing facility and export operations. Specific product batches receive unique Phytosanitary and SGS testing certificates.",
           },
           {
             question: "Do you support third-party inspections?",
-            answer: "Absolutely. We routinely work with international surveying agencies like SGS, Bureau Veritas, and Eurofins for pre-shipment inspection (PSI) and container stuffing supervision."
-          }
+            answer:
+              "Absolutely. We routinely work with international surveying agencies like SGS, Bureau Veritas, and Eurofins for pre-shipment inspection (PSI) and container stuffing supervision.",
+          },
         ]}
       />
 
@@ -317,16 +427,26 @@ export default function CertificationsPage() {
       <section className="py-20 lg:py-24 bg-primary text-primary-foreground">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-4xl text-center">
           <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-medium mb-10">
-            Need Product-Specific<br/> Compliance Documentation?
+            Need Product-Specific
+            <br /> Compliance Documentation?
           </h2>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <Link href="/contact" className="inline-flex items-center justify-center bg-secondary text-primary px-8 py-4 font-medium tracking-wide w-full sm:w-auto hover:bg-secondary/90 transition-colors">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center bg-secondary text-primary px-8 py-4 font-medium tracking-wide w-full sm:w-auto hover:bg-secondary/90 transition-colors"
+            >
               Request Documents
             </Link>
-            <Link href="/contact" className="inline-flex items-center justify-center border border-primary-foreground/30 text-primary-foreground px-8 py-4 font-medium tracking-wide w-full sm:w-auto hover:bg-card/5 transition-colors">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center border border-primary-foreground/30 text-primary-foreground px-8 py-4 font-medium tracking-wide w-full sm:w-auto hover:bg-card/5 transition-colors"
+            >
               Contact Compliance Team
             </Link>
-            <Link href="/request-quote" className="inline-flex items-center justify-center text-primary-foreground underline-offset-4 hover:text-secondary hover:underline px-8 py-4 font-light w-full sm:w-auto transition-colors">
+            <Link
+              href="/request-quote"
+              className="inline-flex items-center justify-center text-primary-foreground underline-offset-4 hover:text-secondary hover:underline px-8 py-4 font-light w-full sm:w-auto transition-colors"
+            >
               Request Quote
             </Link>
           </div>

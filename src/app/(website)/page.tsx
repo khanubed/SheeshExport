@@ -303,7 +303,7 @@ export default function HomePage() {
       <section aria-labelledby="advantage-heading" className="relative py-16 border-y border-border overflow-hidden bg-black">
         <div className="absolute inset-0 z-0">
           <video autoPlay loop muted playsInline aria-hidden="true" className="object-cover w-full h-full grayscale opacity-30">
-            <source src="/12351626_3840_2160_30fps.webm" type="video/webm" />
+            <source src="/masala.webm" type="video/webm" />
           </video>
           <div className="absolute inset-0 bg-black/50" />
         </div>
