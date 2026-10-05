@@ -40,7 +40,7 @@ export function CatalogHeader({
         <div className="hidden sm:flex items-center gap-3">
           <span className="text-sm font-medium text-foreground whitespace-nowrap">Sort by:</span>
           <Select value={sort} onValueChange={(val) => val && setSort(val.toString())}>
-            <SelectTrigger className="w-[180px] bg-background">
+            <SelectTrigger className="w-45 bg-background">
               <SelectValue placeholder="Sort order" />
             </SelectTrigger>
             <SelectContent>
@@ -52,7 +52,7 @@ export function CatalogHeader({
         </div>
 
         {/* Mobile Sort Dropdown */}
-        <div className="sm:hidden w-full max-w-[150px]">
+        <div className="sm:hidden w-full max-w-37.5">
           <Select value={sort} onValueChange={(val) => val && setSort(val.toString())}>
             <SelectTrigger className="w-full bg-background">
               <SelectValue placeholder="Sort" />

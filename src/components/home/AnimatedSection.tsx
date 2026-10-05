@@ -1,56 +1,68 @@
-"use client"
+import { ReactNode, HTMLAttributes } from "react";
 
-import { HTMLMotionProps, motion } from "framer-motion";
-import { ReactNode } from "react";
+interface SectionProps extends HTMLAttributes<HTMLDivElement> {
+  children?: ReactNode;
+  delay?: number;
+  className?: string;
+  viewport?: unknown;
+  initial?: unknown;
+  animate?: unknown;
+  whileInView?: unknown;
+  transition?: unknown;
+  variants?: unknown;
+}
 
-export function FadeIn({ children, delay = 0, className = "", ...props }: { children: ReactNode, delay?: number, className?: string } & HTMLMotionProps<"div">) {
+export function FadeIn({
+  children,
+  className = "",
+  delay: _delay,
+  viewport: _viewport,
+  initial: _initial,
+  animate: _animate,
+  whileInView: _whileInView,
+  transition: _transition,
+  variants: _variants,
+  ...props
+}: SectionProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.5, delay }}
-      className={className}
-      {...props}
-    >
+    <div className={className} {...props}>
       {children}
-    </motion.div>
+    </div>
   );
 }
 
-export function StaggerContainer({ children, className = "", ...props }: { children: ReactNode, className?: string } & HTMLMotionProps<"div">) {
+export function StaggerContainer({
+  children,
+  className = "",
+  viewport: _viewport,
+  initial: _initial,
+  animate: _animate,
+  whileInView: _whileInView,
+  transition: _transition,
+  variants: _variants,
+  ...props
+}: SectionProps) {
   return (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-50px" }}
-      variants={{
-        hidden: {},
-        visible: {
-          transition: {
-            staggerChildren: 0.1
-          }
-        }
-      }}
-      className={className}
-      {...props}
-    >
+    <div className={className} {...props}>
       {children}
-    </motion.div>
+    </div>
   );
 }
 
-export function StaggerItem({ children, className = "", ...props }: { children: ReactNode, className?: string } & HTMLMotionProps<"div">) {
+export function StaggerItem({
+  children,
+  className = "",
+  viewport: _viewport,
+  initial: _initial,
+  animate: _animate,
+  whileInView: _whileInView,
+  transition: _transition,
+  variants: _variants,
+  ...props
+}: SectionProps) {
   return (
-    <motion.div
-      variants={{
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-      }}
-      className={className}
-      {...props}
-    >
+    <div className={className} {...props}>
       {children}
-    </motion.div>
+    </div>
   );
 }

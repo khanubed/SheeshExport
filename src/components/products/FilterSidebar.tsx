@@ -67,7 +67,7 @@ export function FilterSidebar({ filters, setFilters }: FilterSidebarProps) {
         </div>
       </div>
 
-      <div className="w-full h-[1px] bg-border" />
+      <div className="w-full h-px bg-border" />
 
       {/* Accordion Filters */}
       {/* @ts-expect-error - Base UI types might not be perfectly mapped */}

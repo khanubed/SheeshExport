@@ -13,7 +13,17 @@ export default function manifest(): MetadataRoute.Manifest {
     icons: [
       {
         src: "/favicon.webp",
-        sizes: "any",
+        sizes: "100x100",
+        type: "image/webp",
+      },
+      {
+        src: "/icon-192.webp",
+        sizes: "192x192",
+        type: "image/webp",
+      },
+      {
+        src: "/icon-512.webp",
+        sizes: "512x512",
         type: "image/webp",
       },
     ],

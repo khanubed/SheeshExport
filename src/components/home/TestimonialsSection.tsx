@@ -78,9 +78,14 @@ export function TestimonialsSection() {
   };
 
   useEffect(() => {
-    checkScrollState();
+    const frameId = requestAnimationFrame(() => {
+      checkScrollState();
+    });
     window.addEventListener("resize", checkScrollState);
-    return () => window.removeEventListener("resize", checkScrollState);
+    return () => {
+      cancelAnimationFrame(frameId);
+      window.removeEventListener("resize", checkScrollState);
+    };
   }, []);
 
   const scroll = (direction: "left" | "right") => {

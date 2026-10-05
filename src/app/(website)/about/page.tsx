@@ -51,34 +51,47 @@ const BUYER_BENEFITS = [
 const ABOUT_FAQS = [
   {
     question: "Is Sheesh Exports an APEDA registered Indian spices exporter?",
-    answer: "Yes, Sheesh Exports is a fully APEDA-registered and Spices Board of India-certified exporter. We comply with all governmental regulations to legally export premium Indian spices, agro commodities, and food ingredients to over 50 countries worldwide."
+    answer:
+      "Yes, Sheesh Exports is a fully APEDA-registered and Spices Board of India-certified exporter. We comply with all governmental regulations to legally export premium Indian spices, agro commodities, and food ingredients to over 50 countries worldwide.",
   },
   {
     question: "Do you supply bulk Indian spices directly from the farmers?",
-    answer: "Absolutely. We are direct bulk spice suppliers in India, sourcing raw materials like Guntur Red Chilli, Erode Turmeric, and Unjha Cumin directly from verified farming networks. This allows us to maintain strict quality control and offer competitive wholesale pricing."
+    answer:
+      "Absolutely. We are direct bulk spice suppliers in India, sourcing raw materials like Guntur Red Chilli, Erode Turmeric, and Unjha Cumin directly from verified farming networks. This allows us to maintain strict quality control and offer competitive wholesale pricing.",
   },
   {
     question: "Are your export facilities FSSAI and ISO certified?",
-    answer: "Our processing and warehousing facilities are strictly FSSAI certified and hold ISO 22000 certifications for food safety management. We also maintain US FDA registration and provide Halal and Kosher certifications for specific markets like the Middle East and North America."
+    answer:
+      "Our processing and warehousing facilities are strictly FSSAI certified and hold ISO 22000 certifications for food safety management. We also maintain US FDA registration and provide Halal and Kosher certifications for specific markets like the Middle East and North America.",
   },
   {
     question: "What makes you different from other agro commodity exporters in India?",
-    answer: "Unlike traditional traders, we operate a fully integrated supply chain. We handle the farm-level sourcing, mechanical cleaning, optical sortexing, lab testing, and custom packaging in-house. This ensures that every container leaving our facility meets precise international import standards without adulteration risks."
-  }
+    answer:
+      "Unlike traditional traders, we operate a fully integrated supply chain. We handle the farm-level sourcing, mechanical cleaning, optical sortexing, lab testing, and custom packaging in-house. This ensures that every container leaving our facility meets precise international import standards without adulteration risks.",
+  },
 ];
 
 export default function AboutPage() {
   return (
-    <main className="bg-background min-h-screen text-foreground font-sans selection:bg-primary selection:text-white" role="main">
+    <main
+      className="bg-background min-h-screen text-foreground font-sans selection:bg-primary selection:text-white"
+      role="main"
+    >
       {/* SECTION 01: HERO */}
-      <section aria-labelledby="about-hero-heading" className="relative min-h-[90vh] flex items-center pt-24 pb-12 overflow-hidden">
+      <section
+        aria-labelledby="about-hero-heading"
+        className="relative min-h-[90vh] flex items-center pt-24 pb-12 overflow-hidden"
+      >
         <AboutHeroSwiper />
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 max-w-8xl">
           <FadeIn className="max-w-4xl">
             <span className="inline-block text-secondary font-semibold tracking-[0.2em] uppercase text-sm mb-6 border-b border-secondary/30 pb-2">
               India's Trusted Export Partner
             </span>
-            <h1 id="about-hero-heading" className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-white leading-[1.05] mb-8 drop-shadow-lg">
+            <h1
+              id="about-hero-heading"
+              className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-white leading-[1.05] mb-8 drop-shadow-lg"
+            >
               For Spices, Agro Commodities & Food Ingredients
             </h1>
             <p className="text-lg sm:text-xl text-white/90 max-w-2xl font-light leading-relaxed drop-shadow-md">
@@ -94,7 +107,10 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-8xl">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <FadeIn>
-              <h2 id="who-we-are-heading" className="font-heading text-4xl sm:text-5xl lg:text-6xl font-medium text-primary leading-[1.1] mb-8">
+              <h2
+                id="who-we-are-heading"
+                className="font-heading text-4xl sm:text-5xl lg:text-6xl font-medium text-primary leading-[1.1] mb-8"
+              >
                 Built Around Supply Reliability, Quality Consistency & Global Trade Expertise
               </h2>
               <div className="space-y-6 text-lg text-foreground/80 font-light leading-relaxed">
@@ -118,7 +134,7 @@ export default function AboutPage() {
             </FadeIn>
             <FadeIn
               delay={0.2}
-              className="relative h-[600px] w-full rounded-sm overflow-hidden shadow-2xl"
+              className="relative h-150 w-full rounded-sm overflow-hidden shadow-2xl"
             >
               <figure className="relative w-full h-full" style={{ position: "relative" }}>
                 <Image
@@ -128,7 +144,9 @@ export default function AboutPage() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
                 />
-                <figcaption className="sr-only">Our state-of-the-art spice processing facility</figcaption>
+                <figcaption className="sr-only">
+                  Our state-of-the-art spice processing facility
+                </figcaption>
               </figure>
             </FadeIn>
           </div>
@@ -136,14 +154,24 @@ export default function AboutPage() {
       </section>
 
       {/* SECTION 03: WHAT WE EXPORT */}
-      <section aria-labelledby="what-we-export-heading" className="py-24 bg-white border-y border-primary/10">
+      <section
+        aria-labelledby="what-we-export-heading"
+        className="py-24 bg-white border-y border-primary/10"
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-8xl">
           <FadeIn className="mb-16">
-            <h2 id="what-we-export-heading" className="font-heading text-4xl sm:text-5xl font-medium text-primary text-center">
+            <h2
+              id="what-we-export-heading"
+              className="font-heading text-4xl sm:text-5xl font-medium text-primary text-center"
+            >
               What We Export
             </h2>
           </FadeIn>
-          <StaggerContainer className="grid grid-cols-2 lg:grid-cols-3 gap-1" role="list" aria-label="Product categories">
+          <StaggerContainer
+            className="grid grid-cols-2 lg:grid-cols-3 gap-1"
+            role="list"
+            aria-label="Product categories"
+          >
             {CATEGORIES_DATA.map((cat, idx) => (
               <StaggerItem
                 key={idx}
@@ -158,11 +186,11 @@ export default function AboutPage() {
                         alt={cat.name}
                         fill
                         sizes="(max-width: 1024px) 50vw, 33vw"
-                        className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out grayscale-[20%] group-hover:grayscale-0"
+                        className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out grayscale-20 group-hover:grayscale-0"
                       />
                       <figcaption className="sr-only">{cat.name} category</figcaption>
                     </figure>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
                     <div className="absolute bottom-8 left-8">
                       <h3 className="font-heading text-3xl text-white font-medium tracking-wide">
                         {cat.name}
@@ -178,13 +206,25 @@ export default function AboutPage() {
       </section>
 
       {/* SECTION 04: FARM TO GLOBAL MARKET */}
-      <section aria-labelledby="farm-to-market-heading" className="py-32 bg-primary text-white overflow-hidden relative">
+      <section
+        aria-labelledby="farm-to-market-heading"
+        className="py-32 bg-primary text-white overflow-hidden relative"
+      >
         <div className="absolute inset-0 opacity-10">
-          <Image src="/images/about/texture-map.webp" alt="Texture" fill className="object-cover" />
+          <Image
+            loading="lazy"
+            src="/images/about/texture-map.webp"
+            alt="Texture"
+            fill
+            className="object-cover"
+          />
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-8xl relative z-10">
           <FadeIn className="mb-20">
-            <h2 id="farm-to-market-heading" className="font-heading text-4xl sm:text-5xl lg:text-6xl font-medium text-[#F9F8F6] text-center">
+            <h2
+              id="farm-to-market-heading"
+              className="font-heading text-4xl sm:text-5xl lg:text-6xl font-medium text-[#F9F8F6] text-center"
+            >
               Farm To Global Market
             </h2>
             <p className="text-center text-secondary tracking-[0.2em] uppercase text-sm mt-4">
@@ -194,18 +234,31 @@ export default function AboutPage() {
 
           <div className="relative mt-12 lg:mt-24">
             {/* Desktop horizontal line */}
-            <div className="hidden lg:block absolute top-[7px] left-0 w-full h-[2px] bg-white/20" aria-hidden="true" />
-            
-            {/* Mobile/Tablet vertical line */}
-            <div className="lg:hidden absolute top-[7px] bottom-[7px] left-[7px] w-[2px] bg-white/20" aria-hidden="true" />
+            <div
+              className="hidden lg:block absolute top-1.75 left-0 w-full h-0.5 bg-white/20"
+              aria-hidden="true"
+            />
 
-            <StaggerContainer className="grid grid-cols-1 lg:grid-cols-8 gap-y-10 lg:gap-x-4 relative z-10" role="list" aria-label="Supply chain steps">
+            {/* Mobile/Tablet vertical line */}
+            <div
+              className="lg:hidden absolute top-1.75 bottom-1.75 left-1.75 w-0.5 bg-white/20"
+              aria-hidden="true"
+            />
+
+            <StaggerContainer
+              className="grid grid-cols-1 lg:grid-cols-8 gap-y-10 lg:gap-x-4 relative z-10"
+              role="list"
+              aria-label="Supply chain steps"
+            >
               {JOURNEY_STEPS.map((step, idx) => (
                 <StaggerItem key={idx} className="relative group" role="listitem">
                   <article className="flex flex-row lg:flex-col items-start lg:items-center text-left lg:text-center w-full">
                     {/* The Dot */}
-                    <div className="shrink-0 w-[16px] h-[16px] rounded-full bg-secondary shadow-[0_0_15px_rgba(197,160,89,0.5)] group-hover:scale-150 transition-transform duration-300 relative z-20 mt-1 lg:mt-0 mr-6 lg:mr-0 lg:mb-6" aria-hidden="true" />
-                    
+                    <div
+                      className="shrink-0 w-4 h-4 rounded-full bg-secondary shadow-[0_0_15px_rgba(197,160,89,0.5)] group-hover:scale-150 transition-transform duration-300 relative z-20 mt-1 lg:mt-0 mr-6 lg:mr-0 lg:mb-6"
+                      aria-hidden="true"
+                    />
+
                     {/* Content */}
                     <div className="flex-1 lg:w-full">
                       <h3 className="font-heading text-xl lg:text-sm xl:text-base font-medium text-[#F9F8F6] mb-2">
@@ -227,7 +280,7 @@ export default function AboutPage() {
       <section aria-labelledby="india-origins-heading" className="py-24 sm:py-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-8xl">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <FadeIn className="order-2 lg:order-1 relative h-[600px] w-full">
+            <FadeIn className="order-2 lg:order-1 relative h-150 w-full">
               {/* Using a clean map placeholder, user mentioned "Clean India Map. Not interactive." */}
               <figure className="relative w-full h-full" style={{ position: "relative" }}>
                 <Image
@@ -245,7 +298,10 @@ export default function AboutPage() {
               <span className="text-secondary font-semibold tracking-[0.2em] uppercase text-sm mb-4 block">
                 India Origins
               </span>
-              <h2 id="india-origins-heading" className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-12">
+              <h2
+                id="india-origins-heading"
+                className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-12"
+              >
                 Sourced from the Finest Terroirs
               </h2>
 
@@ -297,13 +353,22 @@ export default function AboutPage() {
       </section>
 
       {/* SECTION 06: GLOBAL REACH */}
-      <section aria-labelledby="global-reach-heading" className="py-12 md:py-16 lg:py-24 bg-white text-center flex flex-col justify-center max-h-screen overflow-hidden">
+      <section
+        aria-labelledby="global-reach-heading"
+        className="py-12 md:py-16 lg:py-24 bg-white text-center flex flex-col justify-center max-h-screen overflow-hidden"
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-8xl h-full flex flex-col justify-center">
           <FadeIn className="flex flex-col items-center h-full">
-            <h2 id="global-reach-heading" className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-primary mb-6 md:mb-10">
+            <h2
+              id="global-reach-heading"
+              className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-primary mb-6 md:mb-10"
+            >
               Serving Importers Across 50+ Countries
             </h2>
-            <figure className="relative w-full h-[35vh] sm:h-[40vh] md:h-[50vh] lg:h-[55vh] max-h-[600px] mb-8 md:mb-10 opacity-80 mix-blend-multiply" style={{ position: "relative" }}>
+            <figure
+              className="relative w-full h-[35vh] sm:h-[40vh] md:h-[50vh] lg:h-[55vh] max-h-150 mb-8 md:mb-10 opacity-80 mix-blend-multiply"
+              style={{ position: "relative" }}
+            >
               <Image
                 src="/world-map.webp"
                 alt="Global Export Routes"
@@ -312,17 +377,30 @@ export default function AboutPage() {
                 className="object-contain"
                 priority
               />
-              <figcaption className="sr-only">World map showing export routes to 50+ countries</figcaption>
+              <figcaption className="sr-only">
+                World map showing export routes to 50+ countries
+              </figcaption>
             </figure>
-            <nav className="flex flex-wrap justify-center items-center gap-x-3 sm:gap-x-6 md:gap-x-10 gap-y-3 text-foreground/80 font-heading text-sm sm:text-lg lg:text-xl tracking-wide" aria-label="Export regions">
+            <nav
+              className="flex flex-wrap justify-center items-center gap-x-3 sm:gap-x-6 md:gap-x-10 gap-y-3 text-foreground/80 font-heading text-sm sm:text-lg lg:text-xl tracking-wide"
+              aria-label="Export regions"
+            >
               <span>North America</span>
-              <span aria-hidden="true" className="text-primary/40">•</span>
+              <span aria-hidden="true" className="text-primary/40">
+                •
+              </span>
               <span>Europe</span>
-              <span aria-hidden="true" className="text-primary/40">•</span>
+              <span aria-hidden="true" className="text-primary/40">
+                •
+              </span>
               <span>Middle East</span>
-              <span aria-hidden="true" className="hidden sm:inline text-primary/40">•</span>
+              <span aria-hidden="true" className="hidden sm:inline text-primary/40">
+                •
+              </span>
               <span>Africa</span>
-              <span aria-hidden="true" className="text-primary/40">•</span>
+              <span aria-hidden="true" className="text-primary/40">
+                •
+              </span>
               <span>Asia Pacific</span>
             </nav>
           </FadeIn>
@@ -330,11 +408,17 @@ export default function AboutPage() {
       </section>
 
       {/* SECTION 07: QUALITY & COMPLIANCE */}
-      <section aria-labelledby="quality-compliance-heading" className="py-24 sm:py-32 bg-background">
+      <section
+        aria-labelledby="quality-compliance-heading"
+        className="py-24 sm:py-32 bg-background"
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-8xl">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <FadeIn>
-              <h2 id="quality-compliance-heading" className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-6">
+              <h2
+                id="quality-compliance-heading"
+                className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-6"
+              >
                 Quality Assurance
               </h2>
               <div className="w-12 h-0.5 bg-secondary mb-8" />
@@ -356,7 +440,11 @@ export default function AboutPage() {
               <h3 className="font-heading text-2xl font-medium text-foreground mb-10 pb-4 border-b border-black/10">
                 Official Certifications
               </h3>
-              <ul className="grid grid-cols-2 gap-y-8 gap-x-4" role="list" aria-label="Certifications">
+              <ul
+                className="grid grid-cols-2 gap-y-8 gap-x-4"
+                role="list"
+                aria-label="Certifications"
+              >
                 <li role="listitem" className="flex items-center gap-4">
                   <ShieldCheck className="w-6 h-6 text-primary" aria-hidden="true" />
                   <span className="font-medium tracking-wide">ISO 22000</span>
@@ -388,10 +476,16 @@ export default function AboutPage() {
       </section>
 
       {/* SECTION 08: INFRASTRUCTURE */}
-      <section aria-labelledby="infrastructure-heading" className="py-24 sm:py-32 bg-[#1C1C1C] text-white">
+      <section
+        aria-labelledby="infrastructure-heading"
+        className="py-24 sm:py-32 bg-[#1C1C1C] text-white"
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-8xl">
           <FadeIn className="mb-16">
-            <h2 id="infrastructure-heading" className="font-heading text-4xl sm:text-5xl font-medium text-[#F9F8F6]">
+            <h2
+              id="infrastructure-heading"
+              className="font-heading text-4xl sm:text-5xl font-medium text-[#F9F8F6]"
+            >
               Industrial Infrastructure
             </h2>
             <p className="text-[#F9F8F6]/60 mt-4 max-w-2xl font-light text-lg">
@@ -401,8 +495,12 @@ export default function AboutPage() {
             </p>
           </FadeIn>
 
-          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" role="list" aria-label="Infrastructure facilities">
-            <StaggerItem className="relative h-[350px] group overflow-hidden" role="listitem">
+          <StaggerContainer
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+            role="list"
+            aria-label="Infrastructure facilities"
+          >
+            <StaggerItem className="relative h-87.5 group overflow-hidden" role="listitem">
               <figure className="relative w-full h-full" style={{ position: "relative" }}>
                 <Image
                   src="/images/about/infra-processing.webp"
@@ -414,10 +512,12 @@ export default function AboutPage() {
                 <figcaption className="sr-only">Processing facilities</figcaption>
               </figure>
               <div className="absolute bottom-6 left-6">
-                <h3 className="font-heading bg-primary/60 px-3  text-2xl font-medium">Processing Facilities</h3>
+                <h3 className="font-heading bg-primary/60 px-3  text-2xl font-medium">
+                  Processing Facilities
+                </h3>
               </div>
             </StaggerItem>
-            <StaggerItem className="relative h-[350px] group overflow-hidden" role="listitem">
+            <StaggerItem className="relative h-87.5 group overflow-hidden" role="listitem">
               <figure className="relative w-full h-full" style={{ position: "relative" }}>
                 <Image
                   src="/images/about/infra-warehouse.webp"
@@ -429,10 +529,12 @@ export default function AboutPage() {
                 <figcaption className="sr-only">Warehousing facilities</figcaption>
               </figure>
               <div className="absolute bottom-6 left-6">
-                <h3 className="font-heading bg-primary/60 px-3  text-2xl font-medium">Warehousing</h3>
+                <h3 className="font-heading bg-primary/60 px-3  text-2xl font-medium">
+                  Warehousing
+                </h3>
               </div>
             </StaggerItem>
-            <StaggerItem className="relative h-[350px] group overflow-hidden" role="listitem">
+            <StaggerItem className="relative h-87.5 group overflow-hidden" role="listitem">
               <figure className="relative w-full h-full" style={{ position: "relative" }}>
                 <Image
                   src="/images/about/infra-packaging.webp"
@@ -444,10 +546,12 @@ export default function AboutPage() {
                 <figcaption className="sr-only">Packaging lines</figcaption>
               </figure>
               <div className="absolute bottom-6 left-6">
-                <h3 className="font-heading bg-primary/60 px-3  text-2xl font-medium">Packaging Lines</h3>
+                <h3 className="font-heading bg-primary/60 px-3  text-2xl font-medium">
+                  Packaging Lines
+                </h3>
               </div>
             </StaggerItem>
-            <StaggerItem className="relative h-[350px] group overflow-hidden" role="listitem">
+            <StaggerItem className="relative h-87.5 group overflow-hidden" role="listitem">
               <figure className="relative w-full h-full" style={{ position: "relative" }}>
                 <Image
                   src="/images/about/infra-testing.webp"
@@ -459,10 +563,15 @@ export default function AboutPage() {
                 <figcaption className="sr-only">Quality testing laboratory</figcaption>
               </figure>
               <div className="absolute bottom-6 left-6">
-                <h3 className="font-heading bg-primary/60 px-3  text-2xl font-medium">Quality Testing</h3>
+                <h3 className="font-heading bg-primary/60 px-3  text-2xl font-medium">
+                  Quality Testing
+                </h3>
               </div>
             </StaggerItem>
-            <StaggerItem className="relative h-[350px] group overflow-hidden lg:col-span-2" role="listitem">
+            <StaggerItem
+              className="relative h-87.5 group overflow-hidden lg:col-span-2"
+              role="listitem"
+            >
               <figure className="relative w-full h-full" style={{ position: "relative" }}>
                 <Image
                   src="/images/about/infra-loading.webp"
@@ -474,7 +583,9 @@ export default function AboutPage() {
                 <figcaption className="sr-only">Container loading operations</figcaption>
               </figure>
               <div className="absolute bottom-6 left-6">
-                <h3 className="font-heading bg-primary/60 px-3  text-2xl font-medium">Container Loading Operations</h3>
+                <h3 className="font-heading bg-primary/60 px-3  text-2xl font-medium">
+                  Container Loading Operations
+                </h3>
               </div>
             </StaggerItem>
           </StaggerContainer>
@@ -485,7 +596,10 @@ export default function AboutPage() {
       <section aria-labelledby="why-buyers-heading" className="py-24 sm:py-32 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center">
           <FadeIn>
-            <h2 id="why-buyers-heading" className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-16">
+            <h2
+              id="why-buyers-heading"
+              className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-16"
+            >
               Why Buyers Work With Us
             </h2>
             <ul className="space-y-6" role="list" aria-label="Buyer benefits">
@@ -503,13 +617,19 @@ export default function AboutPage() {
       </section>
 
       {/* SECTION 10: LEADERSHIP NOTE */}
-      <section aria-labelledby="leadership-heading" className="py-24 bg-background border-y border-primary/10">
+      <section
+        aria-labelledby="leadership-heading"
+        className="py-24 bg-background border-y border-primary/10"
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
           <FadeIn>
             <figure className="mx-auto w-12 h-12 mb-8 text-secondary" aria-hidden="true">
               <FileText className="w-full h-full" strokeWidth={1} />
             </figure>
-            <h2 id="leadership-heading" className="font-heading text-3xl sm:text-4xl font-medium text-primary mb-10">
+            <h2
+              id="leadership-heading"
+              className="font-heading text-3xl sm:text-4xl font-medium text-primary mb-10"
+            >
               A Message From Sheesh Exports
             </h2>
             <blockquote className="space-y-6 text-lg text-foreground/80 font-light leading-relaxed italic">
@@ -530,10 +650,10 @@ export default function AboutPage() {
       </section>
 
       {/* SECTION 11: SEO FAQ */}
-      <FAQSection 
-        title="Corporate & Export FAQs" 
-        subtitle="Common Inquiries" 
-        faqs={ABOUT_FAQS} 
+      <FAQSection
+        title="Corporate & Export FAQs"
+        subtitle="Common Inquiries"
+        faqs={ABOUT_FAQS}
         className="bg-white"
       />
 

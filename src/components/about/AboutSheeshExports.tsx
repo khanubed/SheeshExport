@@ -1,8 +1,6 @@
-"use client";
 import React from "react";
 import Image from "next/image";
 import { Check } from "lucide-react";
-import { motion } from "framer-motion";
 
 export function AboutSheeshExports() {
   const trustIndicators = [
@@ -20,12 +18,7 @@ export function AboutSheeshExports() {
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-stretch">
           {/* Content Column - 45% */}
           <div className="w-full lg:w-[45%] flex flex-col justify-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6 }}
-            >
+            <div>
               <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground mb-4">
                 About Sheesh Exports
               </span>
@@ -39,15 +32,9 @@ export function AboutSheeshExports() {
                 grains, pulses, oil seeds and food ingredients, serving importers, distributors,
                 food manufacturers and retail brands across international markets.
               </h3>
-            </motion.div>
+            </div>
 
-            <motion.div
-              className="prose prose-slate prose-lg max-w-none text-muted-foreground mb-12 font-light leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
+            <div className="prose prose-slate prose-lg max-w-none text-muted-foreground mb-12 font-light leading-relaxed">
               <p>
                 As a premier Indian spice exporter and bulk food ingredient supplier, we bridge the
                 gap between agrarian heartlands and the global food supply chain. Our operations are
@@ -61,14 +48,9 @@ export function AboutSheeshExports() {
                 seamless logistics makes us the definitive partner for food products exported from
                 India.
               </p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
+            <div>
               <ul className="space-y-4">
                 {trustIndicators.map((item, index) => (
                   <li
@@ -80,18 +62,12 @@ export function AboutSheeshExports() {
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </div>
           </div>
 
           {/* Visual Column - 55% */}
           <div className="w-full lg:w-[55%] relative flex items-center">
-            <motion.div
-              className="relative w-full aspect-[4/5] bg-slate-100 overflow-hidden"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
+            <div className="relative w-full aspect-4/5 bg-slate-100 overflow-hidden">
               <Image
                 src="/images/sheesh-logo.webp" // Using existing logo as a placeholder until an authentic factory image is provided
                 alt="Premium spice processing facility and export operations"
@@ -100,18 +76,12 @@ export function AboutSheeshExports() {
                 sizes="(max-width: 1024px) 100vw, 55vw"
                 priority
               />
-            </motion.div>
+            </div>
           </div>
         </div>
 
         {/* Global Reach Strip */}
-        <motion.div
-          className="mt-24 pt-12 border-t border-slate-200"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-        >
+        <div className="mt-24 pt-12 border-t border-slate-200">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
               Serving Importers Across
@@ -128,7 +98,7 @@ export function AboutSheeshExports() {
               <span>Africa</span>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

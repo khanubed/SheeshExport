@@ -3,7 +3,6 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Product, Variant } from "@/lib/data/types";
-import { motion } from "framer-motion";
 import { ChevronRight, Download, PackageSearch } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -21,12 +20,7 @@ export function ProductHero({
     <section aria-labelledby="product-name" className="relative pt-12 pb-8 lg:pt-16 lg:pb-8 overflow-hidden border-b border-border">
       <div className="container mx-auto px-4 max-w-8xl">
         <div className="flex flex-col lg:flex-row gap-4 items-center">
-          <motion.div
-            className="w-full lg:w-3/5 flex flex-col gap-3"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
+          <div className="w-full lg:w-3/5 flex flex-col gap-3">
             <nav className="flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-muted-foreground mb-2" aria-label="Breadcrumb">
               <Link href="/products" className="hover:text-primary transition-colors">
                 Products
@@ -71,14 +65,9 @@ export function ProductHero({
                 <Download className="w-4 h-4 mr-2" aria-hidden="true" /> Spec Sheet
               </Button>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            className="w-full lg:w-2/5 relative h-[500px] bg-muted/30"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-          >
+          <div className="w-full lg:w-2/5 relative h-[500px] bg-muted/30">
             <figure className="relative h-full w-full" style={{ position: "relative" }}>
               <Image
                 src={heroImgSrc}
@@ -90,7 +79,7 @@ export function ProductHero({
               />
               <figcaption className="sr-only">{product.name} product image</figcaption>
             </figure>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

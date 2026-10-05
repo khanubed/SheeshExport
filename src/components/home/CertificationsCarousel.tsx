@@ -3,11 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
-
-// Import Swiper styles
-import "swiper/css";
+import { CarouselSlider } from "@/components/shared/CarouselSlider";
 
 interface Certification {
   name: string;
@@ -22,52 +18,49 @@ interface CertificationsCarouselProps {
 
 export function CertificationsCarousel({ certifications }: CertificationsCarouselProps) {
   return (
-    <div className="w-full relative py-4">
-      <Swiper
-        modules={[Autoplay]}
-        spaceBetween={24}
-        slidesPerView={2}
-        breakpoints={{
-          640: { slidesPerView: 3 },
-          1024: { slidesPerView: 4 },
-          1280: { slidesPerView: 5 },
-        }}
-        loop={true}
-        speed={800}
-        autoplay={{ delay: 3000, disableOnInteraction: true }}
-        className="certifications-swiper"
-      >
-        {certifications.map((cert, idx) => {
-          const content = (
-            <>
-              <div className="relative h-20 w-full max-w-[120px] bg-white rounded flex items-center justify-center p-2 mb-2 shadow-sm">
-                <Image src={cert.img} alt={cert.name} fill sizes="120px" className="object-contain p-2" />
+    <CarouselSlider
+      items={certifications}
+      keyExtractor={(cert, idx) => cert.slug || idx}
+      itemClassName="w-[calc(50%-12px)] sm:w-[calc(33.333%-16px)] md:w-[calc(25%-18px)] lg:w-[calc(20%-20px)] h-auto"
+      controlsPosition="top-right"
+      ariaLabel="Certifications carousel"
+      renderItem={(cert) => {
+        const content = (
+          <>
+            <div className="relative h-20 w-full max-w-30 bg-white rounded flex items-center justify-center p-2 mb-2 shadow-sm">
+              <Image
+                // decoding="async"
+                loading="lazy"
+                // decoding="async"
+                src={cert.img}
+                alt={cert.name}
+                fill
+                sizes="120px"
+                className="object-contain p-2"
+              />
+            </div>
+            <div>
+              <div className="font-bold text-foreground group-hover:text-primary transition-colors text-sm sm:text-base">
+                {cert.name}
               </div>
-              <div>
-                <div className="font-bold text-foreground group-hover:text-primary transition-colors">{cert.name}</div>
-                <div className="text-xs text-muted-foreground mt-1">{cert.desc}</div>
-              </div>
-            </>
-          );
+              <div className="text-xs text-muted-foreground mt-1 line-clamp-2">{cert.desc}</div>
+            </div>
+          </>
+        );
 
-          return (
-            <SwiperSlide key={idx} className="h-auto py-2">
-              {cert.slug ? (
-                <Link 
-                  href={`/certifications/${cert.slug}`}
-                  className="bg-card border border-border p-6 rounded-lg text-center flex flex-col items-center justify-center gap-4 h-full transition-all hover:border-primary/50 hover:shadow-md w-full group"
-                >
-                  {content}
-                </Link>
-              ) : (
-                <div className="bg-card border border-border p-6 rounded-lg text-center flex flex-col items-center justify-center gap-4 h-full transition-all hover:border-primary/50 hover:shadow-md w-full">
-                  {content}
-                </div>
-              )}
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
-    </div>
+        return cert.slug ? (
+          <Link
+            href={`/certifications/${cert.slug}`}
+            className="bg-card border border-border p-5 rounded-lg text-center flex flex-col items-center justify-center gap-3 h-full transition-all hover:border-primary/50 hover:shadow-md w-full group"
+          >
+            {content}
+          </Link>
+        ) : (
+          <div className="bg-card border border-border p-5 rounded-lg text-center flex flex-col items-center justify-center gap-3 h-full transition-all hover:border-primary/50 hover:shadow-md w-full">
+            {content}
+          </div>
+        );
+      }}
+    />
   );
 }

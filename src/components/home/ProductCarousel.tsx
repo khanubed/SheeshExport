@@ -1,14 +1,9 @@
 "use client";
 
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
 import { Category } from "@/lib/data/categories";
 import { CategoryCard } from "@/components/categories/CategoryCard";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
+import { CarouselSlider } from "@/components/shared/CarouselSlider";
 
 interface ProductCarouselProps {
   categories: Category[];
@@ -16,27 +11,15 @@ interface ProductCarouselProps {
 
 export function ProductCarousel({ categories }: ProductCarouselProps) {
   return (
-    <div className="w-full relative">
-      <Swiper
-        modules={[Pagination, Autoplay]}
-        spaceBetween={32}
-        slidesPerView={1}
-        breakpoints={{
-          640: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
-        }}
-        loop={true}
-        speed={800}
-        pagination={{ clickable: true }}
-        autoplay={{ delay: 4000, disableOnInteraction: true }}
-        className="product-swiper !pb-14"
-      >
-        {categories.map((cat, idx) => (
-          <SwiperSlide key={idx} className="h-auto">
-            <CategoryCard category={cat} className="rounded-xl" />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
+    <CarouselSlider
+      items={categories}
+      keyExtractor={(cat) => cat.id || cat.slug}
+      itemClassName="w-[85vw] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] h-auto"
+      controlsPosition="top-right"
+      ariaLabel="Product categories carousel"
+      renderItem={(cat) => (
+        <CategoryCard category={cat} className="rounded-xl h-full shadow-sm" />
+      )}
+    />
   );
 }

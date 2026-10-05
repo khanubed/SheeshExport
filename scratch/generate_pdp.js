@@ -232,7 +232,7 @@ export function ProductOriginStory({ product }: { product: Product }) {
           <div className="w-full lg:w-1/2 grid grid-cols-2 gap-4">
             {product.originStory.images.slice(0, 2).map((img, idx) => (
               <div key={idx} className={\`relative \${idx === 0 ? 'aspect-square' : 'aspect-[3/4] mt-12'}\`}>
-                <Image src={img || "/images/placeholder.jpg"} alt="Origin" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+                <Image loading="lazy" src={img || "/images/placeholder.jpg"} alt="Origin" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-700" />
               </div>
             ))}
           </div>
@@ -258,7 +258,7 @@ export function ProductGallery({ variant }: { variant: Variant }) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {variant.images.map((img, idx) => (
             <div key={idx} className="relative aspect-square bg-slate-100 group overflow-hidden">
-              <Image 
+              <Image loading="lazy" 
                 src={img || "/images/placeholder.jpg"} 
                 alt={variant.name} 
                 fill 

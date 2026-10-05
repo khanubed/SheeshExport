@@ -2,13 +2,22 @@ import { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo/metadata";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ChevronRight, Globe, TrendingUp, Anchor, MoveRight, MapPin } from "lucide-react";
+import {
+  ArrowRight,
+  ChevronRight,
+  Globe,
+  TrendingUp,
+  Anchor,
+  MoveRight,
+  MapPin,
+} from "lucide-react";
 import { INDUSTRIES_DATA } from "@/lib/data/industries";
 import { JsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = buildMetadata({
   title: "Global Procurement Ecosystem | Sheesh Exports",
-  description: "Supporting importers, food manufacturers, distributors, retail brands, and hospitality groups with export-grade agricultural commodities from India.",
+  description:
+    "Supporting importers, food manufacturers, distributors, retail brands, and hospitality groups with export-grade agricultural commodities from India.",
   pathname: "/industries",
 });
 
@@ -16,9 +25,9 @@ export default function IndustriesHubPage() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "Global Procurement Network - Sheesh Exports",
-    "description": "Supply Chain Solutions For Global Food & Ingredient Businesses.",
-    "url": "https://sheeshexports.com/industries"
+    name: "Global Procurement Network - Sheesh Exports",
+    description: "Supply Chain Solutions For Global Food & Ingredient Businesses.",
+    url: "https://sheeshexports.com/industries",
   };
 
   return (
@@ -42,10 +51,15 @@ export default function IndustriesHubPage() {
               Global Procurement Network
             </span>
             <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-[6.5rem] font-semibold tracking-tighter text-white leading-[0.9] mb-8  drop-shadow-lg">
-              Serving the<br/>Businesses<br/>That Move Food.
+              Serving the
+              <br />
+              Businesses
+              <br />
+              That Move Food.
             </h1>
             <p className="text-xl md:text-2xl text-white/80 font-sans max-w-3xl font-light leading-relaxed">
-              We execute complex agricultural supply chains for international markets. From industrial ingredients to retail-ready private label packaging.
+              We execute complex agricultural supply chains for international markets. From
+              industrial ingredients to retail-ready private label packaging.
             </p>
           </div>
         </div>
@@ -72,7 +86,9 @@ export default function IndustriesHubPage() {
       <section className="py-24 lg:py-32 bg-background border-b border-border">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-8xl">
           <div className="mb-20">
-            <span className="text-primary font-bold tracking-[0.2em] uppercase text-[10px] mb-6 block">01 / Industry Index</span>
+            <span className="text-primary font-bold tracking-[0.2em] uppercase text-[10px] mb-6 block">
+              01 / Industry Index
+            </span>
             <h2 className="font-heading text-4xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1]">
               Sector Capabilities
             </h2>
@@ -80,8 +96,8 @@ export default function IndustriesHubPage() {
 
           <div className="border-t border-border flex flex-col">
             {INDUSTRIES_DATA.map((industry) => (
-              <Link 
-                key={industry.id} 
+              <Link
+                key={industry.id}
                 href={`/industries/${industry.slug}`}
                 className="group flex flex-col lg:flex-row lg:items-center justify-between py-12 border-b border-border hover:bg-muted/30 transition-colors px-4 -mx-4 lg:px-8 lg:-mx-8"
               >
@@ -97,7 +113,8 @@ export default function IndustriesHubPage() {
                 </div>
                 <div className="lg:w-auto flex items-center justify-end">
                   <span className="font-bold uppercase tracking-widest text-xs text-foreground group-hover:text-secondary transition-colors flex items-center">
-                    [ Explore Market ] <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
+                    [ Explore Market ]{" "}
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
                   </span>
                 </div>
               </Link>
@@ -109,24 +126,34 @@ export default function IndustriesHubPage() {
       {/* SECTION 3 — GLOBAL PROCUREMENT ECOSYSTEM (Diagram) */}
       <section className="py-24 lg:py-32 bg-muted/20 border-b border-border overflow-hidden">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-8xl text-center">
-          <span className="text-primary font-bold tracking-[0.2em] uppercase text-[10px] mb-6 block">02 / Trade Architecture</span>
+          <span className="text-primary font-bold tracking-[0.2em] uppercase text-[10px] mb-6 block">
+            02 / Trade Architecture
+          </span>
           <h2 className="font-heading text-4xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1] mb-24">
             The Procurement Ecosystem
           </h2>
 
           <div className="max-w-6xl mx-auto flex flex-col items-center">
-            <figure className="relative w-full aspect-video md:aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl mb-8" style={{ position: "relative" }}>
-              <Image 
-                src="/images/procurement-ecosystem.jpg" 
-                alt="Global Trade Supply Chain Network radiating from India" 
-                fill 
-                sizes="(max-width: 1024px) 100vw, 80vw" 
+            <figure
+              className="relative w-full aspect-video md:aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl mb-8"
+              style={{ position: "relative" }}
+            >
+              <Image
+                loading="lazy"
+                src="/images/procurement-ecosystem.jpg"
+                alt="Global Trade Supply Chain Network radiating from India"
+                fill
+                sizes="(max-width: 1024px) 100vw, 80vw"
                 className="object-cover"
               />
-              <figcaption className="sr-only">Global Trade Supply Chain Network radiating from India</figcaption>
+              <figcaption className="sr-only">
+                Global Trade Supply Chain Network radiating from India
+              </figcaption>
             </figure>
             <p className="text-muted-foreground font-sans text-sm md:text-base max-w-2xl mx-auto">
-              A robust, streamlined flow of premium agricultural commodities—from the rich soils of India directly to manufacturers, retail brands, and the hospitality sector across 50+ global destinations.
+              A robust, streamlined flow of premium agricultural commodities—from the rich soils of
+              India directly to manufacturers, retail brands, and the hospitality sector across 50+
+              global destinations.
             </p>
           </div>
         </div>
@@ -136,7 +163,9 @@ export default function IndustriesHubPage() {
       <section className="py-24 lg:py-32 bg-background border-b border-border">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-8xl">
           <div className="mb-20">
-            <span className="text-primary font-bold tracking-[0.2em] uppercase text-[10px] mb-6 block">03 / Sourcing Models</span>
+            <span className="text-primary font-bold tracking-[0.2em] uppercase text-[10px] mb-6 block">
+              03 / Sourcing Models
+            </span>
             <h2 className="font-heading text-4xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1]">
               Procurement Architectures
             </h2>
@@ -144,38 +173,78 @@ export default function IndustriesHubPage() {
 
           <div className="grid md:grid-cols-2 gap-16 lg:gap-24">
             <div className="border-t border-border pt-8">
-              <h4 className="font-heading text-3xl font-bold text-primary mb-6">Food Manufacturing</h4>
+              <h4 className="font-heading text-3xl font-bold text-primary mb-6">
+                Food Manufacturing
+              </h4>
               <ul className="space-y-4 text-xl font-light text-muted-foreground">
-                <li className="flex items-center"><ChevronRight className="w-5 h-5 mr-3 text-secondary" /> Strict Specification Tolerance</li>
-                <li className="flex items-center"><ChevronRight className="w-5 h-5 mr-3 text-secondary" /> High-Volume Contract Structures</li>
-                <li className="flex items-center"><ChevronRight className="w-5 h-5 mr-3 text-secondary" /> Industrial Bulk Packaging</li>
-              </ul>
-            </div>
-            
-            <div className="border-t border-border pt-8">
-              <h4 className="font-heading text-3xl font-bold text-primary mb-6">Retail & Private Label</h4>
-              <ul className="space-y-4 text-xl font-light text-muted-foreground">
-                <li className="flex items-center"><ChevronRight className="w-5 h-5 mr-3 text-secondary" /> Custom Brand Packaging</li>
-                <li className="flex items-center"><ChevronRight className="w-5 h-5 mr-3 text-secondary" /> Label & Nutritional Compliance</li>
-                <li className="flex items-center"><ChevronRight className="w-5 h-5 mr-3 text-secondary" /> Ready-to-Shelf Formatting</li>
+                <li className="flex items-center">
+                  <ChevronRight className="w-5 h-5 mr-3 text-secondary" /> Strict Specification
+                  Tolerance
+                </li>
+                <li className="flex items-center">
+                  <ChevronRight className="w-5 h-5 mr-3 text-secondary" /> High-Volume Contract
+                  Structures
+                </li>
+                <li className="flex items-center">
+                  <ChevronRight className="w-5 h-5 mr-3 text-secondary" /> Industrial Bulk Packaging
+                </li>
               </ul>
             </div>
 
             <div className="border-t border-border pt-8">
-              <h4 className="font-heading text-3xl font-bold text-primary mb-6">Import & Distribution</h4>
+              <h4 className="font-heading text-3xl font-bold text-primary mb-6">
+                Retail & Private Label
+              </h4>
+              <ul className="space-y-4 text-xl font-light text-muted-foreground">
+                <li className="flex items-center">
+                  <ChevronRight className="w-5 h-5 mr-3 text-secondary" /> Custom Brand Packaging
+                </li>
+                <li className="flex items-center">
+                  <ChevronRight className="w-5 h-5 mr-3 text-secondary" /> Label & Nutritional
+                  Compliance
+                </li>
+                <li className="flex items-center">
+                  <ChevronRight className="w-5 h-5 mr-3 text-secondary" /> Ready-to-Shelf Formatting
+                </li>
+              </ul>
+            </div>
+
+            <div className="border-t border-border pt-8">
+              <h4 className="font-heading text-3xl font-bold text-primary mb-6">
+                Import & Distribution
+              </h4>
               <div className="space-y-4 text-xl font-light text-muted-foreground">
-                <li className="flex items-center"><ChevronRight className="w-5 h-5 mr-3 text-secondary" /> Multi-Commodity Consolidation</li>
-                <li className="flex items-center"><ChevronRight className="w-5 h-5 mr-3 text-secondary" /> Container Load Optimization (FCL/LCL)</li>
-                <li className="flex items-center"><ChevronRight className="w-5 h-5 mr-3 text-secondary" /> Inventory Replenishment Cycles</li>
+                <li className="flex items-center">
+                  <ChevronRight className="w-5 h-5 mr-3 text-secondary" /> Multi-Commodity
+                  Consolidation
+                </li>
+                <li className="flex items-center">
+                  <ChevronRight className="w-5 h-5 mr-3 text-secondary" /> Container Load
+                  Optimization (FCL/LCL)
+                </li>
+                <li className="flex items-center">
+                  <ChevronRight className="w-5 h-5 mr-3 text-secondary" /> Inventory Replenishment
+                  Cycles
+                </li>
               </div>
             </div>
 
             <div className="border-t border-border pt-8">
-              <h4 className="font-heading text-3xl font-bold text-primary mb-6">HORECA & Foodservice</h4>
+              <h4 className="font-heading text-3xl font-bold text-primary mb-6">
+                HORECA & Foodservice
+              </h4>
               <ul className="space-y-4 text-xl font-light text-muted-foreground">
-                <li className="flex items-center"><ChevronRight className="w-5 h-5 mr-3 text-secondary" /> Commercial Kitchen Tubs & Pails</li>
-                <li className="flex items-center"><ChevronRight className="w-5 h-5 mr-3 text-secondary" /> Consistent Sensory Profiles</li>
-                <li className="flex items-center"><ChevronRight className="w-5 h-5 mr-3 text-secondary" /> Fast Delivery Schedules</li>
+                <li className="flex items-center">
+                  <ChevronRight className="w-5 h-5 mr-3 text-secondary" /> Commercial Kitchen Tubs &
+                  Pails
+                </li>
+                <li className="flex items-center">
+                  <ChevronRight className="w-5 h-5 mr-3 text-secondary" /> Consistent Sensory
+                  Profiles
+                </li>
+                <li className="flex items-center">
+                  <ChevronRight className="w-5 h-5 mr-3 text-secondary" /> Fast Delivery Schedules
+                </li>
               </ul>
             </div>
           </div>
@@ -186,7 +255,9 @@ export default function IndustriesHubPage() {
       <section className="py-24 lg:py-32 bg-muted/30 border-b border-border">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-8xl">
           <div className="mb-20">
-            <span className="text-primary font-bold tracking-[0.2em] uppercase text-[10px] mb-6 block">04 / Execution Workflows</span>
+            <span className="text-primary font-bold tracking-[0.2em] uppercase text-[10px] mb-6 block">
+              04 / Execution Workflows
+            </span>
             <h2 className="font-heading text-4xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1]">
               How Supply Chains Move
             </h2>
@@ -195,54 +266,82 @@ export default function IndustriesHubPage() {
           <div className="grid lg:grid-cols-2 gap-20">
             {/* Story 1 */}
             <div>
-              <span className="block font-heading text-2xl font-bold text-primary mb-12">Industrial Extraction Model</span>
+              <span className="block font-heading text-2xl font-bold text-primary mb-12">
+                Industrial Extraction Model
+              </span>
               <div className="space-y-8 relative before:absolute before:inset-y-0 before:left-3 before:w-px before:bg-border">
                 <div className="relative pl-12">
                   <div className="absolute left-0 top-1.5 w-6 h-6 bg-background border-2 border-primary rounded-full z-10"></div>
                   <strong className="block font-heading text-xl text-foreground">Sourcing</strong>
-                  <p className="text-muted-foreground font-sans">Farm-level procurement of high-curcumin turmeric.</p>
+                  <p className="text-muted-foreground font-sans">
+                    Farm-level procurement of high-curcumin turmeric.
+                  </p>
                 </div>
                 <div className="relative pl-12">
                   <div className="absolute left-0 top-1.5 w-6 h-6 bg-background border-2 border-border rounded-full z-10"></div>
                   <strong className="block font-heading text-xl text-foreground">Validation</strong>
-                  <p className="text-muted-foreground font-sans">Lab testing for alkaloid content and pesticide limits.</p>
+                  <p className="text-muted-foreground font-sans">
+                    Lab testing for alkaloid content and pesticide limits.
+                  </p>
                 </div>
                 <div className="relative pl-12">
                   <div className="absolute left-0 top-1.5 w-6 h-6 bg-background border-2 border-border rounded-full z-10"></div>
                   <strong className="block font-heading text-xl text-foreground">Processing</strong>
-                  <p className="text-muted-foreground font-sans">Milling to precise mesh specifications for extraction efficiency.</p>
+                  <p className="text-muted-foreground font-sans">
+                    Milling to precise mesh specifications for extraction efficiency.
+                  </p>
                 </div>
                 <div className="relative pl-12">
                   <div className="absolute left-0 top-1.5 w-6 h-6 bg-background border-2 border-secondary rounded-full z-10"></div>
                   <strong className="block font-heading text-xl text-foreground">Export</strong>
-                  <p className="text-muted-foreground font-sans">Bulk loading and container dispatch to European facility.</p>
+                  <p className="text-muted-foreground font-sans">
+                    Bulk loading and container dispatch to European facility.
+                  </p>
                 </div>
               </div>
             </div>
 
             {/* Story 2 */}
             <div>
-              <span className="block font-heading text-2xl font-bold text-primary mb-12">Retail Private Label Model</span>
+              <span className="block font-heading text-2xl font-bold text-primary mb-12">
+                Retail Private Label Model
+              </span>
               <div className="space-y-8 relative before:absolute before:inset-y-0 before:left-3 before:w-px before:bg-border">
                 <div className="relative pl-12">
                   <div className="absolute left-0 top-1.5 w-6 h-6 bg-background border-2 border-primary rounded-full z-10"></div>
-                  <strong className="block font-heading text-xl text-foreground">Origin Selection</strong>
-                  <p className="text-muted-foreground font-sans">Identifying premium whole spices for visual shelf appeal.</p>
+                  <strong className="block font-heading text-xl text-foreground">
+                    Origin Selection
+                  </strong>
+                  <p className="text-muted-foreground font-sans">
+                    Identifying premium whole spices for visual shelf appeal.
+                  </p>
                 </div>
                 <div className="relative pl-12">
                   <div className="absolute left-0 top-1.5 w-6 h-6 bg-background border-2 border-border rounded-full z-10"></div>
-                  <strong className="block font-heading text-xl text-foreground">Design & Compliance</strong>
-                  <p className="text-muted-foreground font-sans">Adapting client artwork and ensuring FDA nutritional labeling.</p>
+                  <strong className="block font-heading text-xl text-foreground">
+                    Design & Compliance
+                  </strong>
+                  <p className="text-muted-foreground font-sans">
+                    Adapting client artwork and ensuring FDA nutritional labeling.
+                  </p>
                 </div>
                 <div className="relative pl-12">
                   <div className="absolute left-0 top-1.5 w-6 h-6 bg-background border-2 border-border rounded-full z-10"></div>
-                  <strong className="block font-heading text-xl text-foreground">OEM Packaging</strong>
-                  <p className="text-muted-foreground font-sans">Automated filling into 250g retail pouches.</p>
+                  <strong className="block font-heading text-xl text-foreground">
+                    OEM Packaging
+                  </strong>
+                  <p className="text-muted-foreground font-sans">
+                    Automated filling into 250g retail pouches.
+                  </p>
                 </div>
                 <div className="relative pl-12">
                   <div className="absolute left-0 top-1.5 w-6 h-6 bg-background border-2 border-secondary rounded-full z-10"></div>
-                  <strong className="block font-heading text-xl text-foreground">Fulfillment</strong>
-                  <p className="text-muted-foreground font-sans">Palletized shipping directly to US supermarket distribution center.</p>
+                  <strong className="block font-heading text-xl text-foreground">
+                    Fulfillment
+                  </strong>
+                  <p className="text-muted-foreground font-sans">
+                    Palletized shipping directly to US supermarket distribution center.
+                  </p>
                 </div>
               </div>
             </div>
@@ -255,16 +354,28 @@ export default function IndustriesHubPage() {
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-8xl text-center">
           <div className="grid lg:grid-cols-3 gap-16 md:gap-8">
             <div className="flex flex-col items-center">
-              <span className="font-heading text-6xl sm:text-7xl md:text-9xl font-bold text-primary leading-none tracking-tighter mb-4">50+</span>
-              <span className="text-xl md:text-2xl font-bold uppercase tracking-widest text-background/80">Export Countries</span>
+              <span className="font-heading text-6xl sm:text-7xl md:text-9xl font-bold text-primary leading-none tracking-tighter mb-4">
+                50+
+              </span>
+              <span className="text-xl md:text-2xl font-bold uppercase tracking-widest text-background/80">
+                Export Countries
+              </span>
             </div>
             <div className="flex flex-col items-center">
-              <span className="font-heading text-6xl sm:text-7xl md:text-9xl font-bold text-secondary leading-none tracking-tighter mb-4">100+</span>
-              <span className="text-xl md:text-2xl font-bold uppercase tracking-widest text-background/80">Product Variants</span>
+              <span className="font-heading text-6xl sm:text-7xl md:text-9xl font-bold text-secondary leading-none tracking-tighter mb-4">
+                100+
+              </span>
+              <span className="text-xl md:text-2xl font-bold uppercase tracking-widest text-background/80">
+                Product Variants
+              </span>
             </div>
             <div className="flex flex-col items-center">
-              <span className="font-heading text-6xl sm:text-7xl md:text-9xl font-bold text-white leading-none tracking-tighter mb-4">100<span className="text-4xl md:text-7xl">%</span></span>
-              <span className="text-xl md:text-2xl font-bold uppercase tracking-widest text-background/80">Export Focused</span>
+              <span className="font-heading text-6xl sm:text-7xl md:text-9xl font-bold text-white leading-none tracking-tighter mb-4">
+                100<span className="text-4xl md:text-7xl">%</span>
+              </span>
+              <span className="text-xl md:text-2xl font-bold uppercase tracking-widest text-background/80">
+                Export Focused
+              </span>
             </div>
           </div>
         </div>
@@ -278,13 +389,20 @@ export default function IndustriesHubPage() {
               Let's Discuss Your Supply Chain Requirements.
             </h2>
             <p className="text-2xl text-muted-foreground font-light font-sans mb-12">
-              Connect with our export operations desk to establish a reliable procurement framework for your market.
+              Connect with our export operations desk to establish a reliable procurement framework
+              for your market.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link href="/request-quote" className="inline-flex items-center justify-center bg-secondary text-primary px-12 py-6 font-bold tracking-widest uppercase text-sm hover:bg-secondary/90 transition-colors">
+              <Link
+                href="/request-quote"
+                className="inline-flex items-center justify-center bg-secondary text-primary px-12 py-6 font-bold tracking-widest uppercase text-sm hover:bg-secondary/90 transition-colors"
+              >
                 Initiate Procurement
               </Link>
-              <Link href="/contact" className="inline-flex items-center justify-center border border-border px-12 py-6 font-bold tracking-widest uppercase text-sm hover:bg-muted transition-colors">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center border border-border px-12 py-6 font-bold tracking-widest uppercase text-sm hover:bg-muted transition-colors"
+              >
                 Contact Desk
               </Link>
             </div>

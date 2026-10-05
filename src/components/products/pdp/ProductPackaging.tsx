@@ -23,7 +23,7 @@ export function ProductPackaging({ options }: { options: PackagingOption[] }) {
               className="border border-border p-8  transition-colors bg-muted/30"
             >
               <h4 className="text-xl font-heading font-semibold text-foreground mb-4">{opt.name}</h4>
-              <p className="text-muted-foreground mb-8 min-h-[60px]">{opt.description}</p>
+              <p className="text-muted-foreground mb-8 min-h-15">{opt.description}</p>
 
               <ul className="space-y-4 text-sm">
                 <li className="flex items-center gap-3">

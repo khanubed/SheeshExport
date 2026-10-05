@@ -6,7 +6,7 @@ export function ProductCertifications({ certifications }: { certifications: stri
   return (
     <section className="py-16 bg-muted/50 border-y border-border">
       <div className="container mx-auto px-4 max-w-8xl flex flex-col md:flex-row items-center gap-8">
-        <div className="flex-shrink-0">
+        <div className="shrink-0">
           <h3 className="text-lg font-serif font-semibold text-foreground flex items-center gap-2">
             <ShieldCheck className="w-5 h-5 text-green-600" /> Quality & Compliance
           </h3>
