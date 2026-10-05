@@ -96,7 +96,7 @@ export default async function BlogCategoryPage({ params }: { params: Promise<{ s
                 <article key={idx} className="group flex flex-col">
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="relative w-full aspect-[4/3] mb-6 overflow-hidden bg-muted rounded-xl"
+                    className="relative w-full aspect-4/3 mb-6 overflow-hidden bg-muted rounded-xl"
                   >
                     <Image
                       loading="lazy"

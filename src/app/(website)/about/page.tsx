@@ -134,7 +134,7 @@ export default function AboutPage() {
             </FadeIn>
             <FadeIn
               delay={0.2}
-              className="relative h-[600px] w-full rounded-sm overflow-hidden shadow-2xl"
+              className="relative h-150 w-full rounded-sm overflow-hidden shadow-2xl"
             >
               <figure className="relative w-full h-full" style={{ position: "relative" }}>
                 <Image
@@ -186,11 +186,11 @@ export default function AboutPage() {
                         alt={cat.name}
                         fill
                         sizes="(max-width: 1024px) 50vw, 33vw"
-                        className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out grayscale-[20%] group-hover:grayscale-0"
+                        className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out grayscale-20 group-hover:grayscale-0"
                       />
                       <figcaption className="sr-only">{cat.name} category</figcaption>
                     </figure>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
                     <div className="absolute bottom-8 left-8">
                       <h3 className="font-heading text-3xl text-white font-medium tracking-wide">
                         {cat.name}
@@ -235,13 +235,13 @@ export default function AboutPage() {
           <div className="relative mt-12 lg:mt-24">
             {/* Desktop horizontal line */}
             <div
-              className="hidden lg:block absolute top-[7px] left-0 w-full h-[2px] bg-white/20"
+              className="hidden lg:block absolute top-1.75 left-0 w-full h-0.5 bg-white/20"
               aria-hidden="true"
             />
 
             {/* Mobile/Tablet vertical line */}
             <div
-              className="lg:hidden absolute top-[7px] bottom-[7px] left-[7px] w-[2px] bg-white/20"
+              className="lg:hidden absolute top-1.75 bottom-1.75 left-1.75 w-0.5 bg-white/20"
               aria-hidden="true"
             />
 
@@ -255,7 +255,7 @@ export default function AboutPage() {
                   <article className="flex flex-row lg:flex-col items-start lg:items-center text-left lg:text-center w-full">
                     {/* The Dot */}
                     <div
-                      className="shrink-0 w-[16px] h-[16px] rounded-full bg-secondary shadow-[0_0_15px_rgba(197,160,89,0.5)] group-hover:scale-150 transition-transform duration-300 relative z-20 mt-1 lg:mt-0 mr-6 lg:mr-0 lg:mb-6"
+                      className="shrink-0 w-4 h-4 rounded-full bg-secondary shadow-[0_0_15px_rgba(197,160,89,0.5)] group-hover:scale-150 transition-transform duration-300 relative z-20 mt-1 lg:mt-0 mr-6 lg:mr-0 lg:mb-6"
                       aria-hidden="true"
                     />
 
@@ -280,7 +280,7 @@ export default function AboutPage() {
       <section aria-labelledby="india-origins-heading" className="py-24 sm:py-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-8xl">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <FadeIn className="order-2 lg:order-1 relative h-[600px] w-full">
+            <FadeIn className="order-2 lg:order-1 relative h-150 w-full">
               {/* Using a clean map placeholder, user mentioned "Clean India Map. Not interactive." */}
               <figure className="relative w-full h-full" style={{ position: "relative" }}>
                 <Image
@@ -366,7 +366,7 @@ export default function AboutPage() {
               Serving Importers Across 50+ Countries
             </h2>
             <figure
-              className="relative w-full h-[35vh] sm:h-[40vh] md:h-[50vh] lg:h-[55vh] max-h-[600px] mb-8 md:mb-10 opacity-80 mix-blend-multiply"
+              className="relative w-full h-[35vh] sm:h-[40vh] md:h-[50vh] lg:h-[55vh] max-h-150 mb-8 md:mb-10 opacity-80 mix-blend-multiply"
               style={{ position: "relative" }}
             >
               <Image
@@ -500,7 +500,7 @@ export default function AboutPage() {
             role="list"
             aria-label="Infrastructure facilities"
           >
-            <StaggerItem className="relative h-[350px] group overflow-hidden" role="listitem">
+            <StaggerItem className="relative h-87.5 group overflow-hidden" role="listitem">
               <figure className="relative w-full h-full" style={{ position: "relative" }}>
                 <Image
                   src="/images/about/infra-processing.webp"
@@ -517,7 +517,7 @@ export default function AboutPage() {
                 </h3>
               </div>
             </StaggerItem>
-            <StaggerItem className="relative h-[350px] group overflow-hidden" role="listitem">
+            <StaggerItem className="relative h-87.5 group overflow-hidden" role="listitem">
               <figure className="relative w-full h-full" style={{ position: "relative" }}>
                 <Image
                   src="/images/about/infra-warehouse.webp"
@@ -534,7 +534,7 @@ export default function AboutPage() {
                 </h3>
               </div>
             </StaggerItem>
-            <StaggerItem className="relative h-[350px] group overflow-hidden" role="listitem">
+            <StaggerItem className="relative h-87.5 group overflow-hidden" role="listitem">
               <figure className="relative w-full h-full" style={{ position: "relative" }}>
                 <Image
                   src="/images/about/infra-packaging.webp"
@@ -551,7 +551,7 @@ export default function AboutPage() {
                 </h3>
               </div>
             </StaggerItem>
-            <StaggerItem className="relative h-[350px] group overflow-hidden" role="listitem">
+            <StaggerItem className="relative h-87.5 group overflow-hidden" role="listitem">
               <figure className="relative w-full h-full" style={{ position: "relative" }}>
                 <Image
                   src="/images/about/infra-testing.webp"
@@ -569,7 +569,7 @@ export default function AboutPage() {
               </div>
             </StaggerItem>
             <StaggerItem
-              className="relative h-[350px] group overflow-hidden lg:col-span-2"
+              className="relative h-87.5 group overflow-hidden lg:col-span-2"
               role="listitem"
             >
               <figure className="relative w-full h-full" style={{ position: "relative" }}>

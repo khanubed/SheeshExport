@@ -119,28 +119,28 @@ export default function PrivateLabelPage() {
               </h3>
               <ul className="space-y-6">
                 <li className="flex items-start">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2.5 mr-4 flex-shrink-0" />
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2.5 mr-4 shrink-0" />
                   <p className="text-lg text-foreground/80 font-sans leading-relaxed">
                     <strong className="font-semibold text-foreground">No Manufacturing:</strong>{" "}
                     High capital required to build hygienic, food-safe processing facilities.
                   </p>
                 </li>
                 <li className="flex items-start">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2.5 mr-4 flex-shrink-0" />
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2.5 mr-4 shrink-0" />
                   <p className="text-lg text-foreground/80 font-sans leading-relaxed">
                     <strong className="font-semibold text-foreground">No Packaging Line:</strong>{" "}
                     Inability to efficiently pack retail quantities (100g - 1kg) at scale.
                   </p>
                 </li>
                 <li className="flex items-start">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2.5 mr-4 flex-shrink-0" />
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2.5 mr-4 shrink-0" />
                   <p className="text-lg text-foreground/80 font-sans leading-relaxed">
                     <strong className="font-semibold text-foreground">No Export Expertise:</strong>{" "}
                     Struggling to consolidate shipments from multiple small suppliers.
                   </p>
                 </li>
                 <li className="flex items-start">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2.5 mr-4 flex-shrink-0" />
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2.5 mr-4 shrink-0" />
                   <p className="text-lg text-foreground/80 font-sans leading-relaxed">
                     <strong className="font-semibold text-foreground">Compliance Risks:</strong> FDA
                     or EU customs rejections due to improper nutritional labeling or barcode
@@ -157,7 +157,7 @@ export default function PrivateLabelPage() {
               </h3>
               <ul className="space-y-6">
                 <li className="flex items-start group">
-                  <Factory className="w-7 h-7 text-secondary mt-0.5 mr-5 flex-shrink-0" />
+                  <Factory className="w-7 h-7 text-secondary mt-0.5 mr-5 shrink-0" />
                   <div>
                     <h4 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
                       Turnkey Production
@@ -169,7 +169,7 @@ export default function PrivateLabelPage() {
                   </div>
                 </li>
                 <li className="flex items-start group">
-                  <Package className="w-7 h-7 text-secondary mt-0.5 mr-5 flex-shrink-0" />
+                  <Package className="w-7 h-7 text-secondary mt-0.5 mr-5 shrink-0" />
                   <div>
                     <h4 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
                       Automated Retail Packing
@@ -181,7 +181,7 @@ export default function PrivateLabelPage() {
                   </div>
                 </li>
                 <li className="flex items-start group">
-                  <ShieldCheck className="w-7 h-7 text-secondary mt-0.5 mr-5 flex-shrink-0" />
+                  <ShieldCheck className="w-7 h-7 text-secondary mt-0.5 mr-5 shrink-0" />
                   <div>
                     <h4 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
                       Regulatory Compliance
@@ -200,7 +200,7 @@ export default function PrivateLabelPage() {
 
       {/* SECTION 03: PACKAGING FORMATS GALLERY */}
       <section id="formats" className="py-16 lg:py-24 bg-background">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1400px]">
+        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-350">
           <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-16 text-center">
             Retail Packaging Formats
           </h2>
@@ -208,7 +208,7 @@ export default function PrivateLabelPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Format 1 */}
             <div className="bg-card border border-border group">
-              <div className="relative h-[300px] w-full bg-muted overflow-hidden">
+              <div className="relative h-75 w-full bg-muted overflow-hidden">
                 <Image
                   loading="lazy"
                   src="/images/services/standup-pouch-package.webp"
@@ -236,7 +236,7 @@ export default function PrivateLabelPage() {
 
             {/* Format 2 */}
             <div className="bg-card border border-border group">
-              <div className="relative h-[300px] w-full bg-muted overflow-hidden">
+              <div className="relative h-75 w-full bg-muted overflow-hidden">
                 <Image
                   loading="lazy"
                   src="/images/services/glass-jars.webp"
@@ -264,7 +264,7 @@ export default function PrivateLabelPage() {
 
             {/* Format 3 */}
             <div className="bg-card border border-border group">
-              <div className="relative h-[300px] w-full bg-muted overflow-hidden">
+              <div className="relative h-75 w-full bg-muted overflow-hidden">
                 <Image
                   loading="lazy"
                   src="/images/services/pet-containers.webp"
@@ -292,7 +292,7 @@ export default function PrivateLabelPage() {
 
             {/* Format 4 */}
             <div className="bg-card border border-border group">
-              <div className="relative h-[300px] w-full bg-muted overflow-hidden">
+              <div className="relative h-75 w-full bg-muted overflow-hidden">
                 <Image
                   loading="lazy"
                   src="/images/services/tin-container.webp"
@@ -323,13 +323,13 @@ export default function PrivateLabelPage() {
 
       {/* SECTION 04: BRANDING PROCESS */}
       <section className="py-16 lg:py-24 bg-background border-y border-border">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1400px]">
+        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-350">
           <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-16 text-center">
             The Private Label Process
           </h2>
 
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6 text-foreground">
-            <div className="flex flex-col items-center text-center max-w-[150px]">
+            <div className="flex flex-col items-center text-center max-w-37.5">
               <div className="w-16 h-16 rounded-full border border-secondary flex items-center justify-center font-heading text-2xl font-medium mb-4 bg-background">
                 1
               </div>
@@ -338,7 +338,7 @@ export default function PrivateLabelPage() {
             <ArrowRight className="hidden lg:block w-6 h-6 text-foreground/20" />
             <ArrowRight className="lg:hidden w-6 h-6 text-foreground/20 rotate-90 my-2" />
 
-            <div className="flex flex-col items-center text-center max-w-[150px]">
+            <div className="flex flex-col items-center text-center max-w-37.5">
               <div className="w-16 h-16 rounded-full border border-secondary flex items-center justify-center font-heading text-2xl font-medium mb-4 bg-background">
                 2
               </div>
@@ -347,7 +347,7 @@ export default function PrivateLabelPage() {
             <ArrowRight className="hidden lg:block w-6 h-6 text-foreground/20" />
             <ArrowRight className="lg:hidden w-6 h-6 text-foreground/20 rotate-90 my-2" />
 
-            <div className="flex flex-col items-center text-center max-w-[150px]">
+            <div className="flex flex-col items-center text-center max-w-37.5">
               <div className="w-16 h-16 rounded-full border border-secondary flex items-center justify-center font-heading text-2xl font-medium mb-4 bg-background">
                 3
               </div>
@@ -356,7 +356,7 @@ export default function PrivateLabelPage() {
             <ArrowRight className="hidden lg:block w-6 h-6 text-foreground/20" />
             <ArrowRight className="lg:hidden w-6 h-6 text-foreground/20 rotate-90 my-2" />
 
-            <div className="flex flex-col items-center text-center max-w-[150px]">
+            <div className="flex flex-col items-center text-center max-w-37.5">
               <div className="w-16 h-16 rounded-full border border-secondary flex items-center justify-center font-heading text-2xl font-medium mb-4 bg-background">
                 4
               </div>
@@ -365,7 +365,7 @@ export default function PrivateLabelPage() {
             <ArrowRight className="hidden lg:block w-6 h-6 text-foreground/20" />
             <ArrowRight className="lg:hidden w-6 h-6 text-foreground/20 rotate-90 my-2" />
 
-            <div className="flex flex-col items-center text-center max-w-[150px]">
+            <div className="flex flex-col items-center text-center max-w-37.5">
               <div className="w-16 h-16 rounded-full border border-secondary flex items-center justify-center font-heading text-2xl font-medium mb-4 bg-background">
                 5
               </div>
@@ -374,7 +374,7 @@ export default function PrivateLabelPage() {
             <ArrowRight className="hidden lg:block w-6 h-6 text-foreground/20" />
             <ArrowRight className="lg:hidden w-6 h-6 text-foreground/20 rotate-90 my-2" />
 
-            <div className="flex flex-col items-center text-center max-w-[150px]">
+            <div className="flex flex-col items-center text-center max-w-37.5">
               <div className="w-16 h-16 rounded-full border bg-primary text-primary-foreground flex items-center justify-center font-heading text-2xl font-medium mb-4">
                 6
               </div>
@@ -386,7 +386,7 @@ export default function PrivateLabelPage() {
 
       {/* SECTION 05: REGULATORY LABELING (SEO SECTION) */}
       <section className="py-16 lg:py-24 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1200px]">
+        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-300">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="font-heading text-4xl sm:text-5xl font-semibold mb-8">
@@ -437,7 +437,7 @@ export default function PrivateLabelPage() {
               </div>
             </div>
 
-            <div className="relative h-[400px] lg:h-[500px] w-full rounded-xl overflow-hidden shadow-2xl border border-primary-foreground/10 bg-white">
+            <div className="relative h-100 lg:h-125 w-full rounded-xl overflow-hidden shadow-2xl border border-primary-foreground/10 bg-white">
               <Image
                 loading="lazy"
                 src="/images/services/label-.webp"
@@ -452,7 +452,7 @@ export default function PrivateLabelPage() {
 
       {/* SECTION 06: PRODUCT ELIGIBILITY */}
       <section className="py-16 lg:py-24 bg-background border-b border-border">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1200px]">
+        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-300">
           <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-12 text-center">
             Eligible Commodities For Private Label
           </h2>

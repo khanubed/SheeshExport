@@ -21,9 +21,12 @@ export function AnnouncementBar() {
   };
 
   return (
-    <aside aria-label="Announcement" className="bg-primary text-primary-foreground px-4 py-2 relative text-sm text-center font-medium">
+    <aside
+      aria-label="Announcement"
+      className="bg-primary text-primary-foreground px-4 py-2 relative text-sm text-center font-medium"
+    >
       <span>APEDA Registered · Serving 40+ Countries Worldwide</span>
-      <button 
+      <button
         onClick={handleDismiss}
         className="absolute right-4 top-1/2 -translate-y-1/2 p-1 hover:bg-black/10 rounded-full transition-colors"
         aria-label="Dismiss announcement"

@@ -67,7 +67,7 @@ export function AboutSheeshExports() {
 
           {/* Visual Column - 55% */}
           <div className="w-full lg:w-[55%] relative flex items-center">
-            <div className="relative w-full aspect-[4/5] bg-slate-100 overflow-hidden">
+            <div className="relative w-full aspect-4/5 bg-slate-100 overflow-hidden">
               <Image
                 src="/images/sheesh-logo.webp" // Using existing logo as a placeholder until an authentic factory image is provided
                 alt="Premium spice processing facility and export operations"

@@ -11,3 +11,8 @@ export const DynamicCertificationsCarousel = dynamic(
   () => import("@/components/home/CertificationsCarousel").then((mod) => mod.CertificationsCarousel),
   { ssr: true }
 );
+
+export const DynamicHeroBackgroundVideo = dynamic(
+  () => import("@/components/home/HeroBackgroundVideo").then((mod) => mod.HeroBackgroundVideo),
+  { ssr: false }
+);

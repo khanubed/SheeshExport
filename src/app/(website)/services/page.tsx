@@ -105,7 +105,7 @@ export default function ServicesHubPage() {
         aria-labelledby="services-navigator-heading"
         className="py-16 lg:py-24 bg-background"
       >
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1200px]">
+        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-300">
           <h2 id="services-navigator-heading" className="sr-only">
             Our Services
           </h2>
@@ -113,7 +113,7 @@ export default function ServicesHubPage() {
             {/* Private Label */}
             <article className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
               <figure
-                className="w-full lg:w-1/2 relative h-[350px] lg:h-[450px]"
+                className="w-full lg:w-1/2 relative h-87.5 lg:h-112.5"
                 style={{ position: "relative" }}
               >
                 <Image
@@ -122,7 +122,7 @@ export default function ServicesHubPage() {
                   alt="Retail spice packaging"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700"
+                  className="object-cover grayscale-30 hover:grayscale-0 transition-all duration-700"
                 />
                 <figcaption className="sr-only">Private label spice packaging</figcaption>
               </figure>
@@ -136,7 +136,7 @@ export default function ServicesHubPage() {
                 <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-6">
                   Private Label Manufacturing
                 </h2>
-                <p className="text-xl text-muted-foreground font-sans font-light leading-relaxed font-sans mb-8">
+                <p className="text-xl text-muted-foreground font-sans font-light leading-relaxed mb-8">
                   Launch your own spice brand with custom packaging, regulatory labeling and
                   export-ready production. We handle everything from blending to final shelf-ready
                   pouches and jars.
@@ -153,7 +153,7 @@ export default function ServicesHubPage() {
             {/* Bulk Export */}
             <article className="flex flex-col lg:flex-row-reverse gap-12 lg:gap-20 items-center">
               <figure
-                className="w-full lg:w-1/2 relative h-[350px] lg:h-[450px]"
+                className="w-full lg:w-1/2 relative h-87.5 lg:h-112.5"
                 style={{ position: "relative" }}
               >
                 <Image
@@ -162,7 +162,7 @@ export default function ServicesHubPage() {
                   alt="Warehouse stacked with bags"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700"
+                  className="object-cover grayscale-30 hover:grayscale-0 transition-all duration-700"
                 />
                 <figcaption className="sr-only">Bulk export warehouse</figcaption>
               </figure>
@@ -176,7 +176,7 @@ export default function ServicesHubPage() {
                 <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-6">
                   Bulk Export Shipments
                 </h2>
-                <p className="text-xl text-muted-foreground font-sans font-light leading-relaxed font-sans mb-8">
+                <p className="text-xl text-muted-foreground font-sans font-light leading-relaxed mb-8">
                   Large-volume shipments optimized for manufacturers, processors and wholesale
                   distributors. Packaged in 25kg/50kg PP or Jute bags with container desiccant
                   protection.
@@ -193,7 +193,7 @@ export default function ServicesHubPage() {
             {/* Mixed Container */}
             <article className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
               <figure
-                className="w-full lg:w-1/2 relative h-[350px] lg:h-[450px]"
+                className="w-full lg:w-1/2 relative h-87.5 lg:h-112.5"
                 style={{ position: "relative" }}
               >
                 <Image
@@ -202,7 +202,7 @@ export default function ServicesHubPage() {
                   alt="Container with multiple commodities"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700"
+                  className="object-cover grayscale-30 hover:grayscale-0 transition-all duration-700"
                 />
                 <figcaption className="sr-only">Mixed container shipment</figcaption>
               </figure>
@@ -216,7 +216,7 @@ export default function ServicesHubPage() {
                 <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-6">
                   Mixed Container Consolidation
                 </h2>
-                <p className="text-xl text-muted-foreground font-sans font-light leading-relaxed font-sans mb-8">
+                <p className="text-xl text-muted-foreground font-sans font-light leading-relaxed mb-8">
                   Combine multiple products into a single FCL shipment. Reduce your inventory risk,
                   lower freight costs, and consolidate your supply chain with a single vendor.
                 </p>
@@ -237,7 +237,7 @@ export default function ServicesHubPage() {
         aria-labelledby="why-partner-heading"
         className="py-16 lg:py-24 bg-background border-t border-border"
       >
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1200px]">
+        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-300">
           <h2
             id="why-partner-heading"
             className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-16 text-center"
@@ -253,7 +253,7 @@ export default function ServicesHubPage() {
               <h3 className="font-heading text-2xl font-medium text-foreground mb-3">
                 Procurement Flexibility
               </h3>
-              <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">
+              <p className="text-muted-foreground font-sans font-light leading-relaxed">
                 Scale from a consolidated mixed container up to continuous multi-container bulk
                 contracts effortlessly.
               </p>
@@ -262,7 +262,7 @@ export default function ServicesHubPage() {
               <h3 className="font-heading text-2xl font-medium text-foreground mb-3">
                 Reduced Supply Chain Complexity
               </h3>
-              <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">
+              <p className="text-muted-foreground font-sans font-light leading-relaxed">
                 Eliminate the need for multiple brokers and processors by sourcing, packing, and
                 shipping directly from origin.
               </p>
@@ -271,7 +271,7 @@ export default function ServicesHubPage() {
               <h3 className="font-heading text-2xl font-medium text-foreground mb-3">
                 Single Vendor Sourcing
               </h3>
-              <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">
+              <p className="text-muted-foreground font-sans font-light leading-relaxed">
                 Consolidate your purchasing power. We handle Spices, Oil Seeds, Pulses, and Grains
                 under one commercial invoice.
               </p>
@@ -280,7 +280,7 @@ export default function ServicesHubPage() {
               <h3 className="font-heading text-2xl font-medium text-foreground mb-3">
                 Export Documentation Support
               </h3>
-              <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">
+              <p className="text-muted-foreground font-sans font-light leading-relaxed">
                 We provide flawless Certificates of Origin, Phytosanitary Certificates, and Lab
                 Analysis reports for seamless customs clearance.
               </p>
@@ -289,7 +289,7 @@ export default function ServicesHubPage() {
               <h3 className="font-heading text-2xl font-medium text-foreground mb-3">
                 Global Logistics Expertise
               </h3>
-              <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">
+              <p className="text-muted-foreground font-sans font-light leading-relaxed">
                 Decades of experience routing shipments to highly regulated markets including the
                 EU, USA, and Middle East.
               </p>
@@ -298,7 +298,7 @@ export default function ServicesHubPage() {
               <h3 className="font-heading text-2xl font-medium text-foreground mb-3">
                 Stringent Quality Control
               </h3>
-              <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">
+              <p className="text-muted-foreground font-sans font-light leading-relaxed">
                 Mandatory pre-shipment inspections and lab testing through SGS or Eurofins for
                 strict compliance with destination standards.
               </p>

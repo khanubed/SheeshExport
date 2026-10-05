@@ -75,7 +75,7 @@ export default function CertificationsPage() {
           <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl font-medium text-primary leading-[1.05] mb-8">
             Global Certifications Supporting International Food Trade
           </h1>
-          <p className="text-xl text-muted-foreground font-sans max-w-2xl font-light leading-relaxed font-sans mb-12">
+          <p className="text-xl text-muted-foreground font-sans max-w-2xl font-light leading-relaxed mb-12">
             Sheesh Exports maintains internationally recognized food safety, regulatory and export
             certifications to support buyers, distributors and food manufacturers across global
             markets.
@@ -109,13 +109,13 @@ export default function CertificationsPage() {
 
       {/* SECTION 02: COMPLIANCE OVERVIEW */}
       <section className="py-16 lg:py-20 bg-background">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1400px]">
+        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-350">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <div>
               <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary leading-[1.1] mb-8">
                 Built Around Food Safety, Traceability & Export Compliance
               </h2>
-              <div className="space-y-6 text-lg text-muted-foreground font-sans font-light leading-relaxed font-sans">
+              <div className="space-y-6 text-lg text-muted-foreground font-sans font-light leading-relaxed">
                 <p>
                   <strong className="text-foreground font-medium block mb-1">
                     Food Safety & Quality Assurance
@@ -198,7 +198,7 @@ export default function CertificationsPage() {
 
       {/* SECTION 03: CERTIFICATION DIRECTORY */}
       <section id="directory" className="py-16 lg:py-20 bg-background">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1000px]">
+        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-250">
           <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-12">
             Export Certification Directory
           </h2>
@@ -233,7 +233,7 @@ export default function CertificationsPage() {
                   </div>
                 </div>
                 {cert.image && (
-                  <div className="w-full md:w-[200px] h-[120px] bg-card border border-border flex items-center justify-center p-4 relative flex-shrink-0 group">
+                  <div className="w-full md:w-50 h-30 bg-card border border-border flex items-center justify-center p-4 relative shrink-0 group">
                     <Image
                       loading="lazy"
                       src={cert.image}
@@ -251,7 +251,7 @@ export default function CertificationsPage() {
 
       {/* SECTION 04: MARKET ACCESS MATRIX */}
       <section className="py-16 lg:py-20 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-24 max-w-[1200px]">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-24 max-w-300">
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-medium text-primary mb-10 lg:mb-12">
             Certification Requirements By Market
           </h2>
@@ -323,7 +323,7 @@ export default function CertificationsPage() {
 
       {/* SECTION 05: PRODUCT COMPLIANCE MAPPING */}
       <section className="py-16 lg:py-20 bg-background">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1200px]">
+        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-300">
           <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-12">
             Compliance Across Product Categories
           </h2>
@@ -340,7 +340,7 @@ export default function CertificationsPage() {
                 <li>APEDA</li>
                 <li>Spices Board</li>
               </ul>
-              <div className="h-[1px] w-full bg-muted/20 mt-6" />
+              <div className="h-px w-full bg-muted/20 mt-6" />
             </div>
             <div>
               <Link href="/products/whole-spices/turmeric" className="group">
@@ -354,7 +354,7 @@ export default function CertificationsPage() {
                 <li>US FDA</li>
                 <li>Spices Board</li>
               </ul>
-              <div className="h-[1px] w-full bg-muted/20 mt-6" />
+              <div className="h-px w-full bg-muted/20 mt-6" />
             </div>
             <div>
               <Link href="/products/whole-spices/cumin" className="group">
@@ -368,7 +368,7 @@ export default function CertificationsPage() {
                 <li>APEDA</li>
                 <li>Spices Board</li>
               </ul>
-              <div className="h-[1px] w-full bg-muted/20 mt-6" />
+              <div className="h-px w-full bg-muted/20 mt-6" />
             </div>
           </div>
         </div>
@@ -376,7 +376,7 @@ export default function CertificationsPage() {
 
       {/* SECTION 06: QUALITY PROCESS */}
       <section className="py-12 bg-background border-b border-border">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1400px]">
+        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-350">
           <div className="flex flex-wrap items-center justify-between gap-4 text-foreground font-medium tracking-wider uppercase text-sm sm:text-base">
             <span>Farm Selection</span>
             <ArrowRight className="w-5 h-5 text-secondary hidden md:block" />

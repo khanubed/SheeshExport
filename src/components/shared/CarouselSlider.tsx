@@ -57,14 +57,19 @@ export function CarouselSlider<T = unknown>({
   }, []);
 
   useEffect(() => {
-    checkScrollability();
+    const frameId = requestAnimationFrame(() => {
+      checkScrollability();
+    });
     const el = scrollRef.current;
-    if (!el) return;
+    if (!el) {
+      return () => cancelAnimationFrame(frameId);
+    }
 
     el.addEventListener("scroll", checkScrollability, { passive: true });
     window.addEventListener("resize", checkScrollability);
 
     return () => {
+      cancelAnimationFrame(frameId);
       el.removeEventListener("scroll", checkScrollability);
       window.removeEventListener("resize", checkScrollability);
     };
@@ -179,7 +184,7 @@ export function CarouselSlider<T = unknown>({
         ref={scrollRef}
         className={cn(
           "flex overflow-x-auto gap-6 scroll-smooth snap-x snap-mandatory py-2 px-1",
-          "[scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden",
+          "scrollbar-none [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden",
           containerClassName
         )}
         style={{

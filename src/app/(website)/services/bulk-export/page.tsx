@@ -113,7 +113,7 @@ export default function BulkExportPage() {
 
       {/* SECTION 02: PACKAGING FORMATS */}
       <section id="formats" className="py-16 lg:py-24 bg-background border-b border-border">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1400px]">
+        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-350">
           <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-16 text-center">
             Industrial Packaging Solutions
           </h2>
@@ -180,7 +180,7 @@ export default function BulkExportPage() {
 
       {/* SECTION 03: CONTAINER OPTIMIZATION */}
       <section className="py-16 lg:py-24 bg-background">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1200px]">
+        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-300">
           <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-16 text-center">
             Container Loading Optimization
           </h2>
@@ -236,7 +236,7 @@ export default function BulkExportPage() {
 
       {/* SECTION 04: DESICCANT PROTECTION (SEO BLOCK) */}
       <section className="py-16 lg:py-24 bg-primary text-primary-foreground border-y border-primary-foreground/10">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1200px]">
+        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-300">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="font-heading text-4xl sm:text-5xl font-medium mb-8">
@@ -249,7 +249,7 @@ export default function BulkExportPage() {
 
               <ul className="space-y-6">
                 <li className="flex items-start">
-                  <ShieldAlert className="w-6 h-6 text-secondary mr-4 flex-shrink-0 mt-1" />
+                  <ShieldAlert className="w-6 h-6 text-secondary mr-4 shrink-0 mt-1" />
                   <div>
                     <h4 className="font-heading text-2xl mb-1 text-primary-foreground">
                       Moisture Protection
@@ -261,7 +261,7 @@ export default function BulkExportPage() {
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <TrendingDown className="w-6 h-6 text-secondary mr-4 flex-shrink-0 mt-1" />
+                  <TrendingDown className="w-6 h-6 text-secondary mr-4 shrink-0 mt-1" />
                   <div>
                     <h4 className="font-heading text-2xl mb-1 text-primary-foreground">
                       Preventing Container Condensation
@@ -276,7 +276,7 @@ export default function BulkExportPage() {
               </ul>
             </div>
 
-            <div className="relative h-[400px] lg:h-[500px] bg-card/5 border border-primary-foreground/10 p-8 flex flex-col items-center justify-center text-center">
+            <div className="relative h-100 lg:h-125 bg-card/5 border border-primary-foreground/10 p-8 flex flex-col items-center justify-center text-center">
               <div className="w-24 h-24 rounded-full border border-secondary flex items-center justify-center mb-6">
                 <ShieldAlert className="w-10 h-10 text-secondary" />
               </div>
@@ -294,7 +294,7 @@ export default function BulkExportPage() {
 
       {/* SECTION 05: LOGISTICS NETWORK */}
       <section className="py-16 lg:py-24 bg-background">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1200px]">
+        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-300">
           <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-12 text-center">
             Major Export Ports
           </h2>

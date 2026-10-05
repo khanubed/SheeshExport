@@ -87,7 +87,7 @@ export default function MixedContainerPage() {
             priority
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B2F26] via-[#0B2F26]/80 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-[#0B2F26] via-[#0B2F26]/80 to-transparent" />
 
         <div className="container mx-auto px-6 sm:px-12 lg:px-24 relative z-10 pt-24 pb-16">
           <span className="inline-block text-secondary font-semibold tracking-[0.2em] uppercase text-xs mb-8 border-b border-secondary/30 pb-2">
@@ -123,7 +123,7 @@ export default function MixedContainerPage() {
 
       {/* SECTION 02: PROBLEM VS SOLUTION */}
       <section className="py-16 lg:py-24 bg-background border-b border-border">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1200px]">
+        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-300">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
             <div className="bg-muted text-primary-foreground p-10 lg:p-12 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full blur-3xl" />
@@ -155,7 +155,7 @@ export default function MixedContainerPage() {
               <h3 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-8">
                 The Sheesh Solution
               </h3>
-              <p className="text-xl text-muted-foreground font-sans font-light leading-relaxed font-sans mb-10">
+              <p className="text-xl text-muted-foreground font-sans font-light leading-relaxed mb-10">
                 We handle the sourcing, processing, and warehousing of all commodities internally.
                 We then build a highly optimized container load plan, allowing you to import your
                 exact product mix in a single, cost-effective FCL shipment.
@@ -178,7 +178,7 @@ export default function MixedContainerPage() {
 
       {/* SECTION 03: CONTAINER VISUALIZER */}
       <section id="visualizer" className="py-16 lg:py-24 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1200px] text-center">
+        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-300 text-center">
           <span className="inline-block text-secondary font-semibold tracking-[0.2em] uppercase text-xs mb-6">
             Container Optimization
           </span>
@@ -191,7 +191,7 @@ export default function MixedContainerPage() {
             <div className="absolute -top-4 left-4 bg-secondary text-primary px-4 py-1 text-xs font-bold uppercase tracking-wider">
               Container Cutaway
             </div>
-            <div className="flex flex-col sm:flex-row h-[300px] lg:h-[400px] gap-2">
+            <div className="flex flex-col sm:flex-row h-75 lg:h-100 gap-2">
               <div className="w-full sm:w-[30%] bg-[#FF4500]/20 border border-[#FF4500]/50 flex items-center justify-center relative group">
                 <span className="font-heading text-2xl lg:text-3xl font-medium text-primary-foreground/90 transform -rotate-90 sm:rotate-0">
                   Red Chilli
@@ -229,7 +229,7 @@ export default function MixedContainerPage() {
 
       {/* SECTION 04: BENEFITS (EDITORIAL BLOCKS) */}
       <section className="py-16 lg:py-24 bg-background">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1200px]">
+        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-300">
           <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-16 text-center">
             Strategic Advantages
           </h2>
@@ -239,7 +239,7 @@ export default function MixedContainerPage() {
               <h3 className="font-heading text-2xl font-medium text-foreground mb-3">
                 Lower Inventory Risk
               </h3>
-              <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">
+              <p className="text-muted-foreground font-sans font-light leading-relaxed">
                 Don't tie up capital in 20MT of a slow-moving product. Order only the tonnage you
                 need for current demand.
               </p>
@@ -249,7 +249,7 @@ export default function MixedContainerPage() {
               <h3 className="font-heading text-2xl font-medium text-foreground mb-3">
                 Lower Freight Cost
               </h3>
-              <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">
+              <p className="text-muted-foreground font-sans font-light leading-relaxed">
                 Avoid expensive LCL (Less than Container Load) rates. Shipping one FCL dramatically
                 reduces your per-ton landed cost.
               </p>
@@ -259,7 +259,7 @@ export default function MixedContainerPage() {
               <h3 className="font-heading text-2xl font-medium text-foreground mb-3">
                 Single Documentation
               </h3>
-              <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">
+              <p className="text-muted-foreground font-sans font-light leading-relaxed">
                 One Commercial Invoice, one Bill of Lading, one Phytosanitary certificate covering
                 all products, saving customs clearance time.
               </p>
@@ -269,7 +269,7 @@ export default function MixedContainerPage() {
               <h3 className="font-heading text-2xl font-medium text-foreground mb-3">
                 Simplified Procurement
               </h3>
-              <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">
+              <p className="text-muted-foreground font-sans font-light leading-relaxed">
                 Deal with a single dedicated account manager rather than communicating with four
                 different suppliers across India.
               </p>
@@ -279,7 +279,7 @@ export default function MixedContainerPage() {
               <h3 className="font-heading text-2xl font-medium text-foreground mb-3">
                 Consistent Quality
               </h3>
-              <p className="text-muted-foreground font-sans font-light leading-relaxed font-sans">
+              <p className="text-muted-foreground font-sans font-light leading-relaxed">
                 All consolidated products adhere to the exact same stringent SGS/Eurofins laboratory
                 testing protocols.
               </p>
@@ -290,7 +290,7 @@ export default function MixedContainerPage() {
 
       {/* SECTION 05: SUITABLE BUYERS */}
       <section className="py-16 lg:py-24 bg-background border-y border-border">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1200px]">
+        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-300">
           <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-12 text-center">
             Who Uses This Service?
           </h2>
@@ -316,7 +316,7 @@ export default function MixedContainerPage() {
 
       {/* SECTION 06: CASE EXAMPLE */}
       <section className="py-16 lg:py-24 bg-background">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1000px]">
+        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-250">
           <div className="bg-primary text-primary-foreground p-10 lg:p-16 border-t-4 border-secondary">
             <span className="inline-block text-secondary font-semibold tracking-[0.2em] uppercase text-xs mb-6">
               Case Study
@@ -374,13 +374,13 @@ export default function MixedContainerPage() {
 
       {/* SECTION 07: WORKFLOW */}
       <section className="py-16 lg:py-24 bg-background border-t border-border">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1400px]">
+        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-350">
           <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-16 text-center">
             Mixed Container Workflow
           </h2>
 
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6 text-foreground">
-            <div className="flex flex-col items-center text-center max-w-[150px]">
+            <div className="flex flex-col items-center text-center max-w-37.5">
               <div className="w-16 h-16 rounded-full border border-secondary flex items-center justify-center font-heading text-2xl font-medium mb-4 bg-card">
                 1
               </div>
@@ -388,7 +388,7 @@ export default function MixedContainerPage() {
             </div>
             <ArrowRight className="hidden lg:block w-6 h-6 text-foreground/20" />
 
-            <div className="flex flex-col items-center text-center max-w-[150px]">
+            <div className="flex flex-col items-center text-center max-w-37.5">
               <div className="w-16 h-16 rounded-full border border-secondary flex items-center justify-center font-heading text-2xl font-medium mb-4 bg-card">
                 2
               </div>
@@ -396,7 +396,7 @@ export default function MixedContainerPage() {
             </div>
             <ArrowRight className="hidden lg:block w-6 h-6 text-foreground/20" />
 
-            <div className="flex flex-col items-center text-center max-w-[150px]">
+            <div className="flex flex-col items-center text-center max-w-37.5">
               <div className="w-16 h-16 rounded-full border border-secondary flex items-center justify-center font-heading text-2xl font-medium mb-4 bg-card">
                 3
               </div>
@@ -404,7 +404,7 @@ export default function MixedContainerPage() {
             </div>
             <ArrowRight className="hidden lg:block w-6 h-6 text-foreground/20" />
 
-            <div className="flex flex-col items-center text-center max-w-[150px]">
+            <div className="flex flex-col items-center text-center max-w-37.5">
               <div className="w-16 h-16 rounded-full border border-secondary flex items-center justify-center font-heading text-2xl font-medium mb-4 bg-card">
                 4
               </div>
@@ -412,7 +412,7 @@ export default function MixedContainerPage() {
             </div>
             <ArrowRight className="hidden lg:block w-6 h-6 text-foreground/20" />
 
-            <div className="flex flex-col items-center text-center max-w-[150px]">
+            <div className="flex flex-col items-center text-center max-w-37.5">
               <div className="w-16 h-16 rounded-full border border-secondary flex items-center justify-center font-heading text-2xl font-medium mb-4 bg-card">
                 5
               </div>
@@ -420,7 +420,7 @@ export default function MixedContainerPage() {
             </div>
             <ArrowRight className="hidden lg:block w-6 h-6 text-foreground/20" />
 
-            <div className="flex flex-col items-center text-center max-w-[150px]">
+            <div className="flex flex-col items-center text-center max-w-37.5">
               <div className="w-16 h-16 rounded-full border bg-primary text-primary-foreground flex items-center justify-center font-heading text-2xl font-medium mb-4">
                 6
               </div>

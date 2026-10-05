@@ -211,11 +211,11 @@ export default function ExportProcessPage() {
 
       {/* SECTION 02: EXPORT OVERVIEW */}
       <section className="py-12 lg:py-16 bg-background border-b border-border">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1000px] text-center">
+        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-250 text-center">
           <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-8">
             Built For Reliable International Trade
           </h2>
-          <p className="text-xl text-muted-foreground font-sans font-light leading-relaxed font-sans editorial-content text-left md:text-center">
+          <p className="text-xl text-muted-foreground font-sans font-light leading-relaxed editorial-content text-left md:text-center">
             Successful international commodity shipping requires more than just product
             availability. It demands a highly synchronized workflow integrating precise{" "}
             <strong className="font-medium text-foreground">farm sourcing</strong>, rigorous{" "}
@@ -232,7 +232,7 @@ export default function ExportProcessPage() {
 
       {/* SECTION 03: EXPORT JOURNEY (THE CORE) */}
       <section id="journey" className="py-12 lg:py-16 bg-background">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1200px]">
+        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-300">
           <div className="text-center mb-16 lg:mb-24">
             <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-4">
               The Export Journey
@@ -250,13 +250,13 @@ export default function ExportProcessPage() {
                   key={idx}
                   className={`flex flex-col ${isEven ? "lg:flex-row-reverse" : "lg:flex-row"} gap-8 lg:gap-12 items-center`}
                 >
-                  <div className="w-full lg:w-1/2 relative h-[350px] aspect-4/3 lg:h-[500px]">
+                  <div className="w-full lg:w-1/2 relative h-87.5 aspect-4/3 lg:h-125">
                     <Image
                       loading="lazy"
                       src={step.image}
                       alt={step.title}
                       fill
-                      className="object-cover aspect-4/3 grayscale-[30%] hover:grayscale-0 transition-all duration-700 shadow-sm"
+                      className="object-cover aspect-4/3 grayscale-30 hover:grayscale-0 transition-all duration-700 shadow-sm"
                     />
                     <div className="absolute top-6 left-6 bg-primary text-primary-foreground px-4 py-2 font-heading text-3xl font-medium shadow-md">
                       {step.step}
@@ -267,7 +267,7 @@ export default function ExportProcessPage() {
                     <h3 className="font-heading text-4xl lg:text-5xl font-medium text-foreground mb-6">
                       {step.title}
                     </h3>
-                    <p className="text-xl text-muted-foreground font-sans font-light leading-relaxed font-sans mb-8">
+                    <p className="text-xl text-muted-foreground font-sans font-light leading-relaxed mb-8">
                       {step.desc}
                     </p>
 
@@ -314,7 +314,7 @@ export default function ExportProcessPage() {
 
       {/* SECTION 04: EXPORT DOCUMENTATION CENTER */}
       <section className="py-12 lg:py-16 bg-background border-y border-border">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1200px]">
+        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-300">
           <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-12">
             Documentation Supporting International Trade
           </h2>
@@ -337,7 +337,7 @@ export default function ExportProcessPage() {
 
       {/* SECTION 05: MIXED CONTAINER SOLUTIONS */}
       <section className="py-12 lg:py-16 bg-primary text-primary-foreground overflow-hidden relative">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1200px] relative z-10">
+        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-300 relative z-10">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div>
               <span className="inline-block text-secondary font-semibold tracking-[0.2em] uppercase text-xs mb-6 border-b border-secondary/30 pb-2">
@@ -359,8 +359,8 @@ export default function ExportProcessPage() {
               </Link>
             </div>
 
-            <div className="relative h-[400px] bg-background/5 border border-primary-foreground/10 p-8 flex flex-col justify-center shadow-2xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
+            <div className="relative h-100 bg-background/5 border border-primary-foreground/10 p-8 flex flex-col justify-center shadow-2xl">
+              <div className="absolute inset-0 bg-linear-to-br from-white/5 to-transparent pointer-events-none" />
               <Box className="w-12 h-12 text-secondary mb-8" />
               <div className="space-y-4">
                 <div className="flex items-center justify-between border-b border-primary-foreground/10 pb-4">
@@ -387,13 +387,13 @@ export default function ExportProcessPage() {
 
       {/* SECTION 06: WHY BUYERS PREFER THIS PROCESS */}
       <section className="py-12 lg:py-16 bg-background border-b border-border">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1200px]">
+        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-300">
           <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-12">
             Why Buyers Prefer Our Process
           </h2>
           <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-8">
             <li className="flex items-start">
-              <CheckCircle2 className="w-6 h-6 text-secondary mr-4 flex-shrink-0 mt-1" />
+              <CheckCircle2 className="w-6 h-6 text-secondary mr-4 shrink-0 mt-1" />
               <div>
                 <h4 className="font-heading text-2xl font-medium text-foreground mb-2">
                   Batch Traceability
@@ -404,7 +404,7 @@ export default function ExportProcessPage() {
               </div>
             </li>
             <li className="flex items-start">
-              <CheckCircle2 className="w-6 h-6 text-secondary mr-4 flex-shrink-0 mt-1" />
+              <CheckCircle2 className="w-6 h-6 text-secondary mr-4 shrink-0 mt-1" />
               <div>
                 <h4 className="font-heading text-2xl font-medium text-foreground mb-2">
                   Pre-Shipment Testing
@@ -415,7 +415,7 @@ export default function ExportProcessPage() {
               </div>
             </li>
             <li className="flex items-start">
-              <CheckCircle2 className="w-6 h-6 text-secondary mr-4 flex-shrink-0 mt-1" />
+              <CheckCircle2 className="w-6 h-6 text-secondary mr-4 shrink-0 mt-1" />
               <div>
                 <h4 className="font-heading text-2xl font-medium text-foreground mb-2">
                   Flexible Packaging
@@ -426,7 +426,7 @@ export default function ExportProcessPage() {
               </div>
             </li>
             <li className="flex items-start">
-              <CheckCircle2 className="w-6 h-6 text-secondary mr-4 flex-shrink-0 mt-1" />
+              <CheckCircle2 className="w-6 h-6 text-secondary mr-4 shrink-0 mt-1" />
               <div>
                 <h4 className="font-heading text-2xl font-medium text-foreground mb-2">
                   Documentation Support
@@ -437,7 +437,7 @@ export default function ExportProcessPage() {
               </div>
             </li>
             <li className="flex items-start">
-              <CheckCircle2 className="w-6 h-6 text-secondary mr-4 flex-shrink-0 mt-1" />
+              <CheckCircle2 className="w-6 h-6 text-secondary mr-4 shrink-0 mt-1" />
               <div>
                 <h4 className="font-heading text-2xl font-medium text-foreground mb-2">
                   Global Logistics Network
@@ -448,7 +448,7 @@ export default function ExportProcessPage() {
               </div>
             </li>
             <li className="flex items-start">
-              <CheckCircle2 className="w-6 h-6 text-secondary mr-4 flex-shrink-0 mt-1" />
+              <CheckCircle2 className="w-6 h-6 text-secondary mr-4 shrink-0 mt-1" />
               <div>
                 <h4 className="font-heading text-2xl font-medium text-foreground mb-2">
                   Regulatory Compliance

@@ -27,8 +27,9 @@ export function CertificationsCarousel({ certifications }: CertificationsCarouse
       renderItem={(cert) => {
         const content = (
           <>
-            <div className="relative h-20 w-full max-w-[120px] bg-white rounded flex items-center justify-center p-2 mb-2 shadow-sm">
+            <div className="relative h-20 w-full max-w-30 bg-white rounded flex items-center justify-center p-2 mb-2 shadow-sm">
               <Image
+                // decoding="async"
                 loading="lazy"
                 src={cert.img}
                 alt={cert.name}

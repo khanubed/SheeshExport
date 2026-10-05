@@ -128,7 +128,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               </div>
             </div>
             <div className="flex-1 w-full lg:w-auto">
-              <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg border border-border">
+              <div className="relative aspect-4/3 rounded-xl overflow-hidden shadow-lg border border-border">
                 <Image
                   loading="lazy"
                   src={post.heroImage}

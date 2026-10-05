@@ -19,7 +19,6 @@ export function Header() {
       <div className="mx-auto flex h-20 max-w-8xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center space-x-2" aria-label="Sheesh Exports Home">
           <Image
-            loading="lazy"
             src="/images/sheesh-logo.webp"
             alt="Sheesh Exports Logo"
             width={150}

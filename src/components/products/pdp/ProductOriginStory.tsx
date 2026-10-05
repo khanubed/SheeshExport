@@ -31,7 +31,7 @@ export function ProductOriginStory({ product }: { product: Product }) {
               return (
               <div
                 key={idx}
-                className={`relative ${idx === 0 ? "aspect-square" : "aspect-[3/4] mt-12"}`}
+                className={`relative ${idx === 0 ? "aspect-square" : "aspect-3/4 mt-12"}`}
               >
                 <Image
                   src={imgSrc}

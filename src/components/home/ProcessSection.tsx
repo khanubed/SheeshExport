@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
@@ -67,6 +65,7 @@ export function ProcessSection() {
                   >
                     <Image
                       loading="lazy"
+                      decoding="async"
                       src={step.image}
                       alt={step.title}
                       fill

@@ -78,7 +78,7 @@ export default function QualityPage() {
           <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl font-medium text-primary leading-[1.05] mb-8">
             Quality Is Built Into Every Shipment, Not Inspected At The End
           </h1>
-          <p className="text-xl text-muted-foreground font-sans max-w-2xl font-light leading-relaxed font-sans mb-12">
+          <p className="text-xl text-muted-foreground font-sans max-w-2xl font-light leading-relaxed mb-12">
             From sourcing and cleaning to laboratory testing, packaging and export documentation,
             every batch undergoes rigorous quality verification before shipment.
           </p>
@@ -111,13 +111,13 @@ export default function QualityPage() {
 
       {/* SECTION 02: OUR QUALITY APPROACH */}
       <section className="py-16 lg:py-20 bg-background">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1400px]">
+        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-350">
           <div className="grid lg:grid-cols-[60%_40%] gap-12 lg:gap-16 items-start">
             <div>
               <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary leading-[1.1] mb-8">
                 Our Quality Approach
               </h2>
-              <div className="space-y-6 text-lg text-muted-foreground font-sans font-light leading-relaxed font-sans editorial-content">
+              <div className="space-y-6 text-lg text-muted-foreground font-sans font-light leading-relaxed editorial-content">
                 <p>
                   Quality assurance in international trade cannot be reactionary. At Sheesh Exports,
                   our quality intelligence framework is deeply embedded into our procurement and
@@ -150,13 +150,13 @@ export default function QualityPage() {
                 </p>
               </div>
             </div>
-            <div className="relative h-full min-h-[400px] bg-background">
+            <div className="relative h-full min-h-100 bg-background">
               <Image
                 loading="lazy"
                 src="/images/about/factory-processing.webp"
                 alt="Quality Inspection"
                 fill
-                className="object-cover grayscale-[20%]"
+                className="object-cover grayscale-20"
               />
               <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
             </div>
@@ -166,7 +166,7 @@ export default function QualityPage() {
 
       {/* SECTION 03: FARM TO SHIPMENT QA PROCESS */}
       <section className="py-16 lg:py-24 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1400px]">
+        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-350">
           <h2 className="font-heading text-4xl sm:text-5xl font-medium text-[#F7F5F0] mb-4 text-center">
             Farm to Shipment QA Process
           </h2>
@@ -199,9 +199,9 @@ export default function QualityPage() {
 
       {/* SECTION 04: LABORATORY & TESTING */}
       <section className="py-16 lg:py-24 bg-background">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1400px]">
+        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-350">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div className="relative h-[500px] lg:h-[700px] w-full">
+            <div className="relative h-125 lg:h-175 w-full">
               <Image
                 loading="lazy"
                 src="/images/about/infra-testing.webp"
@@ -214,7 +214,7 @@ export default function QualityPage() {
               <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-8">
                 Laboratory Analysis & Product Verification
               </h2>
-              <p className="text-lg text-muted-foreground font-sans font-light leading-relaxed font-sans mb-10">
+              <p className="text-lg text-muted-foreground font-sans font-light leading-relaxed mb-10">
                 To guarantee absolute compliance with ASTA, ESA, and FSSAI standards, our in-house
                 and third-party laboratory partners perform exhaustive analytical testing on every
                 single export batch.
@@ -265,7 +265,7 @@ export default function QualityPage() {
 
       {/* SECTION 05: TESTING PARAMETERS */}
       <section id="standards" className="py-16 lg:py-24 bg-background border-y border-border">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-24 max-w-[1200px]">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-24 max-w-300">
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-medium text-primary mb-10 lg:mb-12">
             Standard Testing Parameters
           </h2>
@@ -311,7 +311,7 @@ export default function QualityPage() {
 
       {/* SECTION 06: PRODUCT QUALITY STANDARDS */}
       <section className="py-16 lg:py-24 bg-background">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1200px]">
+        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-300">
           <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-12">
             Product Quality Standards
           </h2>
@@ -387,13 +387,13 @@ export default function QualityPage() {
 
       {/* SECTION 07: FOOD SAFETY & HYGIENE */}
       <section className="py-16 lg:py-24 bg-background">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1400px]">
+        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-350">
           <div className="flex flex-col-reverse lg:flex-row gap-12 lg:gap-16 items-center">
             <div className="w-full lg:w-1/2">
               <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-8">
                 Food Safety & Hygiene Protocols
               </h2>
-              <p className="text-lg text-muted-foreground font-sans font-light leading-relaxed font-sans mb-10">
+              <p className="text-lg text-muted-foreground font-sans font-light leading-relaxed mb-10">
                 A pristine processing environment is the foundation of quality. Our facilities
                 strictly implement global Good Manufacturing Practices (GMP).
               </p>
@@ -425,7 +425,7 @@ export default function QualityPage() {
                 </div>
               </div>
             </div>
-            <div className="w-full lg:w-1/2 relative h-[400px] lg:h-[600px]">
+            <div className="w-full lg:w-1/2 relative h-100 lg:h-150">
               <Image
                 loading="lazy"
                 src="/images/about/infra-warehouse.webp"
@@ -440,7 +440,7 @@ export default function QualityPage() {
 
       {/* SECTION 08: QUALITY + CERTIFICATIONS */}
       <section className="py-16 lg:py-20 bg-background border-y border-border">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1200px] text-center">
+        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-300 text-center">
           <h2 className="font-heading text-4xl font-medium text-primary mb-12">
             Quality Systems Supported By Global Certifications
           </h2>
@@ -472,7 +472,7 @@ export default function QualityPage() {
 
       {/* SECTION 09: DOWNLOADABLE DOCUMENTATION */}
       <section className="py-16 lg:py-24 bg-background">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-[1200px]">
+        <div className="container mx-auto px-6 sm:px-12 lg:px-24 max-w-300">
           <h2 className="font-heading text-4xl sm:text-5xl font-medium text-primary mb-12">
             Documentation Center
           </h2>
