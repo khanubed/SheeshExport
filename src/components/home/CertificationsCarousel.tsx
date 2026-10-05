@@ -31,6 +31,7 @@ export function CertificationsCarousel({ certifications }: CertificationsCarouse
               <Image
                 // decoding="async"
                 loading="lazy"
+                // decoding="async"
                 src={cert.img}
                 alt={cert.name}
                 fill

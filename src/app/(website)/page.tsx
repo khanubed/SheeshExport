@@ -201,6 +201,7 @@ export default function HomePage() {
             alt="Sheesh Exports Premium Indian Spices and Agro Commodities"
             fill
             priority
+            fetchPriority="high"
             // decoding="async"
             sizes="100vw"
             quality={60}
